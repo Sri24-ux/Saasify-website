@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaSify – Empowering the Autonomous Enterprise</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-Fd...Omf"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /* Base Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #2a2a2a;
+    }
+    h1, h2, h3 {
+      color: #0a1f44;
+    }
+    p {
+      padding: 6px;
+    }
+    .service-card img{ max-width: 25%;
+	display:block; 
+    }
+    section {
+      padding: 40px;
+    }
+   .hero-text {
+      max-width: 50%;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-text p {
+      margin-bottom: 20px;
+    }
+    .hero-text button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 70px 40px;
+      border-radius: 8px;
+      background-color: #f4faff;
+     }
+     h2.main-heading {
+      position: relative;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+    .span-border-bottom {
+      border-bottom: 3px solid #55ffbe;
+     }
+    .hero .text { flex: 1; margin-right: 2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero .cta { display: inline-block; background: #0077cc; color: #fff; padding: .75rem 1.5rem; border-radius: 4px; text-decoration: none; }
+
+    /* Icons section */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;margin-bottom:2rem; }
+    .feature-card { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
+    .feature-card i { font-size: 2.5rem; color: #0077cc; margin-bottom: 1rem; }
+
+    /* Services */
+    .services, .outcomes { margin-bottom: 2rem; }
+    .service-list, .outcome-list { list-style: none; }
+    .service-list li, .outcome-list li { margin-bottom: .5rem; padding-left: 1.5rem; position: relative; }
+    .service-list li:before, .outcome-list li:before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #0077cc;
+    }
+
+.vision-mission-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #f4faff;
+}
+
+.vision-mission-card {
+  display: flex;
+  max-width: 1257px;
+  background-color: #fff;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+}
+
+.vision-mission-left {
+  flex: 1 1 40%;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: ellipse(90% 100% at 0% 50%);
+}
+
+.vision-mission-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 0;
+}
+
+.vision-mission-right {
+  flex: 1 1 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vision-mission-right h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0a1f44;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vision-mission-right h2 i {
+  color: #55ffbe;
+  font-size: 1.2rem;
+}
+
+.vision-mission-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+  margin-bottom: 30px;
+}
+
+      .cta-button,
+    button[type="submit"] {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .cta-button:hover,
+    button[type="submit"]:hover {
+      background-color: #ffdb4d;
+    }
+ .cta-section a { background: #fff; color: #0077cc; padding: .75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: bold; }
+ .why-saasify {
+    padding: 60px 40px;
+background-image: linear-gradient(-35deg, #03081e 0%, #0a1f44 100%);
+    text-align: center;
+    }
+    .services-grid{
+      display: flex;
+margin-left: 70px;
+    }
+    .services-grid p{
+ 	margin: 18px 0;
+    }
+.careers-section {
+ position: relative;
+    background-image: url(your-careers-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.careers-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68%;
+  background-color: #f4faff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.careers-content {
+  text-align: center;
+  max-width: 700px;
+  color: white;
+  z-index: 1;
+}
+
+.careers-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.careers-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #0a1f44;
+}
+
+.careers-button {
+  display: inline-block;
+  background-color: #f4c300;
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.careers-button:hover {
+  background-color: #ffdb4d;
+}
+.hero-images img {
+  width: 85%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: auto;
+  display: block;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+</style>
+</head>
+<body>
+   <div id="header"></div>
+  <div>
+    <section class="hero">
+  <div class="hero-text" style="flex: 1 1 50%; min-width: 300px; padding-right: 30px;">
+    <h1 style="font-size: 2.5rem;">Empowering the Autonomous Enterprise</h1>
+    <p style="font-size: 1.1rem; line-height: 1.6;">
+      We harness AI-driven automation, cloud-native architecture, and secure, sustainable practices to help your organization innovate and scale.
+    </p>
+     <a href="contact_us_page.html">
+   <button class="cta-button" style="margin-top: 20px;">Book a Free Consultation</button>
+   </a>
+  </div>
+  <div class="hero-images" style="flex: 1 1 45%; min-width: 280px;">
+   <img src="images\About-us.png" alt="Digital transformation" class="hero-image">
+  </div>
+</section>
+
+<section class="why-saasify">
+<h2 class="main-heading"
+style= "color: rgb(255, 255, 255)";><span class="span-border-bottom">Why choose Saasify?</span></h2>
+      <div class="features">
+        <div class="feature-card">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Rapid Deployment</h3>
+          <p>Get operational in days—no heavy integrations or engineering overhead.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-brain"></i>
+          <h3>Scalable &amp; Secure</h3>
+          <p>Handles thousands of devices with enterprise-grade security and compliance.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-shield-alt"></i>
+          <h3>Actionable Analytics</h3>
+          <p>Insights-driven decisions with smart reporting and optimization flags.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-cloud"></i>
+          <h3>Expert Support</h3>
+          <p>Guided onboarding plus ongoing 24×7 technical support.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Seamless Integrations</h3>
+          <p>Plug into your existing IT ecosystem effortlessly, including ITSM, cloud platforms, and monitoring tools.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Data &amp; Analytics</h3>
+          <p>Deliver real-time insights across operations and CX with BI, streaming pipelines, and embedded analytics.</p>
+        </div>
+      </div>
+    </section>
+<section class="vision-mission-wrapper">
+  <div class="vision-mission-card">
+    <div class="vision-mission-left">
+      <img src="images\visionmission.jpg" alt="Saasify meeting" />
+    </div>
+    <div class="vision-mission-right">
+      <h2><i class="fa-solid fa-eye"></i> Vision</h2>
+      <p>
+        We want to be a trusted technology partner and advisor to enterprises and act as a System integrator to build innovative solutions to manage, automate and secure organizational IT and to be a partner of choice for the enterprises in their digital transformation endeavors.
+      </p>
+
+      <h2><i class="fa-solid fa-bullseye"></i> Mission</h2>
+      <p>
+        We exist to help enterprises fulfil their digital goals. We bring our expertise to assist them in their transformational journey right from consulting, planning, implementation and support to share the IT load of the enterprises and enable them to concentrate more on their core business. In this process we also provide an immense learning and growth path for our associates.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="services-section">
+  <h2 class="main-heading"><span class="span-border-bottom">Our Services</span></h2>
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+    We create lasting impact through collaboration, customer focus, and technological excellence.
+  </p>
+
+  <div class="services-grid" style="display: flex;">
+    <div class="service-card">
+      <img src="Collaborate_icon.png" alt="Collaboration icon" />
+      <h3>We collaborate</h3>
+      <p>Winning together through collective growth and accountability.</p>
+    </div>
+    <div class="service-card">
+      <img src="Customer_centric.png" alt="Customer-centered icon" />
+      <h3>We are customer-centered</h3>
+      <p>Placing our customers' ambitions at the heart of everything we do.</p>
+    </div>
+    <div class="service-card">
+      <img src="Opportunities.png" alt="Opportunities icon" />
+      <h3>We create opportunities</h3>
+      <p>Pushing technological boundaries to enable transformation.</p>
+    </div>
+    <div class="service-card">
+      <img src="We-care.png" alt="Care icon" />
+      <h3>We care</h3>
+      <p>Supporting communities through our technology and people.</p>
+    </div>
+  </div>
+</section>
+
+  <section class="quote-section" style="background-color: #0a1f44; padding: 28px 20px;">
+  <div style="max-width: 1198px; margin: auto; background-color: #ffffff; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); overflow: hidden; padding: 40px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px;">
+
+      <!-- Quote Text -->
+      <div style="flex: 1 1 50%; min-width: 280px;">
+        <div style="font-size: 2.5rem; color: #0a1f44; margin-bottom: 20px;">❝</div>
+        <h2 style="color: #0a1f44; font-size: 1.5rem; line-height: 1.6; font-weight: 600;">
+          “At Saasify, we don’t just build solutions — we architect experiences that empower enterprises to evolve faster, smarter, and more securely. Innovation is not our goal — it’s our responsibility.”
+        </h2>
+        <p style="margin-top: 20px; font-weight: bold; color: #0a1f44;">Madhusoodhanan</p>
+        <p style="margin-top: 2px; color: #444;">Director, Saasify Solutions</p>
+        <a href="our-team.html">
+            <button class="cta-button" style="margin-top: 30px;">Meet Our Leadership</button>
+        </a>
+        
+      </div>
+
+      <!-- Director Floating Image -->
+      <div style="flex: 1 1 40%; min-width: 260px; position: relative; display: flex; justify-content: center; align-items: center;">
+        <!-- Background Circle -->
+        <div style="width: 260px; height: 260px; border-radius: 50%; background-color: #f9f9f9; position: relative; z-index: 1;"></div>
+
+        <!-- Director Image on Top -->
+        <img src="images\Director_Image.png" alt="Madhusoodhanan"
+             style="position: absolute; z-index: 2; width: 335px; height: auto; object-fit: cover; transform: translate(16px, 16px);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+ <section class="careers-section">
+  <div class="careers-overlay">
+    <div class="careers-content">
+       <h2 class="main-heading" style="color: #0a1f44;"><span class="span-border-bottom">Join the Future of Innovation</span></h2>
+      <p>Be part of a team that empowers enterprises through cutting-edge technologies and transformative solutions.</p>
+      <a href="saasify-careers.html" class="careers-button">Explore Careers</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  fetch('header_section.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+</script>
+
+</body>
+</html>

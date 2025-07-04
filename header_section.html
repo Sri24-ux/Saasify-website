@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saasify Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"> </script>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #2a2a2a;
+}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: #0a1f44;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 95%;
+      z-index: 1000;
+      box-sizing: content-box;
+}
+    .logo img {
+      height: 40px;
+    }
+   nav {
+   display: flex;
+  gap: 30px;
+  align-items: center;
+  color: white;
+}
+nav .dropdown {
+  position: relative; /* Ensures absolute children align properly */
+}
+ /* Dropdown container */
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(10, 31, 68, 0.95); /* dark blue background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding:20px;
+  z-index: 999;
+  min-width: 200px;
+  color: white;
+}
+/* Two-column container */
+.two-column-dropdown {
+  display: flex;
+  gap: 40px;
+  min-width: 500px !important;
+}
+
+/* Each column */
+.dropdown-column {
+  flex: 1;
+}
+
+.dropdown-column h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #55ffbe;
+  border-bottom: 1px solid #55ffbe;
+  padding-bottom: 5px;
+}
+
+.dropdown-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-column ul li {
+  margin: 6px 0;
+}
+
+.dropdown-column ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  padding-bottom: 2px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+
+/* Show on hover */
+nav .dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Remove bullets and spacing */
+nav .dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown link styles */
+nav .dropdown-content ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover underline effect */
+nav .dropdown-content ul li a::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  bottom: 8px;
+  width: 0;
+  height: 2px;
+  background-color: #00c896; /* green underline */
+  transition: width 0.3s ease;
+}
+
+nav .dropdown-content ul li a:hover::after {
+  width: calc(100% - 40px); /* full width minus padding */
+}
+
+nav .dropdown-content ul li a:hover {
+  color: rgba(244, 248, 248, 0.966);
+}
+
+    .right-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .right-icons i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+.right-icons i:hover {
+  color: #f4c300;
+}
+    .right-icons button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #f4c300;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+   .about-dropdown {
+      display: none;
+      flex-direction: row;
+      gap: 40px;
+    }
+    .dropdown:hover .about-dropdown {
+      display: flex;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+    <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+  </a>
+</div>
+     <nav>
+      <div class="dropdown">
+        <span style="color: white;">Platform Proficiency</span> 
+        <div class="dropdown-content">
+          <ul>
+            <li>IAM</a></li>
+            <li>ITSM</li>
+            <li>ITOM</li>
+            <li>IT Analytics</li> 
+            <li>SIEM</li>
+            <li>UEM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span style="color: white;">Services & Solutions</span>
+        <div class="dropdown-content two-column-dropdown">
+          <div class="dropdown-column">
+             <h4>Services</h4>
+          <ul>
+            <li><a href="consulting-services.html">Consulting</a></li>
+            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
+            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
+            <li>Training</li>
+            <li>Ongoing Support</li>
+            <li>Managed Services</li>
+          </ul>
+          </div>
+          <div class="dropdown-column">
+            <h4>Solutions</h4>
+           <ul>
+            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
+            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
+            <li><a href="it-security-management.html">IT Security Management</a></li>
+            <li><a href="Business-analytics.html">Business Analytics</a></li> 
+            <li><a href="business-pro-management.html">Business Process Management</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+  <span style="color: white;">About Us</span>
+  <div class="dropdown-content about-dropdown">
+    <ul>
+      <li><a href="about_us.html">About Saasify</a></li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="our-presence.html">Our Presence</a></li>
+    </ul>
+  </div>
+</div>
+      </div>
+<div class="dropdown">
+        <span style="color: white;">Careers</span>  
+        <div class="dropdown-content">
+          <ul>
+            <li><a href="saasify-careers.html">Job Vacancy</a></li>  
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <span style="color: white;">Insights</span>
+        <div class="dropdown-content">
+          <ul>
+            <li><a href="insight-page.html#news">News & Announcements</a></li>
+            <li><a href="insight-page.html#blogs">Blogs</a></li>
+            <li><a href="insight-page.html#cases">Case Studies</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="right-icons">
+      <a href="contact_us_page.html">
+       <button>Contact Us</button>
+      </a>
+    </div>
+  </header>
+</body>
+</html>

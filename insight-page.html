@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights – Saasify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #e8fdf6;
+      color: #0a1f44;
+  }
+  .career-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #f4faff;
+   }
+ .career-text {
+  flex: 1 1 50%;
+  max-width: 550px;
+}
+.career-text h1 {
+  font-size: 2.4rem;
+  color: #0a1f44;
+}
+
+.career-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+.career-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.career-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+    .insights-nav {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid #ccc;
+      background: rgba(10, 31, 68, 0.85);
+    }
+    .insights-nav button {
+      background: none;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #ffffff;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .insights-nav button.active {
+      border-bottom: 3px solid #55ffbe;
+      color: #55ffbe;
+      font-weight: bold;
+    }
+    .insight-section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .insight-section.active {
+      display: block;
+      opacity: 1;
+    }
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .insight-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+    .insight-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .insight-card-content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+    .insight-card h3 {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+    }
+    .insight-card p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .read-more {
+      color: #0a1f44;
+      font-weight: bold;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .insight-contact {
+  background-color: #ffffff;
+  padding: 50px 20px;
+}
+.insight-contact-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.insight-contact-text small {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+.insight-contact-text h2 {
+  font-size: 2rem;
+  color: #0c2d3f;
+  margin-bottom: 10px;
+}
+.insight-contact-text p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+}
+.insight-contact-btn {
+  background-color: #f4c300;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.insight-contact-btn:hover {
+  background-color: #ffd500;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+  </style>
+</head>
+<body>
+   <div id="header"></div>
+  <section class="career-hero">
+  <div class="career-text">
+    <h1>Explore What Drives Saasify Forward.</h1>
+    <p>Discover the latest trends, compelling stories, and strategic insights that are shaping the future of enterprise technology and redefining business success with Saasify.</p>
+  </div>
+  <div class="career-image">
+    <img src="images/insight.jpg" alt="Insight image">
+  </div>
+</section>
+
+  <div class="insights-nav" style="padding: 18px;">
+    <button class="tab-button active" data-target="news">News & Announcements</button>
+    <button class="tab-button" data-target="blogs">Blogs</button>
+    <button class="tab-button" data-target="cases">Case Studies</button>
+  </div>
+
+  <section id="news" class="insight-section active">
+    <div class="insight-grid" id="newsContent"></div>
+  </section>
+
+  <section id="blogs" class="insight-section">
+    <div class="insight-grid" id="blogsContent"></div>
+  </section>
+
+  <section id="cases" class="insight-section">
+    <div class="insight-grid" id="casesContent"></div>
+  </section>
+  
+ <section class="insight-contact">
+  <div class="insight-contact-wrapper">
+    <div class="insight-contact-text">
+      <small>Connect with Saasify</small>
+      <h2>Connect to explore possibilities.</h2>
+      <p>We’d love to hear from you and answer any questions. Let’s start a conversation that matters.</p>
+    </div>
+    <div>
+      <a href="contact_us_page.html" class="insight-contact-btn">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <script>
+     fetch('header_section.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+
+  <script>
+    const insightsData = {
+      news: [
+        {
+          title: "Saasify expands with new office in Bengaluru",
+          description: "Saasify is proud to announce the opening of newly expanded office spaces in the Bengaluru, Karnataka.",
+          image: "images/Website-image-banner.jpg"
+        },
+        {
+          title: "Saasify partners with AI leader for enterprise automation",
+          description: "This collaboration enables businesses to fast-track digital transformation.",
+          image: "images/AI-images.jpg"
+        },
+        {
+          title: "Saasify expands with new office in Bengaluru",
+          description: "Saasify is proud to announce the opening of newly expanded office spaces in the Bengaluru, Karnataka.",
+          image: "images/Website-image-banner.jpg"
+        },
+        {
+          title: "Saasify partners with AI leader for enterprise automation",
+          description: "This collaboration enables businesses to fast-track digital transformation.",
+          image: "images/AI-images.jpg"
+        }
+      ],
+      blogs: [
+        {
+          title: "Top 5 Trends in Enterprise Service Management",
+          description: "From AI to low-code platforms, explore what’s shaping the future of ESM.",
+          image: "images/ESM-trends.jpg"
+        },
+        {
+          title: "A beginner’s guide to SDP",
+          description: "Understand the fundamentals and why every business needs Service Desk Plus today.",
+          image: "images/ServiceDesk-Plus.jpeg"
+        },
+        {
+          title: "Top 5 Trends in Enterprise Service Management",
+          description: "From AI to low-code platforms, explore what’s shaping the future of ESM.",
+          image: "images/ESM-trends.jpg"
+        },
+        {
+          title: "A beginner’s guide to SDP",
+          description: "Understand the fundamentals and why every business needs Service Desk Plus today.",
+          image: "images/ServiceDesk-Plus.jpeg"
+        }
+      ],
+      cases: [
+        {
+          title: "How Saasify helped an FMCG giant cut costs by 30%",
+          description: "A real-world case of automation in procurement and support services.",
+          image: "images/fmcc.jpg"
+        },
+        {
+          title: "Client testimonial: Saasify’s impact on digital HR",
+          description: "Hear from a leading tech firm on how Saasify transformed their HR operations.",
+          image: "images/testimonials.jpg"
+        },
+        {
+          title: "How Saasify helped an FMCG giant cut costs by 30%",
+          description: "A real-world case of automation in procurement and support services.",
+          image: "images/fmcc.jpg"
+        },
+        {
+          title: "Client testimonial: Saasify’s impact on digital HR",
+          description: "Hear from a leading tech firm on how Saasify transformed their HR operations.",
+          image: "images/testimonials.jpg"
+        }
+      ]
+    };
+
+    const loadCards = (sectionId, data) => {
+      const container = document.getElementById(sectionId + 'Content');
+      container.innerHTML = '';
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'insight-card';
+        card.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" />
+          <div class="insight-card-content">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+           <a href="insight-detail.html" class="read-more" onclick='viewInsight(${JSON.stringify(item)})'>Read more</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    };
+
+    loadCards('news', insightsData.news);
+    loadCards('blogs', insightsData.blogs);
+    loadCards('cases', insightsData.cases);
+
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.insight-section').forEach(sec => sec.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.target).classList.add('active');
+      });
+    });  
+    
+    window.addEventListener('load', () => {
+  const hash = window.location.hash.substring(1); // removes #
+  if (hash) {
+    const targetBtn = document.querySelector(`.tab-button[data-target="${hash}"]`);
+    if (targetBtn) {
+      targetBtn.click();
+    }
+  }
+});
+  </script>
+</body>
+</html>
