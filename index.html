@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saasify Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #0a1f44;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: #0a1f44;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 95%;
+      z-index: 1000;
+    }
+    .logo img {
+      height: 40px;
+    }
+   nav {
+   display: flex;
+  gap: 30px;
+  align-items: center;
+  color: white;
+}
+nav .dropdown {
+  position: relative; /* Ensures absolute children align properly */
+}
+ /* Dropdown container */
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(10, 31, 68, 0.95); /* dark blue background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 999;
+  min-width: 200px;
+  color: white;
+}
+/* Two-column container */
+.two-column-dropdown {
+  display: flex;
+  gap: 40px;
+  min-width: 400px !important;
+}
+
+/* Each column */
+.dropdown-column {
+  flex: 1;
+}
+
+.dropdown-column h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #55ffbe;
+  border-bottom: 1px solid #55ffbe;
+  padding-bottom: 5px;
+}
+
+.dropdown-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-column ul li {
+  margin: 6px 0;
+}
+
+.dropdown-column ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  padding-bottom: 2px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+
+/* Show on hover */
+nav .dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Remove bullets and spacing */
+nav .dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown link styles */
+nav .dropdown-content ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover underline effect */
+nav .dropdown-content ul li a::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  bottom: 8px;
+  width: 0;
+  height: 2px;
+  background-color: #00c896; /* green underline */
+  transition: width 0.3s ease;
+}
+
+nav .dropdown-content ul li a:hover::after {
+  width: calc(100% - 40px); /* full width minus padding */
+}
+
+nav .dropdown-content ul li a:hover {
+  color: rgba(244, 248, 248, 0.966);
+}
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+    .right-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .right-icons button {
+      padding: 8px 16px;
+      border: none;
+      background-color: #f4c300;
+      color: black;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+   .right-icons i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+.right-icons i:hover {
+  color: #f4c300;
+}
+.about-dropdown {
+      display: none;
+      flex-direction: row;
+      gap: 40px;
+    }
+    .dropdown:hover .about-dropdown {
+      display: flex;
+    }
+      .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 40px;
+      background-color: #f4faff;
+    }
+    .hero-text {
+      max-width: 50%;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-text p {
+      margin-bottom: 20px;
+    }
+    .hero-text button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .hero-images {
+      width: 100%;
+    }
+    .hero-images img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+ .carousel-dots {
+      margin-top: 39px;
+    }
+    .carousel-dots .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #ccc;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+    .carousel-dots .dot.active {
+  background-color: #0a1f44;
+}
+
+    .stats-wrapper {
+        background-image: linear-gradient(-35deg, #03081e 0%, #0a1f44 100%);
+   	padding: 40px;
+    	border-radius: 20px;
+    	margin: 40px auto;
+    	max-width: 1640px;
+    	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    	background-color: transparent;
+    }
+    .key-stats {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 40px;
+     }
+    .key-stats .stat {
+  background: #f9f9f9;
+  width: 25%;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+
+    }
+    .key-stats .stat h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    
+.key-stats .stat p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+    .key-stats .stat:hover {
+      transform: translateY(-5px);
+    }
+   .key-stats .stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+   }
+.key-stats .stat-number .plus {
+  font-size: 1.5rem;
+  color: #27ae60;
+  background: #eafaf1;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+   }
+    .trusted-by {
+      overflow: hidden;
+      padding: 30px 0;
+      text-align: center;
+      font-size: x-large;
+    }
+
+    .logo-slider {
+      display: flex;
+      animation: slide 20s linear infinite;
+      gap: 50px;
+      align-items: center;
+    }
+    .logo-slider img {
+      height: 60px;
+      object-fit: contain;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonial-wrapper {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to top, #dfe9f3 0%, #ffffff 100%);
+}
+.testimonial-wrapper h2 {
+  color: #0a1f44;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.testimonial-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+.testimonial-card {
+  flex-shrink: 0;
+  width: 160px;
+  background: #fff;
+  color: #0a1f44;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #0a1f44;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.testimonial-card .feedback {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+.testimonial-card .name {
+  font-weight: bold;
+}
+.testimonial-card .title {
+  font-size: 0.8rem;
+  color: #666;
+}
+.testimonial-card.active {
+  width: 280px;
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+}
+.testimonial-dots {
+  margin-top: 30px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.dot.active {
+  background-color: #0a1f44;
+}
+     .latest-insights {
+      padding: 60px 40px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    .insight-item {
+      display: inline-block;
+      width: 30%;
+      margin: 0 1.5%;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .insight-item h3 {
+      margin-top: 0;
+    }
+    .insight-item p {
+      color: #555;
+    }
+    .view-all-button {
+       background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+  </style>
+</head>
+
+<body>
+<header>
+<div class="logo">
+  <a href="index.html">
+    <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+  </a>
+</div>
+    <nav>
+      <div class="dropdown">
+        <span style="color: white;">Platform Proficiency</span> 
+        <div class="dropdown-content">
+          <ul>
+            <li>IAM</a></li>
+            <li>ITSM</li>
+            <li>ITOM</li>
+            <li>IT Analytics</li>
+            <li>SIEM</li>
+            <li>UEM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span style="color: white;">Services & Solutions</span>
+        <div class="dropdown-content two-column-dropdown">
+          <div class="dropdown-column">
+             <h4>Services</h4>
+          <ul>
+            <li><a href="consulting-services.html">Consulting</a></li>
+            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
+            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
+            <li>Training</li>
+            <li>Ongoing Support</li>
+            <li>Managed Services</li>
+          </ul>
+          </div>
+          <div class="dropdown-column">
+            <h4>Solutions</h4>
+           <ul>
+            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
+            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
+            <li><a href="it-security-management.html">IT Security Management</a></li>
+            <li><a href="Business-analytics.html">Business Analytics</a></li> 
+            <li><a href="business-pro-management.html">Business Process Management</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+  <span style="color: white;">Company Overview</span>
+  <div class="dropdown-content about-dropdown">
+    <ul>
+      <li><a href="about_us.html">About Saasify</a></li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="our-presence.html">Our Presence</a></li>
+    </ul>
+  </div>
+</div>
+      </div>
+<div class="dropdown">
+        <span style="color: white;">Careers</span>  
+        <div class="dropdown-content">
+          <ul>
+            <li><a href="saasify-careers.html">Job Vacancy</a></li>  
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <span style="color: white;">Insights</span>
+        <div class="dropdown-content">
+          <ul>
+            <li><a href="insight-page.html#news">News & Announcements</a></li>
+            <li><a href="insight-page.html#blogs">Blogs</a></li>
+            <li><a href="insight-page.html#cases">Case Studies</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="right-icons">
+      <a href="contact_us_page.html">
+       <button>Contact Us</button>
+      </a>
+    </div>
+  </header>
+
+   <section class="hero">
+  <div class="hero-text">
+    <h1>Transformative technology.</h1>
+    <p>At Saasify, we deliver purpose-built, intelligence-driven solutions designed to optimize IT, Security, Analytics, and Business Processes. Our cutting-edge platforms help businesses accelerate growth, enhance operational efficiency, and stay ahead.</p>
+  <a href="about_us.html">
+   <button class="cta-button" style="margin-top: 20px;">Get to Know Us</button>
+   </a>
+
+<div class="carousel-dots" >
+   <span class="hero-dot dot"></span>
+   <span class="hero-dot dot"></span>
+   <span class="hero-dot dot"></span>
+   <span class="hero-dot dot"></span>
+   <span class="hero-dot dot"></span>
+</div>
+  </div>
+  <div class="hero-images">
+    <img id="solution-img" src="https://t3.ftcdn.net/jpg/11/41/49/08/240_F_1141490828_pNlOfrChoaXusZLJ1TvNidB9KCAz4WEw.jpg" alt="Saasify Solutions">
+  </div>
+</section>
+
+  <section class="trusted-by">
+<h2 class="main-heading"><span class="span-border-bottom">Preferred by industry leaders</span></h2>
+    <div class="logo-slider" id="partner-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" alt="Partner 1" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 2" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/512px-IBM_logo.svg.png" alt="Partner 3" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/512px-PayPal.svg.png" alt="Partner 4" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 5" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/512px-Amazon_logo.svg.png" alt="Partner 1" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" alt="Partner 2" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 3" />
+    </div>
+  </section>
+  
+<section>
+  <div class="testimonial-wrapper">
+  <h2 class="main-heading"><span class="span-border-bottom">What Our Customers Say</span></h2>
+  <div class="testimonial-carousel" id="carousel"></div>
+  <div class="testimonial-dots" id="dots"></div>
+</div>
+</section>
+
+  <section class="latest-insights">
+    <h2 class="main-heading"><span class="span-border-bottom">Latest Insights</span></h2>
+    <div class="insight-item">
+      <h3>5 Ways to Improve IT Operations</h3>
+      <p>Discover strategies that elevate your IT management to the next level.</p>
+    </div>
+    <div class="insight-item">
+      <h3>Case Study: Optimizing BPM</h3>
+      <p>Read how Saasify helped a client streamline their business processes effectively.</p>
+    </div>
+    <div class="insight-item" style="margin-top: 13px">
+      <h3>Security Trends 2025</h3>
+      <p>Explore the future of cybersecurity and how your company can prepare.</p>
+    </div>
+    <a href="insight-page.html">
+       <button class="view-all-button">View All</button>
+    </a>
+  </section>
+  <footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+  <script>
+    const heroImages = [
+  "images/Sol-one.png",
+  "images/Sol-two.png",
+  "images/Sol-three.png",
+  "images/Sol-four.png",
+  "images/Sol-five.png",
+];
+
+const heroDots = document.querySelectorAll('.hero-dot');
+const heroImg = document.getElementById("solution-img");
+let currentHero = 0;
+
+function updateHeroDots(index) {
+  heroDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function startHeroCarousel() {
+  updateHeroDots(currentHero);
+  setInterval(() => {
+    currentHero = (currentHero + 1) % heroImages.length;
+    if (heroImg) heroImg.src = heroImages[currentHero];
+    updateHeroDots(currentHero);
+  }, 3000);
+}
+
+startHeroCarousel();
+
+    const images = ["images/Sol-one.png", "images/Sol-two.png", "images/Sol-three.png", "images/Sol-four.png", "images/Sol-five.png"];
+    let currentImg = 0;
+    setInterval(() => {
+      currentImg = (currentImg + 1) % images.length;
+      const img = document.getElementById("solution-img");
+      if (img) img.src = images[currentImg];
+    }, 3000);
+
+   const statsData = [
+    { number: '100', label: 'Implementations' },
+    { number: '100', label: 'Clients' },
+    { number: '35', label: 'Technology Professionals' }
+  ];
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "stats-wrapper";
+
+  const headingContainer = document.createElement("div");
+  headingContainer.style.textAlign = "center";
+  headingContainer.style.marginBottom = "40px";
+
+  const title = document.createElement("div");
+  title.style.color = "#fff";
+  title.style.fontSize = "1.2rem";
+  title.textContent = "Key Stats";
+  headingContainer.appendChild(title);
+
+  const subtitle = document.createElement("h1");
+  subtitle.className = "main-heading";
+  subtitle.style.color = "#55ffbe";
+  subtitle.style.fontSize = "2rem";
+  subtitle.style.marginTop = "10px";
+  subtitle.textContent = "Our stats tell the story of Saasify’s impact.";
+  headingContainer.appendChild(subtitle);
+
+  wrapper.appendChild(headingContainer);
+
+  const statsContainer = document.createElement("section");
+  statsContainer.className = "key-stats";
+  statsContainer.id = "stats";
+  wrapper.appendChild(statsContainer);
+document.body.insertBefore(wrapper, document.querySelector(".trusted-by"));
+
+    function animateCounter(el, value) {
+      let counter = 0;
+      const step = Math.ceil(value / 50);
+      const interval = setInterval(() => {
+        counter += step;
+        if (counter >= value) {
+          el.textContent = value;
+          clearInterval(interval);
+        } else {
+          el.textContent = counter;
+        }
+      }, 30);
+    }
+
+  statsData.forEach(stat => {
+  const div = document.createElement("div");
+  div.className = "stat";
+  const h2 = document.createElement("h2");
+  const numberSpan = document.createElement("span");
+  numberSpan.textContent = "0"; 
+  const plusSpan = document.createElement("span");
+  plusSpan.textContent = "+";
+  h2.appendChild(numberSpan);
+  h2.appendChild(plusSpan);
+  const p = document.createElement("p");
+  p.textContent = stat.label;
+  div.appendChild(h2);
+  div.appendChild(p);
+  statsContainer.appendChild(div);
+  animateCounter(numberSpan, stat.number); 
+});
+
+const testimonials = [
+  {
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    feedback: "Amazing platform that transformed our workflows.",
+    name: "Kaity",
+    title: "Web Developer"
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    feedback: "A reliable solution for enterprise integration.",
+    name: "Mike",
+    title: "Product Manager"
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/12.jpg",
+    feedback: "Incredible customer support and intuitive tools.",
+    name: "Samite",
+    title: "Support Lead"
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/13.jpg",
+    feedback: "Boosted our team's efficiency tenfold.",
+    name: "Hashi",
+    title: "Solutions Architect"
+  }
+];
+
+const carousel = document.getElementById("carousel");
+const testimonialDotsContainer = document.getElementById("dots");
+
+testimonials.forEach((t, index) => {
+  const card = document.createElement("div");
+  card.className = "testimonial-card";
+  if (index === 0) card.classList.add("active");
+
+  card.innerHTML = `
+    <img src="${t.image}" alt="${t.name}" />
+    <div class="feedback">"${t.feedback}"</div>
+    <div class="name">${t.name}</div>
+    <div class="title">${t.title}</div>
+  `;
+  carousel.appendChild(card);
+
+  const dot = document.createElement("span");
+  dot.className = "testimonial-dot dot";
+  if (index === 0) dot.classList.add("active");
+  testimonialDotsContainer.appendChild(dot);
+});
+
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const testimonialDots = document.querySelectorAll('.testimonial-dot');
+
+function setActiveTestimonial(index) {
+  testimonialCards.forEach(c => c.classList.remove('active'));
+  testimonialDots.forEach(d => d.classList.remove('active'));
+  testimonialCards[index].classList.add('active');
+  testimonialDots[index].classList.add('active');
+}
+
+testimonialCards.forEach((card, index) => {
+  card.addEventListener('click', () => setActiveTestimonial(index));
+});
+  </script>
+</body>
+
+</html>

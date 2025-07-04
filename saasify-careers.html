@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers – Join Saasify Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4faff;
+      color: #0a1f44;
+    }
+    h1, h2 {
+      color: #0a1f44;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .career-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #f4faff;
+}
+
+.career-text {
+  flex: 1 1 50%;
+  max-width: 550px;
+}
+
+.career-text .subtext {
+  font-size: 1rem;
+  color: #0077cc;
+  font-weight: 600;
+}
+
+.career-text h1 {
+  font-size: 2.4rem;
+  color: #0a1f44;
+}
+
+.career-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.career-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.career-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+  .careers-openings-bg {
+  background: url('images/the-role.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 195px;
+  position: relative;
+}
+
+.careers-openings-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 31, 68, 0.85); 
+  z-index: 1;
+}
+
+.careers-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
+}
+
+.careers-content .tagline {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.careers-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: rgb(85, 255, 190);
+}
+
+.careers-content a {
+  color: #ffc107;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+  .why-work-section {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.benefits-inline {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.benefit-item {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.benefit-item img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.benefit-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0a1f44;
+}
+
+.benefit-item p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+}
+.span-border-bottom {
+  border-bottom: 3px solid #00bfa6;
+}
+
+   .job-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .job-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .job-card h3 {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .job-card p {
+      font-size: 0.95rem;
+      margin: 4px 0;
+    }
+
+    .view-dtls {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #f4c300;
+      color: #000000;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .view-dtls:hover {
+      background-color: #ffdb4d;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .modal-content p {
+      margin: 10px 0;
+      font-size: 0.95rem;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #0a1f44;
+    }
+
+    .apply-email a {
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+ .apply-split {
+  display: flex;
+  flex-wrap: wrap;
+  background: #eef7fc;
+  padding: 40px 30px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+.apply-left, .apply-right {
+  flex: 1;
+  padding: 10px 20px;
+  min-width: 280px;
+}
+.apply-left h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #0a1f44;
+}
+.apply-left ul {
+  padding-left: 20px;
+  color: #333;
+}
+.apply-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+}
+.apply-right a {
+  font-size: 1.2rem;
+  color: #005ea2;
+  font-weight: bold;
+  text-decoration: none;
+}
+    @media (max-width: 768px) {
+      .careers-hero h1 {
+        font-size: 2rem;
+      }
+    }
+    h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <section class="career-hero">
+  <div class="career-text">
+    <p class="subtext">Grow with us</p>
+    <h1>Join the Saasify team</h1>
+    <p>
+      At Saasify, we empower enterprises with next-gen digital solutions in ITSM, automation, security, and analytics. Whether you're starting your journey or advancing your career, you'll thrive in a culture built on collaboration, innovation, and impact. 
+      <br><br>
+      We believe in people-first growth—where your talent meets purpose and your passion shapes the digital future. Explore open roles and unlock your full potential with Saasify.
+    </p>
+  </div>
+  <div class="career-image">
+    <img src="images/Saasify-team-photo.jpg" alt="Join Saasify team">
+  </div>
+</section>
+
+  <section class="why-work-section">
+  <h2 class="main-heading"><span class="span-border-bottom">Why Work With Us?</span></h2>
+  <div class="benefits-inline">
+    <div class="benefit-item">
+      <img src="images/salary_icon.png" alt="Competitive Salary" />
+      <h4>Competitive Salary</h4>
+      <p>Your packages and benefits are open conversation and made to give maximum advantage to the employee.</p>
+    </div>
+    <div class="benefit-item">
+      <img src="images/work-life-balance-icon.png" alt="Work-life-balance" />
+      <h4>Work-Life Balance</h4>
+      <p>We prioritize well-being with flexible hours, remote work, and supportive leave—helping you thrive at work and in life.</p>
+    </div>
+    <div class="benefit-item">
+      <img src="images/Culture-icon.png" alt="Culture" />
+      <h4>Inclusive Culture</h4>
+      <p>We celebrate diversity and foster a culture where everyone feels respected, valued, and empowered to be their authentic self.</p>
+    </div>
+    <div class="benefit-item">
+      <img src="images/global_icon.png" alt="Growth Assured" />
+      <h4>Global Exposure</h4>
+      <p>Collaborate with clients and teams across geographies, giving you broad exposure to international business challenges and innovations.</p>
+    </div>
+     <div class="benefit-item">
+      <img src="images/read_icon.png" alt="Continuous Learning" />
+      <h4>Continuous Learning</h4>
+      <p>Access to certification programs, internal workshops, and mentorship ensures you’re always learning and upskilling.</p>
+    </div>
+    <div class="benefit-item">
+      <img src="images/Growth_icon.png" alt="Growth Assured" />
+      <h4>images/Growth Assured</h4>
+      <p>We believe personal and professional growth of an employee is the key to success.</p>
+    </div>
+  </div>
+</section>
+
+ <section class="careers-openings-bg">
+  <div class="careers-content">
+    <p class="tagline">INNOVATE FREELY, GROW FEARLESSLY</p>
+    <h2>Current Openings</h2>
+    <p>We’re always looking for curious minds and passionate builders to join the Saasify journey.</p>
+    <p>Share your resume with us at <a href="mailto:kalyani@saasifysolutions.com">kalyani@saasifysolutions.com</a></p>
+  </div>
+</section> 
+
+ <section>
+  <h2 class="main-heading"><span class="span-border-bottom">Current Openings</span></h2>
+  <div class="job-grid" id="jobList"></div>
+   
+  <div id="jobModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <h3 id="modalTitle">Job Title</h3>
+      <p><strong>Location:</strong> <span id="modalLocation"></span></p>
+      <p><strong>Experience:</strong> <span id="modalExperience"></span></p>
+      <p><strong>Posted:</strong> <span id="modalPosted"></span></p>
+      <p><strong>Job Type:</strong> <span id="modalJobtype"></span></p>
+      <p><strong>Description:</strong> <span id="modalDescription"></span></p>
+      <p><strong>Requirements:</strong> <span id="modalRequirements"></span></p>
+      <p><strong>Responsibilities:</strong> <span id="modalResponsibilities"></span></p>
+      <p><strong>Skills Required:</strong> <span id="modalSkills"></span></p>
+      <p class="apply-email">📩 Apply via Email: <a id="modalEmail" href="#">kalyani@saasifysolutions.com</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="apply-split">
+  <div class="apply-left">
+    <h2>Apply for a Role</h2>
+    <h3>📧 Email your details to:</h3>
+    <a href="mailto:kalyani@saasifysolutions.com">kalyani@saasifysolutions.com</a>
+    <p>Send your resume along with:</p>
+    <ul>
+      <li>✔️ Full Name</li>
+      <li>✔️ Phone Number</li>
+      <li>✔️ Current Location</li>
+      <li>✔️ Expected CTC</li>
+    </ul>
+  </div>
+  <div class="apply-right">
+      <img src="images/OIP.jpg"></img>
+   </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+ <script>
+    fetch('header_section.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+ </script>
+ <script>
+   const jobs = [
+         {
+  title: "Sales Manager",
+  location: "Bangalore - India",
+  experience: "2 – 5 Years",
+  posted: "17.06.2025",
+  jobtype: "Full Time",
+  description: [
+    "We are seeking a motivated and results-driven Sales Manager to lead our sales team and drive revenue growth. The ideal candidate will have strong leadership skills, a track record of meeting/exceeding targets, and the ability to develop and execute strategic sales plans."
+  ],
+  requirements: [
+     "Bachelor’s degree in Business, Marketing, or a related field (MBA preferred).",
+     "Proven experience as a Sales Manager or similar role (typically 5+ years).",
+     "Excellent communication, negotiation, and leadership skills.",
+     "Proficient in CRM software (e.g., Salesforce, HubSpot)."
+  ],
+  responsibilities: [
+    "Develop and implement effective sales strategies to achieve business goals.",
+    "Lead, coach, and motivate the sales team to meet and exceed targets.",
+    "Set sales targets, monitor performance, and report on sales metrics.",
+    "Monitor market trends and competitor activities.",
+    "Prepare monthly, quarterly, and annual sales forecasts and reports.",
+    "Collaborate with marketing and product teams to align sales strategies."
+  ],
+  skills: "B2B Sales, Strategic Planning, CRM Tools"
+  },
+   {
+  title: "Technical Lead",
+  location: "Chennai - India",
+  experience: "5 – 8 Years",
+  posted: "25.06.2025",
+  jobtype: "Full Time",
+  description: [
+    "We are looking for a highly skilled and experienced Technical Lead to oversee software development teams and provide technical direction throughout the project lifecycle. As a Technical Lead, you will be responsible for leading architecture discussions, code reviews, mentoring engineers, and ensuring the successful delivery of high-quality software solutions."
+  ],
+   requirements: [
+     "5+ years of software development experience, with 2+ years in a leadership or senior developer role.",
+     "Bachelor’s or Master’s degree in Computer Science, Engineering, or a related field.",
+     "Deep understanding of system design, data structures, and algorithms."
+  ],
+  responsibilities: [
+    "Lead the design, development, and deployment of scalable software solutions.",
+    "Manage technical risks and support in troubleshooting and debugging.",
+    "Guide and mentor developers through technical challenges and code reviews.",
+    "Ensure adherence to coding standards, best practices, and maintainable code.",
+    "Collaborate with cross-functional teams including product, design, QA, and DevOps."
+  ],
+  skills: "AWS, Azure, or Google Cloud, Docker, Kubernetes"
+  },
+        {
+  title: "Sales Manager",
+  location: "Bangalore - India",
+  experience: "2 – 5 Years",
+  posted: "17.06.2025",
+  jobtype: "Full Time",
+  description: [
+    "We are seeking a motivated and results-driven Sales Manager to lead our sales team and drive revenue growth. The ideal candidate will have strong leadership skills, a track record of meeting/exceeding targets, and the ability to develop and execute strategic sales plans."
+  ],
+  requirements: [
+     "Bachelor’s degree in Business, Marketing, or a related field (MBA preferred).",
+     "Proven experience as a Sales Manager or similar role (typically 5+ years).",
+     "Excellent communication, negotiation, and leadership skills.",
+     "Proficient in CRM software (e.g., Salesforce, HubSpot)."
+  ],
+  responsibilities: [
+    "Develop and implement effective sales strategies to achieve business goals.",
+    "Lead, coach, and motivate the sales team to meet and exceed targets.",
+    "Set sales targets, monitor performance, and report on sales metrics.",
+    "Monitor market trends and competitor activities.",
+    "Prepare monthly, quarterly, and annual sales forecasts and reports.",
+    "Collaborate with marketing and product teams to align sales strategies."
+  ],
+  skills: "B2B Sales, Strategic Planning, CRM Tools"
+  },
+        {
+  title: "Sales Manager",
+  location: "Bangalore - India",
+  experience: "2 – 5 Years",
+  posted: "17.06.2025",
+  jobtype: "Full Time",
+  description: [
+    "We are seeking a motivated and results-driven Sales Manager to lead our sales team and drive revenue growth. The ideal candidate will have strong leadership skills, a track record of meeting/exceeding targets, and the ability to develop and execute strategic sales plans."
+  ],
+  requirements: [
+     "Bachelor’s degree in Business, Marketing, or a related field (MBA preferred).",
+     "Proven experience as a Sales Manager or similar role (typically 5+ years).",
+     "Excellent communication, negotiation, and leadership skills.",
+     "Proficient in CRM software (e.g., Salesforce, HubSpot)."
+  ],
+  responsibilities: [
+    "Develop and implement effective sales strategies to achieve business goals.",
+    "Lead, coach, and motivate the sales team to meet and exceed targets.",
+    "Set sales targets, monitor performance, and report on sales metrics.",
+    "Monitor market trends and competitor activities.",
+    "Prepare monthly, quarterly, and annual sales forecasts and reports.",
+    "Collaborate with marketing and product teams to align sales strategies."
+  ],
+  skills: "B2B Sales, Strategic Planning, CRM Tools"
+  }
+    ];
+
+    const jobList = document.getElementById("jobList");
+    const modal = document.getElementById("jobModal");
+
+    jobs.forEach((job, i) => {
+      const card = document.createElement("div");
+      card.className = "job-card";
+      card.innerHTML = `
+        <h3>${job.title}</h3>
+        <p><strong>Location:</strong> ${job.location}</p>
+        <p><strong>Experience:</strong> ${job.experience}</p>
+        <p><strong>JobType:</strong> ${job.jobtype}</p>
+        <button class="view-dtls" onclick="openModal(${i})">View Details</button>
+      `;
+      jobList.appendChild(card);
+    });
+
+    function openModal(index) {
+  const job = jobs[index];
+  document.getElementById("modalTitle").textContent = job.title;
+  document.getElementById("modalLocation").textContent = job.location;
+  document.getElementById("modalExperience").textContent = job.experience;
+  document.getElementById("modalPosted").textContent = job.posted;
+
+  // Description as bullet list
+  const descList = job.description.map(item => `<li>${item}</li>`).join('');
+  document.getElementById("modalDescription").innerHTML = `<ul>${descList}</ul>`;
+  
+  //Requirements as bullet list
+   const reqList = job.requirements.map(item => `<li>${item}</li>`).join('');
+   document.getElementById("modalRequirements").innerHTML = `<ul>${reqList}</ul>`;
+
+  // Responsibilities as bullet list
+  const resList = job.responsibilities.map(item => `<li>${item}</li>`).join('');
+  document.getElementById("modalResponsibilities").innerHTML = `<ul>${resList}</ul>`;
+
+  document.getElementById("modalSkills").textContent = job.skills;
+
+  const emailLink = document.getElementById("modalEmail");
+  emailLink.href = `mailto:kalyani@saasifysolutions.com?subject=Application for ${job.title}`;
+  emailLink.textContent = "kalyani@saasifysolutions.com";
+
+  modal.style.display = "flex";
+  }
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Close modal on outside click
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Presence – Saasify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+  body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4faff;
+      color: #0a1f44;
+ }
+  .presence-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px;
+  background-color: #f4faff;
+  gap: 40px;
+}
+
+.presence-hero > div {
+  flex: 1;
+}
+
+.presence-hero img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px; /* Adjust as needed */
+  object-fit: cover;
+  border-radius: 10px;
+}
+    .presence-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 10px;
+    }
+    .presence-hero p {
+      font-size: 1rem;
+      margin: 0;
+    }
+    .presence-section {
+      padding: 20px 20px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .location-card {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 14px 11px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .location-card:hover {
+      transform: translateY(-5px);
+    }
+    .location-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .location-details {
+      padding: 20px;
+    }
+    .location-details h4 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: #0a1f44;
+    }
+    .location-details p {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.5;
+    }
+    .location-details i {
+      margin-right: 8px;
+      color: #00bfa6;
+    }
+    .main-heading {
+     position: relative;
+     margin-bottom: 35px;
+     text-align: center;
+    }
+    .span-border-bottom {
+      border-bottom: 3px solid #55ffbe;
+    }
+     footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+  </style>
+</head>
+<body>
+   <div id="header"></div>
+  <section class="presence-hero">
+    <div>
+      <h1>Strategically positioned,<br>purposefully driven.</h1>
+      <p>Every Saasify office is a hub of enterprise transformation.</p>
+    </div>
+    <div>
+      <img src="images/presence.jpg" alt="Our-presence" />
+    </div>
+  </section>
+
+  <section class="presence-section">
+    <h2 class="main-heading"><span class="span-border-bottom">Registered Offices</span></h2>
+    <div class="location-grid" id="registered-offices"></div>
+  </section>
+
+  <section class="presence-section">
+    <h2 class="main-heading"><span class="span-border-bottom">Remote Locations</span></h2>
+    <div class="location-grid" id="remote-locations"></div>
+  </section>
+   
+  <footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <!-- Embedded JSON -->
+   <script>
+     fetch('header_section.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+   </script>
+
+  <script type="application/json" id="locations-data">
+  {
+    "registeredOffices": [
+      {
+        "city": "Chennai",
+        "image": "Chennai.jpg",
+        "address": "No.2/4, 6th Floor, Center Point, Mount Poonamallee High Road, Chennai, Tamilnadu - 600089",
+        "email": "sales@saasifysolutions.com",
+        "hours": "Mon - Fri: 9.30 AM to 6.30 PM",
+        "phone": "+91-95510 62198"
+      },
+      {
+        "city": "Bengaluru",
+        "image": "Banglore.jpg",
+        "address": "ZED PINNACLE, No 77/A, 403, 4th Floor, Koramangala Industrial Layout, Koramangala, Bengaluru, Karnataka 560095",
+        "email": "sales@saasifysolutions.com",
+        "hours": "Mon - Fri: 9.30 AM to 6.30 PM",
+        "phone": "+91-95510 62198"
+      }
+    ],
+    "remoteLocations": [
+      {
+        "city": "Hyderabad",
+        "image": "Hyderabad.jpg",
+        "address": "Remote Office – Hyderabad, Telangana"
+      },
+      {
+        "city": "Coimbatore",
+        "image": "Coimbatore.jpg",
+        "address": "Remote Office – Coimbatore, Tamil Nadu"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Script to Render Cards Dynamically -->
+  <script>
+    const jsonData = JSON.parse(document.getElementById('locations-data').textContent);
+    const registeredContainer = document.getElementById('registered-offices');
+    const remoteContainer = document.getElementById('remote-locations');
+
+    jsonData.registeredOffices.forEach(loc => {
+      registeredContainer.innerHTML += `
+        <div class="location-card">
+          <img src="${loc.image}" alt="${loc.city} Office">
+          <div class="location-details">
+            <h4><i class="fa-solid fa-location-dot"></i> ${loc.city}</h4>
+            <p>${loc.address}</p>
+            <p><i class="fa-solid fa-envelope"></i> ${loc.email}</p>
+            <p><i class="fa-solid fa-clock"></i> ${loc.hours}</p>
+            <p><i class="fa-solid fa-phone"></i> ${loc.phone}</p>
+          </div>
+        </div>`;
+    });
+
+    jsonData.remoteLocations.forEach(loc => {
+      remoteContainer.innerHTML += `
+        <div class="location-card">
+          <img src="${loc.image}" alt="${loc.city} Office">
+          <div class="location-details">
+            <h4><i class="fa-solid fa-location-dot"></i> ${loc.city}</h4>
+            <p>${loc.address}</p>
+          </div>
+        </div>`;
+    });
+  </script>
+</body>
+</html>

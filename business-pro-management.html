@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Business Process Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+    section.hero-iom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background-color: #f4faff;
+    }
+    .hero-iom h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-iom p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-iom img {
+      max-width: 100%;
+      height: auto;
+    }
+.benefits-section {
+  position: relative;
+  background-image: url('images/your-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 31, 68, 0.85); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+.benefit-content {
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+ .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+}
+.fancy-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.benefit-card {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.benefit-card h3 {
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  color: #2a2a2a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-left, .contact-right {
+      flex: 1 1 45%;
+    }
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, textarea {
+      padding: 8px;
+      width: 100%;
+    }
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+    .section-subtext {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 40px;
+      color: #555;
+      font-size: 1rem;
+    }
+    .process-section{
+    padding: 60px 20px;
+    background-color: #f4faff;
+    }
+    .process-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .process-card {
+      position: relative;
+      background: white;
+      border-radius: 12px;
+      width: 300px;
+      padding: 20px 20px 60px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .process-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #1f3c88;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .process-title {
+      margin-top: 50px;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #222;
+    }
+
+    .process-text {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: left;
+    }
+
+    .step-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1f3c88;
+      color: white;
+      padding: 8px 0;
+      border-top-left-radius: 100px;
+      border-top-right-radius: 100px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .process-card {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+ 
+</style>
+</head>
+<body>
+<div id="header"></div>
+
+<section class="hero-iom">
+    <div style="flex: 1 1 500px; padding-right: 20px;">
+      <h1>Streamline Your Workflows. Empower Your Teams</h1>
+      <p>Every business is unique—and so are its processes. Saasify helps organizations identify gaps in their existing applications and deploy scalable, no-code/low-code BPM solutions tailored to their needs. Whether you're building from scratch or automating parts of an existing system, we help you design and implement workflows that boost productivity, reduce inefficiencies, and integrate seamlessly across your enterprise.</p>
+      <a href="contact_us_page.html">
+        <button class="cta-button">Book a Demo</button>
+      </a>
+    </div>
+    <div style="flex: 1 1 400px; text-align: center;">
+      <img src="images/business-anal-img.jpg" alt="Business Process Management" />
+    </div>
+</section>
+
+<section class="benefits-section">
+  <div class="benefit-overlay">
+    <div class="benefit-content">
+      <h2 class="main-heading" style="color: #ffffff">
+        <span class="span-border-bottom">Core Capabilities</span>
+      </h2>
+      <div class="benefit-grid fancy-cards">
+        <div class="benefit-card">
+           <h3>Strategic Data Mapping</h3>
+          <p>We identify key business questions first, then map your internal and external data to answer them.</p>
+        </div>
+        <div class="benefit-card">
+         <h3>Custom Dashboards & KPIs</h3>
+          <p>Visualize what truly matters — tailored views for leadership, sales, ops, and customer teams.</p>
+        </div>
+        <div class="benefit-card">
+           <h3>Cross-System Integration</h3>
+          <p>Consolidate data from CRMs, ERPs, marketing tools, and databases into a single trusted source.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Predictive Insights</h3>
+          <p>Spot trends, forecast outcomes, and guide product, customer, and revenue strategies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+ <h2 class="main-heading">
+    <span class="span-border-bottom">Our Rapid Process-Driven Approach</span>
+</h2>
+  <p class="section-subtext">
+    At Saasify, we understand that every business runs differently. Our approach focuses on identifying inefficiencies, designing agile workflows, and building tailored solutions that drive productivity — all without writing complex code.
+  </p>
+
+  <div class="process-container">
+    <!-- Card 1 -->
+    <div class="process-card">
+      <div class="process-title">Assess Business Workflows</div>
+      <div class="process-text">
+        <ul>
+          <li>Map current processes</li>
+          <li>Identify inefficiencies</li>
+          <li>Find automation opportunities</li>
+        </ul>
+      </div>
+      <div class="step-footer">01</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="process-card">
+      <div class="process-title">Identify Gaps & Needs</div>
+      <div class="process-text">
+        <ul>
+          <li>Spot disconnected tools</li>
+          <li>Bridge manual steps</li>
+          <li>Analyze process gaps</li>
+        </ul>
+      </div>
+      <div class="step-footer" style="background-color: #28a745;">02</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="process-card">
+      <div class="process-title">Design Low-Code Solutions</div>
+      <div class="process-text">
+        <ul>
+          <li>Build tailored workflows</li>
+          <li>Use low-code/no-code tools</li>
+          <li>Faster delivery cycles</li>
+        </ul>
+      </div>
+      <div class="step-footer">03</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="process-card">
+      <div class="process-title">Deploy & Integrate</div>
+      <div class="process-text">
+        <ul>
+          <li>Rapid deployment</li>
+          <li>Connect with core systems</li>
+          <li>Enterprise-wide visibility</li>
+        </ul>
+      </div>
+      <div class="step-footer" style="background-color: #28a745;">04</div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="process-card">
+      <div class="process-title">Monitor & Evolve</div>
+      <div class="process-text">
+        <ul>
+          <li>Track usage & feedback</li>
+          <li>Scale as needed</li>
+          <li>Continuous optimization</li>
+        </ul>
+      </div>
+      <div class="step-footer">05</div>
+    </div>
+  </div>
+ </section> 
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+     <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>What is your enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
+        </div>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
+        </a>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <script>
+    fetch('header_section.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+
+
+</body>
+</html>

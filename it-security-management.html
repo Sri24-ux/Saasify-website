@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT Security Management – Saasify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+.benefits-section {
+  position: relative;
+  background-image: url('images/your-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 80vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 31, 68, 0.85); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+.benefit-content {
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+ .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+}
+.fancy-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.benefit-card {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.benefit-card h3 {
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  color: #2a2a2a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+ .core-capabilities {
+  background-color: #f4faff;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.capability-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #0a1f44;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-5px);
+}
+
+.capability-icon {
+  font-size: 40px;
+  color: #00c896;
+  margin-bottom: 20px;
+}
+
+.capability-card h3 {
+  font-size: 1.1rem;
+  color: #0a1f44;
+  margin-bottom: 15px;
+}
+
+.capability-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.main-heading {
+    position: relative;
+     margin-bottom: 35px;
+     text-align: center;
+}
+
+.span-border-bottom {
+  border-bottom: 3px solid #00c896;
+}
+
+    section.hero-esm {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background-color: #f4faff;
+    }
+    .hero-esm h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-esm p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-esm img {
+      max-width: 100%;
+      height: auto;
+    }
+    .contact-section {
+      padding: 60px 20px;
+    }
+    .contact-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      gap: 40px;
+    }
+    .contact-left {
+      flex: 1 1 40%;
+    }
+    .contact-left h2 {
+      font-size: 32px;
+      color: #0a1f44;
+    }
+    .contact-left p {
+      margin-top: 20px;
+      color: #333;
+    }
+    .contact-decor {
+      max-width: 402px;
+    }
+    .contact-right {
+      flex: 1 1 55%;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #0a1f44;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .form-group.full {
+      grid-column: span 2;
+    }
+    .form-footer {
+      font-size: 14px;
+      color: #333;
+    }
+    button[type="submit"] {
+      margin-top: 16px;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #0a1f44;
+      color: white;
+      padding: 60px 40px 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+    .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #f4c300;
+    }
+    .footer-col p, .footer-col ul {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a, .footer-col a {
+      color: white;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: #f4c300;
+    }
+    .footer-social a {
+      margin-right: 15px;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 15px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+<div id="header"></div>
+
+<section class="hero-esm">
+  <div style="flex: 1 1 500px; padding-right: 20px;">
+    <h1>Secure Every Layer of Your IT Ecosystem</h1>
+    <p>With the rise of digital transformation and data proliferation, securing business and customer information is more vital than ever. SaaSify helps organizations build a strong cybersecurity foundation by aligning with ITIL practices and regulatory standards like PCI-DSS, HIPAA, and SOX. From endpoint protection to SIEM and identity management, we deliver best-in-class solutions to defend against evolving threats and ensure compliance.</p>
+    <a href="contact_us_page.html"><button class="cta-button">Request a Demo</button></a>
+  </div>
+  <div style="flex: 1 1 400px; text-align: center;">
+    <img src="images/IT-security-img.jpg" alt="Security Illustration" style="max-width: 100%;" />
+  </div>
+</section>
+
+<section class="benefits-section">
+  <div class="benefit-overlay">
+    <div class="benefit-content">
+      <h2 class="main-heading" style="color: #ffffff">
+        <span class="span-border-bottom">Why Saasify ?</span>
+      </h2>
+
+      <div class="benefit-grid fancy-cards">
+        <div class="benefit-card">
+          <h3>Standards-Aligned</h3>
+          <p>We implement ITIL processes and ensure compliance with major frameworks like PCI-DSS, HIPAA, SOX, and FISMA.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Focused Expertise</h3>
+          <p>We specialize in foundational security tools—without overpromising hype around unbuilt AI features.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>End-to-End Delivery</h3>
+          <p>From assessment and implementation to training and ongoing managed support—we handle it all.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Proven Track Record</h3>
+          <p>Trusted by leading enterprises across healthcare, finance, and technology industries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-capabilities">
+  <h2 class="main-heading"><span class="span-border-bottom">Core Capabilities</span></h2>
+  <div class="capability-grid">
+    <div class="capability-card">
+      <div class="capability-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Endpoint Protection</h3>
+      <ul>
+        <li>Anti-malware & device hardening</li>
+        <li>Patch management</li>
+      </ul>
+    </div>
+
+    <div class="capability-card">
+      <div class="capability-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <h3>SIEM & Security Analytics</h3>
+      <ul>
+        <li>Log correlation & anomaly detection</li>
+        <li>Real-time alerting & response</li>
+      </ul>
+    </div>
+
+    <div class="capability-card">
+      <div class="capability-icon">
+        <i class="fas fa-user-shield"></i>
+      </div>
+      <h3>Privileged Identity & Access Management</h3>
+      <ul>
+        <li>Granular policy control</li>
+        <li>Session monitoring</li>
+      </ul>
+    </div>
+
+    <div class="capability-card">
+      <div class="capability-icon">
+        <i class="fas fa-file-alt"></i>
+      </div>
+      <h3>Compliance Enablement</h3>
+      <ul>
+        <li>PCI-DSS, HIPAA, SOX, FISMA ready</li>
+        <li>Audit-ready reporting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <p>Explore how we can help secure your digital landscape.</p>
+      <img src="images/contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group"><label>First name*</label><input type="text" name="firstName" required></div>
+          <div class="form-group"><label>Last name*</label><input type="text" name="lastName" required></div>
+          <div class="form-group"><label>Business email*</label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Phone number</label><input type="text" name="phone"></div>
+          <div class="form-group"><label>Job title</label><input type="text" name="jobTitle"></div>
+          <div class="form-group"><label>Company*</label><input type="text" name="company" required></div>
+          <div class="form-group"><label>Select country*</label><select name="country" required><option value="">Choose...</option><option>India</option><option>USA</option><option>UK</option></select></div>
+          <div class="form-group"><label>What is your enquiry about?*</label><select name="enquiry" required><option value="">Choose...</option><option>IT Security Management</option><option>Partnership</option><option>Other</option></select></div>
+          <div class="form-group full"><label>Comments</label><textarea rows="3" name="message"></textarea></div>
+        </div>
+        <div class="form-footer"><button type="submit">Submit</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Saasify Solutions Pvt Ltd<br>6th Floor, Center Point 3,<br>Manapakkam, Chennai - 600089</p>
+      <p>Email: contact@saasifysolutions.com<br>Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  fetch('header_section.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+</script>
+</body>
+</html>
