@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Training Services - Saasify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+   section.hero-iom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 40px;
+      background-color: #f4faff;
+    }
+    .hero-iom h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-iom p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-iom img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-left, .contact-right {
+      flex: 1 1 45%;
+    }
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, textarea {
+      padding: 8px;
+      width: 100%;
+    }
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+ .consulting-expertise {
+  padding: 40px 20px;
+  background-color: #f4faff;
+  text-align: center;
+}
+.consulting-expertise .main-heading {
+  margin-bottom: 20px;
+}
+.section-subtext {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.expertise-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
+  max-width: 400px;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #0a1f44;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 8px 0;
+}
+
+ .approach-section {
+      max-width: 100%;
+      margin: auto;
+      text-align: center;
+      padding: 60px 40px;
+      background-color: #0a1f44;
+    }
+
+    .approach-steps {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .step-card {
+      flex: 1;
+      min-width: 200px;
+      padding: 20px;
+      background: #0a1f44;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-card:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 0;
+      height: 80%;
+      width: 1px;
+      background-color: #ffffff;
+    }
+
+    .step-card i {
+      font-size: 28px;
+      color: #55ffbe;
+      margin-bottom: 15px;
+    }
+
+    .step-time {
+      font-size: 0.85rem;
+      color: #1f3c88;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .step-title {
+      font-weight: bold;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .step-desc {
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .approach-steps {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .step-card {
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .step-card::after {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-iom {
+        flex-direction: column;
+      }
+      .approach-steps {
+        flex-direction: column;
+      }
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
+</style>
+</head>
+<body>
+<div id="header"></div>
+<section class="hero-iom">
+  <div style="flex: 1 1 500px; padding-right: 20px;">
+    <h1>Post-Implementation Training & Enablement</h1>
+    <p>At Saasify Solutions, we don’t stop at implementation. Our expert-led training ensures your teams—whether business users or admins—know exactly how to use, configure, and manage your new SaaS solution effectively. It’s our way of ensuring lasting ROI, faster adoption, and self-sufficiency across departments.</p>
+    <a href="contact_us_page.html">
+      <button class="cta-button">Talk to Us</button>
+    </a>
+  </div>
+  <div style="flex: 1 1 400px; text-align: center;">
+    <img src="images/Training-img.jpg" alt="Post Go-live Training" />
+  </div>
+</section>
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Services & Solutions</a> &gt;
+    <span>Training & Enablement</span>
+  </div>
+</section>
+<section class="approach-section">
+  <h2 class="main-heading" style="color: #ffffff">
+    <span class="span-border-bottom">Our Training Coverage</span>
+  </h2>
+  <div class="approach-steps">
+    <div class="step-card">
+      <i class="fas fa-users"></i>
+      <div class="step-title">End-User Enablement</div>
+      <div class="step-desc">
+        Guided sessions for functional users to perform daily operations confidently across the platform.
+      </div>
+    </div>
+    <div class="step-card">
+      <i class="fas fa-user-shield"></i>
+      <div class="step-title">Admin & Support Training</div>
+      <div class="step-desc">
+        Training for internal admins and support teams to manage workflows, permissions, and system settings.
+      </div>
+    </div>
+    <div class="step-card">
+      <i class="fas fa-play-circle"></i>
+      <div class="step-title">Recorded Walkthroughs</div>
+      <div class="step-desc">
+        Access on-demand video tutorials and knowledgebase articles tailored to your platform setup.
+      </div>
+    </div>
+    <div class="step-card">
+      <i class="fas fa-comments"></i>
+      <div class="step-title">Live Q&A & Refresher Sessions</div>
+      <div class="step-desc">
+        Post-go-live support with Q&A, clarifications, and refresher sessions for better retention.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="consulting-expertise">
+  <div class="container">
+    <h2 class="main-heading"><span class="span-border-bottom">Benefits of Our Training</span></h2>
+    <p class="section-subtext">We enable your workforce to become confident users of the platforms we deploy.</p>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="card-content">
+          <h3>Faster User Adoption</h3>
+          <p>We reduce learning curves by delivering simple, outcome-based sessions for every user role.</p>
+        </div>
+      </div>
+      <div class="expertise-card">
+        <div class="card-content">
+          <h3>Self-Sufficiency</h3>
+          <p>Your teams can independently manage platform updates, configurations, and reporting post go-live.</p>
+        </div>
+      </div>
+      <div class="expertise-card">
+        <div class="card-content">
+          <h3>Role-Based Material</h3>
+          <p>Customized documentation and training content for specific roles like end users, power users, and admins.</p>
+        </div>
+      </div>
+      <div class="expertise-card">
+        <div class="card-content">
+          <h3>Knowledge Retention</h3>
+          <p>We reinforce learning with real-world exercises, recordings, and easy-to-access job aids.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+     <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>What is your enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
+        </div>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
+        </a>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <script>
+    fetch('header_section.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+
+</body>
+</html>

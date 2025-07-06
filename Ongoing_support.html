@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ongoing Support - Saasify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+   section.hero-iom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 40px;
+      background-color: #f4faff;
+    }
+    .hero-iom h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-iom p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-iom img {
+      max-width: 84%;
+      height: auto;
+    }
+  
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-left, .contact-right {
+      flex: 1 1 45%;
+    }
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, textarea {
+      padding: 8px;
+      width: 100%;
+    }
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  
+}
+
+  .section-wrapper {
+    background: #0a1f44;
+    padding: 40px 20px 0;
+    text-align: center;
+    color: #fff;
+  }
+ 
+    @media (max-width: 768px) {
+      .fancy-cards {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .benefit-card {
+        max-width: 100%;
+      }
+    }
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
+ 
+</style>
+</head>
+<body>
+<div id="header"></div>
+<section class="hero-iom">
+  <div style="flex: 1 1 500px; padding-right: 20px;">
+    <h1>Ongoing Support & Handholding</h1>
+    <p>Our role doesn’t end with implementation and training. At Saasify Solutions, we provide dedicated, ongoing support for your live environment — ensuring stability, issue resolution, and user satisfaction. Acting as your first line of support between your teams and the technology OEM, we handle day-to-day challenges, bug fixes, and platform issues so your users stay productive without disruption. Backed by SLAs and expert teams, we’re with you every step of the way.</p>
+    <a href="contact_us_page.html">
+      <button class="cta-button">Get Support</button>
+    </a>
+  </div>
+  <div style="flex: 1 1 400px; text-align: center;">
+    <img src="images/ongoing-img.jpg" alt="Ongoing Support" />
+  </div>
+</section>
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Services & Solutions</a> &gt;
+    <span>Ongoing Support</span>
+  </div>
+</section>
+<section style="background-color: #0a1f44; padding: 60px 20px;">
+  <div style="max-width: 1200px; margin: auto; text-align: center; color: white;">
+    <h2 class="main-heading" style="color: white;">
+      <span class="span-border-bottom">Saasify Support in Action</span>
+    </h2>
+    <div class="support-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+      
+      <!-- Card 1 -->
+      <div class="support-card" style="background: white; padding: 30px 20px; border-radius: 20px; color: #0a1f44; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+        <div style="font-size: 2.5rem; color: #00c896; margin-bottom: 16px;">
+          <i class="fas fa-shield-alt"></i> <!-- corrected icon -->
+        </div>
+        <h3 style="margin-bottom: 10px;">97% SLA Adherence</h3>
+        <p>Our commitment ensures your issues are acknowledged and resolved on time.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="support-card" style="background: white; padding: 30px 20px; border-radius: 20px; color: #0a1f44; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+        <div style="font-size: 2.5rem; color: #00c896; margin-bottom: 16px;">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h3 style="margin-bottom: 10px;">6-Hour Avg Resolution</h3>
+        <p>Fast, efficient, and transparent—your team never waits in the dark.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="support-card" style="background: white; padding: 30px 20px; border-radius: 20px; color: #0a1f44; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+        <div style="font-size: 2.5rem; color: #00c896; margin-bottom: 16px;">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 style="margin-bottom: 10px;">Trusted by 45+ Clients</h3>
+        <p>Global enterprises rely on SaaSify for ongoing support—every single day.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding: 60px 20px; background-color: #ffffff;">
+  <h2 class="main-heading" style="text-align: center; margin-bottom: 10px;">
+    <span class="span-border-bottom">What We Cover</span>
+  </h2>
+
+  <!-- Row 1 -->
+  <div style="display: flex; align-items: center;">
+    <div style="flex: 1 1 50%; padding: 20px;">
+      <img src="images/handling-img.jpg" alt="Issue Handling" style="width: 100%; max-width: 300px;" />
+    </div>
+    <div style="flex: 1 1 80%; padding: 20px;">
+      <h3 style="color: #0a1f44;">Comprehensive Issue Handling</h3>
+      <p>
+        Once our solution is live, we don’t just walk away — we stay connected. <br>
+        Whether you're facing bugs, performance lags, or unexpected system behavior,
+        our expert support team is always just a message away.<br>
+        We prioritize every issue and work swiftly to restore normalcy.<br>
+        From minor glitches to critical system crashes, we've got you covered.<br>
+        Our goal is to ensure your business runs smoothly, without disruption.</p>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div style="display: flex; align-items: center; background-color: #f4faff; border-radius: 12px;">
+    <div style="flex: 1 1 36%; padding: 20px; order: 2;">
+      <img src="images/report-img.jpg" alt="Reports and Insights" style="width: 100%; max-width: 500px;" />
+    </div>
+    <div style="flex: 1 1 50%; padding: 20px; order: 1;">
+      <h3 style="color: #0a1f44;">Reports & Usage Insights</h3>
+      <p>
+        We deliver regular reports that offer complete visibility into your system's usage.<br>
+        From performance trends to user activity, every insight is captured and shared.<br>
+        These reports help you closely monitor adoption and track critical KPIs.<br>
+        Understand how your teams interact with the platform in real-time.<br>
+        Use data-backed insights to drive strategic improvements and planning.<br>
+        With Saasify, reporting isn't just routine — it's a decision-making powerhouse.
+        
+        </p>
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+  <div style="display: flex; align-items: center; ">
+    <div style="flex: 1 1 50%; padding: 20px;">
+      <img src="images/securityandpatch-img.png" alt="Security and Patching" style="width: 100%; max-width: 360px;" />
+    </div>
+    <div style="flex: 1 1 80%; padding: 20px;">
+      <h3 style="color: #0a1f44;">Security & Patch Updates</h3>
+      <p>
+        We help you stay protected from evolving cyber threats with proactive patching.<br>
+        Our team delivers regular security updates tailored to your solution landscape.<br>
+        Each patch is tested to ensure stability, compliance, and performance.<br>
+        We safeguard your business applications without disrupting daily operations.<br>
+        System integrity is continuously reinforced through structured updates.<br>
+        With Saasify, your environment stays secure, compliant, and future-ready.</p>
+    </div>
+  </div>
+
+  <!-- Row 4 -->
+  <div style="display: flex; align-items: center; background-color: #f4faff; border-radius: 12px;">
+    <div style="flex: 1 1 36%; padding: 20px; order: 2;">
+      <img src="images/support-enhance-img.jpg" alt="Enhancement Support" style="width: 100%; max-width: 500px;" />
+    </div>
+    <div style="flex: 1 1 50%; padding: 20px; order: 1;">
+      <h3 style="color: #0a1f44;">Minor Enhancements</h3>
+      <p>
+        After go-live, we understand that new needs and refinements often emerge.<br>
+        Whether it's renaming field labels or adjusting approval workflows, we’ve got you covered.<br>
+        We support UI tweaks, logic updates, and functional improvements as your business evolves.<br>
+        Our enhancement services ensure your system remains relevant and user-friendly.<br>
+        Requests are handled efficiently to maintain continuity and satisfaction.<br>
+        With Saasify, your solution grows in sync with your organizational goals.</p>
+    </div>
+  </div>
+</section>
+
+
+<section style="padding: 60px 20px; background-color: #0a1f44; color: #fff;">
+  <div style="max-width: 1200px; margin: auto;">
+    <h2 class="main-heading" style=" color: white; margin-bottom: 40px;">
+      <span class="span-border-bottom">Our Support Model</span>
+    </h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+      <!-- Support Point 1 -->
+      <div style="flex: 1 1 30%; display: flex; align-items: flex-start; gap: 15px;">
+        <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+        <div>
+          <h4 style="margin: 0 0 10px;">Tiered Support Options</h4>
+          <p style="margin: 0;">Choose from Basic, Standard, or Premium plans tailored to your operational needs and criticality.</p>
+        </div>
+      </div>
+
+      <!-- Support Point 2 -->
+      <div style="flex: 1 1 30%; display: flex; align-items: flex-start; gap: 15px;">
+        <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+        <div>
+          <h4 style="margin: 0 0 10px;">24/7 Helpdesk Access</h4>
+          <p style="margin: 0;">Round-the-clock support availability with guaranteed response SLAs, ensuring peace of mind.</p>
+        </div>
+      </div>
+
+      <!-- Support Point 3 -->
+      <div style="flex: 1 1 30%; display: flex; align-items: flex-start; gap: 15px;">
+        <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+        <div>
+          <h4 style="margin: 0 0 10px;">Dedicated Account Manager</h4>
+          <p style="margin: 0;">Your single point of contact for escalations, reporting, and proactive account health check-ins.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+     <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>What is your enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
+        </div>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
+        </a>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <script>
+    fetch('header_section.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+
+</body>
+</html>

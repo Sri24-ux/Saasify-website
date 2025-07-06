@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Managed-Service– Saasify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+
+
+.main-heading {
+    position: relative;
+     margin-bottom: 35px;
+     text-align: center;
+}
+
+.span-border-bottom {
+  border-bottom: 3px solid #00c896;
+}
+
+    section.hero-esm {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 40px;
+      background-color: #f4faff;
+    }
+    .hero-esm h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-esm p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-esm img {
+      max-width: 100%;
+      height: auto;
+    }
+    .contact-section {
+      padding: 60px 20px;
+    }
+    .contact-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      gap: 40px;
+    }
+    .contact-left {
+      flex: 1 1 40%;
+    }
+    .contact-left h2 {
+      font-size: 32px;
+      color: #0a1f44;
+    }
+    .contact-left p {
+      margin-top: 20px;
+      color: #333;
+    }
+    .contact-decor {
+      max-width: 402px;
+    }
+    .contact-right {
+      flex: 1 1 55%;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #0a1f44;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .form-group.full {
+      grid-column: span 2;
+    }
+    .form-footer {
+      font-size: 14px;
+      color: #333;
+    }
+    button[type="submit"] {
+    margin-top: 16px;
+    background: #f4c300;
+    color: #000;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    }
+    footer {
+      background-color: #0a1f44;
+      color: white;
+      padding: 60px 40px 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+    .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #f4c300;
+    }
+    .footer-col p, .footer-col ul {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a, .footer-col a {
+      color: white;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: #f4c300;
+    }
+    .footer-social a {
+      margin-right: 15px;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 15px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .managed-section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+    }
+  
+    .managed-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .managed-text {
+      flex: 1 1 500px;
+    }
+  
+    .managed-text h2 {
+      color: #0a1f44;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  
+    .managed-text p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+  
+    .managed-text ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #444;
+      font-size: 16px;
+    }
+  
+    .managed-image {
+      flex: 1 1 500px;
+      text-align: center;
+    }
+  
+    .managed-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .trusted-section {
+      padding: 60px 20px;
+      background-color: #f4faff;
+      text-align: center;
+    }
+  
+    .trusted-section h2 {
+      font-size: 32px;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+  
+    .trusted-section p {
+      font-size: 16px;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+  
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      align-items: center;
+    }
+  
+    .logo-grid img {
+      width: 100%;
+      max-width: 120px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      
+    }
+  
+    .logo-grid img:hover {
+      transform: scale(1.1);
+   
+    }
+  
+    @media (max-width: 600px) {
+      .trusted-section h2 {
+        font-size: 26px;
+      }
+      .trusted-section p {
+        font-size: 15px;
+      }
+    }
+    .continuous-section {
+      background-color: #0a1f44;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  
+    .continuous-section h2 {
+      color: #ffffff;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  
+    .continuous-section .section-underline {
+      width: 80px;
+      height: 3px;
+      margin: 0 auto 40px auto;
+      border-radius: 2px;
+    }
+  
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .improvement-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+  
+    .improvement-card:hover {
+      transform: translateY(-5px);
+    }
+  
+    .improvement-card img {
+      height: 40px;
+      margin-bottom: 20px;
+    }
+  
+    .improvement-card h3 {
+      font-size: 18px;
+      color: #0a1f44;
+      margin-bottom: 15px;
+    }
+  
+    .improvement-card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+<div id="header"></div>
+
+<section class="hero-esm">
+  <div style="flex: 1 1 500px; padding-right: 20px;">
+    <h1>Secure Every Layer of Your IT Ecosystem</h1>
+    <p>With the rise of digital transformation and data proliferation, securing business and customer information is more vital than ever. SaaSify helps organizations build a strong cybersecurity foundation by aligning with ITIL practices and regulatory standards like PCI-DSS, HIPAA, and SOX. From endpoint protection to SIEM and identity management, we deliver best-in-class solutions to defend against evolving threats and ensure compliance.</p>
+    <a href="contact_us_page.html"><button class="cta-button">Request a Demo</button></a>
+  </div>
+  <div style="flex: 1 1 400px; text-align: center;">
+    <img src="images/IT-security-img.jpg" alt="Managed Services" style="max-width: 100%;" />
+  </div>
+</section>
+
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Services & Solutions</a> &gt;
+    <span>Managed Services</span>
+  </div>
+</section>
+<section class="continuous-section">
+  <h2 class="main-heading" style="color: #ffffff">
+    <span class="span-border-bottom">Continuous Improvements</span>
+  </h2>
+  <div class="section-underline"></div>
+
+  <div class="card-container">
+
+    <div class="improvement-card">
+      <img src="add-file.png" alt="Feature Usage Icon">
+      <h3>Feature Usage Audits</h3>
+      <p>
+        We analyze usage patterns and adoption trends to identify underused or high-impact areas for improvement.
+      </p>
+    </div>
+
+    <div class="improvement-card">
+      <img src="presentation.png" alt="UX/UI Icon">
+      <h3>UX/UI & Workflow Optimization</h3>
+      <p>
+        Based on real user feedback, we refine forms, navigation, and workflows to enhance experience and reduce friction.
+      </p>
+    </div>
+
+    <div class="improvement-card">
+      <img src="medical.png" alt="Feature Rollout Icon">
+      <h3>New Feature Rollouts</h3>
+      <p>
+        We help roll out new features with full support—from configuration to user training and release communication.
+      </p>
+    </div>
+
+    <div class="improvement-card">
+      <img src="search.png" alt="Recommendations Icon">
+      <h3>Strategic Recommendations</h3>
+      <p>
+        Get expert input on aligning your platform with evolving trends, business needs, and future scalability goals.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="managed-section">
+  <div class="managed-container">
+     <!-- Image -->
+    <div class="managed-image">
+      <img src="images/managed-services.jpg" alt="Managed Services" />
+    </div>
+
+    <!-- Text Content -->
+    <div class="managed-text">
+      <h2>Managed Services – Your IT, Continuously Optimized</h2>
+      <p>
+        At Saasify, our Managed Services go beyond basic support. We become an extension of your internal team,
+        proactively managing your enterprise tools, handling daily operational tasks, and ensuring continuous
+        system performance.
+      </p>
+
+      <div style="display:flex">
+      <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+      <h4 style="margin: 0 0 10px; padding-left: 28px;">Ongoing Support & Maintenance</h4> 
+    </div>
+    <div style="display:flex">
+      <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+      <h4 style="margin: 0 0 10px; padding-left: 28px;">Feature Configuration & Customization</h4> 
+    </div>
+    <div style="display:flex">
+      <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+      <h4 style="margin: 0 0 10px; padding-left: 28px;">Proactive Monitoring & Health Checks</h4> 
+    </div>
+    <div style="display:flex">
+      <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+      <h4 style="margin: 0 0 10px; padding-left: 28px;">Release & Change Management</h4> 
+    </div>
+    <div style="display:flex">
+      <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
+      <h4 style="margin: 0 0 10px; padding-left: 28px;">Client-Centric Collaboration</h4> 
+    </div>
+      
+    </div>
+
+  </div>
+</section>
+
+<section class="trusted-section">
+  <h2 class="main-heading">
+    <span class="span-border-bottom">Trusted by Leading Brands</span>
+  </h2>
+  <p>
+    From startups to large enterprises, Saasify is trusted by organizations across industries
+    to power their digital transformation. Our clients rely on our solutions, service quality,
+    and long-term commitment.
+  </p>
+  <div class="logo-grid">
+    <img src="S1.png" alt="Client 1">
+    <img src="S2.png" alt="Client 2">
+    <img src="S3.jpg" alt="Client 3">
+    <img src="S4.jpg" alt="Client 4">
+    <img src="S5.jpg" alt="Client 5">
+    <img src="S6.png" alt="Client 6">
+  </div>
+</section>
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <p>Explore how we can help secure your digital landscape.</p>
+      <img src="images/contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group"><label>First name*</label><input type="text" name="firstName" required></div>
+          <div class="form-group"><label>Last name*</label><input type="text" name="lastName" required></div>
+          <div class="form-group"><label>Business email*</label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Phone number</label><input type="text" name="phone"></div>
+          <div class="form-group"><label>Job title</label><input type="text" name="jobTitle"></div>
+          <div class="form-group"><label>Company*</label><input type="text" name="company" required></div>
+          <div class="form-group"><label>Select country*</label><select name="country" required><option value="">Choose...</option><option>India</option><option>USA</option><option>UK</option></select></div>
+          <div class="form-group"><label>What is your enquiry about?*</label><select name="enquiry" required><option value="">Choose...</option><option>IT Security Management</option><option>Partnership</option><option>Other</option></select></div>
+          <div class="form-group full"><label>Comments</label><textarea rows="3" name="message"></textarea></div>
+        </div>
+        <div class="form-footer"><button type="submit">Submit</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Saasify Solutions Pvt Ltd<br>6th Floor, Center Point 3,<br>Manapakkam, Chennai - 600089</p>
+      <p>Email: contact@saasifysolutions.com<br>Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  fetch('header_section.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+</script>
+</body>
+</html>
