@@ -20,7 +20,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 60px 40px;
+      padding: 40px 40px;
       background-color: #f4faff;
     }
     .hero-iom h1 {
@@ -320,13 +320,13 @@ footer {
 .step-badge {
   position: absolute;
   top: -15px;
-  left: 15px;
-  background-color: #00c896;
+  left: 152px;
+  background-color: #0a1f44;
   color: white;
   font-weight: bold;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,11 +343,30 @@ footer {
   background-color: #f4faff;
   height: 678px;
 }
+.breadcrumb {
+  padding: 15px 40px;
+  font-size: 0.95rem;
+  color: #333;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+}
+
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
+
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
   </style>
 </head>
 <body>
   <div id="header"></div>
-
+  
   <section class="hero-iom">
     <div style="flex: 1 1 500px; padding-right: 20px;">
       <h1>Empower Your IT Operations with Intelligence & Automation</h1>
@@ -360,7 +379,13 @@ footer {
       <img src="images/IT-operation_img.jpg" alt="IT Operations Management" />
     </div>
   </section>
-
+  <section class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html">Home</a> &gt;
+      <a href="it-operations-management.html">Services & Solutions</a> &gt;
+      <span>IT Operations Management</span>
+    </div>
+  </section>
 <section class="benefits-section">
   <div class="benefit-overlay">
     <div class="benefit-content">

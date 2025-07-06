@@ -1,147 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Insight Detail – Saasify</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insight Details – Saasify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      padding: 40px 20px;
+      margin: 0;
+      background: #f4faff;
+      color: #0a1f44;
+    }
+    .detail-wrapper {
       max-width: 900px;
       margin: auto;
-      background: #f9f9f9;
-      color: #0a1f44;
+      padding: 60px 20px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #0a1f44;
-    }
-
-    img {
+    .detail-image {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
       border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #333;
-      margin-bottom: 20px;
+    h1 {
+      font-size: 2rem;
+      margin-top: 20px;
     }
-
-    .back-btn {
+    p.full-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-top: 20px;
+      white-space: pre-line; /* preserve newlines */
+    }
+    a.back-link {
       display: inline-block;
       margin-top: 30px;
-      background-color: #0a1f44;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
+      color: #0077cc;
       text-decoration: none;
-      transition: background 0.3s ease;
     }
-
-    .back-btn:hover {
-      background-color: #1a3c6e;
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+    .insight-contact-btn {
+      background-color: #f4c300;
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .insight-contact-btn:hover {
+      background-color: #ffd500;
     }
   </style>
 </head>
 <body>
-  <h1 id="insight-title">Loading...</h1>
-  <img id="insight-img" src="" alt="Insight Image" />
-  <p id="insight-desc">Loading insight description...</p>
+  <div class="detail-wrapper">
+    <img id="detailImage" class="detail-image" src="" alt="Insight image" />
+    <h1 id="detailTitle"></h1>
+    <p class="full-text" id="detailText"></p>
+    <a href="insight-page.html" class="insight-contact-btn">&larr; Back to Insights</a>
+  </div>
 
-  <a href="insight-page.html" class="back-btn">← Back to Insights</a>
-  <div id="insight-detail" style="padding: 40px;"></div>
-
-   <script>
-  const insightData = JSON.parse(localStorage.getItem("selectedInsight"));
-
-  const container = document.getElementById("insight-detail");
-
-  if (!insightData) {
-    container.innerHTML = `
-      <h2>Insight Not Found</h2>
-      <p>We couldn't load the requested insight. Please go back and try again.</p>
-      <a href="insight-page.html">← Back to Insights</a>
-    `;
-  } else {
-    container.innerHTML = `
-      <h2>${insightData.title}</h2>
-      <img src="${insightData.image}" alt="${insightData.title}" style="max-width:100%; height:auto; border-radius:10px; margin:20px 0;">
-      <p>${insightData.description}</p>
-      <a href="insight-page.html" style="display:inline-block;margin-top:20px;">← Back to Insights</a>
-    `;
-  }
-</script>
-
+  <script src="insights-data.js"></script>
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const type = urlParams.get('type');
-    const index = urlParams.get('index');
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'));
+    const category = params.get('category');
 
-    const insightsData = {
-      news: [
-        {
-          title: "Saasify expands with new office in Bengaluru",
-          image: "images/Website-image-banner.jpg",
-          description: "Saasify proudly announces the inauguration of its new office space in Bengaluru. This new facility marks a significant milestone in our expansion journey and is strategically designed to accommodate our growing teams, foster innovation, and bring us closer to key clients in the region. With state-of-the-art infrastructure, collaboration zones, and sustainable energy practices, the Bengaluru office is a reflection of Saasify’s commitment to technological excellence and employee well-being.",
-          content: "Full content here..."
-        },
-        {
-          title: "Saasify partners with AI leader for enterprise automation",
-          image: "images/AI-images.jpg",
-          description: "Saasify has entered into a strategic partnership with one of the global leaders in Artificial Intelligence to deliver cutting-edge automation to enterprise clients. This collaboration will empower organizations to streamline workflows, reduce human error, and achieve faster ROI through intelligent process automation. The combined expertise ensures seamless deployment, agile transformation, and unmatched support for customers seeking future-ready operations.",
-          content: "Full content here..."
-        }
-      ],
-      blogs: [
-        {
-          title: "Top 5 Trends in Enterprise Service Management",
-          image: "images/ESM-trends.jpg",
-          description: "The future of Enterprise Service Management (ESM) is being shaped by AI, low-code platforms, and cross-departmental workflows. Organizations are moving away from siloed ITSM tools and embracing unified platforms that enhance efficiency across HR, finance, and operations. This blog explores emerging technologies such as predictive analytics, chatbot integrations, and workflow orchestration that redefine the way services are delivered within modern enterprises.",
-          content: "Full content here..."
-        },
-        {
-          title: "A beginner’s guide to SDP",
-          image: "images/ServiceDesk-Plus.jpeg",
-          description: "New to Service Desk Plus (SDP)? This guide helps you understand why thousands of enterprises rely on SDP for IT service management. Learn about incident tracking, SLA management, change workflows, and reporting dashboards that help IT teams stay proactive. With its intuitive UI and automation-first features, SDP reduces ticket resolution time and boosts employee satisfaction.",
-          content: "Full content here..."        
-        }
-      ],
-      cases: [
-        {
-          title: "How Saasify helped an FMCG giant cut costs by 30%",
-          image: "images/fmcc.jpg",
-          description: "This case study details how a leading FMCG brand collaborated with Saasify to digitize their procurement and internal support functions. Using a combination of workflow automation, data analytics, and customized service portals, the client achieved a 30% reduction in operational costs within 12 months. Employee productivity rose, vendor onboarding became quicker, and compliance tracking was fully digitized.",
-          content: "Full content here..."
-        },
-        {
-          title: "Client testimonial: Saasify’s impact on digital HR",
-          image: "images/testimonials.jpg",
-          description: "A global software services company shares their experience with Saasify's digital HR solutions. The testimonial outlines how Saasify reimagined their employee lifecycle—from onboarding to exit—through intelligent automation, self-service portals, and integrated payroll support. With enhanced transparency and reduced manual effort, the client saw improved employee satisfaction and HR team efficiency.",
-          content: "Full content here..."
-        }
-      ]
-    };
+    const dataItem = insightsData[category]?.[id];
 
-    const item = insightsData[type]?.[index];
+    if (dataItem) {
+      document.getElementById("detailImage").src = dataItem.image;
+      document.getElementById("detailTitle").textContent = dataItem.title;
+      document.getElementById("detailText").textContent = dataItem.fullText;
 
-    if (item) {
-      document.getElementById("insight-title").textContent = item.title;
-      document.getElementById("insight-img").src = item.image;
-      document.getElementById("insight-desc").textContent = item.description;
     } else {
-      document.getElementById("insight-title").textContent = "Insight Not Found";
-      document.getElementById("insight-desc").textContent = "We couldn’t load the requested insight. Please go back and try another.";
+      document.querySelector(".detail-wrapper").innerHTML = "<h2>Content not found.</h2>";
     }
   </script>
 </body>
