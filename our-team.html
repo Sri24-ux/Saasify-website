@@ -14,14 +14,53 @@
       background: #ffffff;
       color: #0a1f44;
     }
+    section.hero-iom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 40px;
+      background-color: #f4faff;
+    }
+    .hero-iom h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-iom p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-iom img {
+      max-width: 100%;
+      height: auto;
+    }
     section.team-section {
       padding: 60px 20px;
       text-align: center;
+      background: linear-gradient(to bottom, #0a1f44 0%, #ffffff 100%);
     }
+    .team-section h2,
     .team-section p {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 40px;
+      color: #fff;
+    }
+    
+    .team-card {
+      background: #fff;
+      color: #0a1f44;
     }
 
     .team-grid {
@@ -149,11 +188,53 @@ footer {
   font-size: 0.85rem;
   color: #ddd;
 }
+
+.breadcrumb {
+  padding: 15px 40px;
+  font-size: 0.95rem;
+  color: #333;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+}
+
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
+
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
   </style>
 </head>
 
 <body style="margin: 0; background: linear-gradient(to bottom, #f4faff 0%, #f9f9f9 50%, rgba(10, 31, 68, 0.85) 100%);">
 <div id="header"></div>
+
+<section class="hero-iom" style="display: flex; align-items: center; padding: 60px 40px; background-color: #f4faff; flex-wrap: wrap;">
+  <div style="flex: 1 1 500px; padding-right: 20px;">
+    <h1>Meet the Minds Behind Saasify</h1>
+    <p>Our strength lies in our people. Saasify is powered by passionate professionals who bring vision, expertise, and dedication to every project. From consultants to engineers, each member plays a crucial role in delivering excellence and driving innovation.</p>
+    <a href="about_us.html">
+      <button class="cta-button">Learn More About Us</button>
+    </a>
+  </div>
+  <div style="flex: 1 1 400px; text-align: center;">
+    <img src="images/team-img.jpg" alt="Our Team" style="max-width: 85%; border-radius: 10px;" />
+  </div>
+</section>
+
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Company Overview</a> &gt;
+    <span>Our Team</span>
+  </div>
+</section>
+
 <div>
 <section class="team-section">
 <h2 class="main-heading"><span class="span-border-bottom">Our People</span></h2>

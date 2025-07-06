@@ -358,7 +358,25 @@ footer {
         display: none;
       }
     }
-
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
 </style>
 </head>
 <body>
@@ -376,6 +394,13 @@ footer {
     </div>
   </section>
 
+  <section class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html">Home</a> &gt;
+      <a href="#">Services & Solutions</a> &gt;
+      <span>Consulting</span>
+    </div>
+  </section>
   <section class="approach-section">
      <h2 class="main-heading" style="color: #ffffff">
         <span class="span-border-bottom">Our Consulting Approach</span>

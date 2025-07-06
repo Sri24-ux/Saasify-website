@@ -164,7 +164,20 @@ nav .dropdown-content ul li a:hover {
     .dropdown:hover .about-dropdown {
       display: flex;
     }
-
+    nav a {
+      text-decoration: none;
+    }
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      list-style: none !important;
+    }
+    .navbar li {
+      list-style-type: none !important;
+    }
   </style>
 </head>
 <body>
@@ -175,6 +188,32 @@ nav .dropdown-content ul li a:hover {
   </a>
 </div>
      <nav>
+      <div class="dropdown">
+        <span style="color: white;">Services & Solutions</span>
+        <div class="dropdown-content two-column-dropdown">
+          <div class="dropdown-column">
+             <h4>Services</h4>
+          <ul>
+            <li><a href="consulting-services.html">Consulting</a></li>
+            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
+            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
+            <li><a href="training-services.html">Training & Enablement</a></li>
+            <li><a href="Ongoing_support.html">Ongoing Support</a></li>
+            <li><a href="managed-services.html">Managed Services</a></li>
+          </ul>
+          </div>
+          <div class="dropdown-column">
+            <h4>Solutions</h4>
+           <ul>
+            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
+            <li><a href="it-security-management.html">IT Security Management</a></li>
+            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
+            <li><a href="Business-analytics.html">Business Analytics</a></li> 
+            <li><a href="business-pro-management.html">Business Process Management</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
       <div class="dropdown">
         <span style="color: white;">Platform Proficiency</span> 
         <div class="dropdown-content">
@@ -189,33 +228,7 @@ nav .dropdown-content ul li a:hover {
         </div>
       </div>
       <div class="dropdown">
-        <span style="color: white;">Services & Solutions</span>
-        <div class="dropdown-content two-column-dropdown">
-          <div class="dropdown-column">
-             <h4>Services</h4>
-          <ul>
-            <li><a href="consulting-services.html">Consulting</a></li>
-            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
-            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
-            <li>Training</li>
-            <li>Ongoing Support</li>
-            <li>Managed Services</li>
-          </ul>
-          </div>
-          <div class="dropdown-column">
-            <h4>Solutions</h4>
-           <ul>
-            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
-            <li><a href="it-security-management.html">IT Security Management</a></li>
-            <li><a href="Business-analytics.html">Business Analytics</a></li> 
-            <li><a href="business-pro-management.html">Business Process Management</a></li>
-          </ul>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown">
-  <span style="color: white;">About Us</span>
+  <span style="color: white;">Company Overview</span>
   <div class="dropdown-content about-dropdown">
     <ul>
       <li><a href="about_us.html">About Saasify</a></li>
@@ -233,17 +246,9 @@ nav .dropdown-content ul li a:hover {
           </ul>
         </div>
       </div>
-
-      <div class="dropdown">
-        <span style="color: white;">Insights</span>
-        <div class="dropdown-content">
-          <ul>
-            <li><a href="insight-page.html#news">News & Announcements</a></li>
-            <li><a href="insight-page.html#blogs">Blogs</a></li>
-            <li><a href="insight-page.html#cases">Case Studies</a></li>
-          </ul>
-        </div>
-      </div>
+<ul>
+  <li><a href="insight-page.html" style="color: white;">Insights</a></li>
+</ul>
     </nav>
     <div class="right-icons">
       <a href="contact_us_page.html">

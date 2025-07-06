@@ -22,7 +22,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 60px 40px;
+      padding: 40px 40px;
       background-color: #f4faff;
     }
     .hero-iom h1 {
@@ -54,7 +54,7 @@
     .section-wrapper {
   position: relative; /* Important for anchoring the pseudo-element */
   max-width: 1000px;
-  margin: 60px auto;
+  margin-left: 219px;
   padding: 20px 40px;
   z-index: 1; /* Make sure it's above the pseudo-line */
 }
@@ -344,6 +344,25 @@ footer {
     flex-direction: column;
   }
 }
+.breadcrumb {
+  padding: 15px 40px;
+  font-size: 0.95rem;
+  color: #333;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+}
+
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
+
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
 </style>
 </head>
 <body>
@@ -361,7 +380,13 @@ footer {
       <img src="images/business-anal-img.jpg" alt="Business Analytics" />
     </div>
 </section>
-
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Services & Solutions</a> &gt;
+    <span>Business Analytics</span>
+  </div>
+</section>
 <section class="benefits-section">
   <div class="benefit-overlay">
     <div class="benefit-content">
@@ -397,7 +422,7 @@ footer {
           <span class="span-border-bottom">Our Data-to-Decision Framework</span>
       </h2>
     <p class="intro">
-      At SaaSify, we don’t just implement tools—we build a data culture. Our proven framework helps organizations move from scattered data to smart, strategic decisions that drive real growth.
+      At Saasify, we don’t just implement tools—we build a data culture. Our proven framework helps organizations move from scattered data to smart, strategic decisions that drive real growth.
     </p>
 
     <div class="step">

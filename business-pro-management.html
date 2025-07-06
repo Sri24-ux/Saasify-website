@@ -362,7 +362,25 @@ footer {
         max-width: 320px;
       }
     }
- 
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
 </style>
 </head>
 <body>
@@ -377,10 +395,16 @@ footer {
       </a>
     </div>
     <div style="flex: 1 1 400px; text-align: center;">
-      <img src="images/business-anal-img.jpg" alt="Business Process Management" />
+      <img src="images/business-process-man.jpg" alt="Business Process Management" />
     </div>
 </section>
-
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Services & Solutions</a> &gt;
+    <span>Business Process Management</span>
+  </div>
+</section>
 <section class="benefits-section">
   <div class="benefit-overlay">
     <div class="benefit-content">

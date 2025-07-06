@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insights – Saasify</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="insights-data.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -17,7 +19,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 63px 40px;
   background-color: #f4faff;
    }
  .career-text {
@@ -40,7 +42,7 @@
 }
 
 .career-image img {
-  max-width: 100%;
+  max-width: 60%;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
@@ -115,7 +117,7 @@
       text-decoration: none;
     }
     .insight-contact {
-  background-color: #ffffff;
+  background-color: #f4faff;
   padding: 50px 20px;
 }
 .insight-contact-wrapper {
@@ -210,6 +212,26 @@ footer {
   font-size: 0.85rem;
   color: #ddd;
 }
+
+.breadcrumb {
+  padding: 15px 40px;
+  font-size: 0.95rem;
+  color: #333;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+}
+
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
+
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
   </style>
 </head>
 <body>
@@ -217,13 +239,19 @@ footer {
   <section class="career-hero">
   <div class="career-text">
     <h1>Explore What Drives Saasify Forward.</h1>
-    <p>Discover the latest trends, compelling stories, and strategic insights that are shaping the future of enterprise technology and redefining business success with Saasify.</p>
+    <p>Discover the latest trends, compelling success stories, and expert-driven insights that are shaping the future of enterprise technology. At Saasify, we go beyond the surface—exploring innovation, digital transformation strategies, and real-world impact across industries. Whether you're seeking to modernize IT operations, embrace automation, or unlock new efficiencies, our insights empower you to make smarter decisions and stay ahead in a rapidly evolving digital landscape.</p>
   </div>
   <div class="career-image">
-    <img src="images/insight.jpg" alt="Insight image">
+    <img src="images/insight.png" alt="Insight image">
   </div>
 </section>
 
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <span>Insights</span>
+  </div>
+</section>
   <div class="insights-nav" style="padding: 18px;">
     <button class="tab-button active" data-target="news">News & Announcements</button>
     <button class="tab-button" data-target="blogs">Blogs</button>
@@ -290,118 +318,46 @@ footer {
     .then(response => response.text())
     .then(data => document.getElementById('header').innerHTML = data);
   </script>
-
+<script src="insights-data.js"></script>
   <script>
-    const insightsData = {
-      news: [
-        {
-          title: "Saasify expands with new office in Bengaluru",
-          description: "Saasify is proud to announce the opening of newly expanded office spaces in the Bengaluru, Karnataka.",
-          image: "images/Website-image-banner.jpg"
-        },
-        {
-          title: "Saasify partners with AI leader for enterprise automation",
-          description: "This collaboration enables businesses to fast-track digital transformation.",
-          image: "images/AI-images.jpg"
-        },
-        {
-          title: "Saasify expands with new office in Bengaluru",
-          description: "Saasify is proud to announce the opening of newly expanded office spaces in the Bengaluru, Karnataka.",
-          image: "images/Website-image-banner.jpg"
-        },
-        {
-          title: "Saasify partners with AI leader for enterprise automation",
-          description: "This collaboration enables businesses to fast-track digital transformation.",
-          image: "images/AI-images.jpg"
-        }
-      ],
-      blogs: [
-        {
-          title: "Top 5 Trends in Enterprise Service Management",
-          description: "From AI to low-code platforms, explore what’s shaping the future of ESM.",
-          image: "images/ESM-trends.jpg"
-        },
-        {
-          title: "A beginner’s guide to SDP",
-          description: "Understand the fundamentals and why every business needs Service Desk Plus today.",
-          image: "images/ServiceDesk-Plus.jpeg"
-        },
-        {
-          title: "Top 5 Trends in Enterprise Service Management",
-          description: "From AI to low-code platforms, explore what’s shaping the future of ESM.",
-          image: "images/ESM-trends.jpg"
-        },
-        {
-          title: "A beginner’s guide to SDP",
-          description: "Understand the fundamentals and why every business needs Service Desk Plus today.",
-          image: "images/ServiceDesk-Plus.jpeg"
-        }
-      ],
-      cases: [
-        {
-          title: "How Saasify helped an FMCG giant cut costs by 30%",
-          description: "A real-world case of automation in procurement and support services.",
-          image: "images/fmcc.jpg"
-        },
-        {
-          title: "Client testimonial: Saasify’s impact on digital HR",
-          description: "Hear from a leading tech firm on how Saasify transformed their HR operations.",
-          image: "images/testimonials.jpg"
-        },
-        {
-          title: "How Saasify helped an FMCG giant cut costs by 30%",
-          description: "A real-world case of automation in procurement and support services.",
-          image: "images/fmcc.jpg"
-        },
-        {
-          title: "Client testimonial: Saasify’s impact on digital HR",
-          description: "Hear from a leading tech firm on how Saasify transformed their HR operations.",
-          image: "images/testimonials.jpg"
-        }
-      ]
-    };
-
-    const loadCards = (sectionId, data) => {
-      const container = document.getElementById(sectionId + 'Content');
+    function generateInsightCards(category, containerId) {
+      const container = document.getElementById(containerId);
       container.innerHTML = '';
-      data.forEach(item => {
+      insightsData[category].forEach(item => {
         const card = document.createElement('div');
         card.className = 'insight-card';
         card.innerHTML = `
           <img src="${item.image}" alt="${item.title}" />
           <div class="insight-card-content">
             <h3>${item.title}</h3>
-            <p>${item.description}</p>
-           <a href="insight-detail.html" class="read-more" onclick='viewInsight(${JSON.stringify(item)})'>Read more</a>
+            <p>${item.summary}</p>
+            <a href="insight-detail.html?id=${item.id}&category=${category}" class="read-more">Read more</a>
           </div>
         `;
         container.appendChild(card);
       });
-    };
-
-    loadCards('news', insightsData.news);
-    loadCards('blogs', insightsData.blogs);
-    loadCards('cases', insightsData.cases);
-
+    }
+  
+    window.addEventListener("DOMContentLoaded", () => {
+      generateInsightCards('news', 'newsContent');
+      generateInsightCards('blogs', 'blogsContent');
+      generateInsightCards('cases', 'casesContent');
+  
+      // Optional: strip hash from URL
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+      }
+    });
+  
     document.querySelectorAll('.tab-button').forEach(button => {
       button.addEventListener('click', () => {
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
         document.querySelectorAll('.insight-section').forEach(sec => sec.classList.remove('active'));
-
+  
         button.classList.add('active');
         document.getElementById(button.dataset.target).classList.add('active');
       });
-    });  
-    
-    window.addEventListener('load', () => {
-  const hash = window.location.hash.substring(1); // removes #
-  if (hash) {
-    const targetBtn = document.querySelector(`.tab-button[data-target="${hash}"]`);
-    if (targetBtn) {
-      targetBtn.click();
-    }
-  }
-});
+    });
   </script>
 </body>
 </html>

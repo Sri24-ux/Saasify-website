@@ -150,6 +150,37 @@
   font-size: 0.85rem;
   color: #ddd;
 }
+.breadcrumb {
+  padding: 15px 40px;
+  font-size: 0.95rem;
+  color: #333;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+}
+
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
+
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
   </style>
 </head>
 <body>
@@ -157,10 +188,24 @@
   <section class="presence-hero">
     <div>
       <h1>Strategically positioned,<br>purposefully driven.</h1>
-      <p>Every Saasify office is a hub of enterprise transformation.</p>
+      <p>Every Saasify office serves as a hub of innovation and enterprise transformation.
+        Our teams work closely with clients to drive impactful change and deliver measurable results.
+        We foster collaboration, agility, and a customer-first mindset in everything we do.
+        From strategy to execution, our offices are where ideas turn into enterprise success.</p>
+        <a href="contact_us_page.html">
+          <button class="cta-button">Get Support</button>
+        </a>
     </div>
+
     <div>
-      <img src="images/presence.jpg" alt="Our-presence" />
+      <img src="images/presence-img.jpg" alt="Our-presence" />
+    </div>
+  </section>
+  <section class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html">Home</a> &gt;
+      <a href="#">Company Overview</a> &gt;
+      <span>Our Presence</span>
     </div>
   </section>
 

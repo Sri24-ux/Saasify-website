@@ -222,6 +222,8 @@ footer {
 }
  .feature-section{
   padding: 40px 40px;
+  color: #fff;
+  background: #0a1f44;;
  }
     
     .features {
@@ -256,7 +258,7 @@ footer {
     }
     .testimonial-section{
       padding: 40px 40px;
-       background-color: #f4faff;
+       background-color: #fff;
     }
      .testimonial-wrapper {
       text-align: center;
@@ -324,6 +326,83 @@ footer {
       font-size: 1.1rem;
       color: #1f3c88;
     }
+    .evaluation-section {
+      background-color: #f4faff;
+      padding: 60px 20px;
+    }
+    
+    .evaluation-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .evaluation-image {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+    
+    .evaluation-image img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    
+    .evaluation-text {
+      flex: 1 1 50%;
+    }
+    
+    .evaluation-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .evaluation-list li {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      font-size: 1rem;
+      color: #2a2a2a;
+    }
+    
+    .evaluation-list li i {
+      color: #00c896;
+      margin-right: 12px;
+      font-size: 1.2rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .evaluation-container {
+        flex-direction: column;
+      }
+      .evaluation-text, .evaluation-image {
+        flex: 1 1 100%;
+      }
+    }
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -332,13 +411,21 @@ footer {
 <section class="hero-iom">
     <div style="flex: 1 1 500px; padding-right: 20px;">
       <h1>Smart Evaluation Assistance</h1>
-      <p>Choosing the right enterprise IT solution can be complex—we simplify it. SaaSify helps you evaluate, compare, and test software tools to ensure you select the best fit for your needs and budget.</p>
+      <p>Choosing the right enterprise IT solution can be complex—we simplify it. Saasify works closely with your team to understand operational goals, compliance needs, and integration requirements. We help you evaluate, compare, and shortlist software tools through a structured and unbiased approach. Our experts also assist in arranging demos, testing environments, and hands-on trials. This ensures you select the most effective solution that fits both your business needs and your budget.</p>
   <a href="contact_us_page.html">
         <button class="cta-button">Book a Demo</button>
       </a>
     </div>
     <div style="flex: 1 1 400px; text-align: center;">
-      <img src="images/consulting-img.jpg" alt="Evaluation Assistance" />
+      <img src="images/evaluation-assistance.jpg" alt="Evaluation Assistance" />
+    </div>
+  </section>
+  
+  <section class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html">Home</a> &gt;
+      <a href="#">Services & Solutions</a> &gt;
+      <span>Evaluation Assistance</span>
     </div>
   </section>
 
@@ -387,6 +474,41 @@ footer {
   </div>
   <div class="author" id="author-name"></div>
    </div>
+</section>
+
+<section class="evaluation-section">
+  <div class="evaluation-container">
+    
+    <!-- Left Image -->
+    <div class="evaluation-image">
+      <img src="images/evaluation-benefits.jpg" alt="Why Evaluation Matters">
+    </div>
+
+    <!-- Right Text -->
+    <div class="evaluation-text">
+      <h2 class="main-heading">
+        <span class="span-border-bottom">Why Evaluation Matters</span>
+      </h2>
+      <ul class="evaluation-list">
+        <li>
+          <i class="fas fa-check-circle"></i>
+          <span>Reduce vendor lock-in by choosing the right solution early.</span>
+        </li>
+        <li>
+          <i class="fas fa-check-circle"></i>
+          <span>Save cost and time with aligned decision-making.</span>
+        </li>
+        <li>
+          <i class="fas fa-check-circle"></i>
+          <span>Prevent future rework by understanding business fit upfront.</span>
+        </li>
+        <li>
+          <i class="fas fa-check-circle"></i>
+          <span>Ensure stakeholder buy-in by validating features early.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
 
   <section class="contact-section">

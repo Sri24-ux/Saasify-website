@@ -454,7 +454,20 @@ h2.main-heading {
   font-size: 0.85rem;
   color: #ddd;
 }
-
+nav a {
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  list-style: none !important;
+}
+.navbar li {
+  list-style-type: none !important;
+}
   </style>
 </head>
 
@@ -466,6 +479,34 @@ h2.main-heading {
   </a>
 </div>
     <nav>
+     
+      <div class="dropdown">
+        <span style="color: white;">Services & Solutions</span>
+        <div class="dropdown-content two-column-dropdown">
+          <div class="dropdown-column">
+             <h4>Services</h4>
+          <ul>
+            <li><a href="consulting-services.html">Consulting</a></li>
+            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
+            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
+            <li><a href="training-services.html">Training & Enablement</a></li>
+            <li><a href="Ongoing_support.html">Ongoing Support</a></li>
+            <li><a href="managed-services.html">Managed Services</a></li>
+          </ul>
+          </div>
+          <div class="dropdown-column">
+            <h4>Solutions</h4>
+           <ul>
+            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
+            <li><a href="it-security-management.html">IT Security Management</a></li>
+            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
+            <li><a href="Business-analytics.html">Business Analytics</a></li> 
+            <li><a href="business-pro-management.html">Business Process Management</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      
       <div class="dropdown">
         <span style="color: white;">Platform Proficiency</span> 
         <div class="dropdown-content">
@@ -477,32 +518,6 @@ h2.main-heading {
             <li>SIEM</li>
             <li>UEM</li>
           </ul>
-        </div>
-      </div>
-      <div class="dropdown">
-        <span style="color: white;">Services & Solutions</span>
-        <div class="dropdown-content two-column-dropdown">
-          <div class="dropdown-column">
-             <h4>Services</h4>
-          <ul>
-            <li><a href="consulting-services.html">Consulting</a></li>
-            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
-            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
-            <li>Training</li>
-            <li>Ongoing Support</li>
-            <li>Managed Services</li>
-          </ul>
-          </div>
-          <div class="dropdown-column">
-            <h4>Solutions</h4>
-           <ul>
-            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
-            <li><a href="it-security-management.html">IT Security Management</a></li>
-            <li><a href="Business-analytics.html">Business Analytics</a></li> 
-            <li><a href="business-pro-management.html">Business Process Management</a></li>
-          </ul>
-          </div>
         </div>
       </div>
       <div class="dropdown">
@@ -525,16 +540,7 @@ h2.main-heading {
         </div>
       </div>
 
-      <div class="dropdown">
-        <span style="color: white;">Insights</span>
-        <div class="dropdown-content">
-          <ul>
-            <li><a href="insight-page.html#news">News & Announcements</a></li>
-            <li><a href="insight-page.html#blogs">Blogs</a></li>
-            <li><a href="insight-page.html#cases">Case Studies</a></li>
-          </ul>
-        </div>
-      </div>
+      <li><a href="insight-page.html" style="color: white;">Insights</a></li>
     </nav>
     <div class="right-icons">
       <a href="contact_us_page.html">
@@ -721,7 +727,10 @@ document.body.insertBefore(wrapper, document.querySelector(".trusted-by"));
       }, 30);
     }
 
-  statsData.forEach(stat => {
+ // Create all stat elements but DO NOT animate yet
+const statElements = [];
+
+statsData.forEach(stat => {
   const div = document.createElement("div");
   div.className = "stat";
   const h2 = document.createElement("h2");
@@ -736,8 +745,25 @@ document.body.insertBefore(wrapper, document.querySelector(".trusted-by"));
   div.appendChild(h2);
   div.appendChild(p);
   statsContainer.appendChild(div);
-  animateCounter(numberSpan, stat.number); 
+  statElements.push({ el: numberSpan, value: stat.number }); // collect for observer
 });
+let statsAnimated = false;
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !statsAnimated) {
+      statsAnimated = true; // prevent re-triggering
+      statElements.forEach(stat => {
+        animateCounter(stat.el, stat.value);
+      });
+    }
+  });
+}, {
+  threshold: 0.5 // trigger when 50% of section is visible
+});
+
+observer.observe(wrapper); // observe the whole stats section
+
 
 const testimonials = [
   {

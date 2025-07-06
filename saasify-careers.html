@@ -32,12 +32,6 @@
   max-width: 550px;
 }
 
-.career-text .subtext {
-  font-size: 1rem;
-  color: #0077cc;
-  font-weight: 600;
-}
-
 .career-text h1 {
   font-size: 2.4rem;
   color: #0a1f44;
@@ -55,7 +49,7 @@
 }
 
 .career-image img {
-  max-width: 100%;
+  max-width: 85%;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
@@ -352,25 +346,67 @@ footer {
   font-size: 0.85rem;
   color: #ddd;
 }
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.breadcrumb {
+  padding: 15px 40px;
+  font-size: 0.95rem;
+  color: #333;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+}
+
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
+
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
   </style>
 </head>
 <body>
   <div id="header"></div>
   <section class="career-hero">
   <div class="career-text">
-    <p class="subtext">Grow with us</p>
+    
     <h1>Join the Saasify team</h1>
     <p>
       At Saasify, we empower enterprises with next-gen digital solutions in ITSM, automation, security, and analytics. Whether you're starting your journey or advancing your career, you'll thrive in a culture built on collaboration, innovation, and impact. 
       <br><br>
       We believe in people-first growth—where your talent meets purpose and your passion shapes the digital future. Explore open roles and unlock your full potential with Saasify.
     </p>
+    <a href="contact_us_page.html">
+      <button class="cta-button">Get Support</button>
+    </a>
   </div>
   <div class="career-image">
     <img src="images/Saasify-team-photo.jpg" alt="Join Saasify team">
   </div>
 </section>
 
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Careers</a> &gt;
+    <span>Job Vacancy</span>
+  </div>
+</section>
   <section class="why-work-section">
   <h2 class="main-heading"><span class="span-border-bottom">Why Work With Us?</span></h2>
   <div class="benefits-inline">
