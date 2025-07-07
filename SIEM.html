@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>evaluation Assistance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+    section.hero-iom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background-color: #f4faff;
+    }
+    .hero-iom h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-iom p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-iom img {
+      max-width: 100%;
+      height: auto;
+    }
+
+  @media (max-width: 768px) {
+  .itsm-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+}
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-left, .contact-right {
+      flex: 1 1 45%;
+    }
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, textarea {
+      padding: 8px;
+      width: 100%;
+    }
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+ 
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
+    
+    .why-siem-section {
+  padding: 60px 20px;
+  background-color: #0a1f44;
+  text-align: center;
+}
+
+.siem-steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  gap: 30px;
+  position: relative;
+}
+
+.siem-step {
+  background-color: white;
+  flex: 1 1 calc(25% - 30px);
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.siem-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.siem-step h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #0a1f44;
+}
+
+.siem-step p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .siem-step {
+    flex: 1 1 calc(50% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .siem-step {
+    flex: 1 1 100%;
+  }
+
+  .siem-step::after {
+    display: none;
+  }
+}
+
+.siem-pie-section {
+  background: #f7faff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.siem-pie-layout {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.siem-capabilities {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+}
+
+.cap-item {
+  background: #fff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.cap-item h4 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #0a1f44;
+}
+
+.cap-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .siem-pie-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .siem-capabilities {
+    max-width: 100%;
+    align-items: center;
+  }
+}
+.semi-circle-diagram {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: 0px 79px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #3f72af 0deg 60deg,
+    #f4c300 60deg 120deg,
+    #55ffbe 120deg 180deg,
+    #0077cc 180deg 240deg,
+    #00c2cb 240deg 300deg,
+    #ff8c42 300deg 360deg
+  );
+}
+
+.segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+}
+
+.segment span {
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+  width: 80px;
+  text-align: center;
+}
+
+.seg1 span { 
+    top: 14%;
+    left: 47%;
+    transform: translateX(-113%);
+ }
+.seg2 span {
+    top: 14%;
+    right: 20%;
+    transform: rotate(34deg);
+}
+.seg3 span { top: 50%; right: 0; transform: translateY(-50%) rotate(80deg); }
+.seg4 span { 
+    bottom: 14%;
+    right: 21%;
+    transform: rotate(150deg); 
+}
+.seg5 span { 
+    bottom: 16%;
+    left: 22%;
+    transform: rotate(-147deg);
+ }
+.seg6 span { 
+    top: 45%;
+    left: 1%;
+    transform: rotate(-90deg);
+}
+
+.center-circle {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #0a1f44;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .semi-circle-diagram {
+    width: 280px;
+    height: 280px;
+  }
+
+  .center-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 1.1rem;
+  }
+
+  .segment span {
+    font-size: 0.75rem;
+    width: 60px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<div id="header"></div>
+<section class="hero-iom">
+    <div style="flex: 1 1 500px; padding-right: 20px;">
+      <h1>Security Information and Event Management </h1>
+      <p>Get real-time threat visibility, centralized log management, and faster incident response.
+Saasify’s SIEM empowers your IT security team with actionable insights and automated alerts — making compliance and protection easier than ever.</p>
+  <a href="contact_us_page.html">
+        <button class="cta-button">Book a Demo</button>
+      </a>
+    </div>
+    <div style="flex: 1 1 400px; text-align: center;">
+      <img src="images/siem-img.jpg" alt="SIEM" />
+    </div>
+  </section>
+  
+  <section class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html">Home</a> &gt;
+      <a href="#">Platform Proficiency</a> &gt;
+    <span>SIEM</span>
+    </div>
+  </section>
+  
+  <section class="why-siem-section">
+  <h2 class="main-heading" style="color:#fff"><span class="span-border-bottom">Why Security Information and Event Management ?</span></h2>
+  <div class="siem-steps-container">
+
+    <div class="siem-step">
+      <div class="step-icon"><img src="images/log-management-img.png" alt="Log Management Icon"></div>
+      <h3>Centralized Log Management</h3>
+      <p>Aggregate and normalize logs from diverse systems in one secure platform.</p>
+    </div>
+
+    <div class="siem-step">
+      <div class="step-icon"><img src="images/threat-detection.png" alt="Threat Detection Icon"></div>
+      <h3>Real-Time Threat Detection</h3>
+      <p>Continuously monitor activities to detect anomalies and breaches in real-time.</p>
+    </div>
+
+    <div class="siem-step">
+      <div class="step-icon"><img src="images/compliance-icon.png" alt="Compliance Icon"></div>
+      <h3>Compliance & Audit Readiness</h3>
+      <p>Generate reports to meet regulatory requirements and ensure security posture.</p>
+    </div>
+
+    <div class="siem-step">
+      <div class="step-icon"><img src="images/incident-response.png" alt="Incident Response Icon"></div>
+      <h3>Automated Incident Response</h3>
+      <p>Trigger automated workflows to contain and resolve security events efficiently.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="siem-pie-section">
+  <h2 class="main-heading"><span class="span-border-bottom">Core Capabilities of SIEM</span></h2>
+
+  <div class="siem-pie-layout">
+    <!-- Left capabilities -->
+    <div class="siem-capabilities">
+      <div class="cap-item" style="border-left: 5px solid #3f72af;">
+        <h4>Real-Time Threat Detection</h4>
+        <p>Continuously monitor logs and events to spot suspicious behavior as it happens.</p>
+      </div>
+      <div class="cap-item" style="border-left: 5px solid #f4c300;">
+        <h4>Log Management</h4>
+        <p>Aggregate and store logs from various sources for analysis and compliance.</p>
+      </div>
+      <div class="cap-item" style="border-left: 5px solid #55ffbe;">
+        <h4>Incident Correlation</h4>
+        <p>Connect multiple alerts into a single incident for better visibility and action.</p>
+      </div>
+    </div>
+
+    <!-- Pie diagram -->
+    
+  <div class="semi-circle-diagram">
+    <div class="segment seg1">
+      <span>Log Aggregation</span>
+    </div>
+    <div class="segment seg2">
+      <span>Threat Intelligence</span>
+    </div>
+    <div class="segment seg3">
+      <span>Anomaly Detection</span>
+    </div>
+    <div class="segment seg4">
+      <span>Dashboards & Reports</span>
+    </div>
+    <div class="segment seg5">
+      <span>Automated Alerts</span>
+    </div>
+    <div class="segment seg6">
+      <span>Incident Management</span>
+    </div>
+    <div class="center-circle">
+      SIEM
+    </div>
+  </div>
+
+    <!-- Right capabilities -->
+    <div class="siem-capabilities">
+      <div class="cap-item" style="border-left: 5px solid #0077cc;">
+        <h4>Automated Response</h4>
+        <p>Trigger predefined actions when specific threats or anomalies are detected.</p>
+      </div>
+      <div class="cap-item" style="border-left: 5px solid #00c2cb;">
+        <h4>Compliance Reporting</h4>
+        <p>Generate audit-ready reports for standards like HIPAA, PCI-DSS, and ISO.</p>
+      </div>
+      <div class="cap-item" style="border-left: 5px solid #ff8c42;">
+        <h4>Advanced Analytics</h4>
+        <p>Use machine learning and behavior analytics to detect stealthy threats.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+     <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>What is your enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
+        </div>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
+        </a>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <script>
+    fetch('header_section.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+  <script>
+  // JSON data
+  const testimonial = {
+    avatar: "https://i.pravatar.cc/100?img=11",
+    text: "The flexibility Saasify gave us in customizing our own internal leave management and travel approval system saved us weeks of development time.",
+    author: "IT Head, Consulting Firm",
+    rating: 5
+  };
+
+  // Render testimonial
+  const testimonialContainer = document.getElementById("testimonial");
+  const authorName = document.getElementById("author-name");
+
+  testimonialContainer.innerHTML = `
+    <i class="fas fa-quote-left quote"></i>
+    <p>${testimonial.text}</p>
+    <div class="stars">
+      ${'<i class="fas fa-star"></i>'.repeat(testimonial.rating)}
+    </div>
+    <img src="${testimonial.avatar}" alt="Avatar" class="avatar" />
+  `;
+
+  authorName.textContent = testimonial.author;
+</script>
+</body>
+</html>

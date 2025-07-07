@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Business Process Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+    section.hero-iom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background-color: #f4faff;
+    }
+    .hero-iom h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-iom p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-iom img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-left, .contact-right {
+      flex: 1 1 45%;
+    }
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, textarea {
+      padding: 8px;
+      width: 100%;
+    }
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+   
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
+.why-itom-section {
+  padding: 60px 20px;
+  background-color: #0b1d3a;
+  color: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  border-bottom: 3px solid #00e0d0;
+  display: inline-block;
+}
+
+.why-itom-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Alternate background */
+.zigzag-item:nth-child(even) {
+  background-color: #ffffff;
+}
+.zigzag-item:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.zigzag-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  padding: 18px;
+  transition: transform 0.3s ease;
+}
+
+.zigzag-item:hover {
+  transform: translateY(-5px);
+}
+
+.zigzag-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.zigzag-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.zigzag-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.zigzag-content {
+  flex: 1 1 55%;
+  text-align: center;
+}
+
+.zigzag-content h3 {
+  font-size: 22px;
+  color: #00e0d0;
+  margin-bottom: 15px;
+}
+
+.zigzag-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #0a1f44;
+}
+
+.zigzag-content strong {
+  color: #0a1f44;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .zigzag-item,
+  .zigzag-item.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .zigzag-content {
+    text-align: left;
+  }
+}
+
+.itom-capabilities-section {
+  background-color: #f4faff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.capability-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 20px rgba(0, 43, 92, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-6px);
+}
+
+.capability-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #0056b3;
+}
+
+.capability-card h3 {
+  font-size: 20px;
+  color: #002b5c;
+  margin-bottom: 10px;
+}
+
+.capability-card p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+.client-benefits-section {
+  background-color: #0a1f44;
+  padding: 60px 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.client-benefit-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.client-benefit-card {
+  flex: 1 1 22%;
+  padding: 30px 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.client-benefit-card:last-child {
+  border-right: none;
+}
+
+.client-benefit-card h3 {
+  font-size: 18px;
+  color: #00e0d0;
+  margin-bottom: 12px;
+}
+
+.client-benefit-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .client-benefit-card {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .client-benefit-card:nth-child(2n) {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .client-benefit-card:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .client-benefit-card {
+    flex: 1 1 100%;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+</style>
+</head>
+<body>
+<div id="header"></div>
+
+<section class="hero-iom">
+    <div style="flex: 1 1 500px; padding-right: 20px;">
+      <h1>IT Operations Management</h1>
+      <p>Ensure high availability, automated operations, and complete infrastructure visibility with Saasify’s ITOM solutions. We help you proactively manage incidents, reduce downtime, and optimize resource usage with intelligent automation and analytics.</p>
+      <a href="contact_us_page.html">
+        <button class="cta-button">Book a Demo</button>
+      </a>
+    </div>
+    <div style="flex: 1 1 400px; text-align: center;">
+      <img src="images/itom-img.jpg" alt="ITOM" />
+    </div>
+</section>
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+      <a href="#">Platform Proficiency</a> &gt;
+      <span>ITOM</span>
+  </div>
+</section>
+
+<section class="why-itom-section">
+<h2 class="main-heading"><span class="span-border-bottom">Why Choose IT Operations Management ?</span></h2>
+  
+  <div class="why-itom-zigzag">
+
+    <!-- Block 1 -->
+    <div class="zigzag-item">
+      <div class="zigzag-image">
+        <img src="images/revenue-icon.jpg" alt="Revenue Icon">
+      </div>
+      <div class="zigzag-content">
+        <h3>Minimize Revenue Loss</h3>
+        <p><strong>ITIL Focus:</strong> Accelerates IT issue resolution.</p>
+        <p><strong>Impact:</strong> Reduces downtime, leading to fewer missed sales opportunities.</p>
+        <p><strong>Outcome:</strong> Boosts revenue by minimizing losses.</p>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="zigzag-item reverse">
+      <div class="zigzag-image">
+        <img src="images/customer-icon.jpg" alt="Customer Satisfaction Icon">
+      </div>
+      <div class="zigzag-content">
+        <h3>Enhance Customer Satisfaction</h3>
+        <p><strong>ITIL Focus:</strong> Ensures a disruption-free customer experience.</p>
+        <p><strong>Impact:</strong> Increases customer satisfaction and loyalty.</p>
+        <p><strong>Outcome:</strong> Builds long-term customer relationships.</p>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="zigzag-item">
+      <div class="zigzag-image">
+        <img src="images/productivity-icon.jpg" alt="Productivity Icon">
+      </div>
+      <div class="zigzag-content">
+        <h3>Ensure Productivity</h3>
+        <p><strong>ITIL Focus:</strong> Prevents IT interruptions for employees.</p>
+        <p><strong>Impact:</strong> Drives up in-store productivity.</p>
+        <p><strong>Outcome:</strong> Optimizes employee efficiency.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="itom-capabilities-section">
+  <h2 class="main-heading"><span class="span-border-bottom">Key Capabilities of IT Operations Management</span></h2>
+  <div class="capabilities-grid">
+    <div class="capability-card">
+      <div class="capability-icon">🔍</div>
+      <h3>Infrastructure Discovery</h3>
+      <p>Automatically detect devices, applications, and services across your IT network, ensuring full visibility.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">🧠</div>
+      <h3>Event Correlation & Root Cause Analysis</h3>
+      <p>Reduce alert noise and identify the true root cause faster using advanced AI-powered analytics.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">⚙️</div>
+      <h3>Automation & Orchestration</h3>
+      <p>Automate frequent incidents and standard IT workflows for faster, error-free operations.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">📊</div>
+      <h3>Operational Dashboards</h3>
+      <p>Gain insights into performance, availability, and trends with real-time, customizable dashboards.</p>
+    </div>
+  </div>
+</section>
+
+<section class="client-benefits-section">
+  <h2 class="main-heading"><span class="span-border-bottom">Benefits to Clients</span></h2>
+  <div class="client-benefit-row">
+    <div class="client-benefit-card">
+      <h3>Improve Service Availability</h3>
+      <p>Reduce business disruptions by preventing system failures.</p>
+    </div>
+    <div class="client-benefit-card">
+      <h3>Lower Operational Costs</h3>
+      <p>Use automation to do more with less — faster resolutions, less workforce strain.</p>
+    </div>
+    <div class="client-benefit-card">
+      <h3>Enable Scalable Growth</h3>
+      <p>Manage increasing IT complexity with a modular and scalable platform.</p>
+    </div>
+    <div class="client-benefit-card">
+      <h3>Faster Incident Response</h3>
+      <p>Improve SLAs and end-user satisfaction through quicker problem resolution.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+     <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>What is your enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
+        </div>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
+        </a>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <script>
+    fetch('header_section.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+
+
+</body>
+</html>
