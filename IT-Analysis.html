@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Business Process Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+    section.hero-iom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background-color: #f4faff;
+    }
+    .hero-iom h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-iom p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-iom img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-left, .contact-right {
+      flex: 1 1 45%;
+    }
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, textarea {
+      padding: 8px;
+      width: 100%;
+    }
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+footer {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 40px 30px;
+  font-family: 'Inter', sans-serif;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #f4c300;
+}
+.footer-col p,
+.footer-col ul {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a,
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-col a:hover {
+  color: #f4c300;
+}
+.footer-social a {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: #f4c300;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+   
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
+
+    .why-it-analysis {
+  background-color: #0a1f44;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.why-it-analysis .section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  border-bottom: 3px solid #55ffbe;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.analysis-card {
+  background-color: #122b5a;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.analysis-card:hover {
+  transform: translateY(-5px);
+}
+
+.analysis-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.analysis-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #55ffbe;
+}
+
+.analysis-card p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+.implementation-strategy {
+  background-color: #f4faff;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    background-color: #e0e0e0;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.timeline-item .content-box {
+  background: #ffffff;
+  padding: 5px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.timeline-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0a1f44;
+}
+
+.timeline-item p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item.left .content-box::after {
+    content: "";
+    position: absolute;
+    top: 42px;
+    right: -47px;
+    width: 25px;
+    height: 25px;
+    background: #0a1f44;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.timeline-item.right .content-box::after {
+  content: "";
+  position: absolute;
+    top: 50px;
+    left: -46px;
+    width: 25px;
+    height: 25px;
+    background: #0a1f44;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .timeline-container::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    text-align: left;
+  }
+
+  .timeline-item .content-box::after {
+    left: -30px;
+    right: auto;
+  }
+}
+.key-analysis-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.key-analysis-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.key-analysis-left {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.key-analysis-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.key-analysis-right {
+  flex: 1 1 55%;
+}
+
+.analysis-item {
+  margin-bottom: 25px;
+}
+
+.analysis-item h3 {
+  font-size: 1.2rem;
+  color: #0a1f44;
+  margin-bottom: 8px;
+}
+
+.analysis-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .key-analysis-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .key-analysis-left,
+  .key-analysis-right {
+    flex: 1 1 100%;
+  }
+
+}
+
+
+</style>
+</head>
+<body>
+<div id="header"></div>
+
+<section class="hero-iom">
+    <div style="flex: 1 1 500px; padding-right: 20px;">
+      <h1>IT Analysis</h1>
+      <p>Turn your data into insights. Saasify empowers businesses to monitor IT systems, evaluate performance, and make proactive decisions that prevent issues before they arise.</p>
+      <a href="contact_us_page.html">
+        <button class="cta-button">Book a Demo</button>
+      </a>
+    </div>
+    <div style="flex: 1 1 400px; text-align: center;">
+      <img src="images/business-process-man.jpg" alt="IT Analysis" />
+    </div>
+</section>
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+      <a href="#">Platform Proficiency</a> &gt;
+      <span>IT Analysis</span>
+  </div>
+</section>
+
+<section class="why-it-analysis">
+  <h2 class="main-heading">
+      <span class="span-border-bottom">Why IT Analysis Matters ?</span>
+    </h2>
+  <div class="grid-wrapper">
+    
+    <div class="analysis-card">
+      <img src="images/proactive-icon.png" alt="Proactive Monitoring">
+      <h3>Proactive Monitoring</h3>
+      <p>Predict and fix problems before they impact users.</p>
+    </div>
+
+    <div class="analysis-card">
+      <img src="images/transparency-icon.png" alt="Operational Transparency">
+      <h3>Operational Transparency</h3>
+      <p>Gain visibility into every IT layer—from networks to endpoints.</p>
+    </div>
+
+    <div class="analysis-card">
+      <img src="images/optimization-icon.png" alt="Performance Optimization">
+      <h3>Performance Optimization</h3>
+      <p>Detect bottlenecks and improve efficiency with data-backed decisions.</p>
+    </div>
+
+    <div class="analysis-card">
+      <img src="images/risk-icon.png" alt="Risk Mitigation">
+      <h3>Risk Mitigation</h3>
+      <p>Identify vulnerabilities early with continuous system evaluation.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="key-analysis-section">
+  <div class="key-analysis-wrapper">
+    
+    <div class="key-analysis-left">
+      <img src="images/it-analysis-benefits.jpg" alt="IT Analysis Illustration">
+    </div>
+
+    <div class="key-analysis-right">
+      <h2 class="main-heading">
+        <span class="span-border-bottom">Key Benefits of IT Analysis</span>
+      </h2>
+
+      <div class="analysis-item">
+        <h3>Proactive Issue Detection</h3>
+        <p>Identify potential system failures before they occur through real-time monitoring and alerts.</p>
+      </div>
+
+      <div class="analysis-item">
+        <h3>Optimized Resource Allocation</h3>
+        <p>Track infrastructure usage trends to allocate servers, storage, and bandwidth efficiently.</p>
+      </div>
+
+      <div class="analysis-item">
+        <h3>Improved Performance</h3>
+        <p>Analyze historical and real-time data to fine-tune system performance and reduce bottlenecks.</p>
+      </div>
+
+      <div class="analysis-item">
+        <h3>Data-Driven Decision Making</h3>
+        <p>Generate actionable insights from operational data to guide IT strategy and investments.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="implementation-strategy">
+  <h2 class="main-heading">
+      <span class="span-border-bottom">Implementation Strategy</span>
+    </h2>
+  <div class="timeline-container">
+
+    <div class="timeline-item left">
+      <div class="content-box">
+        <h3>Assessment</h3>
+        <p>Understand current infrastructure, requirements, and analysis scope.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="content-box">
+        <h3>Tool Integration</h3>
+        <p>Connect relevant monitoring and analysis tools into your ecosystem.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="content-box">
+        <h3>Dashboard Configuration</h3>
+        <p>Set up intuitive dashboards to visualize key metrics and alerts.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="content-box">
+        <h3>Continuous Review & Alerts</h3>
+        <p>Enable automated alerting and ongoing performance optimization.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+     <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>What is your enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
+        </div>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
+        </a>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        Saasify Solutions Pvt Ltd<br />
+        6th Floor, Center Point 3,<br />
+        Manapakkam, Chennai - 600089
+      </p>
+      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+  <script>
+    fetch('header_section.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Managed-Service– Saasify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4faff;
+      color: #2a2a2a;
+    }
+
+
+.main-heading {
+    position: relative;
+     margin-bottom: 35px;
+     text-align: center;
+}
+
+.span-border-bottom {
+  border-bottom: 3px solid #00c896;
+}
+
+    section.hero-esm {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 40px;
+      background-color: #f4faff;
+    }
+    .hero-esm h1 {
+      font-size: 2.5rem;
+      color: #0a1f44;
+      margin-bottom: 20px;
+    }
+    .hero-esm p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+    }
+    .cta-button {
+      background-color: #f4c300;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #ffdb4d;
+    }
+    .hero-esm img {
+      max-width: 100%;
+      height: auto;
+    }
+    .contact-section {
+      padding: 60px 20px;
+    }
+    .contact-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      gap: 40px;
+    }
+    .contact-left {
+      flex: 1 1 40%;
+    }
+    .contact-left h2 {
+      font-size: 32px;
+      color: #0a1f44;
+    }
+    .contact-left p {
+      margin-top: 20px;
+      color: #333;
+    }
+    .contact-decor {
+      max-width: 402px;
+    }
+    .contact-right {
+      flex: 1 1 55%;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #0a1f44;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .form-group.full {
+      grid-column: span 2;
+    }
+    .form-footer {
+      font-size: 14px;
+      color: #333;
+    }
+    button[type="submit"] {
+    margin-top: 16px;
+    background: #f4c300;
+    color: #000;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    }
+    footer {
+      background-color: #0a1f44;
+      color: white;
+      padding: 60px 40px 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+    .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #f4c300;
+    }
+    .footer-col p, .footer-col ul {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a, .footer-col a {
+      color: white;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: #f4c300;
+    }
+    .footer-social a {
+      margin-right: 15px;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 15px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    
+    .breadcrumb {
+      padding: 15px 40px;
+      font-size: 0.95rem;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      background-color: #fff;
+    }
+    
+    .breadcrumb-container a {
+      text-decoration: none;
+      color: #0a1f44;
+      margin-right: 5px;
+    }
+    
+    .breadcrumb-container span {
+      color: #666;
+      font-weight: 500;
+    }
+ 
+.implementation-section {
+  background: #f4faff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.arrow-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.step {
+  position: relative;
+  flex: 1 1 200px;
+  max-width: 300px;
+  margin: 10px;
+}
+
+.arrow {
+  background-color: #0a1f44;
+  color: white;
+  padding: 15px 20px;
+  position: relative;
+  font-weight: bold;
+  border-radius: 5px 0 0 5px;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -25px;
+  width: 0;
+  height: 0;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 25px solid #0a1f44;
+  z-index: 1;
+}
+
+.arrow:last-child::after {
+  display: none;
+}
+
+.step-descriptions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.desc {
+  flex: 1 1 242px;
+  max-width: 276px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.desc ul {
+  padding-left: 18px;
+  text-align: left;
+}
+
+.iam-capabilities-section {
+  background-color: #071c41;
+  padding: 60px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.section-heading span {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  border-bottom: 4px solid #00e6e6;
+  padding-bottom: 5px;
+}
+
+.capabilities-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.capability-card {
+  background-color: #ffffff;
+  color: #2e2e2e;
+  width: 270px;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-6px);
+}
+
+.capability-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.capability-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.capability-card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.iam-benefits-zigzag {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #062b5b;
+}
+
+.zigzag-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+
+}
+
+.zigzag-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.zigzag-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.zigzag-image img {
+  width: 100px;
+  height: 100px;
+}
+
+.zigzag-text {
+  flex: 1 1 400px;
+}
+
+.zigzag-text h3 {
+  font-size: 22px;
+  color: #062b5b;
+  margin-bottom: 12px;
+}
+
+.zigzag-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .zigzag-row,
+  .zigzag-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .zigzag-text,
+  .zigzag-image {
+    flex: unset;
+  }
+}
+
+  </style>
+</head>
+<body>
+<div id="header"></div>
+
+<section class="hero-esm">
+  <div style="flex: 1 1 500px; padding-right: 20px;">
+      <h1>Identity and Access Management</h1>
+     <p>Saasify's IAM solutions help organizations centralize access, enforce security policies, and enhance compliance—enabling the right individuals to access the right resources at the right time for the right reasons.</p>
+    <a href="contact_us_page.html"><button class="cta-button">Request a Demo</button></a>
+  </div>
+  <div style="flex: 1 1 400px; text-align: center;">
+    <img src="images/IT-security-img.jpg" alt="IAM" style="max-width: 100%;" />
+  </div>
+</section>
+
+<section class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> &gt;
+    <a href="#">Platform Proficiency</a> &gt;
+    <span>IAM</span>
+  </div>
+</section>
+
+<section class="iam-capabilities-section">
+  <h2 class="main-heading"><span class="span-border-bottom">Our IAM Capabilities</span></h2>
+  <div class="capabilities-container">
+    <div class="capability-card">
+      <img src="images/tool-comparison-icon.jpg" alt="Tool Icon" class="capability-icon">
+      <h3>Single Sign-On (SSO)</h3>
+      <p>Enable one-click access to multiple applications securely.</p>
+    </div>
+    <div class="capability-card">
+      <img src="images/analysis-icon.jpg" alt="Analysis Icon" class="capability-icon">
+      <h3>Multi-Factor Authentication</h3>
+      <p>Protect critical systems with layered authentication methods.</p>
+    </div>
+    <div class="capability-card">
+      <img src="images/demo-img.jpg" alt="Demo Icon" class="capability-icon">
+      <h3>Role-Based Access Control (RBAC)</h3>
+      <p>Ensure least-privilege access based on user roles and context.</p>
+    </div>
+    <div class="capability-card">
+      <img src="images/POC-img.jpg" alt="POC Icon" class="capability-icon">
+      <h3>Provisioning & Deprovisioning</h3>
+      <p>Automate user onboarding/offboarding across systems.</p>
+    </div>
+  </div>
+</section>
+
+<section class="iam-benefits-zigzag">
+  <h2 class="main-heading"><span class="span-border-bottom">Why IAM Matters ?</span></h2>
+
+  <div class="zigzag-row">
+    <div class="zigzag-image">
+      <img src="images/security.png" alt="Secure Access">
+    </div>
+    <div class="zigzag-text">
+      <h3>Secure Access Control</h3>
+      <p>Ensure only authorized users gain access to critical systems, reducing security risks.</p>
+    </div>
+  </div>
+
+  <div class="zigzag-row reverse">
+    <div class="zigzag-image">
+      <img src="images/compliance-img.png" alt="Compliance">
+    </div>
+    <div class="zigzag-text">
+      <h3>Regulatory Compliance</h3>
+      <p>Meet industry standards like GDPR, HIPAA, and ISO by managing identity and access effectively.</p>
+    </div>
+  </div>
+
+  <div class="zigzag-row">
+    <div class="zigzag-image">
+      <img src="images/efficiency.png" alt="Efficiency">
+    </div>
+    <div class="zigzag-text">
+      <h3>Boosted Productivity</h3>
+      <p>Enable seamless single sign-on and reduce login friction, improving workforce efficiency.</p>
+    </div>
+  </div>
+
+  <div class="zigzag-row reverse">
+    <div class="zigzag-image">
+      <img src="images/monitoring.png" alt="Monitoring">
+    </div>
+    <div class="zigzag-text">
+      <h3>Centralized Monitoring</h3>
+      <p>Track user behavior and access logs in real time for audits and incident response.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="implementation-section">
+  <h2 class="main-heading"><span class="span-border-bottom">Implementation Stages</span></h2>
+<div class="arrow-steps">
+  <div class="step">
+    <div class="arrow">Assessment</div>
+    <div class="connector">&#x2193;</div>
+  </div>
+  <div class="step">
+    <div class="arrow">Design</div>
+    <div class="connector">&#x2193;</div>
+  </div>
+  <div class="step">
+    <div class="arrow">Deployment</div>
+    <div class="connector">&#x2193;</div>
+  </div>
+  <div class="step">
+    <div class="arrow">Monitoring</div>
+    <div class="connector">&#x2193;</div>
+  </div>
+</div>
+
+  <div class="step-descriptions">
+    <div class="desc">
+      <ul>
+        <li>Understand current identity landscape and risks.</li>
+      </ul>
+    </div>
+    <div class="desc">
+      <ul>
+        <li>Architect a scalable IAM model with SSO, MFA, and RBAC.</li>
+      </ul>
+    </div>
+    <div class="desc">
+      <ul>
+        <li>Integrate tools with HR, ITSM, and business systems.</li>
+      </ul>
+    </div>
+    <div class="desc">
+      <ul>
+        <li>Enable reporting, alerts, and periodic reviews.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h2>
+      <p>Explore how we can help secure your digital landscape.</p>
+      <img src="images/contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group"><label>First name*</label><input type="text" name="firstName" required></div>
+          <div class="form-group"><label>Last name*</label><input type="text" name="lastName" required></div>
+          <div class="form-group"><label>Business email*</label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Phone number</label><input type="text" name="phone"></div>
+          <div class="form-group"><label>Job title</label><input type="text" name="jobTitle"></div>
+          <div class="form-group"><label>Company*</label><input type="text" name="company" required></div>
+          <div class="form-group"><label>Select country*</label><select name="country" required><option value="">Choose...</option><option>India</option><option>USA</option><option>UK</option></select></div>
+          <div class="form-group"><label>What is your enquiry about?*</label><select name="enquiry" required><option value="">Choose...</option><option>IT Security Management</option><option>Partnership</option><option>Other</option></select></div>
+          <div class="form-group full"><label>Comments</label><textarea rows="3" name="message"></textarea></div>
+        </div>
+        <div class="form-footer"><button type="submit">Submit</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Saasify Solutions Pvt Ltd<br>6th Floor, Center Point 3,<br>Manapakkam, Chennai - 600089</p>
+      <p>Email: contact@saasifysolutions.com<br>Phone: +91 98765 43210</p>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Chat With Us</h4>
+      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  fetch('header_section.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+</script>
+</body>
+</html>
