@@ -1,20 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saasify Solutions</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #ffffff;
-      color: #0a1f44;
+      color: #2a2a2a;
     }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -22,156 +23,209 @@
       padding: 10px 40px;
       background-color: #0a1f44;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: fixed !important;
+      position: fixed;
       top: 0;
       left: 0;
-      width: 95%;
+      width: 100%;
       z-index: 1000;
+      box-sizing: border-box;
     }
+
     .logo img {
       height: 40px;
     }
-   nav {
-   display: flex;
-  gap: 30px;
-  align-items: center;
-  color: white;
-}
-nav .dropdown {
-  position: relative; /* Ensures absolute children align properly */
-}
- /* Dropdown container */
-nav .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(10, 31, 68, 0.95); /* dark blue background */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  z-index: 999;
-  min-width: 200px;
-  color: white;
-}
-/* Two-column container */
-.two-column-dropdown {
-  display: flex;
-  gap: 40px;
-  min-width: 400px !important;
-}
 
-/* Each column */
-.dropdown-column {
-  flex: 1;
-}
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      color: white;
+    }
 
-.dropdown-column h4 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: #55ffbe;
-  border-bottom: 1px solid #55ffbe;
-  padding-bottom: 5px;
-}
+    nav .dropdown {
+      position: relative;
+    }
 
-.dropdown-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    nav .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(10, 31, 68, 0.95);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      z-index: 999;
+      min-width: 200px;
+      color: white;
+    }
 
-.dropdown-column ul li {
-  margin: 6px 0;
-}
+    .two-column-dropdown {
+      display: flex;
+      gap: 40px;
+      min-width: 500px;
+    }
 
-.dropdown-column ul li a {
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-  padding-bottom: 2px;
-  display: inline-block;
-  border-bottom: 2px solid transparent;
-}
+    .dropdown-column {
+      flex: 1;
+    }
 
-/* Show on hover */
-nav .dropdown:hover .dropdown-content {
-  display: flex;
-}
+    .dropdown-column h4 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #55ffbe;
+      border-bottom: 1px solid #55ffbe;
+      padding-bottom: 5px;
+    }
 
-/* Remove bullets and spacing */
-nav .dropdown-content ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .dropdown-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-/* Dropdown link styles */
-nav .dropdown-content ul li a {
-  display: block;
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  position: relative;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
+    .dropdown-column ul li {
+      margin: 6px 0;
+    }
 
-/* Hover underline effect */
-nav .dropdown-content ul li a::after {
-  content: '';
-  position: absolute;
-  left: 20px;
-  bottom: 8px;
-  width: 0;
-  height: 2px;
-  background-color: #00c896; /* green underline */
-  transition: width 0.3s ease;
-}
+    .dropdown-column ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      padding-bottom: 2px;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+    }
 
-nav .dropdown-content ul li a:hover::after {
-  width: calc(100% - 40px); /* full width minus padding */
-}
+    nav .dropdown:hover .dropdown-content {
+      display: flex;
+    }
 
-nav .dropdown-content ul li a:hover {
-  color: rgba(244, 248, 248, 0.966);
-}
+    nav .dropdown-content ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-h2.main-heading {
-    position: relative;
-    margin-bottom: 56px;
-}
-.span-border-bottom {
-    border-bottom: 3px solid #55ffbe;
-}
+    nav .dropdown-content ul li a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      position: relative;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    nav .dropdown-content ul li a::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: 8px;
+      width: 0;
+      height: 2px;
+      background-color: #00c896;
+      transition: width 0.3s ease;
+    }
+
+    nav .dropdown-content ul li a:hover::after {
+      width: calc(100% - 40px);
+    }
+
+    nav .dropdown-content ul li a:hover {
+      color: rgba(244, 248, 248, 0.966);
+    }
+
     .right-icons {
       display: flex;
       gap: 15px;
       align-items: center;
     }
+
+    .right-icons i {
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .right-icons i:hover {
+      color: #f4c300;
+    }
+
     .right-icons button {
       padding: 8px 16px;
       border: none;
       background-color: #f4c300;
-      color: black;
+      color: #000;
       border-radius: 4px;
       cursor: pointer;
     }
-   .right-icons i {
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: white;
-}
-.right-icons i:hover {
-  color: #f4c300;
-}
-.about-dropdown {
+
+    .about-dropdown {
       display: none;
       flex-direction: row;
       gap: 40px;
     }
+
     .dropdown:hover .about-dropdown {
       display: flex;
     }
-      .hero {
+
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+  text-decoration: none;
+}
+
+.navbar {
+  list-style: none !important;
+}
+.navbar li {
+  list-style-type: none !important;
+}
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: #0a1f44;
+      position: fixed;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      z-index: 1001;
+    }
+
+    .mobile-menu a {
+      color: white;
+      padding: 10px 0;
+      text-decoration: none;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 1024px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+    }
+    
+    .hero {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -454,102 +508,121 @@ h2.main-heading {
   font-size: 0.85rem;
   color: #ddd;
 }
-nav a {
-  text-decoration: none;
-}
-ul, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.navbar {
-  list-style: none !important;
-}
-.navbar li {
-  list-style-type: none !important;
-}
+
   </style>
 </head>
-
 <body>
-<header>
-<div class="logo">
-  <a href="index.html">
-    <img src="images/Saasify_logo.png" alt="Saasify Logo" />
-  </a>
-</div>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
     <nav>
-     
       <div class="dropdown">
         <span style="color: white;">Services & Solutions</span>
         <div class="dropdown-content two-column-dropdown">
           <div class="dropdown-column">
-             <h4>Services</h4>
-          <ul>
-            <li><a href="consulting-services.html">Consulting</a></li>
-            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
-            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
-            <li><a href="training-services.html">Training & Enablement</a></li>
-            <li><a href="Ongoing_support.html">Ongoing Support</a></li>
-            <li><a href="managed-services.html">Managed Services</a></li>
-          </ul>
+            <h4>Services</h4>
+            <ul>
+              <li><a href="consulting-services.html">Consulting</a></li>
+              <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
+              <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
+              <li><a href="training-services.html">Training & Enablement</a></li>
+              <li><a href="Ongoing_support.html">Ongoing Support</a></li>
+              <li><a href="managed-services.html">Managed Services</a></li>
+            </ul>
           </div>
           <div class="dropdown-column">
             <h4>Solutions</h4>
-           <ul>
-            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
-            <li><a href="it-security-management.html">IT Security Management</a></li>
-            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-            <li><a href="Business-analytics.html">Business Analytics</a></li> 
-            <li><a href="business-pro-management.html">Business Process Management</a></li>
-          </ul>
+            <ul>
+              <li><a href="it-operations-management.html">IT Operations Management</a></li>
+              <li><a href="it-security-management.html">IT Security Management</a></li>
+              <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
+              <li><a href="Business-analytics.html">Business Analytics</a></li>
+              <li><a href="business-pro-management.html">Business Process Management</a></li>
+            </ul>
           </div>
         </div>
       </div>
-      
       <div class="dropdown">
-        <span style="color: white;">Platform Proficiency</span> 
+        <span style="color: white;">Platform Proficiency</span>
         <div class="dropdown-content">
           <ul>
-             <li><a href="IAM.html">IAM</a></li>
-             <li><a href="ITSM.html">ITSM</a></li>
-             <li><a href="ITOM.html">ITOM</a></li>
-             <li><a href="IT-Analysis.html">IT Analysis</a></li>
-             <li><a href="SIEM.html">SIEM</a></li>
-             <li><a href="UEM.html">UEM</a></li>
+            <li><a href="IAM.html">IAM</a></li>
+            <li><a href="ITSM.html">ITSM</a></li>
+            <li><a href="ITOM.html">ITOM</a></li>
+            <li><a href="IT-Analysis.html">IT Analysis</a></li>
+            <li><a href="SIEM.html">SIEM</a></li>
+            <li><a href="UEM.html">UEM</a></li>
           </ul>
         </div>
       </div>
       <div class="dropdown">
-  <span style="color: white;">Company Overview</span>
-  <div class="dropdown-content about-dropdown">
-    <ul>
-      <li><a href="about_us.html">About Saasify</a></li>
-      <li><a href="our-team.html">Our Team</a></li>
-      <li><a href="our-presence.html">Our Presence</a></li>
-    </ul>
-  </div>
-</div>
-      </div>
-<div class="dropdown">
-        <span style="color: white;">Careers</span>  
-        <div class="dropdown-content">
+        <span style="color: white;">Company Overview</span>
+        <div class="dropdown-content about-dropdown">
           <ul>
-            <li><a href="saasify-careers.html">Job Vacancy</a></li>  
+            <li><a href="about_us.html">About Saasify</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="our-presence.html">Our Presence</a></li>
           </ul>
         </div>
       </div>
-
-      <li><a href="insight-page.html" style="color: white;">Insights</a></li>
+      <div class="dropdown">
+        <span style="color: white;">Careers</span>
+        <div class="dropdown-content">
+          <ul>
+            <li><a href="saasify-careers.html">Job Vacancy</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul>
+        <li><a href="insight-page.html" style="color: white;">Insights</a></li>
+      </ul>
     </nav>
     <div class="right-icons">
       <a href="contact_us_page.html">
-       <button>Contact Us</button>
+        <button>Contact Us</button>
       </a>
     </div>
   </header>
 
-   <section class="hero">
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="consulting-services.html">Consulting</a>
+    <a href="evaluation-assistance.html">Evaluation Assistance</a>
+    <a href="Imp-Cust-service.html">Implementation and Customisation</a>
+    <a href="training-services.html">Training & Enablement</a>
+    <a href="Ongoing_support.html">Ongoing Support</a>
+    <a href="managed-services.html">Managed Services</a>
+    <a href="it-operations-management.html">IT Operations Management</a>
+    <a href="it-security-management.html">IT Security Management</a>
+    <a href="enterprise-service.html">Enterprise Service Management</a>
+    <a href="Business-analytics.html">Business Analytics</a>
+    <a href="business-pro-management.html">Business Process Management</a>
+    <a href="IAM.html">IAM</a>
+    <a href="ITSM.html">ITSM</a>
+    <a href="ITOM.html">ITOM</a>
+    <a href="IT-Analysis.html">IT Analysis</a>
+    <a href="SIEM.html">SIEM</a>
+    <a href="UEM.html">UEM</a>
+    <a href="about_us.html">About Saasify</a>
+    <a href="our-team.html">Our Team</a>
+    <a href="our-presence.html">Our Presence</a>
+    <a href="saasify-careers.html">Job Vacancy</a>
+    <a href="insight-page.html">Insights</a>
+    <a href="contact_us_page.html">Contact Us</a>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("show");
+    }
+  </script>
+  <!-- Other sections -->
+  
+ <section class="hero">
   <div class="hero-text">
     <h1>Transformative technology.</h1>
     <p>At Saasify, we deliver purpose-built, intelligence-driven solutions designed to optimize IT, Security, Analytics, and Business Processes. Our cutting-edge platforms help businesses accelerate growth, enhance operational efficiency, and stay ahead.</p>
@@ -570,8 +643,8 @@ ul, li {
   </div>
 </section>
 
-  <section class="trusted-by">
-<h2 class="main-heading"><span class="span-border-bottom">Preferred by industry leaders</span></h2>
+<section class="trusted-by">
+    <h2 class="main-heading"><span class="span-border-bottom">Trusted by Industry Innovators</span></h2>
     <div class="logo-slider" id="partner-logos">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" alt="Partner 1" />
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 2" />
@@ -582,7 +655,7 @@ ul, li {
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" alt="Partner 2" />
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 3" />
     </div>
-  </section>
+</section>
   
 <section>
   <div class="testimonial-wrapper">
@@ -610,6 +683,7 @@ ul, li {
        <button class="view-all-button">View All</button>
     </a>
   </section>
+
   <footer>
   <div class="footer-grid">
     <div class="footer-col">
@@ -679,9 +753,9 @@ startHeroCarousel();
     }, 3000);
 
    const statsData = [
-    { number: '100', label: 'Implementations' },
+    { number: '150', label: 'Implementations' },
     { number: '100', label: 'Clients' },
-    { number: '35', label: 'Technology Professionals' }
+    { number: '40', label: 'Technology Professionals' }
   ];
 
   const wrapper = document.createElement("div");
@@ -689,8 +763,8 @@ startHeroCarousel();
 
   const headingContainer = document.createElement("div");
   headingContainer.style.textAlign = "center";
-  headingContainer.style.marginBottom = "40px";
-
+  headingContainer.style.marginBottom = "29px";
+ 
   const title = document.createElement("div");
   title.style.color = "#fff";
   title.style.fontSize = "1.2rem";
@@ -711,7 +785,7 @@ startHeroCarousel();
   statsContainer.className = "key-stats";
   statsContainer.id = "stats";
   wrapper.appendChild(statsContainer);
-document.body.insertBefore(wrapper, document.querySelector(".trusted-by"));
+  document.body.insertBefore(wrapper, document.querySelector(".trusted-by"));
 
     function animateCounter(el, value) {
       let counter = 0;
@@ -733,6 +807,10 @@ const statElements = [];
 statsData.forEach(stat => {
   const div = document.createElement("div");
   div.className = "stat";
+  const icon = document.createElement("i");
+  icon.className = "fas fa-chart-line"; // change per stat if needed
+  div.appendChild(icon);
+
   const h2 = document.createElement("h2");
   const numberSpan = document.createElement("span");
   numberSpan.textContent = "0"; 
@@ -827,7 +905,7 @@ function setActiveTestimonial(index) {
 testimonialCards.forEach((card, index) => {
   card.addEventListener('click', () => setActiveTestimonial(index));
 });
-  </script>
+</script>
 </body>
-
 </html>
+

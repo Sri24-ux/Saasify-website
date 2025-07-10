@@ -9,129 +9,211 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4faff;
-      color: #2a2a2a;
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ section.hero-iom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
     }
-
-
-.main-heading {
-    position: relative;
-     margin-bottom: 35px;
-     text-align: center;
 }
 
-.span-border-bottom {
-  border-bottom: 3px solid #00c896;
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
 }
-
-    section.hero-esm {
+  .contact-form {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 40px;
-      background-color: #f4faff;
-    }
-    .hero-esm h1 {
-      font-size: 2.5rem;
-      color: #0a1f44;
-      margin-bottom: 20px;
-    }
-    .hero-esm p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #2a2a2a;
-    }
-    .cta-button {
-      background-color: #f4c300;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    .cta-button:hover {
-      background-color: #ffdb4d;
-    }
-    .hero-esm img {
-      max-width: 100%;
-      height: auto;
-    }
-    .contact-section {
-      padding: 60px 20px;
-    }
-    .contact-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
       gap: 40px;
     }
-    .contact-left {
-      flex: 1 1 40%;
+    .contact-left, .contact-right {
+      flex: 1 1 45%;
     }
-    .contact-left h2 {
-      font-size: 32px;
-      color: #0a1f44;
-    }
-    .contact-left p {
-      margin-top: 20px;
-      color: #333;
-    }
-    .contact-decor {
-      max-width: 402px;
-    }
-    .contact-right {
-      flex: 1 1 55%;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-    .form-group {
+    .contact-right form {
       display: flex;
       flex-direction: column;
-    }
-    .form-group label {
-      font-size: 14px;
-      margin-bottom: 6px;
-      color: #0a1f44;
+      gap: 10px;
     }
     input, select, textarea {
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-family: 'Inter', sans-serif;
+      padding: 8px;
+      width: 100%;
     }
-    textarea {
-      resize: vertical;
-    }
-    .form-group.full {
-      grid-column: span 2;
-    }
-    .form-footer {
-      font-size: 14px;
-      color: #333;
-    }
-    button[type="submit"] {
-    margin-top: 16px;
-    background: #f4c300;
-    color: #000;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    }
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+  overflow: hidden;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
     footer {
       background-color: #0a1f44;
       color: white;
@@ -353,15 +435,16 @@
 </head>
 <body>
 <div id="header"></div>
-
-<section class="hero-esm">
-  <div style="flex: 1 1 500px; padding-right: 20px;">
+<section class="hero-iom">
+  <div class="hero-text">
     <h1>Secure Every Layer of Your IT Ecosystem</h1>
     <p>With the rise of digital transformation and data proliferation, securing business and customer information is more vital than ever. SaaSify helps organizations build a strong cybersecurity foundation by aligning with ITIL practices and regulatory standards like PCI-DSS, HIPAA, and SOX. From endpoint protection to SIEM and identity management, we deliver best-in-class solutions to defend against evolving threats and ensure compliance.</p>
-    <a href="contact_us_page.html"><button class="cta-button">Request a Demo</button></a>
+    <a href="contact_us_page.html">
+      <button class="cta-button">Book a Demo</button>
+    </a>
   </div>
-  <div style="flex: 1 1 400px; text-align: center;">
-    <img src="images/IT-security-img.jpg" alt="Managed Services" style="max-width: 100%;" />
+  <div class="hero-image">
+     <img src="images/IT-security-img.jpg" alt="Managed Services" style="max-width: 100%;" />
   </div>
 </section>
 
@@ -475,29 +558,73 @@
     <img src="S6.png" alt="Client 6">
   </div>
 </section>
+
 <section class="contact-section">
   <div class="contact-container">
     <div class="contact-left">
-      <h2 class="main-heading">
+     <h2 class="main-heading">
       <span class="span-border-bottom">Connect with Saasify</span>
     </h2>
-      <p>Explore how we can help secure your digital landscape.</p>
-      <img src="images/contact-form.png" alt="arrow graphic" class="contact-decor">
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
     </div>
     <div class="contact-right">
       <form action="https://formspree.io/f/yourformid" method="POST">
         <div class="form-grid">
-          <div class="form-group"><label>First name*</label><input type="text" name="firstName" required></div>
-          <div class="form-group"><label>Last name*</label><input type="text" name="lastName" required></div>
-          <div class="form-group"><label>Business email*</label><input type="email" name="email" required></div>
-          <div class="form-group"><label>Phone number</label><input type="text" name="phone"></div>
-          <div class="form-group"><label>Job title</label><input type="text" name="jobTitle"></div>
-          <div class="form-group"><label>Company*</label><input type="text" name="company" required></div>
-          <div class="form-group"><label>Select country*</label><select name="country" required><option value="">Choose...</option><option>India</option><option>USA</option><option>UK</option></select></div>
-          <div class="form-group"><label>What is your enquiry about?*</label><select name="enquiry" required><option value="">Choose...</option><option>IT Security Management</option><option>Partnership</option><option>Other</option></select></div>
-          <div class="form-group full"><label>Comments</label><textarea rows="3" name="message"></textarea></div>
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
         </div>
-        <div class="form-footer"><button type="submit">Submit</button></div>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
+        </a>
+       </div>
       </form>
     </div>
   </div>

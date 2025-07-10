@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SaaSify – Empowering the Autonomous Enterprise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Saasify – Empowering the Autonomous Enterprise</title>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -26,8 +26,10 @@
     p {
       padding: 6px;
     }
-    .service-card img{ max-width: 25%;
-	display:block; 
+    .service-card img{ 
+       max-width: 16%;
+	     display:block; 
+       margin: 0 auto;
     }
     section {
       padding: 40px;
@@ -169,10 +171,14 @@ background-image: linear-gradient(-35deg, #03081e 0%, #0a1f44 100%);
     }
     .services-grid{
       display: flex;
-margin-left: 70px;
+      justify-content: center;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 48px;
     }
-    .services-grid p{
- 	margin: 18px 0;
+    
+    .services-grid h3{
+       margin-top: 14px;
     }
 .careers-section {
  position: relative;
@@ -317,6 +323,58 @@ footer {
   color: #666;
   font-weight: 500;
 }
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text, .hero-images {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr; /* Stack features on mobile */
+  }
+
+  .vision-mission-card {
+    flex-direction: column;
+  }
+
+  .vision-mission-left, .vision-mission-right {
+    flex: 1 1 100%;
+    clip-path: none; /* Optional: remove clipping for better mobile view */
+  }
+
+  .quote-section > div {
+    padding: 20px;
+  }
+
+  .quote-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumb {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -403,11 +461,8 @@ style= "color: rgb(255, 255, 255)";><span class="span-border-bottom">Why choose 
 </section>
 <section class="services-section">
   <h2 class="main-heading"><span class="span-border-bottom">Our Services</span></h2>
-  <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
-    We create lasting impact through collaboration, customer focus, and technological excellence.
-  </p>
 
-  <div class="services-grid" style="display: flex;">
+  <div class="services-grid">
     <div class="service-card">
       <img src="Collaborate_icon.png" alt="Collaboration icon" />
       <h3>We collaborate</h3>
