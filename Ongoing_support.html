@@ -9,49 +9,99 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
+     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4faff;
       color: #2a2a2a;
+      max-width: 100%;
+      overflow-x: hidden;
     }
    section.hero-iom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 40px;
-      background-color: #f4faff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
     }
-    .hero-iom h1 {
-      font-size: 2.5rem;
-      color: #0a1f44;
-      margin-bottom: 20px;
-    }
-    .hero-iom p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #2a2a2a;
-    }
-    .cta-button {
-      background-color: #f4c300;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    .cta-button:hover {
-      background-color: #ffdb4d;
-    }
-    .hero-iom img {
-      max-width: 84%;
-      height: auto;
-    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
   
-    .contact-form {
+   .contact-form {
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
@@ -71,7 +121,7 @@
 
 h2.main-heading {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 56px;
     text-align: center;
 }
 .span-border-bottom {
@@ -88,6 +138,7 @@ h2.main-heading {
 }
 .contact-left {
   flex: 1 1 40%;
+  overflow: hidden;
 }
 .contact-left h2 {
   font-size: 32px;
@@ -98,7 +149,12 @@ h2.main-heading {
   color: #333;
 }
 .contact-decor {
-   max-width: 402px;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .contact-right {
   flex: 1 1 55%;
@@ -151,6 +207,35 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background: #ffd500;
 }
+
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+
+  }
+
+  .contact-decor {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .contact-right {
+    padding: 20px;
+  }
+
+  .contact-left h2 {
+    text-align: center;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+}
+
 footer {
   background-color: #0a1f44;
   color: white;
@@ -215,7 +300,9 @@ footer {
   .form-group.full {
     grid-column: span 1;
   }
-  
+  .contact-container {
+    flex-direction: column;
+  }
 }
 
   .section-wrapper {
@@ -253,23 +340,76 @@ footer {
       color: #666;
       font-weight: 500;
     }
- 
+ .row {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.row.bg-alt {
+  background-color: #f4faff;
+  border-radius: 12px;
+}
+
+.column.image img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+.column.image {
+  flex: 1 1 40%;
+}
+
+.column.text {
+  flex: 1 1 60%;
+}
+
+.row:nth-child(even) .column.image {
+  order: 2;
+}
+
+.row:nth-child(even) .column.text {
+  order: 1;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .column.image,
+  .column.text {
+    flex: 1 1 100%;
+  }
+
+  .row:nth-child(even) .column.image,
+  .row:nth-child(even) .column.text {
+    order: initial;
+  }
+}
+
 </style>
 </head>
 <body>
 <div id="header"></div>
+
 <section class="hero-iom">
-  <div style="flex: 1 1 500px; padding-right: 20px;">
+  <div class="hero-text">
     <h1>Ongoing Support & Handholding</h1>
-    <p>Our role doesn’t end with implementation and training. At Saasify Solutions, we provide dedicated, ongoing support for your live environment — ensuring stability, issue resolution, and user satisfaction. Acting as your first line of support between your teams and the technology OEM, we handle day-to-day challenges, bug fixes, and platform issues so your users stay productive without disruption. Backed by SLAs and expert teams, we’re with you every step of the way.</p>
+   <p>Our role doesn’t end with implementation and training. At Saasify Solutions, we provide dedicated, ongoing support for your live environment — ensuring stability, issue resolution, and user satisfaction. Acting as your first line of support between your teams and the technology OEM, we handle day-to-day challenges, bug fixes, and platform issues so your users stay productive without disruption. Backed by SLAs and expert teams, we’re with you every step of the way.</p>
     <a href="contact_us_page.html">
       <button class="cta-button">Get Support</button>
     </a>
   </div>
-  <div style="flex: 1 1 400px; text-align: center;">
+  <div class="hero-image">
     <img src="images/ongoing-img.jpg" alt="Ongoing Support" />
   </div>
 </section>
+
 <section class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> &gt;
@@ -320,75 +460,75 @@ footer {
     <span class="span-border-bottom">What We Cover</span>
   </h2>
 
-  <!-- Row 1 -->
-  <div style="display: flex; align-items: center;">
-    <div style="flex: 1 1 50%; padding: 20px;">
-      <img src="images/handling-img.jpg" alt="Issue Handling" style="width: 100%; max-width: 300px;" />
-    </div>
-    <div style="flex: 1 1 80%; padding: 20px;">
-      <h3 style="color: #0a1f44;">Comprehensive Issue Handling</h3>
-      <p>
+ <!-- Row 1 -->
+<div class="row">
+  <div class="column image">
+    <img src="images/handling-img.jpg" alt="Issue Handling" />
+  </div>
+  <div class="column text">
+    <h3>Comprehensive Issue Handling</h3>
+    <p>
         Once our solution is live, we don’t just walk away — we stay connected. <br>
         Whether you're facing bugs, performance lags, or unexpected system behavior,
         our expert support team is always just a message away.<br>
         We prioritize every issue and work swiftly to restore normalcy.<br>
         From minor glitches to critical system crashes, we've got you covered.<br>
         Our goal is to ensure your business runs smoothly, without disruption.</p>
-    </div>
   </div>
+</div>
 
-  <!-- Row 2 -->
-  <div style="display: flex; align-items: center; background-color: #f4faff; border-radius: 12px;">
-    <div style="flex: 1 1 36%; padding: 20px; order: 2;">
-      <img src="images/report-img.jpg" alt="Reports and Insights" style="width: 100%; max-width: 500px;" />
-    </div>
-    <div style="flex: 1 1 50%; padding: 20px; order: 1;">
-      <h3 style="color: #0a1f44;">Reports & Usage Insights</h3>
-      <p>
+<!-- Row 2 -->
+<div class="row bg-alt">
+  <div class="column image reverse">
+    <img src="images/report-img.jpg" alt="Reports and Insights" />
+  </div>
+  <div class="column text">
+    <h3>Reports & Usage Insights</h3>
+    <p>
         We deliver regular reports that offer complete visibility into your system's usage.<br>
         From performance trends to user activity, every insight is captured and shared.<br>
         These reports help you closely monitor adoption and track critical KPIs.<br>
         Understand how your teams interact with the platform in real-time.<br>
         Use data-backed insights to drive strategic improvements and planning.<br>
         With Saasify, reporting isn't just routine — it's a decision-making powerhouse.
-        
-        </p>
-    </div>
+    </p>
   </div>
+</div>
 
-  <!-- Row 3 -->
-  <div style="display: flex; align-items: center; ">
-    <div style="flex: 1 1 50%; padding: 20px;">
-      <img src="images/securityandpatch-img.png" alt="Security and Patching" style="width: 100%; max-width: 360px;" />
-    </div>
-    <div style="flex: 1 1 80%; padding: 20px;">
-      <h3 style="color: #0a1f44;">Security & Patch Updates</h3>
-      <p>
+<!-- Row 3 -->
+
+<div class="row">
+  <div class="column image reverse">
+    <img src="images/report-img.jpg" alt="Reports and Insights" />
+  </div>
+  <div class="column text">
+    <h3>Security & Patch Updates</h3>
+   <p>
         We help you stay protected from evolving cyber threats with proactive patching.<br>
         Our team delivers regular security updates tailored to your solution landscape.<br>
         Each patch is tested to ensure stability, compliance, and performance.<br>
         We safeguard your business applications without disrupting daily operations.<br>
         System integrity is continuously reinforced through structured updates.<br>
         With Saasify, your environment stays secure, compliant, and future-ready.</p>
-    </div>
   </div>
+</div>
 
-  <!-- Row 4 -->
-  <div style="display: flex; align-items: center; background-color: #f4faff; border-radius: 12px;">
-    <div style="flex: 1 1 36%; padding: 20px; order: 2;">
-      <img src="images/support-enhance-img.jpg" alt="Enhancement Support" style="width: 100%; max-width: 500px;" />
-    </div>
-    <div style="flex: 1 1 50%; padding: 20px; order: 1;">
-      <h3 style="color: #0a1f44;">Minor Enhancements</h3>
-      <p>
+<!-- Row 4 -->
+<div class="row bg-alt">
+  <div class="column image reverse">
+    <img src="images/report-img.jpg" alt="Reports and Insights" />
+  </div>
+  <div class="column text">
+    <h3>Minor Enhancements</h3>
+     <p>
         After go-live, we understand that new needs and refinements often emerge.<br>
         Whether it's renaming field labels or adjusting approval workflows, we’ve got you covered.<br>
         We support UI tweaks, logic updates, and functional improvements as your business evolves.<br>
         Our enhancement services ensure your system remains relevant and user-friendly.<br>
         Requests are handled efficiently to maintain continuity and satisfaction.<br>
         With Saasify, your solution grows in sync with your organizational goals.</p>
-    </div>
   </div>
+</div>
 </section>
 
 
@@ -476,7 +616,7 @@ footer {
             </select>
           </div>
           <div class="form-group">
-            <label>What is your enquiry about?*</label>
+            <label>Enquiry about?*</label>
             <select name="enquiry" required>
               <option value="">Choose...</option>
               <option>Enterprise Solutions</option>

@@ -8,40 +8,103 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4faff;
-      color: #2a2a2a;
-    }
-    section {
-      padding: 40px;
-    }
-    h1, h2 {
-      color: #0a1f44;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ section.hero-iom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
 
-    .cta-button,
-    button[type="submit"] {
-      background-color: #f4c300;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
     }
-    .cta-button:hover,
-    button[type="submit"]:hover {
-      background-color: #ffdb4d;
-    }
-    a {
-      color: #0a1f44;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #f4c300;
-    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
+.methodology {
+  background: #f4faff;
+  padding: 30px;
+  border-radius: 43px;
+  margin-bottom: 20px;
+}
 
 .infinity-process {
   position: relative;
@@ -53,125 +116,123 @@
 .loop-svg {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  height: auto;
   display: block;
+  margin: 0 auto;
 }
-.methodology {
-  background: #fff;
-  padding: 30px;
-  border-radius: 43px;
-  margin-bottom:20px;
-}
+
+/* Step cards */
 .step-card {
   position: absolute;
   background: #fff;
   padding: 16px 20px;
   border-radius: 12px;
-  width: 224px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  width: 220px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   text-align: left;
+  z-index: 1;
 }
 
 .step-card h3 {
   margin-top: 0;
   color: #0a1f44;
 }
-
 .step-card p {
   margin-bottom: 0;
   font-size: 0.9rem;
 }
+.step-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 36px;
+  color: #ccc;
+  opacity: 0.2;
+  z-index: 0;
+}
 
-/* Card positioning around the SVG */
+/* Positioning relative to SVG dots */
 .top-left {
-  top: 0;
+  top: 10px;
   left: 0;
 }
 .top-right {
-  top: 0;
+  top: 10px;
   right: 0;
 }
 .bottom-left {
-  bottom: 0;
+  bottom: 10px;
   left: 0;
 }
 .bottom-right {
-  bottom: 0;
+  bottom: 10px;
   right: 0;
 }
 
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .loop-svg {
+    display: none; /* Hide infinity SVG on small screens */
+  }
+
+  .infinity-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .step-card {
+    position: static;
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 20px;
+  }
+
+  .step-number {
+    font-size: 28px;
+    top: auto;
+    right: auto;
+    float: right;
+    opacity: 0.15;
+  }
+}
+
 .benefits-section {
-  position: relative;
   background-image: url('images/your-image.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 94%;
-  min-height: 100vh; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.benefit-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(10, 31, 68, 0.85); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 40px;
   box-sizing: border-box;
 }
 
+.benefit-overlay {
+  background-color: rgba(10, 31, 68, 0.85);
+  padding: 60px 20px;
+}
+
 .benefit-content {
-  width: 100%;
   max-width: 1200px;
-  z-index: 1;
+  margin: 0 auto;
   text-align: center;
   color: white;
 }
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .contact-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    .contact-left, .contact-right {
-      flex: 1 1 45%;
-    }
-    .contact-right form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, select, textarea {
-      padding: 8px;
-      width: 100%;
-    }
-.fancy-cards {
-  display: flex;
-  flex-wrap: wrap;
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
-  justify-content: center;
+  margin-top: 40px;
 }
 
 .benefit-card {
-  position: relative;
   background: white;
   border-radius: 12px;
   padding: 30px 25px;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2a2a2a;
+  text-align: left;
 }
 
 .benefit-card h3 {
@@ -180,21 +241,44 @@
 }
 
 .benefit-card p {
-  color: #2a2a2a;
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
 }
 
-.step-number {
-    position: absolute;
-    top: -5px;
-    right: 12px;
-    font-size: 83px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.05);
-    z-index: 0;
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+.benefit-overlay {
+  padding: 40px 15px;
 }
+
+.benefit-card {
+  padding: 20px 15px;
+}
+}
+@media (max-width: 1024px) {
+  .benefit-overlay {
+    padding: 40px 16px;
+  }
+}
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.contact-left, .contact-right {
+  flex: 1 1 45%;
+}
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, select, textarea {
+  padding: 8px;
+  width: 100%;
+}
+
 h2.main-heading {
     position: relative;
     margin-bottom: 56px;
@@ -214,6 +298,7 @@ h2.main-heading {
 }
 .contact-left {
   flex: 1 1 40%;
+  overflow: hidden;
 }
 .contact-left h2 {
   font-size: 32px;
@@ -233,7 +318,6 @@ h2.main-heading {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
-
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -277,6 +361,19 @@ button[type="submit"] {
 }
 button[type="submit"]:hover {
   background: #ffd500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
 }
 footer {
   background-color: #0a1f44;
@@ -368,81 +465,27 @@ footer {
   </style>
 </head>
 <body>
-  <div id="header"></div>
-  <section class="hero-esm" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 40px 40px; background-color: #f4faff;">
-  <div style="flex: 1 1 500px; padding-right: 20px;">
-    <h1 style="font-size: 2.5rem; color: #0a1f44; margin-bottom: 20px;">Enterprise Service Management</h1>
-    <p style="font-size: 1.1rem; line-height: 1.6; color: #2a2a2a;">
-      Streamline your internal operations by extending IT service management principles across HR, Facilities, Finance, and more. 
-      Saasify empowers organizations to improve efficiency, transparency, and user experience through unified service delivery.
-    </p>
-   <a href="contact_us_page.html">
-   <button class="cta-button" style="margin-top: 20px;">Talk to Us</button>
-   </a>
-  </div>
+<div id="header"></div>
 
-  <div style="flex: 1 1 500px; text-align: center;">
-    <img src="images\Enterprise Service M.png" alt="Enterprise Service Management Illustration" style="max-width: 100%; height: auto;" />
+<section class="hero-iom">
+  <div class="hero-text">
+   <h1>Enterprise Service Management</h1>
+      <p>Streamline your internal operations by extending IT service management principles across HR, Facilities, Finance, and more. 
+      Saasify empowers organizations to improve efficiency, transparency, and user experience through unified service delivery.</p>
+      <a href="contact_us_page.html">
+      <button class="cta-button">Get Support</button>
+    </a>
+  </div>
+  <div class="hero-image">
+   <img src="images\Enterprise Service M.png" alt="Enterprise Service Management Illustration" style="max-width: 100%; height: auto;" />
   </div>
 </section>
+
 <section class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> &gt;
     <a href="#">Services & Solutions</a> &gt;
     <span>Enterprise Service Management</span>
-  </div>
-</section>
-  <section class="methodology">
-  <h2 class="main-heading"><span class="span-border-bottom">Our Implementation Approach</span></h2>
-
-  <div class="infinity-process" style="position: relative;">
-    <!-- SVG with loop, dots and connecting lines -->
-    <svg viewBox="0 0 600 300" width="100%" height="auto" class="loop-svg" style="display: block; margin: 0 auto;">
-      <!-- Infinity path -->
-      <path d="M 100,150 
-               C 100,50 250,50 300,150 
-               C 350,250 500,250 500,150 
-               C 500,50 350,50 300,150 
-               C 250,250 100,250 100,150 Z"
-            fill="none"
-            stroke="#d3c5ff"
-            stroke-width="20"
-            stroke-linecap="round"/>
-
-      <!-- Circles (steps) -->
-      <circle cx="180" cy="75" r="8" fill="#7c3aed" />
-      <circle cx="180" cy="225" r="8" fill="#7c3aed" />
-      <circle cx="425" cy="75" r="8" fill="#7c3aed" />
-      <circle cx="425" cy="225" r="8" fill="#7c3aed" />
-
-      <!-- Connecting lines -->
-      <line x1="180" y1="75" x2="80" y2="40" stroke="#ccc" stroke-width="1.5" />
-      <line x1="180" y1="225" x2="80" y2="280" stroke="#ccc" stroke-width="1.5" />
-      <line x1="425" y1="75" x2="520" y2="40" stroke="#ccc" stroke-width="1.5" />
-      <line x1="425" y1="225" x2="520" y2="280" stroke="#ccc" stroke-width="1.5" />
-    </svg>
-
-    <!-- Step Cards -->
-    <div class="step-card top-left" style="top: 10px; left: 20px;">
-      <h3>Plan</h3>
-      <p>Understand goals and define the roadmap</p>
-      <span class="step-number">1</span>
-    </div>
-    <div class="step-card top-right" style="top: 10px; right: 20px;">
-      <h3>Design</h3>
-      <p>Customize for your unique environment</p>
-      <span class="step-number">2</span>
-    </div>
-    <div class="step-card bottom-right" style="bottom: 20px; right: 20px;">
-      <h3>Deploy</h3>
-      <p>Implement with minimal disruption</p>
-      <span class="step-number">3</span>
-    </div>
-    <div class="step-card bottom-left" style="bottom: 20px; left: 20px;">
-      <h3>Optimize</h3>
-      <p>Continuous value delivery </p>
-      <span class="step-number">4</span>
-    </div>
   </div>
 </section>
 
@@ -453,7 +496,7 @@ footer {
         <span class="span-border-bottom">Benefits of Saasify’s Solutions</span>
       </h2>
 
-      <div class="benefit-grid fancy-cards">
+      <div class="benefit-grid">
         <div class="benefit-card">
           <h3>Understanding the Business</h3>
           <p>The first step is to understand your business process and your difficulties. Using our expertise, we suggest the best practices for the process optimization with cost efficiency.</p>
@@ -471,6 +514,62 @@ footer {
           <p>Our post-implementation support ensures you stay confident. From training to troubleshooting, we help your team maintain momentum and success.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+ <section class="methodology">
+  <h2 class="main-heading">
+    <span class="span-border-bottom">Our Implementation Approach</span>
+  </h2>
+
+  <div class="infinity-process">
+    <!-- Infinity loop SVG -->
+    <svg viewBox="0 0 600 300" class="loop-svg">
+      <!-- Main infinity path -->
+      <path d="M 100,150 
+               C 100,50 250,50 300,150 
+               C 350,250 500,250 500,150 
+               C 500,50 350,50 300,150 
+               C 250,250 100,250 100,150 Z"
+            fill="none"
+            stroke="#d3c5ff"
+            stroke-width="20"
+            stroke-linecap="round"/>
+
+      <!-- Dots -->
+      <circle cx="180" cy="75" r="8" fill="#7c3aed" />
+      <circle cx="425" cy="75" r="8" fill="#7c3aed" />
+      <circle cx="425" cy="225" r="8" fill="#7c3aed" />
+      <circle cx="180" cy="225" r="8" fill="#7c3aed" />
+
+      <!-- Connecting lines -->
+      <line x1="180" y1="75" x2="80" y2="40" stroke="#bbb" stroke-width="1.5" />
+      <line x1="425" y1="75" x2="520" y2="40" stroke="#bbb" stroke-width="1.5" />
+      <line x1="425" y1="225" x2="520" y2="280" stroke="#bbb" stroke-width="1.5" />
+      <line x1="180" y1="225" x2="80" y2="280" stroke="#bbb" stroke-width="1.5" />
+    </svg>
+
+    <!-- Step cards positioned relative to dots -->
+    <div class="step-card top-left">
+      <h3>Plan</h3>
+      <p>Understand goals and define the roadmap</p>
+      <span class="step-number">1</span>
+    </div>
+    <div class="step-card top-right">
+      <h3>Design</h3>
+      <p>Customize for your unique environment</p>
+      <span class="step-number">2</span>
+    </div>
+    <div class="step-card bottom-right">
+      <h3>Deploy</h3>
+      <p>Implement with minimal disruption</p>
+      <span class="step-number">3</span>
+    </div>
+    <div class="step-card bottom-left">
+      <h3>Optimize</h3>
+      <p>Continuous value delivery</p>
+      <span class="step-number">4</span>
     </div>
   </div>
 </section>
@@ -522,7 +621,7 @@ footer {
             </select>
           </div>
           <div class="form-group">
-            <label>What is your enquiry about?*</label>
+            <label>Enquiry about?*</label>
             <select name="enquiry" required>
               <option value="">Choose...</option>
               <option>Enterprise Solutions</option>

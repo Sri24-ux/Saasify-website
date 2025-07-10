@@ -9,48 +9,98 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4faff;
-      color: #2a2a2a;
-    }
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ section.hero-iom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
     section.hero-iom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 40px;
-      background-color: #f4faff;
+        max-width: 95% !important;
     }
-    .hero-iom h1 {
-      font-size: 2.5rem;
-      color: #0a1f44;
-      margin-bottom: 20px;
-    }
-    .hero-iom p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #2a2a2a;
-    }
-    .cta-button {
-      background-color: #f4c300;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    .cta-button:hover {
-      background-color: #ffdb4d;
-    }
-    .hero-iom img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    .contact-form {
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
+
+ .contact-form {
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
@@ -87,6 +137,7 @@ h2.main-heading {
 }
 .contact-left {
   flex: 1 1 40%;
+  overflow: hidden;
 }
 .contact-left h2 {
   font-size: 32px;
@@ -149,6 +200,19 @@ button[type="submit"] {
 }
 button[type="submit"]:hover {
   background: #ffd500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
 }
 footer {
   background-color: #0a1f44;
@@ -218,60 +282,41 @@ footer {
     flex-direction: column;
   }
 }
-
 .benefits-section {
-  position: relative;
   background-image: url('images/your-image.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 100vh; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.benefit-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(10, 31, 68, 0.85); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 40px;
   box-sizing: border-box;
 }
+
+.benefit-overlay {
+  background-color: rgba(10, 31, 68, 0.85);
+  padding: 60px 20px;
+}
+
 .benefit-content {
-  width: 100%;
   max-width: 1200px;
-  z-index: 1;
+  margin: 0 auto;
   text-align: center;
   color: white;
 }
- .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-}
-.fancy-cards {
-  display: flex;
-  flex-wrap: wrap;
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
-  justify-content: center;
+  margin-top: 40px;
 }
 
 .benefit-card {
-  position: relative;
   background: white;
   border-radius: 12px;
   padding: 30px 25px;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2a2a2a;
+  text-align: left;
 }
 
 .benefit-card h3 {
@@ -280,12 +325,31 @@ footer {
 }
 
 .benefit-card p {
-  color: #2a2a2a;
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
 }
-   
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .benefit-overlay {
+    padding: 40px 15px;
+  }
+
+  .benefit-card {
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 1024px) {
+  .benefit-overlay {
+    padding: 40px 16px;
+  }
+}
+ .how-it-works {
+  background-color: #f4faff;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}  
 .how-steps-row {
   display: flex;
   justify-content: center;
@@ -318,20 +382,16 @@ footer {
 }
 
 .step-badge {
-  position: absolute;
-  top: -15px;
-  left: 152px;
-  background-color: #0a1f44;
-  color: white;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    background-color: #0a1f44;
+    color: white;
+    position: absolute;
+    align-items: center;
+    width: 30px;
+    height: 22px;
+    border-radius: 16%;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .step-card i {
@@ -339,9 +399,10 @@ footer {
   margin-bottom: 12px;
   color: #00c896;
 }
-.how-it-works{
-  background-color: #f4faff;
-  height: 678px;
+@media (max-width: 768px) {
+  .how-steps-row::before {
+    display: none;
+  }
 }
 .breadcrumb {
   padding: 15px 40px;
@@ -365,20 +426,21 @@ footer {
   </style>
 </head>
 <body>
-  <div id="header"></div>
-  
-  <section class="hero-iom">
-    <div style="flex: 1 1 500px; padding-right: 20px;">
-      <h1>Empower Your IT Operations with Intelligence & Automation</h1>
-      <p>IT forms the backbone of every digital enterprise—from data‑centers and networks to cloud services and end‑user devices. Saasify partners with you to ensure seamless availability, health, and performance across all IT layers. We guide you through selecting and implementing the right ITOM tools, configure them to your needs, integrate with your systems, train your team, and provide ongoing support — all to drive ROI and robust service continuity.</p>
-      <a href="contact_us_page.html">
-        <button class="cta-button">Book a Demo</button>
-      </a>
-    </div>
-    <div  style="flex: 1 1 400px; text-align: center;">
-      <img src="images/IT-operation_img.jpg" alt="IT Operations Management" />
-    </div>
-  </section>
+<div id="header"></div>
+
+<section class="hero-iom">
+  <div class="hero-text">
+   <h1>Empower Your IT Operations with Intelligence & Automation</h1>
+   <p>IT forms the backbone of every digital enterprise—from data‑centers and networks to cloud services and end‑user devices. Saasify partners with you to ensure seamless availability, health, and performance across all IT layers. We guide you through selecting and implementing the right ITOM tools, configure them to your needs, integrate with your systems, train your team, and provide ongoing support — all to drive ROI and robust service continuity.</p>
+       <a href="contact_us_page.html">
+      <button class="cta-button">Get Support</button>
+    </a>
+  </div>
+  <div class="hero-image">
+   <img src="images/IT-operation_img.jpg" alt="IT Operations Management" />
+  </div>
+</section>
+
   <section class="breadcrumb">
     <div class="breadcrumb-container">
       <a href="index.html">Home</a> &gt;
@@ -386,6 +448,7 @@ footer {
       <span>IT Operations Management</span>
     </div>
   </section>
+
 <section class="benefits-section">
   <div class="benefit-overlay">
     <div class="benefit-content">
@@ -393,7 +456,7 @@ footer {
         <span class="span-border-bottom">Core Benefits of Saasify's IT Operations Management</span>
       </h2>
 
-      <div class="benefit-grid fancy-cards">
+      <div class="benefit-grid">
         <div class="benefit-card">
           <h3>Unified Visibility</h3>
           <p>Centralized dashboards bring server, network, application, and endpoint metrics into one pane for simplified monitoring and control.</p>
@@ -508,7 +571,7 @@ footer {
             </select>
           </div>
           <div class="form-group">
-            <label>What is your enquiry about?*</label>
+            <label>Enquiry about?*</label>
             <select name="enquiry" required>
               <option value="">Choose...</option>
               <option>Enterprise Solutions</option>
