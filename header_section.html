@@ -1,559 +1,663 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saasify Solutions</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"> </script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #2a2a2a;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px;
-      background-color: #0a1f44;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: fixed !important;
-      top: 0;
-      left: 0;
-      width: 95%;
-      z-index: 1000;
-      box-sizing: content-box;
-    }
-    .logo img {
-      height: 40px;
-    }
-    nav {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      color: white;
-    }
-    nav .dropdown {
-      position: relative;
-    }
-    nav .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: rgba(10, 31, 68, 0.95);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      z-index: 999;
-      min-width: 200px;
-      color: white;
-    }
-    .two-column-dropdown {
-      display: flex;
-      gap: 40px;
-      min-width: 500px !important;
-    }
-    .dropdown-column {
-      flex: 1;
-    }
-    .dropdown-column h4 {
-      font-size: 1rem;
-      margin-bottom: 10px;
-      color: #55ffbe;
-      border-bottom: 1px solid #55ffbe;
-      padding-bottom: 5px;
-    }
-    .dropdown-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .dropdown-column ul li {
-      margin: 6px 0;
-    }
-    .dropdown-column ul li a {
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-      padding-bottom: 2px;
-      display: inline-block;
-      border-bottom: 2px solid transparent;
-    }
-    nav .dropdown:hover .dropdown-content {
-      display: flex;
-    }
-    nav .dropdown-content ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    nav .dropdown-content ul li a {
-      display: block;
-      padding: 10px 20px;
-      color: white;
-      text-decoration: none;
-      position: relative;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-    }
-    nav .dropdown-content ul li a::after {
-      content: '';
-      position: absolute;
-      left: 20px;
-      bottom: 8px;
-      width: 0;
-      height: 2px;
-      background-color: #00c896;
-      transition: width 0.3s ease;
-    }
-    nav .dropdown-content ul li a:hover::after {
-      width: calc(100% - 40px);
-    }
-    nav .dropdown-content ul li a:hover {
-      color: rgba(244, 248, 248, 0.966);
-    }
-    .right-icons {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-    .right-icons i {
-      font-size: 1.2rem;
-      cursor: pointer;
-      color: white;
-    }
-    .right-icons i:hover {
-      color: #f4c300;
-    }
-    .right-icons button {
-      padding: 8px 16px;
-      border: none;
-      background-color: #f4c300;
-      color: #000;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .about-dropdown {
-      display: none;
-      flex-direction: row;
-      gap: 40px;
-    }
-    .dropdown:hover .about-dropdown {
-      display: flex;
-    }
-    nav a {
-      text-decoration: none;
-    }
-    ul, li {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .navbar {
-      list-style: none !important;
-    }
-    .navbar li {
-      list-style-type: none !important;
-    }
-
-    /* Mobile Specific */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-    }
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background-color: #0a1f44;
-      padding: 20px;
-      position: absolute;
-      top: 62px;
-    }
-    .mobile-nav .accordion-item {
-      border-bottom: 1px solid #444;
-    }
-    .accordion-header {
-      color: white;
-      padding: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .accordion-content {
-      display: none;
-      padding: 10px 20px;
-    }
-    .accordion-content a {
-      display: block;
-      padding: 8px 0;
-      color: #ccc;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .accordion-content a:hover {
-      color: #f4c300;
-    }
-    @media screen and (max-width: 768px) {
-      nav, .right-icons {
-        display: none !important;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      .mobile-nav {
-        display: flex;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saasify Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #2a2a2a;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background-color: #0a1f44;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 95%;
+            z-index: 1000;
+            box-sizing: content-box;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            color: white;
+        }
+        
+        nav .dropdown {
+            position: relative;
+        }
+        
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(10, 31, 68, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 999;
+            min-width: 200px;
+            color: white;
+        }
+        
+        .two-column-dropdown {
+            display: flex;
+            gap: 40px;
+            min-width: 500px !important;
+        }
+        
+        .dropdown-column {
+            flex: 1;
+        }
+        
+        .dropdown-column h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #55ffbe;
+            border-bottom: 1px solid #55ffbe;
+            padding-bottom: 5px;
+        }
+        
+        .dropdown-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .dropdown-column ul li {
+            margin: 6px 0;
+        }
+        
+        .dropdown-column ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            padding-bottom: 2px;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+        
+        nav .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+        
+        nav .dropdown-content ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav .dropdown-content ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav .dropdown-content ul li a::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            bottom: 8px;
+            width: 0;
+            height: 2px;
+            background-color: #00c896;
+            transition: width 0.3s ease;
+        }
+        
+        nav .dropdown-content ul li a:hover::after {
+            width: calc(100% - 40px);
+        }
+        
+        nav .dropdown-content ul li a:hover {
+            color: rgba(244, 248, 248, 0.966);
+        }
+        
+        .right-icons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .right-icons i {
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: white;
+        }
+        
+        .right-icons i:hover {
+            color: #f4c300;
+        }
+        
+        .right-icons button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #f4c300;
+            color: #000;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .about-dropdown {
+            display: none;
+            flex-direction: row;
+            gap: 40px;
+        }
+        
+        .dropdown:hover .about-dropdown {
+            display: flex;
+        }
+        
+        nav a {
+            text-decoration: none;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            list-style: none !important;
+        }
+        
+        .navbar li {
+            list-style-type: none !important;
+        }
+        /* Mobile Specific */
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #0a1f44;
+            padding: 20px;
+            position: absolute;
+            top: 62px;
+        }
+        
+        .mobile-nav .accordion-item {
+            border-bottom: 1px solid #444;
+        }
+        
+        .accordion-header {
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-content {
+            display: none;
+            padding: 10px 20px;
+        }
+        
+        .accordion-content a {
+            display: block;
+            padding: 8px 0;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .accordion-content a:hover {
+            color: #f4c300;
+        }
+        
+        @media screen and (max-width: 768px) {
+            nav,
+            .right-icons {
+                display: none !important;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+        }
+        
+        .submenu {
+            display: none;
+            padding-left: 15px;
+        }
+        
+        .submenu-toggle {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #55ffbe;
+            border-bottom: 1px solid #55ffbe;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+        
+        .submenu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/Saasify_logo.png" alt="Saasify Logo" />
-      </a>
-    </div>
-    <span class="menu-toggle" onclick="toggleMobileMenu()">☰</span>
- 
-    <nav>
-      <div class="dropdown">
-        <span style="color: white;">Services & Solutions</span>
-        <div class="dropdown-content two-column-dropdown">
-          <div class="dropdown-column">
-             <h4>Services</h4>
-          <ul>
-            <li><a href="consulting-services.html">Consulting</a></li>
-            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
-            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
-            <li><a href="training-services.html">Training & Enablement</a></li>
-            <li><a href="Ongoing_support.html">Ongoing Support</a></li>
-            <li><a href="managed-services.html">Managed Services</a></li>
-          </ul>
-          </div>
-          <div class="dropdown-column">
-            <h4>Solutions</h4>
-           <ul>
-            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
-            <li><a href="it-security-management.html">IT Security Management</a></li>
-            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-            <li><a href="Business-analytics.html">Business Analytics</a></li> 
-            <li><a href="business-pro-management.html">Business Process Management</a></li>
-          </ul>
-          </div>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+            </a>
         </div>
-      </div>
-      <div class="dropdown">
-        <span style="color: white;">Platform Proficiency</span> 
-        <div class="dropdown-content">
-          <ul>
-             <li><a href="IAM.html">IAM</a></li>
-             <li><a href="ITSM.html">ITSM</a></li>
-             <li><a href="ITOM.html">ITOM</a></li>
-             <li><a href="IT-Analysis.html">IT Analysis</a></li>
-             <li><a href="SIEM.html">SIEM</a></li>
-             <li><a href="UEM.html">UEM</a></li>
-          </ul>
+        <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+        <nav>
+            <div class="dropdown">
+                <span style="color: white;">Services & Solutions</span>
+                <div class="dropdown-content two-column-dropdown">
+                    <div class="dropdown-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="consulting-services.html">Consulting</a></li>
+                            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
+                            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
+                            <li><a href="training-services.html">Training & Enablement</a></li>
+                            <li><a href="Ongoing_support.html">Ongoing Support</a></li>
+                            <li><a href="managed-services.html">Managed Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="it-operations-management.html">IT Operations Management</a></li>
+                            <li><a href="it-security-management.html">IT Security Management</a></li>
+                            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
+                            <li><a href="Business-analytics.html">Business Analytics</a></li>
+                            <li><a href="business-pro-management.html">Business Process Management</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span style="color: white;">Platform Proficiency</span>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="IAM.html">IAM</a></li>
+                        <li><a href="ITSM.html">ITSM</a></li>
+                        <li><a href="ITOM.html">ITOM</a></li>
+                        <li><a href="IT-Analysis.html">IT Analysis</a></li>
+                        <li><a href="SIEM.html">SIEM</a></li>
+                        <li><a href="UEM.html">UEM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span style="color: white;">Company Overview</span>
+                <div class="dropdown-content about-dropdown">
+                    <ul>
+                        <li><a href="about_us.html">About Saasify</a></li>
+                        <li><a href="our-team.html">Our Team</a></li>
+                        <li><a href="our-presence.html">Our Presence</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span style="color: white;">Careers</span>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="saasify-careers.html">Job Vacancy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul>
+                <li><a href="insight-page.html" style="color: white;">Insights</a></li>
+            </ul>
+        </nav>
+        <div class="right-icons">
+            <a href="contact_us_page.html">
+                <button>Contact Us</button>
+            </a>
         </div>
-      </div>
-      <div class="dropdown">
-  <span style="color: white;">Company Overview</span>
-  <div class="dropdown-content about-dropdown">
-    <ul>
-      <li><a href="about_us.html">About Saasify</a></li>
-      <li><a href="our-team.html">Our Team</a></li>
-      <li><a href="our-presence.html">Our Presence</a></li>
-    </ul>
-  </div>
-</div>
-      </div>
-<div class="dropdown">
-        <span style="color: white;">Careers</span>  
-        <div class="dropdown-content">
-          <ul>
-            <li><a href="saasify-careers.html">Job Vacancy</a></li>  
-          </ul>
-        </div>
-      </div>
-<ul>
-  <li><a href="insight-page.html" style="color: white;">Insights</a></li>
-</ul>
-   
-    </nav>
-    <div class="right-icons">
-      <a href="contact_us_page.html">
-        <button>Contact Us</button>
-      </a>
-    </div>
-  </header>
+    </header>
 
-  <div class="mobile-nav" id="mobileMenu">
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">Services & Solutions</div>
-      <div class="accordion-content">
-        <a href="consulting-services.html">Consulting</a>
-        <a href="evaluation-assistance.html">Evaluation Assistance</a>
-        <a href="Imp-Cust-service.html">Implementation</a>
-        <a href="training-services.html">Training</a>
-        <a href="Ongoing_support.html">Ongoing Support</a>
-        <a href="managed-services.html">Managed Services</a>
-        <hr style="border: 0; height: 1px; background: #444;">
-        <a href="it-operations-management.html">IT Operations Management</a>
-        <a href="it-security-management.html">IT Security Management</a>
-        <a href="enterprise-service.html">Enterprise Service Management</a>
-        <a href="Business-analytics.html">Business Analytics</a>
-        <a href="business-pro-management.html">Business Process Management</a>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">Platform Proficiency</div>
-      <div class="accordion-content">
-        <a href="IAM.html">IAM</a>
-        <a href="ITSM.html">ITSM</a>
-        <a href="ITOM.html">ITOM</a>
-        <a href="IT-Analysis.html">IT Analysis</a>
-        <a href="SIEM.html">SIEM</a>
-        <a href="UEM.html">UEM</a>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">Company Overview</div>
-      <div class="accordion-content">
-        <a href="about_us.html">About Saasify</a>
-        <a href="our-team.html">Our Team</a>
-        <a href="our-presence.html">Our Presence</a>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">Careers</div>
-      <div class="accordion-content">
-        <a href="saasify-careers.html">Job Vacancy</a>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header"><a href="insight-page.html" style="color: white;">Insights</a></div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header"><a href="contact_us_page.html" style="color: #f4c300;">Contact Us</a></div>
-    </div>
-  </div>
+    <div class="mobile-menu" id="mobileMenu" style="display: none;">
+        <!-- Services -->
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Services ▼</div>
+        <div class="submenu">
+            <a href="consulting-services.html">Consulting</a>
+            <a href="evaluation-assistance.html">Evaluation Assistance</a>
+            <a href="Imp-Cust-service.html">Implementation and Customisation</a>
+            <a href="training-services.html">Training & Enablement</a>
+            <a href="Ongoing_support.html">Ongoing Support</a>
+            <a href="managed-services.html">Managed Services</a>
+        </div>
 
-  <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-    }
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const isOpen = content.style.display === "block";
-      document.querySelectorAll(".accordion-content").forEach(el => el.style.display = "none");
-      content.style.display = isOpen ? "none" : "block";
-    }
-  </script>
+        <!-- Solutions -->
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Solutions ▼</div>
+        <div class="submenu">
+            <a href="it-operations-management.html">IT Operations Management</a>
+            <a href="it-security-management.html">IT Security Management</a>
+            <a href="enterprise-service.html">Enterprise Service Management</a>
+            <a href="Business-analytics.html">Business Analytics</a>
+            <a href="business-pro-management.html">Business Process Management</a>
+        </div>
+
+        <!-- Platform Proficiency -->
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Platform Proficiency ▼</div>
+        <div class="submenu">
+            <a href="IAM.html">IAM</a>
+            <a href="ITSM.html">ITSM</a>
+            <a href="ITOM.html">ITOM</a>
+            <a href="IT-Analysis.html">IT Analysis</a>
+            <a href="SIEM.html">SIEM</a>
+            <a href="UEM.html">UEM</a>
+        </div>
+
+        <!-- Company Overview -->
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Company Overview ▼</div>
+        <div class="submenu">
+            <a href="about_us.html">About Saasify</a>
+            <a href="our-team.html">Our Team</a>
+            <a href="our-presence.html">Our Presence</a>
+        </div>
+
+        <!-- Careers -->
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Careers ▼</div>
+        <div class="submenu">
+            <a href="saasify-careers.html">Job Vacancy</a>
+        </div>
+
+        <!-- Insights -->
+        <a href="insight-page.html" style="display:block; margin-top: 10px;">Insights</a>
+
+        <!-- Contact Us -->
+        <a href="contact_us_page.html" style="display:block; margin-top: 10px;">Contact Us</a>
+    </div>
+
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        }
+
+        function toggleSubmenu(element) {
+            const submenu = element.nextElementSibling;
+            if (submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+                element.textContent = element.textContent.replace('▲', '▼');
+            } else {
+                submenu.style.display = 'block';
+                element.textContent = element.textContent.replace('▼', '▲');
+            }
+        }
+
+
+
+        function toggleDropdown(el) {
+            const dropdown = el.nextElementSibling;
+            // Close all others first
+            document.querySelectorAll('.dropdown-content.active').forEach(menu => {
+                if (menu !== dropdown) menu.classList.remove('active');
+            });
+            // Toggle clicked
+            dropdown.classList.toggle('active');
+        }
+        // Optional: close dropdowns when clicking outside
+        window.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('dropdown-toggle')) {
+                document.querySelectorAll('.dropdown-content.active').forEach(menu => menu.classList.remove('active'));
+            }
+        });
+    </script>
 </body>
+
 </html>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Navigation - Saasify</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px;
-      background-color: #0a1f44;
-      color: white;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-    .logo img {
-      height: 40px;
-    }
-    .menu-toggle {
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-    .mobile-nav, .mobile-submenu {
-      display: none;
-      flex-direction: column;
-      background-color: #0a1f44;
-      position: absolute;
-      top: 60px;
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .accordion-header, .accordion-subitem {
-      color: white;
-      padding: 12px;
-      font-weight: 600;
-      border-bottom: 1px solid #2a2a2a;
-      cursor: pointer;
-    }
-    .accordion-subitem a {
-      color: #ccc;
-      text-decoration: none;
-      display: block;
-      padding: 10px 0;
-    }
-    .accordion-subitem a:hover {
-      color: #f4c300;
-    }
-    .back-button {
-      color: #f4c300;
-      padding: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Navigation - Saasify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background-color: #0a1f44;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .menu-toggle {
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        .mobile-nav,
+        .mobile-submenu {
+            display: none;
+            flex-direction: column;
+            background-color: #0a1f44;
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .accordion-header,
+        .accordion-subitem {
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+            border-bottom: 1px solid #2a2a2a;
+            cursor: pointer;
+        }
+        
+        .accordion-subitem a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+        
+        .accordion-subitem a:hover {
+            color: #f4c300;
+        }
+        
+        .back-button {
+            color: #f4c300;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/Saasify_logo.png" alt="Saasify Logo" />
-      </a>
-    </div>
-    <span class="menu-toggle" onclick="toggleMobileMenu()">☰</span>
- 
-    <nav>
-      <div class="dropdown">
-        <span style="color: white;">Services & Solutions</span>
-        <div class="dropdown-content two-column-dropdown">
-          <div class="dropdown-column">
-             <h4>Services</h4>
-          <ul>
-            <li><a href="consulting-services.html">Consulting</a></li>
-            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
-            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
-            <li><a href="training-services.html">Training & Enablement</a></li>
-            <li><a href="Ongoing_support.html">Ongoing Support</a></li>
-            <li><a href="managed-services.html">Managed Services</a></li>
-          </ul>
-          </div>
-          <div class="dropdown-column">
-            <h4>Solutions</h4>
-           <ul>
-            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
-            <li><a href="it-security-management.html">IT Security Management</a></li>
-            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-            <li><a href="Business-analytics.html">Business Analytics</a></li> 
-            <li><a href="business-pro-management.html">Business Process Management</a></li>
-          </ul>
-          </div>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+            </a>
         </div>
-      </div>
-      <div class="dropdown">
-        <span style="color: white;">Platform Proficiency</span> 
-        <div class="dropdown-content">
-          <ul>
-             <li><a href="IAM.html">IAM</a></li>
-             <li><a href="ITSM.html">ITSM</a></li>
-             <li><a href="ITOM.html">ITOM</a></li>
-             <li><a href="IT-Analysis.html">IT Analysis</a></li>
-             <li><a href="SIEM.html">SIEM</a></li>
-             <li><a href="UEM.html">UEM</a></li>
-          </ul>
+        <span class="menu-toggle" onclick="toggleMobileMenu()">☰</span>
+
+        <nav>
+            <div class="dropdown">
+                <span style="color: white;">Services & Solutions</span>
+                <div class="dropdown-content two-column-dropdown">
+                    <div class="dropdown-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="consulting-services.html">Consulting</a></li>
+                            <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
+                            <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
+                            <li><a href="training-services.html">Training & Enablement</a></li>
+                            <li><a href="Ongoing_support.html">Ongoing Support</a></li>
+                            <li><a href="managed-services.html">Managed Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="it-operations-management.html"> IT Operations Management</a></li>
+                            <li><a href="it-security-management.html">IT Security Management</a></li>
+                            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
+                            <li><a href="Business-analytics.html">Business Analytics</a></li>
+                            <li><a href="business-pro-management.html">Business Process Management</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span style="color: white;">Platform Proficiency</span>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="IAM.html">IAM</a></li>
+                        <li><a href="ITSM.html">ITSM</a></li>
+                        <li><a href="ITOM.html">ITOM</a></li>
+                        <li><a href="IT-Analysis.html">IT Analysis</a></li>
+                        <li><a href="SIEM.html">SIEM</a></li>
+                        <li><a href="UEM.html">UEM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span style="color: white;">Company Overview</span>
+                <div class="dropdown-content about-dropdown">
+                    <ul>
+                        <li><a href="about_us.html">About Saasify</a></li>
+                        <li><a href="our-team.html">Our Team</a></li>
+                        <li><a href="our-presence.html">Our Presence</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <div class="dropdown">
+                <span style="color: white;">Careers</span>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="saasify-careers.html">Job Vacancy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul>
+                <li><a href="insight-page.html" style="color: white;">Insights</a></li>
+            </ul>
+
+        </nav>
+        <div class="right-icons">
+            <a href="contact_us_page.html">
+                <button>Contact Us</button>
+            </a>
         </div>
-      </div>
-      <div class="dropdown">
-  <span style="color: white;">Company Overview</span>
-  <div class="dropdown-content about-dropdown">
-    <ul>
-      <li><a href="about_us.html">About Saasify</a></li>
-      <li><a href="our-team.html">Our Team</a></li>
-      <li><a href="our-presence.html">Our Presence</a></li>
-    </ul>
-  </div>
-</div>
-      </div>
-<div class="dropdown">
-        <span style="color: white;">Careers</span>  
-        <div class="dropdown-content">
-          <ul>
-            <li><a href="saasify-careers.html">Job Vacancy</a></li>  
-          </ul>
+    </header>
+
+
+    <div class="mobile-nav" id="mobileMenu">
+        <div class="accordion-header" onclick="showSubMenu('servicesSubMenu')">Services & Solutions</div>
+        <div class="accordion-header"><a href="platform.html" style="color:white">Platform Proficiency</a></div>
+        <div class="accordion-header"><a href="about_us.html" style="color:white">Company Overview</a></div>
+        <div class="accordion-header"><a href="saasify-careers.html" style="color:white">Careers</a></div>
+        <div class="accordion-header"><a href="insight-page.html" style="color:white">Insights</a></div>
+        <div class="accordion-header"><a href="contact_us_page.html" style="color:#f4c300">Contact Us</a></div>
+    </div>
+
+    <div class="mobile-submenu" id="servicesSubMenu">
+        <div class="back-button" onclick="showMainMenu()">← Back</div>
+        <div class="accordion-subitem">
+            <a href="consulting-services.html">Consulting</a>
+            <a href="evaluation-assistance.html">Evaluation Assistance</a>
+            <a href="Imp-Cust-service.html">Implementation</a>
+            <a href="training-services.html">Training</a>
+            <a href="Ongoing_support.html">Ongoing Support</a>
+            <a href="managed-services.html">Managed Services</a>
+            <hr style="border: 0; height: 1px; background: #444;">
+            <a href="it-operations-management.html">IT Operations Management</a>
+            <a href="it-security-management.html">IT Security Management</a>
+            <a href="enterprise-service.html">Enterprise Service Management</a>
+            <a href="Business-analytics.html">Business Analytics</a>
+            <a href="business-pro-management.html">Business Process Management</a>
         </div>
-      </div>
-<ul>
-  <li><a href="insight-page.html" style="color: white;">Insights</a></li>
-</ul>
-   
-    </nav>
-    <div class="right-icons">
-      <a href="contact_us_page.html">
-        <button>Contact Us</button>
-      </a>
     </div>
-  </header>
 
+    <script>
+        function toggleMobileMenu() {
+            const main = document.getElementById("mobileMenu");
+            const sub = document.getElementById("servicesSubMenu");
+            main.style.display = main.style.display === "flex" ? "none" : "flex";
+            sub.style.display = "none";
+        }
 
-  <div class="mobile-nav" id="mobileMenu">
-    <div class="accordion-header" onclick="showSubMenu('servicesSubMenu')">Services & Solutions</div>
-    <div class="accordion-header"><a href="platform.html" style="color:white">Platform Proficiency</a></div>
-    <div class="accordion-header"><a href="about_us.html" style="color:white">Company Overview</a></div>
-    <div class="accordion-header"><a href="saasify-careers.html" style="color:white">Careers</a></div>
-    <div class="accordion-header"><a href="insight-page.html" style="color:white">Insights</a></div>
-    <div class="accordion-header"><a href="contact_us_page.html" style="color:#f4c300">Contact Us</a></div>
-  </div>
+        function showSubMenu(id) {
+            document.getElementById("mobileMenu").style.display = "none";
+            document.getElementById(id).style.display = "flex";
+        }
 
-  <div class="mobile-submenu" id="servicesSubMenu">
-    <div class="back-button" onclick="showMainMenu()">← Back</div>
-    <div class="accordion-subitem">
-      <a href="consulting-services.html">Consulting</a>
-      <a href="evaluation-assistance.html">Evaluation Assistance</a>
-      <a href="Imp-Cust-service.html">Implementation</a>
-      <a href="training-services.html">Training</a>
-      <a href="Ongoing_support.html">Ongoing Support</a>
-      <a href="managed-services.html">Managed Services</a>
-      <hr style="border: 0; height: 1px; background: #444;">
-      <a href="it-operations-management.html">IT Operations Management</a>
-      <a href="it-security-management.html">IT Security Management</a>
-      <a href="enterprise-service.html">Enterprise Service Management</a>
-      <a href="Business-analytics.html">Business Analytics</a>
-      <a href="business-pro-management.html">Business Process Management</a>
-    </div>
-  </div>
-
-  <script>
-    function toggleMobileMenu() {
-      const main = document.getElementById("mobileMenu");
-      const sub = document.getElementById("servicesSubMenu");
-      main.style.display = main.style.display === "flex" ? "none" : "flex";
-      sub.style.display = "none";
-    }
-
-    function showSubMenu(id) {
-      document.getElementById("mobileMenu").style.display = "none";
-      document.getElementById(id).style.display = "flex";
-    }
-
-    function showMainMenu() {
-      document.getElementById("mobileMenu").style.display = "flex";
-      document.getElementById("servicesSubMenu").style.display = "none";
-    }
-  </script>
+        function showMainMenu() {
+            document.getElementById("mobileMenu").style.display = "flex";
+            document.getElementById("servicesSubMenu").style.display = "none";
+        }
+    </script>
 </body>
+
 </html>
