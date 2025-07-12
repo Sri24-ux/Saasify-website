@@ -6,45 +6,97 @@
   <title>Insights – Saasify</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="insights-data.js"></script>
-
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #e8fdf6;
-      color: #0a1f44;
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
   }
-  .career-hero {
+ section.hero-iom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 63px 40px;
+  padding: 60px 40px;
   background-color: #f4faff;
-   }
- .career-text {
-  flex: 1 1 50%;
-  max-width: 550px;
-}
-.career-text h1 {
-  font-size: 2.4rem;
-  color: #0a1f44;
 }
 
-.career-text p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #333;
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
 }
-.career-image {
+
+.hero-image {
   flex: 1 1 45%;
   text-align: center;
 }
 
-.career-image img {
-  max-width: 60%;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
+    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
 }
     .insights-nav {
       display: flex;
@@ -116,7 +168,7 @@
       font-size: 0.95rem;
       text-decoration: none;
     }
-    .insight-contact {
+.insight-contact {
   background-color: #f4faff;
   padding: 50px 20px;
 }
@@ -156,6 +208,11 @@
 }
 .insight-contact-btn:hover {
   background-color: #ffd500;
+}
+@media (max-width: 600px) {
+  .insight-contact-wrapper {
+    padding: 20px;
+  }
 }
 footer {
   background-color: #0a1f44;
@@ -235,14 +292,18 @@ footer {
   </style>
 </head>
 <body>
-   <div id="header"></div>
-  <section class="career-hero">
-  <div class="career-text">
-    <h1>Explore What Drives Saasify Forward.</h1>
-    <p>Discover the latest trends, compelling success stories, and expert-driven insights that are shaping the future of enterprise technology. At Saasify, we go beyond the surface—exploring innovation, digital transformation strategies, and real-world impact across industries. Whether you're seeking to modernize IT operations, embrace automation, or unlock new efficiencies, our insights empower you to make smarter decisions and stay ahead in a rapidly evolving digital landscape.</p>
+<div id="header"></div>
+
+<section class="hero-iom">
+  <div class="hero-text">
+   <h1>Explore What Drives Saasify Forward.</h1>
+     <p>Discover the latest trends, compelling success stories, and expert-driven insights that are shaping the future of enterprise technology. At Saasify, we go beyond the surface—exploring innovation, digital transformation strategies, and real-world impact across industries. Whether you're seeking to modernize IT operations, embrace automation, or unlock new efficiencies, our insights empower you to make smarter decisions and stay ahead in a rapidly evolving digital landscape.</p>  
+        <a href="contact_us_page.html">
+      <button class="cta-button">Get Support</button>
+    </a>
   </div>
-  <div class="career-image">
-    <img src="images/insight.png" alt="Insight image">
+  <div class="hero-image">
+   <img src="images/insight.png" alt="Insight image">
   </div>
 </section>
 

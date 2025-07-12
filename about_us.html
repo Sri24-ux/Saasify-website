@@ -9,104 +9,126 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-Fd...Omf"
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    referrerpolicy="no-referrer"/>
   <style>
-    /* Base Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #2a2a2a;
-    }
-    h1, h2, h3 {
-      color: #0a1f44;
-    }
-    p {
-      padding: 6px;
-    }
-    .service-card img{ 
-       max-width: 16%;
-	     display:block; 
-       margin: 0 auto;
-    }
-    section {
-      padding: 40px;
-    }
-   .hero-text {
-      max-width: 50%;
-    }
-    .hero-text h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    .hero-text p {
-      margin-bottom: 20px;
-    }
-    .hero-text button {
-      background-color: #f4c300;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      padding: 70px 40px;
-      border-radius: 8px;
-      background-color: #f4faff;
-     }
-     h2.main-heading {
-      position: relative;
-      margin-bottom: 35px;
-      text-align: center;
-    }
-    .span-border-bottom {
-      border-bottom: 3px solid #55ffbe;
-     }
-    .hero .text { flex: 1; margin-right: 2rem; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero .cta { display: inline-block; background: #0077cc; color: #fff; padding: .75rem 1.5rem; border-radius: 4px; text-decoration: none; }
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ section.hero-iom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
 
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
+    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
+  
     /* Icons section */
     .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;margin-bottom:2rem; }
     .feature-card { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
     .feature-card i { font-size: 2.5rem; color: #0077cc; margin-bottom: 1rem; }
 
-    /* Services */
-    .services, .outcomes { margin-bottom: 2rem; }
-    .service-list, .outcome-list { list-style: none; }
-    .service-list li, .outcome-list li { margin-bottom: .5rem; padding-left: 1.5rem; position: relative; }
-    .service-list li:before, .outcome-list li:before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #0077cc;
-    }
-
 .vision-mission-wrapper {
   display: flex;
   justify-content: center;
   background-color: #f4faff;
+  padding: 60px 20px;
 }
 
 .vision-mission-card {
   display: flex;
+  flex-direction: row;         
   max-width: 1257px;
+  width: 100%;
   background-color: #fff;
   border-radius: 0 20px 20px 0;
   overflow: hidden;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-  flex-wrap: wrap;
 }
 
 .vision-mission-left {
   flex: 1 1 40%;
+  min-width: 300px;
   background-color: #eaeaea;
   display: flex;
   align-items: center;
@@ -115,10 +137,9 @@
 }
 
 .vision-mission-left img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    border-radius: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .vision-mission-right {
@@ -150,6 +171,42 @@
   margin-bottom: 30px;
 }
 
+@media (max-width: 1024px) {
+  .vision-mission-card {
+    flex-direction: column;     
+    border-radius: 20px;
+  }
+  .vision-mission-left {
+    clip-path: ellipse(100% 100% at 50% 50%);
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .vision-mission-card {
+    max-width: 1400px;   
+  }
+  .vision-mission-left {
+    background-color: transparent; 
+    clip-path: ellipse(100% 100% at 0% 50%); 
+  }
+  .vision-mission-right {
+    flex: 0 0 50%;        
+  }
+}
+
+@media (max-width: 600px) {
+  .vision-mission-card {
+    flex-direction: column;
+  }
+  .vision-mission-left {
+    clip-path: none;
+    border-radius: 20px 20px 0 0;
+  }
+  .vision-mission-right {
+    padding: 20px;
+  }
+}
+
       .cta-button,
     button[type="submit"] {
       background-color: #f4c300;
@@ -169,17 +226,77 @@
 background-image: linear-gradient(-35deg, #03081e 0%, #0a1f44 100%);
     text-align: center;
     }
-    .services-grid{
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 48px;
-    }
+
+.services-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+
+.services-grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.service-card {
+  padding: 24px 16px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card img {
+  max-width: 80px;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  color: #0a1f44;
+}
+
+.service-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 40px 10px;
+  }
+  .services-grid {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+  .service-card img {
+    max-width: 60px;
+  }
+}
     
-    .services-grid h3{
-       margin-top: 14px;
-    }
 .careers-section {
  position: relative;
     background-image: url(your-careers-bg.jpg);
@@ -324,40 +441,9 @@ footer {
   font-weight: 500;
 }
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .hero-text, .hero-images {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
 
   .features {
     grid-template-columns: 1fr; /* Stack features on mobile */
-  }
-
-  .vision-mission-card {
-    flex-direction: column;
-  }
-
-  .vision-mission-left, .vision-mission-right {
-    flex: 1 1 100%;
-    clip-path: none; /* Optional: remove clipping for better mobile view */
-  }
-
-  .quote-section > div {
-    padding: 20px;
-  }
-
-  .quote-section h2 {
-    font-size: 1.2rem;
   }
 
   .breadcrumb {
@@ -375,26 +461,144 @@ footer {
   }
 }
 
+.quote-section {
+  background-color: #0a1f44;
+  padding: 40px 20px;
+}
+
+.quote-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.quote-content {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.quote-text {
+  color: #0a1f44;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 600;
+  margin: 0 0 30px;
+}
+
+.quote-author {
+  font-weight: bold;
+  color: #0a1f44;
+  margin-bottom: 4px;
+}
+
+.quote-title {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.quote-btn {
+  display: inline-block;
+  background-color: #f4c300;
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.quote-btn:hover {
+  background-color: #e0b800;
+}
+
+.quote-image {
+  position: relative;
+  flex: 1 1 260px;
+  min-width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-image .image-bg {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-image img {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  max-width: 335px;
+  height: auto;
+  object-fit: cover;
+  transform: translate(16px, 16px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .quote-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .quote-content,
+  .quote-image {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .quote-image img {
+    transform: none;
+    position: relative;
+    margin-top: 20px;
+    max-width: 280px;
+  }
+
+  .quote-image .image-bg {
+    display: none;
+  }
+}
+
 </style>
 </head>
 <body>
-   <div id="header"></div>
-  <div>
-    <section class="hero">
-  <div class="hero-text" style="flex: 1 1 50%; min-width: 300px; padding-right: 30px;">
-    <h1 style="font-size: 2.5rem;">Empowering the Autonomous Enterprise</h1>
-    <p style="font-size: 1.1rem; line-height: 1.6;">
-      We are a boutique consulting firm specializing in IT automation and digital transformation.
+<div id="header"></div>
+
+<section class="hero-iom">
+  <div class="hero-text">
+   <h1>Empowering the Autonomous Enterprise</h1>
+     <p> We are a boutique consulting firm specializing in IT automation and digital transformation.
       Our team of young yet experienced professionals brings deep expertise in IT management, automation, security, BPM, and analytics.
       We guide enterprises in selecting the right technologies, implementing them effectively, and ensuring measurable ROI.
       With hands-on experience and strategic insight, we help businesses modernize their tech landscape.
       Our support doesn’t end at go-live — we stay with you to ensure long-term success.</p>
-    <a href="contact_us_page.html">
-   <button class="cta-button" style="margin-top: 20px;">Book a Free Consultation</button>
-   </a>
+         <a href="contact_us_page.html">
+      <button class="cta-button">Book a Free Consultation</button>
+    </a>
   </div>
-  <div class="hero-images" style="flex: 1 1 45%; min-width: 280px;">
-   <img src="images\About-us.png" alt="Digital transformation" class="hero-image">
+  <div class="hero-image">
+    <img src="images\About-us.png" alt="Digital transformation">
   </div>
 </section>
 
@@ -406,8 +610,8 @@ footer {
   </div>
 </section>
 <section class="why-saasify">
-<h2 class="main-heading"
-style= "color: rgb(255, 255, 255)";><span class="span-border-bottom">Why choose Saasify?</span></h2>
+
+<h2 class="main-heading" style="color: white;"><span class="span-border-bottom">Why choose Saasify?</span></h2>
       <div class="features">
         <div class="feature-card">
           <i class="fa-solid fa-robot"></i>
@@ -441,6 +645,7 @@ style= "color: rgb(255, 255, 255)";><span class="span-border-bottom">Why choose 
         </div>
       </div>
     </section>
+    
 <section class="vision-mission-wrapper">
   <div class="vision-mission-card">
     <div class="vision-mission-left">
@@ -459,8 +664,11 @@ style= "color: rgb(255, 255, 255)";><span class="span-border-bottom">Why choose 
     </div>
   </div>
 </section>
+
 <section class="services-section">
-  <h2 class="main-heading"><span class="span-border-bottom">Our Services</span></h2>
+  <h2 class="main-heading">
+    <span class="span-border-bottom">Our Services</span>
+  </h2>
 
   <div class="services-grid">
     <div class="service-card">
@@ -486,33 +694,20 @@ style= "color: rgb(255, 255, 255)";><span class="span-border-bottom">Why choose 
   </div>
 </section>
 
-  <section class="quote-section" style="background-color: #0a1f44; padding: 28px 20px;">
-  <div style="max-width: 1198px; margin: auto; background-color: #ffffff; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); overflow: hidden; padding: 40px;">
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px;">
-
-      <!-- Quote Text -->
-      <div style="flex: 1 1 50%; min-width: 280px;">
-        <div style="font-size: 2.5rem; color: #0a1f44; margin-bottom: 20px;">❝</div>
-        <h2 style="color: #0a1f44; font-size: 1.5rem; line-height: 1.6; font-weight: 600;">
-          “At Saasify, we don’t just build solutions — we architect experiences that empower enterprises to evolve faster, smarter, and more securely. Innovation is not our goal — it’s our responsibility.”
-        </h2>
-        <p style="margin-top: 20px; font-weight: bold; color: #0a1f44;">Madhusoodhanan</p>
-        <p style="margin-top: 2px; color: #444;">Director, Saasify Solutions</p>
-        <a href="our-team.html">
-            <button class="cta-button" style="margin-top: 30px;">Meet Our Leadership</button>
-        </a>
-        
-      </div>
-
-      <!-- Director Floating Image -->
-      <div style="flex: 1 1 40%; min-width: 260px; position: relative; display: flex; justify-content: center; align-items: center;">
-        <!-- Background Circle -->
-        <div style="width: 260px; height: 260px; border-radius: 50%; background-color: #f9f9f9; position: relative; z-index: 1;"></div>
-
-        <!-- Director Image on Top -->
-        <img src="images\Director_Image.png" alt="Madhusoodhanan"
-             style="position: absolute; z-index: 2; width: 335px; height: auto; object-fit: cover; transform: translate(16px, 16px);" />
-      </div>
+<section class="quote-section">
+  <div class="quote-inner">
+    <div class="quote-content">
+      <div class="quote-mark">❝</div>
+      <h2 class="quote-text">
+        “At Saasify, we don’t just build solutions — we architect experiences that empower enterprises to evolve faster, smarter, and more securely. Innovation is not our goal — it’s our responsibility.”
+      </h2>
+      <p class="quote-author">Madhusoodhanan</p>
+      <p class="quote-title">Director, Saasify Solutions</p>
+      <a href="our-team.html" class="quote-btn">Meet Our Leadership</a>
+    </div>
+    <div class="quote-image">
+      <div class="image-bg"></div>
+      <img src="images/Director_Image.png" alt="Madhusoodhanan" />
     </div>
   </div>
 </section>

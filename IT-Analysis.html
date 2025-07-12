@@ -9,65 +9,115 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4faff;
-      color: #2a2a2a;
-    }
-    section.hero-iom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 40px;
-      background-color: #f4faff;
-    }
-    .hero-iom h1 {
-      font-size: 2.5rem;
-      color: #0a1f44;
-      margin-bottom: 20px;
-    }
-    .hero-iom p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #2a2a2a;
-    }
-    .cta-button {
-      background-color: #f4c300;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    .cta-button:hover {
-      background-color: #ffdb4d;
-    }
-    .hero-iom img {
-      max-width: 100%;
-      height: auto;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ section.hero-iom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
 
-    .contact-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
     }
-    .contact-left, .contact-right {
-      flex: 1 1 45%;
-    }
-    .contact-right form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, select, textarea {
-      padding: 8px;
-      width: 100%;
-    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
+    
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.contact-left, .contact-right {
+  flex: 1 1 45%;
+}
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, select, textarea {
+  padding: 8px;
+  width: 100%;
+}
 
 h2.main-heading {
     position: relative;
@@ -88,6 +138,7 @@ h2.main-heading {
 }
 .contact-left {
   flex: 1 1 40%;
+  overflow: hidden;
 }
 .contact-left h2 {
   font-size: 32px;
@@ -151,6 +202,20 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background: #ffd500;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
 footer {
   background-color: #0a1f44;
   color: white;
@@ -307,14 +372,14 @@ footer {
 }
 
 .timeline-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 5px;
-    background-color: #e0e0e0;
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 5px;
+  background-color: #e0e0e0;
+  transform: translateX(-50%);
 }
 
 .timeline-item {
@@ -326,7 +391,7 @@ footer {
 
 .timeline-item .content-box {
   background: #ffffff;
-  padding: 5px 18px;
+  padding: 20px 18px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   position: relative;
@@ -355,40 +420,41 @@ footer {
 }
 
 .timeline-item.left .content-box::after {
-    content: "";
-    position: absolute;
-    top: 42px;
-    right: -47px;
-    width: 25px;
-    height: 25px;
-    background: #0a1f44;
-    border-radius: 50%;
-    border: 4px solid #fff;
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: -47px;
+  width: 25px;
+  height: 25px;
+  background: #0a1f44;
+  border-radius: 50%;
+  border: 4px solid #fff;
 }
 
 .timeline-item.right .content-box::after {
   content: "";
   position: absolute;
-    top: 50px;
-    left: -46px;
-    width: 25px;
-    height: 25px;
-    background: #0a1f44;
-    border-radius: 50%;
-    border: 4px solid #fff;
+  top: 25px;
+  left: -47px;
+  width: 25px;
+  height: 25px;
+  background: #0a1f44;
+  border-radius: 50%;
+  border: 4px solid #fff;
 }
 
-/* Mobile Responsive */
+/* ======== Mobile Responsive Styles ======== */
 @media screen and (max-width: 768px) {
   .timeline-container::before {
-    left: 10px;
+    left: 20px;
+    transform: none;
   }
 
   .timeline-item {
     width: 100%;
-    padding-left: 40px;
-    padding-right: 0;
-    margin-bottom: 40px;
+    padding-left: 60px;
+    padding-right: 20px;
+    margin-bottom: 50px;
   }
 
   .timeline-item.left,
@@ -398,10 +464,12 @@ footer {
   }
 
   .timeline-item .content-box::after {
-    left: -30px;
+    left: -73px !important;
     right: auto;
   }
 }
+
+
 .key-analysis-section {
   background-color: #ffffff;
   padding: 60px 20px;
@@ -470,17 +538,18 @@ footer {
 <div id="header"></div>
 
 <section class="hero-iom">
-    <div style="flex: 1 1 500px; padding-right: 20px;">
-      <h1>IT Analysis</h1>
-      <p>Turn your data into insights. Saasify empowers businesses to monitor IT systems, evaluate performance, and make proactive decisions that prevent issues before they arise.</p>
-      <a href="contact_us_page.html">
-        <button class="cta-button">Book a Demo</button>
-      </a>
-    </div>
-    <div style="flex: 1 1 400px; text-align: center;">
-      <img src="images/business-process-man.jpg" alt="IT Analysis" />
-    </div>
+  <div class="hero-text">
+   <h1>IT Analysis</h1>
+     <p>Turn your data into insights. Saasify empowers businesses to monitor IT systems, evaluate performance, and make proactive decisions that prevent issues before they arise.</p>
+         <a href="contact_us_page.html">
+      <button class="cta-button">Get Support</button>
+    </a>
+  </div>
+  <div class="hero-image">
+    <img src="images/business-process-man.jpg" alt="IT Analysis" />
+  </div>
 </section>
+
 <section class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> &gt;
@@ -491,8 +560,8 @@ footer {
 
 <section class="why-it-analysis">
   <h2 class="main-heading">
-      <span class="span-border-bottom">Why IT Analysis Matters ?</span>
-    </h2>
+      <span class="span-border-bottom">Why IT Analysis Matters?</span>
+  </h2>
   <div class="grid-wrapper">
     
     <div class="analysis-card">
@@ -518,7 +587,6 @@ footer {
       <h3>Risk Mitigation</h3>
       <p>Identify vulnerabilities early with continuous system evaluation.</p>
     </div>
-
   </div>
 </section>
 
@@ -558,41 +626,35 @@ footer {
   </div>
 </section>
 
-
 <section class="implementation-strategy">
   <h2 class="main-heading">
-      <span class="span-border-bottom">Implementation Strategy</span>
-    </h2>
+    <span class="span-border-bottom">Implementation Strategy</span>
+  </h2>
   <div class="timeline-container">
-
     <div class="timeline-item left">
       <div class="content-box">
         <h3>Assessment</h3>
         <p>Understand current infrastructure, requirements, and analysis scope.</p>
       </div>
     </div>
-
     <div class="timeline-item right">
       <div class="content-box">
         <h3>Tool Integration</h3>
         <p>Connect relevant monitoring and analysis tools into your ecosystem.</p>
       </div>
     </div>
-
     <div class="timeline-item left">
       <div class="content-box">
         <h3>Dashboard Configuration</h3>
         <p>Set up intuitive dashboards to visualize key metrics and alerts.</p>
       </div>
     </div>
-
     <div class="timeline-item right">
       <div class="content-box">
         <h3>Continuous Review & Alerts</h3>
         <p>Enable automated alerting and ongoing performance optimization.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -643,7 +705,7 @@ footer {
             </select>
           </div>
           <div class="form-group">
-            <label>What is your enquiry about?*</label>
+            <label>Enquiry about?*</label>
             <select name="enquiry" required>
               <option value="">Choose...</option>
               <option>Enterprise Solutions</option>

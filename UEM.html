@@ -59,23 +59,24 @@
     padding: 60px 20px;
   }
 }
-    .contact-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    .contact-left, .contact-right {
-      flex: 1 1 45%;
-    }
-    .contact-right form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, select, textarea {
-      padding: 8px;
-      width: 100%;
-    }
+    
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.contact-left, .contact-right {
+  flex: 1 1 45%;
+}
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, select, textarea {
+  padding: 8px;
+  width: 100%;
+}
 
 h2.main-heading {
     position: relative;
@@ -96,6 +97,7 @@ h2.main-heading {
 }
 .contact-left {
   flex: 1 1 40%;
+  overflow: hidden;
 }
 .contact-left h2 {
   font-size: 32px;
@@ -159,6 +161,20 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background: #ffd500;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
 footer {
   background-color: #0a1f44;
   color: white;
@@ -215,19 +231,6 @@ footer {
   color: #ddd;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-  .form-group.full {
-    grid-column: span 1;
-  }
-  .contact-container {
-    flex-direction: column;
-  }
-}
- 
     .breadcrumb {
       padding: 15px 40px;
       font-size: 0.95rem;
@@ -302,18 +305,20 @@ footer {
   color: #0a1f44;
   line-height: 1.6;
 }
+
+
 .business-benefits-section {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 60px 20px;
 }
 
 .benefit-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 20px;
-  flex-wrap: wrap;
+  padding: 30px 20px;
+  flex-wrap: nowrap;
 }
 
 .white-bg {
@@ -325,16 +330,26 @@ footer {
 }
 
 .benefit-image,
-.benefit-text {
-  flex: 1 1 48%;
-  padding: 20px;
-}
+  .benefit-text {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
 
-.benefit-image img {
-  width: 100%;
-  max-width: 400px;
+ .benefit-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 320px; 
   display: block;
   margin: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .benefit-image img {
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .benefit-text h3 {
@@ -351,29 +366,23 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .benefit-row {
-    flex-direction: column;
+   .benefit-row {
+    flex-direction: column !important;
     text-align: center;
   }
 
   .benefit-image,
   .benefit-text {
     flex: 1 1 100%;
-    padding: 10px;
+    padding: 10px 15px;
   }
 
   .benefit-image img {
-    max-width: 100%;
-  }
-}
-
-  @media (min-width: 769px) {
-  .order-1 {
-    order: 1;
+    max-width: 90%;
   }
 
-  .order-2 {
-    order: 2;
+  .benefit-row:not(:last-child) {
+    margin-bottom: 30px;
   }
 }
  
@@ -385,7 +394,10 @@ footer {
 <section class="hero-iom">
     <div style="flex: 1 1 500px; padding-right: 20px;">
       <h1>Unified Endpoint Management </h1>
-      <p>Saasify’s UEM solution streamlines the management of desktops, laptops, mobile devices, and more — all from a centralized console.</p>
+      <p>
+      Saasify’s Unified Endpoint Management (UEM) solution streamlines the administration of all your endpoints—desktops, laptops, mobile devices, tablets, and even IoT assets—through a single, centralized console.<br><br>
+      With comprehensive visibility and control, IT teams can efficiently enforce policies, deploy updates, track devices in real time, and ensure consistent security across every platform. Saasify empowers organizations to reduce complexity, boost productivity, and maintain compliance effortlessly.
+    </p>
       <a href="contact_us_page.html">
         <button class="cta-button">Book a Demo</button>
       </a>
@@ -414,7 +426,7 @@ footer {
         <p>Manage Windows, macOS, iOS, Android, and more from one unified console.</p>
       </div>
       <div class="uem-card">
-        <img src="images/security.png" alt="Security icon" />
+        <img src="images/enhanced-security.png" alt="Security icon" />
         <h3>Enhanced Security</h3>
         <p>Enforce remote wipe, encryption, and patch updates to safeguard data.</p>
       </div>
@@ -424,7 +436,7 @@ footer {
         <p>Automate user and device setup for smooth provisioning and deprovisioning.</p>
       </div>
       <div class="uem-card">
-        <img src="images/efficiency.png" alt="Efficiency icon" />
+        <img src="images/operational-efficiency.png" alt="Efficiency icon" />
         <h3>Operational Efficiency</h3>
         <p>Centralize control and reduce IT workload with intelligent automation tools.</p>
       </div>
@@ -442,16 +454,24 @@ footer {
     </div>
     <div class="benefit-text">
       <h3>Improve Device Uptime</h3>
-      <p>Ensure devices are always updated, connected, and running efficiently to reduce business disruptions and increase productivity.</p>
-    </div>
+      <p>
+        Ensure all endpoints remain updated with the latest patches, securely connected to your network, and optimized for peak performance.<br><br>
+        By maintaining device health and availability, Saasify’s UEM helps minimize downtime, prevent system failures, and avoid costly interruptions.<br><br>
+        This proactive approach enables your workforce to stay productive and ensures business operations continue seamlessly across all environments.
+      </p>
+ </div>
   </div>
 
   <!-- Row 2 -->
   <div class="benefit-row lightblue-bg">
     <div class="benefit-text">
       <h3>Strengthen Endpoint Security</h3>
-      <p>Enforce security policies, enable remote wipes, and secure sensitive data across all devices from a unified platform.</p>
-    </div>
+     <p>
+      Enforce robust security policies across all endpoints to ensure consistent protection against evolving threats.<br><br>
+      With Saasify’s UEM, you can remotely wipe lost or compromised devices to prevent data breaches and unauthorized access.<br><br>
+      The unified platform offers centralized control, enabling IT teams to monitor, secure, and manage sensitive information across desktops, laptops, and mobile devices in real time.
+    </p>
+ </div>
     <div class="benefit-image">
       <img src="images/endpoint-security.jpg" alt="Strengthen Endpoint Security" />
     </div>
@@ -464,22 +484,29 @@ footer {
     </div>
     <div class="benefit-text">
       <h3>Simplify IT Operations</h3>
-      <p>Streamline device provisioning, updates, monitoring, and troubleshooting with automation and centralized control.</p>
-    </div>
+     <p>
+      Streamline device provisioning, configuration, software updates, and compliance enforcement through intelligent automation.<br><br>
+      Saasify’s UEM centralizes these operations into a single, intuitive dashboard—reducing manual effort and improving IT response times.<br><br>
+      With real-time monitoring and remote troubleshooting, your IT team can proactively resolve issues and maintain operational continuity across all user endpoints.
+    </p>
+ </div>
   </div>
 
   <!-- Row 4 -->
   <div class="benefit-row lightblue-bg">
     <div class="benefit-text">
       <h3>Scale Easily with Cloud-first UEM</h3>
-      <p>Support remote and hybrid work environments efficiently with a cloud-first, scalable UEM solution.</p>
-    </div>
+      <p>
+        Support remote, hybrid, and on-the-go work environments with a robust, cloud-first UEM solution tailored for modern enterprises.<br><br>
+        Saasify’s scalable platform ensures secure access, real-time updates, and centralized control across all user devices, regardless of location.<br><br>
+        Empower your workforce with uninterrupted connectivity and consistent device performance while reducing IT overhead and complexity.
+      </p>
+ </div>
     <div class="benefit-image">
       <img src="images/cloud-scale.jpg" alt="Scale with Cloud-first UEM" />
     </div>
   </div>
 </section>
-
 
   <section class="contact-section">
   <div class="contact-container">
@@ -528,7 +555,7 @@ footer {
             </select>
           </div>
           <div class="form-group">
-            <label>What is your enquiry about?*</label>
+            <label>Enquiry about?*</label>
             <select name="enquiry" required>
               <option value="">Choose...</option>
               <option>Enterprise Solutions</option>
