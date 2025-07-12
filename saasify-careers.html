@@ -6,100 +6,108 @@
   <title>Careers – Join Saasify Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f4faff;
-      color: #0a1f44;
-    }
-    h1, h2 {
-      color: #0a1f44;
-    }
-    section {
-      padding: 60px 20px;
-    }
-    .career-hero {
+ body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ section.hero-iom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 60px 40px;
   background-color: #f4faff;
 }
 
-.career-text {
+.hero-text {
   flex: 1 1 50%;
-  max-width: 550px;
+  padding-right: 20px;
 }
 
-.career-text h1 {
-  font-size: 2.4rem;
-  color: #0a1f44;
-}
-
-.career-text p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #333;
-}
-
-.career-image {
+.hero-image {
   flex: 1 1 45%;
   text-align: center;
 }
 
-.career-image img {
-  max-width: 85%;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-}
-  .careers-openings-bg {
-  background: url('images/the-role.jpg') center center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 195px;
-  position: relative;
-}
-
-.careers-openings-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(10, 31, 68, 0.85); 
-  z-index: 1;
-}
-
-.careers-content {
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  z-index: 2;
-  position: relative;
-}
-
-.careers-content .tagline {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
-
-.careers-content h2 {
+.hero-iom h1 {
   font-size: 2.5rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-  color: rgb(85, 255, 190);
+  color: #0a1f44;
+  margin-bottom: 20px;
 }
 
-.careers-content a {
-  color: #ffc107;
-  font-weight: bold;
-  text-decoration: none;
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
 }
 
-  .why-work-section {
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
+    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+  border-bottom: 3px solid #00bfa6;
+}
+
+.why-work-section {
   padding: 40px 20px;
   background-color: #fff;
 }
@@ -137,160 +145,199 @@
   color: #444;
   line-height: 1.5;
 }
-h2.main-heading {
+
+  .apply-role{
+    padding: 40px 20px;
+  }
+  .job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    justify-content: space-between;
+    margin: auto;
+    text-align: center;
+  }
+
+  .job-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .job-card h3 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  .job-card p {
+    font-size: 0.95rem;
+    margin: 4px 0;
+  }
+
+  .view-dtls {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #f4c300;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .view-dtls:hover {
+    background-color: #ffdb4d;
+  }
+
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
     position: relative;
-    margin-bottom: 56px;
-}
-.span-border-bottom {
-  border-bottom: 3px solid #00bfa6;
-}
+    animation: slideDown 0.3s ease;
+  }
 
-   .job-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+  @keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
 
-    .job-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+  }
 
-    .job-card h3 {
-      margin: 10px 0;
-      font-size: 1.1rem;
-    }
+  .close-btn:hover {
+    color: #000;
+  }
 
-    .job-card p {
-      font-size: 0.95rem;
-      margin: 4px 0;
-    }
+  .modal-content p {
+    margin: 10px 0;
+    font-size: 0.95rem;
+  }
 
-    .view-dtls {
-      margin-top: 10px;
-      padding: 8px 16px;
-      background-color: #f4c300;
-      color: #000000;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+  .modal-content h3 {
+    margin-top: 0;
+    color: #0a1f44;
+  }
 
-    .view-dtls:hover {
-      background-color: #ffdb4d;
-    }
+  .apply-email a {
+    color: #0077cc;
+    font-weight: bold;
+  }
 
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
-      position: relative;
-      animation: slideDown 0.3s ease;
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      font-size: 20px;
-      cursor: pointer;
-      color: #999;
-    }
-
-    .close-btn:hover {
-      color: #000;
-    }
-
-    .modal-content p {
-      margin: 10px 0;
-      font-size: 0.95rem;
-    }
-
-    .modal-content h3 {
-      margin-top: 0;
-      color: #0a1f44;
-    }
-
-    .apply-email a {
-      color: #0077cc;
-      font-weight: bold;
-    }
-
- .apply-split {
+.apply-split {
   display: flex;
   flex-wrap: wrap;
   background: #eef7fc;
   padding: 40px 30px;
   border-radius: 10px;
   max-width: 900px;
-  margin: 0px auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
-.apply-left, .apply-right {
+
+.apply-left,
+.apply-right {
   flex: 1;
   padding: 10px 20px;
   min-width: 280px;
+  box-sizing: border-box;
 }
+
 .apply-left h2 {
   font-size: 1.6rem;
   margin-bottom: 15px;
   color: #0a1f44;
 }
+
+.apply-left h3 {
+  margin: 15px 0 5px;
+  color: #0a1f44;
+  font-size: 1.1rem;
+}
+
+.apply-left a {
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #005ea2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .apply-left ul {
   padding-left: 20px;
   color: #333;
+  list-style: none;
 }
+
+.apply-left ul li {
+  margin-bottom: 10px;
+}
+
 .apply-right {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
+}
+
+.apply-right img {
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
-  padding: 20px;
+  object-fit: cover;
 }
-.apply-right a {
-  font-size: 1.2rem;
-  color: #005ea2;
-  font-weight: bold;
-  text-decoration: none;
-}
-    @media (max-width: 768px) {
-      .careers-hero h1 {
-        font-size: 2rem;
-      }
-    }
-    h2.main-heading {
-    position: relative;
-    margin-bottom: 56px;
+
+@media (max-width: 768px) {
+  .apply-split {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .apply-left {
     text-align: center;
+  }
+
+  .apply-left h2 {
+    font-size: 1.4rem;
+  }
+
+  .apply-left h3 {
+    font-size: 1rem;
+  }
+
+  .apply-left a {
+    font-size: 0.95rem;
+  }
+
+  .apply-right {
+    margin-top: 20px;
+    padding: 15px 10px;
+  }
 }
-.span-border-bottom {
-    border-bottom: 3px solid #55ffbe;
-}
+
 footer {
   background-color: #0a1f44;
   color: white;
@@ -378,25 +425,71 @@ footer {
   color: #666;
   font-weight: 500;
 }
-  </style>
+.careers-openings-bg {
+  background: url('images/the-role.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 195px;
+  position: relative;
+}
+
+.careers-openings-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 31, 68, 0.85); 
+  z-index: 1;
+}
+
+.careers-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
+}
+
+.careers-content .tagline {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.careers-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: rgb(85, 255, 190);
+}
+
+.careers-content a {
+  color: #ffc107;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+</style>
 </head>
 <body>
-  <div id="header"></div>
-  <section class="career-hero">
-  <div class="career-text">
-    
-    <h1>Join the Saasify team</h1>
-    <p>
+<div id="header"></div>
+
+<section class="hero-iom">
+  <div class="hero-text">
+   <h1>Join the Saasify team</h1>
+     <p>
       At Saasify, we empower enterprises with next-gen digital solutions in ITSM, automation, security, and analytics. Whether you're starting your journey or advancing your career, you'll thrive in a culture built on collaboration, innovation, and impact. 
       <br><br>
       We believe in people-first growth—where your talent meets purpose and your passion shapes the digital future. Explore open roles and unlock your full potential with Saasify.
-    </p>
-    <a href="contact_us_page.html">
+    </p>   
+        <a href="contact_us_page.html">
       <button class="cta-button">Get Support</button>
     </a>
   </div>
-  <div class="career-image">
-    <img src="images/Saasify-team-photo.jpg" alt="Join Saasify team">
+  <div class="hero-image">
+    <img src="images/Saasify-team-photo.JPG" alt="Join Saasify team">
   </div>
 </section>
 
@@ -407,7 +500,8 @@ footer {
     <span>Job Vacancy</span>
   </div>
 </section>
-  <section class="why-work-section">
+
+<section class="why-work-section">
   <h2 class="main-heading"><span class="span-border-bottom">Why Work With Us?</span></h2>
   <div class="benefits-inline">
     <div class="benefit-item">
@@ -437,22 +531,22 @@ footer {
     </div>
     <div class="benefit-item">
       <img src="images/Growth_icon.png" alt="Growth Assured" />
-      <h4>images/Growth Assured</h4>
+      <h4>Growth Assured</h4>
       <p>We believe personal and professional growth of an employee is the key to success.</p>
     </div>
   </div>
 </section>
 
- <section class="careers-openings-bg">
+<section class="careers-openings-bg">
   <div class="careers-content">
     <p class="tagline">INNOVATE FREELY, GROW FEARLESSLY</p>
     <h2>Current Openings</h2>
     <p>We’re always looking for curious minds and passionate builders to join the Saasify journey.</p>
     <p>Share your resume with us at <a href="mailto:kalyani@saasifysolutions.com">kalyani@saasifysolutions.com</a></p>
   </div>
-</section> 
+</section>
 
- <section>
+ <section class="apply-role">
   <h2 class="main-heading"><span class="span-border-bottom">Current Openings</span></h2>
   <div class="job-grid" id="jobList"></div>
    
@@ -487,7 +581,7 @@ footer {
     </ul>
   </div>
   <div class="apply-right">
-      <img src="images/OIP.jpg"></img>
+      <img src="images/scenes-people-work.jpg"></img>
    </div>
 </section>
 

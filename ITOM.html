@@ -10,64 +10,114 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4faff;
-      color: #2a2a2a;
-    }
-    section.hero-iom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 40px;
-      background-color: #f4faff;
-    }
-    .hero-iom h1 {
-      font-size: 2.5rem;
-      color: #0a1f44;
-      margin-bottom: 20px;
-    }
-    .hero-iom p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #2a2a2a;
-    }
-    .cta-button {
-      background-color: #f4c300;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    .cta-button:hover {
-      background-color: #ffdb4d;
-    }
-    .hero-iom img {
-      max-width: 100%;
-      height: auto;
-    }
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4faff;
+    color: #2a2a2a;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ section.hero-iom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
 
-    .contact-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
     }
-    .contact-left, .contact-right {
-      flex: 1 1 45%;
-    }
-    .contact-right form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, select, textarea {
-      padding: 8px;
-      width: 100%;
-    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.contact-left, .contact-right {
+  flex: 1 1 45%;
+}
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, select, textarea {
+  padding: 8px;
+  width: 100%;
+}
 
 h2.main-heading {
     position: relative;
@@ -88,6 +138,7 @@ h2.main-heading {
 }
 .contact-left {
   flex: 1 1 40%;
+  overflow: hidden;
 }
 .contact-left h2 {
   font-size: 32px;
@@ -151,6 +202,20 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background: #ffd500;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
 footer {
   background-color: #0a1f44;
   color: white;
@@ -274,7 +339,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 0px;
   flex-wrap: wrap;
   border-radius: 12px;
   padding: 18px;
@@ -445,20 +510,20 @@ footer {
 </style>
 </head>
 <body>
-<div id="header"></div>
 
 <section class="hero-iom">
-    <div style="flex: 1 1 500px; padding-right: 20px;">
-      <h1>IT Operations Management</h1>
-      <p>Ensure high availability, automated operations, and complete infrastructure visibility with Saasify’s ITOM solutions. We help you proactively manage incidents, reduce downtime, and optimize resource usage with intelligent automation and analytics.</p>
-      <a href="contact_us_page.html">
-        <button class="cta-button">Book a Demo</button>
-      </a>
-    </div>
-    <div style="flex: 1 1 400px; text-align: center;">
-      <img src="images/itom-img.jpg" alt="ITOM" />
-    </div>
+  <div class="hero-text">
+   <h1>IT Operations Management</h1>
+     <p>Ensure high availability, automated operations, and complete infrastructure visibility with Saasify’s ITOM solutions. We help you proactively manage incidents, reduce downtime, and optimize resource usage with intelligent automation and analytics.</p>
+        <a href="contact_us_page.html">
+      <button class="cta-button">Get Support</button>
+    </a>
+  </div>
+  <div class="hero-image">
+     <img src="images/itom-img.jpg" alt="ITOM" />
+  </div>
 </section>
+
 <section class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> &gt;
@@ -609,7 +674,7 @@ footer {
             </select>
           </div>
           <div class="form-group">
-            <label>What is your enquiry about?*</label>
+            <label>Enquiry about?*</label>
             <select name="enquiry" required>
               <option value="">Choose...</option>
               <option>Enterprise Solutions</option>

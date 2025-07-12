@@ -265,51 +265,55 @@ button[type="submit"]:hover {
       font-size: 0.85rem;
     }
     
-    .breadcrumb {
-      padding: 15px 40px;
-      font-size: 0.95rem;
-      color: #333;
-      z-index: 1;
-      position: relative;
-      background-color: #fff;
-    }
-    
-    .breadcrumb-container a {
-      text-decoration: none;
-      color: #0a1f44;
-      margin-right: 5px;
-    }
-    
-    .breadcrumb-container span {
-      color: #666;
-      font-weight: 500;
-    }
- 
+.breadcrumb {
+  padding: 15px 40px;
+  font-size: 0.95rem;
+  color: #333;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+}
+
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
+
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
+
 .implementation-section {
   background: #f4faff;
   padding: 60px 20px;
   text-align: center;
 }
-.arrow-steps {
+.arrow-flow {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  justify-content: center;
+  gap: 60px;
 }
 
-.step {
+.step-block {
+  flex: 1 1 240px;
+  max-width: 260px;
   position: relative;
-  flex: 1 1 200px;
-  max-width: 300px;
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .arrow {
   background-color: #0a1f44;
   color: white;
   padding: 15px 20px;
-  position: relative;
   font-weight: bold;
+  position: relative;
+  width: 100%;
+  text-align: center;
   border-radius: 5px 0 0 5px;
 }
 
@@ -325,32 +329,28 @@ button[type="submit"]:hover {
   border-left: 25px solid #0a1f44;
   z-index: 1;
 }
-
-.arrow:last-child::after {
+.step-block:last-child .arrow::after {
   display: none;
 }
-
-.step-descriptions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 20px;
-}
-
 .desc {
-  flex: 1 1 242px;
-  max-width: 276px;
   background-color: #ffffff;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  text-align: left;
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
 }
-
-.desc ul {
-  padding-left: 18px;
-  text-align: left;
+@media (max-width: 768px) {
+  .step-block {
+    align-items: center;
+  }
+  .arrow {
+    text-align: center;
+  }
+  .desc {
+    text-align: center;
+  }
 }
 
 .iam-capabilities-section {
@@ -588,47 +588,32 @@ button[type="submit"]:hover {
 
 <section class="implementation-section">
   <h2 class="main-heading"><span class="span-border-bottom">Implementation Stages</span></h2>
-<div class="arrow-steps">
-  <div class="step">
+<div class="arrow-flow">
+  <div class="step-block">
     <div class="arrow">Assessment</div>
-    <div class="connector">&#x2193;</div>
+    <div class="desc">
+      <ul><li>Understand current identity landscape and risks.</li></ul>
+    </div>
   </div>
-  <div class="step">
+  <div class="step-block">
     <div class="arrow">Design</div>
-    <div class="connector">&#x2193;</div>
+    <div class="desc">
+      <ul><li>Architect a scalable IAM model with SSO, MFA, and RBAC.</li></ul>
+    </div>
   </div>
-  <div class="step">
+  <div class="step-block">
     <div class="arrow">Deployment</div>
-    <div class="connector">&#x2193;</div>
+    <div class="desc">
+      <ul><li>Integrate tools with HR, ITSM, and business systems.</li></ul>
+    </div>
   </div>
-  <div class="step">
+  <div class="step-block">
     <div class="arrow">Monitoring</div>
-    <div class="connector">&#x2193;</div>
+    <div class="desc">
+      <ul><li>Enable reporting, alerts, and periodic reviews.</li></ul>
+    </div>
   </div>
 </div>
-
-  <div class="step-descriptions">
-    <div class="desc">
-      <ul>
-        <li>Understand current identity landscape and risks.</li>
-      </ul>
-    </div>
-    <div class="desc">
-      <ul>
-        <li>Architect a scalable IAM model with SSO, MFA, and RBAC.</li>
-      </ul>
-    </div>
-    <div class="desc">
-      <ul>
-        <li>Integrate tools with HR, ITSM, and business systems.</li>
-      </ul>
-    </div>
-    <div class="desc">
-      <ul>
-        <li>Enable reporting, alerts, and periodic reviews.</li>
-      </ul>
-    </div>
-  </div>
 </section>
 
 <section class="contact-section">
