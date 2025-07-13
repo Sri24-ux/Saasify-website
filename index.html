@@ -135,23 +135,27 @@
             color: rgba(244, 248, 248, 0.966);
         }
         
-        .right-icons {
+       .right-icons, 
+        .contact-button desktop-only {
             display: flex;
             gap: 15px;
             align-items: center;
         }
         
-        .right-icons i {
+        .right-icons,
+         .contact-button desktop-only i {
             font-size: 1.2rem;
             cursor: pointer;
             color: white;
         }
         
-        .right-icons i:hover {
+        .right-icons, 
+        .contact-button desktop-only i:hover {
             color: #f4c300;
         }
         
-        .right-icons button {
+        .right-icons button,
+        .contact-button.desktop-only button {
             padding: 8px 16px;
             border: none;
             background-color: #f4c300;
@@ -195,7 +199,7 @@
             align-items: flex-start;
             background-color: #0a1f44;
             position: fixed;
-            top: 90px;
+            top: 63px;
             left: 0;
             width: 100%;
             padding: 20px;
@@ -583,6 +587,11 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
         }
+          @media (max-width: 767px) {
+            .contact-button.desktop-only {
+            display: none;
+            }
+        }
     </style>
 </head>
 
@@ -656,7 +665,7 @@
                 <li><a href="insight-page.html" style="color: white;">Insights</a></li>
             </ul>
         </nav>
-        <div class="right-icons">
+        <div class="contact-button desktop-only">
             <a href="contact_us_page.html">
                 <button>Contact Us</button>
             </a>
@@ -714,7 +723,11 @@
         <a href="insight-page.html" style="display:block; margin-top: 10px;">Insights</a>
 
         <!-- Contact Us -->
-        <a href="contact_us_page.html" style="display:block; margin-top: 10px;">Contact Us</a>
+         <div class="right-icons">
+            <a href="contact_us_page.html">
+                <button>Contact Us</button>
+            </a>
+        </div>
     </div>
 
 
