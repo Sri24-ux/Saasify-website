@@ -230,49 +230,100 @@
                 display: flex;
             }
         }
-        
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 40px;
-            background-color: #f4faff;
+        h2.main-heading {
+            position: relative;
+            margin-bottom: 56px;
+            text-align: center;
         }
-        
-        .hero-text {
-            max-width: 50%;
+        .span-border-bottom {
+            border-bottom: 3px solid #55ffbe;
         }
-        
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        
-        .hero-text p {
-            margin-bottom: 20px;
-        }
-        
-        .hero-text button {
-            background-color: #f4c300;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-        
-        .hero-images {
-            width: 100%;
-        }
-        
-        .hero-images img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        
-        .carousel-dots {
+ section.hero-iom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #f4faff;
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 20px;
+}
+
+.hero-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.hero-iom h1 {
+  font-size: 2.5rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.hero-iom p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+.hero-iom img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section.hero-iom {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .hero-iom h1 {
+    font-size: 2rem;
+  }
+
+  .hero-iom p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 580px) {
+    section.hero-iom {
+        max-width: 95% !important;
+    }
+}
+
+@media (max-width: 1500px) {
+    section.hero-iom {
+        max-width: 90% !important;
+    }  
+}
+ .carousel-dots {
             margin-top: 39px;
         }
         
@@ -288,73 +339,13 @@
         
         .carousel-dots .dot.active {
             background-color: #0a1f44;
-        }
-        
-        .stats-wrapper {
-            background-image: linear-gradient(-35deg, #03081e 0%, #0a1f44 100%);
-            padding: 40px;
-            border-radius: 20px;
-            margin: 40px auto;
-            max-width: 1640px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            background-color: transparent;
-        }
-        
-        .key-stats {
-            display: flex;
-            justify-content: space-evenly;
-            padding: 40px;
-        }
-        
-        .key-stats .stat {
-            background: #f9f9f9;
-            width: 25%;
-            padding: 20px;
-            border-radius: 4px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .key-stats .stat h2 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-        
-        .key-stats .stat p {
-            margin-top: 10px;
-            font-size: 1rem;
-            color: #555;
-        }
-        
-        .key-stats .stat:hover {
-            transform: translateY(-5px);
-        }
-        
-        .key-stats .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            gap: 5px;
-        }
-        
-        .key-stats .stat-number .plus {
-            font-size: 1.5rem;
-            color: #27ae60;
-            background: #eafaf1;
-            padding: 2px 6px;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-        
+        } 
+
         .trusted-by {
             overflow: hidden;
-            padding: 30px 0;
+            padding: 50px 40px;
             text-align: center;
-            font-size: x-large;
+            background-color: #f4faff;
         }
         
         .logo-slider {
@@ -377,126 +368,7 @@
                 transform: translateX(-50%);
             }
         }
-        
-        .testimonial-wrapper {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(to top, #dfe9f3 0%, #ffffff 100%);
-        }
-        
-        .testimonial-wrapper h2 {
-            color: #0a1f44;
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-        
-        .testimonial-carousel {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            overflow: hidden;
-        }
-        
-        .testimonial-card {
-            flex-shrink: 0;
-            width: 160px;
-            background: #fff;
-            color: #0a1f44;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            filter: grayscale(100%);
-            opacity: 0.6;
-        }
-        
-        .testimonial-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid #0a1f44;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-card .feedback {
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            color: #444;
-        }
-        
-        .testimonial-card .name {
-            font-weight: bold;
-        }
-        
-        .testimonial-card .title {
-            font-size: 0.8rem;
-            color: #666;
-        }
-        
-        .testimonial-card.active {
-            width: 280px;
-            filter: none;
-            opacity: 1;
-            transform: scale(1.05);
-            z-index: 2;
-        }
-        
-        .testimonial-dots {
-            margin-top: 30px;
-        }
-        
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 5px;
-            background-color: #ccc;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-        
-        .dot.active {
-            background-color: #0a1f44;
-        }
-        
-        .latest-insights {
-            padding: 60px 40px;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-        
-        .insight-item {
-            display: inline-block;
-            width: 30%;
-            margin: 0 1.5%;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-        }
-        
-        .insight-item h3 {
-            margin-top: 0;
-        }
-        
-        .insight-item p {
-            color: #555;
-        }
-        
-        .view-all-button {
-            background-color: #f4c300;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+
         
         footer {
             background-color: #0a1f44;
@@ -592,6 +464,443 @@
             display: none;
             }
         }
+   .testimonial-section {
+  background: linear-gradient(rgba(10, 31, 68, 0.95), rgba(10, 31, 68, 0.95)),
+              url('images/testimonial-bg.jpg') no-repeat center/cover;
+  padding: 20px 20px;
+  color: white;
+  text-align: center;
+}
+
+.testimonial-container {
+  max-width: 1076px;
+  margin: auto;
+}
+
+.testimonial-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: white;
+  color: #0a1f44;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.testimonial-quote {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.testimonial-quote img {
+  width: 100%;
+  height: auto;
+}
+
+/* Varying card heights for desktop */
+.testimonial-card.short {
+  height: 30%;
+  min-height: 183px;
+}
+.testimonial-card.tall {
+  height: 70%;
+  min-height: 260px;
+  margin-top: 59px;
+}
+.testimonial-card.n-short {
+  height: 30%;
+  min-height: 217px;
+}
+.testimonial-card.n-tall {
+  height: 70%;
+  min-height: 260px;
+}
+.testimonial-card.large {
+  grid-row: span 2;
+  height: 86%;
+}
+
+/* Structure groups */
+.testimonial-right,
+.testimonial-next {
+  display: grid;
+}
+.testimonial-right {
+  grid-template-rows: 30% 70%;
+}
+.testimonial-next {
+  grid-template-rows: 53% 47%;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  margin-top: 20px;
+}
+
+.testimonial-header img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0a1f44;
+}
+
+.testimonial-rating {
+  color: #f4c300;
+  font-size: 1.1rem;
+  margin: 15px 0 10px;
+}
+
+.testimonial-message {
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Remove height styles on smaller devices */
+  .testimonial-card,
+  .testimonial-card.short,
+  .testimonial-card.tall,
+  .testimonial-card.n-short,
+  .testimonial-card.n-tall,
+  .testimonial-card.large {
+    height: auto !important;
+    min-height: unset !important;
+    margin-top: 0 !important;
+  }
+
+  .testimonial-right,
+  .testimonial-next {
+    display: contents;
+  }
+
+  .testimonial-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .testimonial-header img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .testimonial-message {
+    font-size: 1rem;
+  }
+}
+
+.key-stats-section {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),  /* Black with 70% opacity */
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('images/future-visions-business-technology-concept.jpg') center/cover no-repeat;
+  color: white;
+  padding: 80px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+.stats-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.stats-left {
+  flex: 1 1 45%;
+}
+
+.stats-left h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.stats-left .highlight {
+  color: #f4c300;
+  font-weight: bold;
+}
+
+.stats-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.stats-right {
+  flex: 1 1 45%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-left,
+  .stats-right {
+    flex: 1 1 100%;
+  }
+
+  .stats-right {
+    grid-template-columns: 1fr;
+  }
+}
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.stat-suffix {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+.latest-insights {
+  padding: 60px 20px;
+  background-color: #f4faff;
+  text-align: center;
+}
+
+.insight-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.insight-item {
+  flex: 1 1 300px;
+  max-width: 32%;
+  min-width: 260px;
+  background: white;
+  box-shadow: 0 20px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.insight-item:hover {
+  transform: translateY(-5px);
+}
+
+.insight-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.insight-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.insight-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: #0a1f44;
+}
+
+.insight-content p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.view-all-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .insight-item {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .insight-item {
+    max-width: 100%;
+  }
+}
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.contact-left, .contact-right {
+  flex: 1 1 45%;
+}
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, select, textarea {
+  padding: 8px;
+  width: 100%;
+}
+
+h2.main-heading {
+    position: relative;
+    margin-bottom: 56px;
+    text-align: center;
+}
+.span-border-bottom {
+    border-bottom: 3px solid #55ffbe;
+}
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.contact-left {
+  flex: 1 1 40%;
+  overflow: hidden;
+}
+.contact-left h2 {
+  font-size: 32px;
+  color: #0a1f44;
+}
+.contact-left p {
+  margin-top: 20px;
+  color: #333;
+}
+.contact-decor {
+   max-width: 402px;
+}
+.contact-right {
+  flex: 1 1 55%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: stretch;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+textarea {
+  resize: vertical;
+}
+.form-group.full {
+  grid-column: span 2;
+}
+.form-footer {
+  font-size: 14px;
+  color: #333;
+}
+button[type="submit"] {
+  margin-top: 16px;
+  background: #f4c300;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #ffd500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
     </style>
 </head>
 
@@ -729,8 +1038,6 @@
             </a>
         </div>
     </div>
-
-
     <script>
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
@@ -752,8 +1059,6 @@
             }
         }
 
-
-
         function toggleDropdown(el) {
             const dropdown = el.nextElementSibling;
             // Close all others first
@@ -771,70 +1076,173 @@
         });
     </script>
     <!-- Other sections -->
-
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Transformative technology.</h1>
-            <p>At Saasify, we deliver purpose-built, intelligence-driven solutions designed to optimize IT, Security, Analytics, and Business Processes. Our cutting-edge platforms help businesses accelerate growth, enhance operational efficiency, and stay
-                ahead.
-            </p>
-            <a href="about_us.html">
-                <button class="cta-button" style="margin-top: 20px;">Get to Know Us</button>
-            </a>
-
-            <div class="carousel-dots">
+    
+<section class="hero-iom">
+  <div class="hero-text">
+    <div>
+   <h1>Transformative technology.</h1>
+   <p>At Saasify, we deliver purpose-built, intelligence-driven solutions designed to optimize IT, Security, Analytics, and Business Processes. Our cutting-edge platforms help businesses accelerate growth, enhance operational efficiency, and stay
+       ahead.</p>   
+    <a href="contact_us_page.html">
+      <button class="cta-button">Get to Know Us</button>
+    </a>
+   </div>
+    <div class="carousel-dots">
                 <span class="hero-dot dot"></span>
                 <span class="hero-dot dot"></span>
                 <span class="hero-dot dot"></span>
                 <span class="hero-dot dot"></span>
                 <span class="hero-dot dot"></span>
             </div>
-        </div>
-        <div class="hero-images">
-            <img id="solution-img" src="https://t3.ftcdn.net/jpg/11/41/49/08/240_F_1141490828_pNlOfrChoaXusZLJ1TvNidB9KCAz4WEw.jpg" alt="Saasify Solutions">
-        </div>
-    </section>
+  </div>
+  
+  <div class="hero-image">
+     <img id="solution-img" src="images/Solution1.jpg" alt="Saasify Solutions">
+  </div>
+  
+  </div>
+</section>
+   
+<section class="key-stats-section">
+  <div class="stats-content">
+    <div class="stats-left">
+      <h2>Our stats tell the story of Saasify’s impact.</h2>
+      <p>Exceptional service across industries. Our proven track record drives growth and ensures maximum ROI for your enterprise.</p>
+    </div>
+
+    <div class="stats-right" id="statsGrid">
+      <!-- Boxes will be added here dynamically -->
+    </div>
+  </div>
+</section>
+
 
     <section class="trusted-by">
         <h2 class="main-heading"><span class="span-border-bottom">Trusted by Industry Innovators</span></h2>
         <div class="logo-slider" id="partner-logos">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" alt="Partner 1" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 2" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/512px-IBM_logo.svg.png" alt="Partner 3" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/512px-PayPal.svg.png" alt="Partner 4" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 5" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/512px-Amazon_logo.svg.png" alt="Partner 1" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" alt="Partner 2" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Partner 3" />
+            <img src="S1.png" alt="Partner 1" />
+            <img src="S2.png" alt="Partner 2" />
+            <img src="S3.jpg" alt="Partner 3" />
+            <img src="S4.jpg" alt="Partner 4" />
+            <img src="S5.jpg" alt="Partner 5" />
+            <img src="S6.png" alt="Partner 1" />
+            <img src="S3.jpg" alt="Partner 2" />
+            <img src="S4.jpg" alt="Partner 3" />
         </div>
     </section>
 
-    <section>
-        <div class="testimonial-wrapper">
-            <h2 class="main-heading"><span class="span-border-bottom">What Our Customers Say</span></h2>
-            <div class="testimonial-carousel" id="carousel"></div>
-            <div class="testimonial-dots" id="dots"></div>
-        </div>
-    </section>
+<section class="testimonial-section">
+  <div class="testimonial-container">
+    <h2 class="main-heading"><span class="span-border-bottom">What Our Customers Say</span></h2>
 
-    <section class="latest-insights">
-        <h2 class="main-heading"><span class="span-border-bottom">Latest Insights</span></h2>
-        <div class="insight-item">
-            <h3>5 Ways to Improve IT Operations</h3>
-            <p>Discover strategies that elevate your IT management to the next level.</p>
+    <div class="testimonial-layout" id="testimonialLayout"></div>
+  </div>
+</section>
+
+<section class="latest-insights">
+  <h2 class="main-heading"><span class="span-border-bottom">Latest Insights</span></h2>
+
+  <div class="insight-wrapper">
+    <div class="insight-item">
+      <img src="images/Home-Insight1.png" alt="Improve IT Operations">
+      <div class="insight-content">
+        <h3>5 Ways to Improve IT Operations</h3>
+        <p>Discover strategies that elevate your IT management to the next level.</p>
+      </div>
+    </div>
+
+    <div class="insight-item">
+      <img src="images/home-insight2.png" alt="BPM Case Study">
+      <div class="insight-content">
+        <h3>Case Study: Optimizing BPM</h3>
+        <p>Read how Saasify helped a client streamline their business processes effectively.</p>
+      </div>
+    </div>
+
+    <div class="insight-item">
+      <img src="images/home-insight3.png" alt="Security Trends">
+      <div class="insight-content">
+        <h3>Security Trends 2025</h3>
+        <p>Explore the future of cybersecurity and how your company can prepare.</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="insight-page.html">
+    <button class="view-all-button">View All</button>
+  </a>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+     <h3 class="main-heading">
+      <span class="span-border-bottom">Connect with Saasify</span>
+    </h3>
+      <h2>Together, let’s take the next step.</h2>
+      <p>Connect with us to explore tailored solutions.</p>
+      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
+    </div>
+    <div class="contact-right">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First name*</label>
+            <input type="text" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last name*</label>
+            <input type="text" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Business email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-group">
+            <label>Job title</label>
+            <input type="text" name="jobTitle" />
+          </div>
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" name="company" required />
+          </div>
+          <div class="form-group">
+            <label>Select country*</label>
+            <select name="country" required>
+              <option value="">Choose...</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Enquiry about?*</label>
+            <select name="enquiry" required>
+              <option value="">Choose...</option>
+              <option>Enterprise Solutions</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Comments</label>
+            <textarea rows="3" name="message"></textarea>
+          </div>
         </div>
-        <div class="insight-item">
-            <h3>Case Study: Optimizing BPM</h3>
-            <p>Read how Saasify helped a client streamline their business processes effectively.</p>
-        </div>
-        <div class="insight-item" style="margin-top: 13px">
-            <h3>Security Trends 2025</h3>
-            <p>Explore the future of cybersecurity and how your company can prepare.</p>
-        </div>
-        <a href="insight-page.html">
-            <button class="view-all-button">View All</button>
+       
+       <div class="form-footer">
+        <a href="thankyou.html">
+           <button type="submit">Submit</button>
         </a>
-    </section>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
 
     <footer>
         <div class="footer-grid">
@@ -866,11 +1274,11 @@
     </footer>
     <script>
         const heroImages = [
-            "images/Sol-one.png",
-            "images/Sol-two.png",
-            "images/Sol-three.png",
-            "images/Sol-four.png",
-            "images/Sol-five.png",
+            "images/Solution1.jpg",
+            "images/Solution2.jpg",
+            "images/Solution3.jpg",
+            "images/Solution4.jpg",
+            "images/Solution5.jpg",
         ];
 
         const heroDots = document.querySelectorAll('.hero-dot');
@@ -894,7 +1302,7 @@
 
         startHeroCarousel();
 
-        const images = ["images/Sol-one.png", "images/Sol-two.png", "images/Sol-three.png", "images/Sol-four.png", "images/Sol-five.png"];
+        const images = ["images/Solution1.jpg", "images/Solution2.jpg", "images/Solution3.jpg", "images/Solution4.jpg", "images/Solution5.jpg"];
         let currentImg = 0;
         setInterval(() => {
             currentImg = (currentImg + 1) % images.length;
@@ -902,163 +1310,160 @@
             if (img) img.src = images[currentImg];
         }, 3000);
 
-        const statsData = [{
-            number: '150',
-            label: 'Implementations'
-        }, {
-            number: '100',
-            label: 'Clients'
-        }, {
-            number: '40',
-            label: 'Technology Professionals'
-        }];
+        const testimonials = [
+  {
+    quote: "images/sign.png",
+    name: "Meg Larsen",
+    role: "Agency Project Manager",
+    image: "images/Aravindhan.png",
+    rating: 5,
+    message: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form...There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form...There are manyvariations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form...There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form..."
+  },
+  {
+    quote: "images/sign.png",
+    name: "Paul Scott",
+    role: "Startup Founder",
+    image: "images/Raghu.png",
+    rating: 4,
+    message: "We have always received fantastic support from the guys..."
+  },
+  {
+    quote: "images/sign.png",
+    name: "Jessica",
+    role: "Marketing Head",
+    image: "images/Sakthi.png",
+    rating: 5,
+    message: "The best part about the theme is how clean the CSS is...The best part about the theme is how clean the CSS is..Clean code, scalable UI components, and fantastic documentation!."
+  },
+  {
+    quote: "images/sign.png",
+    name: "Robert Brown",
+    role: "Product Designer",
+    image: "images/Sakthi.png",
+    rating: 4,
+    message: "Clean code, scalable UI components, and fantastic documentation!My go-to team for agile product launches and timely updates. The best part about the theme is how clean the CSS is..."
+  },
+  {
+    quote: "images/sign.png",
+    name: "Natalie Lane",
+    role: "Creative Director",
+    image: "images/Aravindhan.png",
+    rating: 5,
+    message: "My go-to team for agile product launches and timely updates."
+  }
+];
 
-        const wrapper = document.createElement("div");
-        wrapper.className = "stats-wrapper";
+const layout = document.getElementById("testimonialLayout");
 
-        const headingContainer = document.createElement("div");
-        headingContainer.style.textAlign = "center";
-        headingContainer.style.marginBottom = "29px";
+layout.innerHTML = `
+  <div class="testimonial-card large">
+    ${renderCard(testimonials[0])}
+  </div>
+  <div class="testimonial-right">
+    <div class="testimonial-card short">${renderCard(testimonials[1])}</div>
+    <div class="testimonial-card tall">${renderCard(testimonials[2])}</div>
+  </div>
+  <div class="testimonial-next">
+    <div class="testimonial-card n-tall">${renderCard(testimonials[3])}</div>
+    <div class="testimonial-card n-short">${renderCard(testimonials[4])}</div>
+  </div>
+`;
 
-        const title = document.createElement("div");
-        title.style.color = "#fff";
-        title.style.fontSize = "1.2rem";
-        title.textContent = "Key Stats";
-        headingContainer.appendChild(title);
-
-        const subtitle = document.createElement("h1");
-        subtitle.className = "main-heading";
-        subtitle.style.color = "#55ffbe";
-        subtitle.style.fontSize = "2rem";
-        subtitle.style.marginTop = "10px";
-        subtitle.textContent = "Our stats tell the story of Saasify’s impact.";
-        headingContainer.appendChild(subtitle);
-
-        wrapper.appendChild(headingContainer);
-
-        const statsContainer = document.createElement("section");
-        statsContainer.className = "key-stats";
-        statsContainer.id = "stats";
-        wrapper.appendChild(statsContainer);
-        document.body.insertBefore(wrapper, document.querySelector(".trusted-by"));
-
-        function animateCounter(el, value) {
-            let counter = 0;
-            const step = Math.ceil(value / 50);
-            const interval = setInterval(() => {
-                counter += step;
-                if (counter >= value) {
-                    el.textContent = value;
-                    clearInterval(interval);
-                } else {
-                    el.textContent = counter;
-                }
-            }, 30);
-        }
-
-        // Create all stat elements but DO NOT animate yet
-        const statElements = [];
-
-        statsData.forEach(stat => {
-            const div = document.createElement("div");
-            div.className = "stat";
-            const icon = document.createElement("i");
-            icon.className = "fas fa-chart-line"; // change per stat if needed
-            div.appendChild(icon);
-
-            const h2 = document.createElement("h2");
-            const numberSpan = document.createElement("span");
-            numberSpan.textContent = "0";
-            const plusSpan = document.createElement("span");
-            plusSpan.textContent = "+";
-            h2.appendChild(numberSpan);
-            h2.appendChild(plusSpan);
-            const p = document.createElement("p");
-            p.textContent = stat.label;
-            div.appendChild(h2);
-            div.appendChild(p);
-            statsContainer.appendChild(div);
-            statElements.push({
-                el: numberSpan,
-                value: stat.number
-            }); // collect for observer
-        });
-        let statsAnimated = false;
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    statsAnimated = true; // prevent re-triggering
-                    statElements.forEach(stat => {
-                        animateCounter(stat.el, stat.value);
-                    });
-                }
-            });
-        }, {
-            threshold: 0.5 // trigger when 50% of section is visible
-        });
-
-        observer.observe(wrapper); // observe the whole stats section
-
-
-        const testimonials = [{
-            image: "https://randomuser.me/api/portraits/women/68.jpg",
-            feedback: "Amazing platform that transformed our workflows.",
-            name: "Kaity",
-            title: "Web Developer"
-        }, {
-            image: "https://randomuser.me/api/portraits/men/11.jpg",
-            feedback: "A reliable solution for enterprise integration.",
-            name: "Mike",
-            title: "Product Manager"
-        }, {
-            image: "https://randomuser.me/api/portraits/men/12.jpg",
-            feedback: "Incredible customer support and intuitive tools.",
-            name: "Samite",
-            title: "Support Lead"
-        }, {
-            image: "https://randomuser.me/api/portraits/men/13.jpg",
-            feedback: "Boosted our team's efficiency tenfold.",
-            name: "Hashi",
-            title: "Solutions Architect"
-        }];
-
-        const carousel = document.getElementById("carousel");
-        const testimonialDotsContainer = document.getElementById("dots");
-
-        testimonials.forEach((t, index) => {
-            const card = document.createElement("div");
-            card.className = "testimonial-card";
-            if (index === 0) card.classList.add("active");
-
-            card.innerHTML = `
-    <img src="${t.image}" alt="${t.name}" />
-    <div class="feedback">"${t.feedback}"</div>
-    <div class="name">${t.name}</div>
-    <div class="title">${t.title}</div>
+function renderCard(t) {
+  return `
+    <div class="testimonial-quote"> 
+        <img src="${t.quote}">
+    </div>
+    <div class="testimonial-header">
+      <img src="${t.image}" alt="${t.name}">
+      <div>
+        <strong>${t.name}</strong>
+        <p>${t.role}</p>
+      </div>
+    </div>
+    <div class="testimonial-rating">${"★".repeat(t.rating)}${"☆".repeat(5 - t.rating)}</div>
+    <p class="testimonial-message">${t.message}</p>
   `;
-            carousel.appendChild(card);
+}
 
-            const dot = document.createElement("span");
-            dot.className = "testimonial-dot dot";
-            if (index === 0) dot.classList.add("active");
-            testimonialDotsContainer.appendChild(dot);
-        });
+      const statsData = [
+  { number: 150, label: 'Implementations', suffix: '+'  },
+  { number: 40, label: 'Technology professionals', suffix: '+'  },
+  { number: 100, label: 'Clients',  suffix: '+'},
+  { number: 95, label: 'Retention Rate', suffix: '%'}
+];
 
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+const statsGrid = document.getElementById("statsGrid");
 
-        function setActiveTestimonial(index) {
-            testimonialCards.forEach(c => c.classList.remove('active'));
-            testimonialDots.forEach(d => d.classList.remove('active'));
-            testimonialCards[index].classList.add('active');
-            testimonialDots[index].classList.add('active');
-        }
 
-        testimonialCards.forEach((card, index) => {
-            card.addEventListener('click', () => setActiveTestimonial(index));
-        });
-    </script>
+// Create stat boxes
+const statElements = [];
+
+statsData.forEach(stat => {
+  const box = document.createElement("div");
+  box.className = "stat-box";
+
+  // Create wrapper for animated number + static suffix
+  const numWrapper = document.createElement("div");
+  numWrapper.className = "stat-number"; // parent container for number + suffix
+
+  const numberSpan = document.createElement("span"); // animated number
+  numberSpan.textContent = "0";
+
+  const suffixSpan = document.createElement("span"); // static symbol
+  suffixSpan.textContent = stat.suffix || '';
+  suffixSpan.className = "stat-suffix";
+
+  numWrapper.appendChild(numberSpan);
+  numWrapper.appendChild(suffixSpan); // ✅ append inside the wrapper
+
+  const label = document.createElement("div");
+  label.className = "stat-label";
+  label.textContent = stat.label;
+
+  box.appendChild(numWrapper); // ✅ add the wrapper to the card
+  box.appendChild(label);
+  statsGrid.appendChild(box);
+
+  statElements.push({ el: numberSpan, value: stat.number }); // animate only numberSpan
+});
+
+
+statElements.forEach(stat => {
+  animateCounter(stat.el, stat.value, stat.suffix || '');
+});
+
+function animateCounter(el, value) {
+  let counter = 0;
+  const step = Math.ceil(value / 50);
+  const interval = setInterval(() => {
+    counter += step;
+    if (counter >= value) {
+      el.textContent = value;
+      clearInterval(interval);
+    } else {
+      el.textContent = counter;
+    }
+  }, 50);
+}
+
+
+// Animate on scroll
+let statsAnimated = false;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !statsAnimated) {
+      statsAnimated = true;
+      statElements.forEach(stat => {
+        animateCounter(stat.el, stat.value);
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(document.querySelector(".key-stats-section"));
+
+</script>
 </body>
 
 </html>
