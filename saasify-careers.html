@@ -385,39 +385,60 @@ h2.main-heading {
   background-color: #fff;
 }
 
-.benefits-inline {
-  display: flex;
-  justify-content: space-around;
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
-  flex-wrap: wrap;
   max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
 }
 
-.benefit-item {
-  flex: 1 1 250px;
-  max-width: 300px;
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.benefit-item img {
-  width: 60px;
-  height: auto;
-  margin-bottom: 15px;
-}
 
-.benefit-item h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+.why-card {
+  border-radius: 20px;
+  padding: 30px;
   color: #0a1f44;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.benefit-item p {
+.bg-color-card {
+  color: #000;
+  background-blend-mode: overlay;
+  background-color: rgba(10, 31, 68, 0.3); /* Optional dark overlay for text readability */
+}
+
+.bg-color-card1 {
+  background: linear-gradient(270deg, #50D387 0%, #296D46 100%);
+}
+.bg-image-card {
+  color: #fff;
+  background-blend-mode: overlay;
+  background-color: rgba(10, 31, 68, 0.3); /* Optional dark overlay for text readability */
+}
+
+.card-text h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.card-text p {
   font-size: 0.95rem;
-  color: #444;
   line-height: 1.5;
 }
+
 
   .apply-role{
     padding: 40px 20px;
@@ -431,23 +452,38 @@ h2.main-heading {
     margin: auto;
     text-align: center;
   }
+.job-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  color: #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .job-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  }
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-  .job-card h3 {
-    margin: 10px 0;
-    font-size: 1.1rem;
-  }
+.job-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
 
-  .job-card p {
-    font-size: 0.95rem;
-    margin: 4px 0;
-  }
+.job-card:hover h3 {
+  color: #296D46; /* Highlight text on hover */
+}
+
+.job-card p {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
 
   .view-dtls {
     margin-top: 10px;
@@ -908,52 +944,54 @@ footer {
 </section>
 
 <section class="why-work-section">
-  <h2 class="main-heading"><span class="span-border-bottom">Why Work With Us?</span></h2>
-  <div class="benefits-inline">
-    <div class="benefit-item">
-      <img src="images/salary_icon.png" alt="Competitive Salary" />
-      <h4>Competitive Salary</h4>
-      <p>Your packages and benefits are open conversation and made to give maximum advantage to the employee.</p>
+  <h2 class="main-heading">
+    <span class="span-border-bottom">Why Work With Us?</span>
+  </h2>
+
+  <div class="why-grid">
+    <!-- Card 1 - Background Image -->
+    <div class="why-card bg-image-card" style="background-image: url('images/three-engineers.jpg');">
+      <div class="card-text">
+        <h4>Inclusive Culture</h4>
+        <p>We embrace diversity and unique perspectives to build a thriving, inclusive workplace.</p>
+      </div>
     </div>
-    <div class="benefit-item">
-      <img src="images/work-life-balance-icon.png" alt="Work-life-balance" />
-      <h4>Work-Life Balance</h4>
-      <p>We prioritize well-being with flexible hours, remote work, and supportive leave—helping you thrive at work and in life.</p>
+
+    <!-- Card 2 - Soft background -->
+    <div class="why-card bg-color-card" style="background-image: url('images/corevalues2.png');">
+      <div class="card-text">
+        <h4>Competitive CompensationWork-Life Balance</h4>
+        <p>Flexible hours, remote options, and wellness-first culture to support your life.</p>
+      </div>
     </div>
-    <div class="benefit-item">
-      <img src="images/Culture-icon.png" alt="Culture" />
-      <h4>Inclusive Culture</h4>
-      <p>We celebrate diversity and foster a culture where everyone feels respected, valued, and empowered to be their authentic self.</p>
+
+    <!-- Card 3 - Soft background -->
+    <div class="why-card bg-color-card" style="background-image: url('images/corevalue-sal.png');">
+      <div class="card-text">
+        <h4>Competitive Compensation</h4>
+        <p>Salary, bonuses, equity, and benefits better than market standards.</p>
+      </div>
     </div>
-    <div class="benefit-item">
-      <img src="images/global_icon.png" alt="Growth Assured" />
-      <h4>Global Exposure</h4>
-      <p>Collaborate with clients and teams across geographies, giving you broad exposure to international business challenges and innovations.</p>
-    </div>
-     <div class="benefit-item">
-      <img src="images/read_icon.png" alt="Continuous Learning" />
-      <h4>Continuous Learning</h4>
-      <p>Access to certification programs, internal workshops, and mentorship ensures you’re always learning and upskilling.</p>
-    </div>
-    <div class="benefit-item">
-      <img src="images/Growth_icon.png" alt="Growth Assured" />
-      <h4>Growth Assured</h4>
-      <p>We believe personal and professional growth of an employee is the key to success.</p>
+    
+    <!-- Card 4 - Background Image -->
+    <div class="why-card bg-image-card" style="background-image: url('images/corevalue.jpg');">
+      <div class="card-text">
+        <h4>Continuous Learning</h4>
+        <p>Upskill through certifications, training programs, and mentorship opportunities.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="careers-openings-bg">
   <div class="careers-content">
-    <p class="tagline">INNOVATE FREELY, GROW FEARLESSLY</p>
     <h2>Current Openings</h2>
-    <p>We’re always looking for curious minds and passionate builders to join the Saasify journey.</p>
-    <p>Share your resume with us at <a href="mailto:kalyani@saasifysolutions.com">kalyani@saasifysolutions.com</a></p>
   </div>
 </section>
 
  <section class="apply-role">
-  <h2 class="main-heading"><span class="span-border-bottom">Current Openings</span></h2>
+  <h4 class="tagline" style="text-align:center; color: #00c896;">WE ARE HIRING!</h4>
+  <h2 class="main-heading"><span class="span-border-bottom">Our Current Job Openings</span></h2>
   <div class="job-grid" id="jobList"></div>
    
   <div id="jobModal" class="modal">
@@ -988,7 +1026,7 @@ footer {
   </div>
   <div class="apply-right">
       <img src="images/scenes-people-work.jpg"></img>
-   </div>
+  </div>
 </section>
 
 <footer>

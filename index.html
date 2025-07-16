@@ -227,16 +227,6 @@
             cursor: pointer;
         }
         
-        .about-dropdown {
-            display: none;
-            flex-direction: row;
-            gap: 40px;
-        }
-        
-        .dropdown:hover .about-dropdown {
-            display: flex;
-        }
-        
         ul,
         li {
             list-style: none;
@@ -255,7 +245,80 @@
         .navbar li {
             list-style-type: none !important;
         }
-        
+        @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #0a1f44;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none; /* Will be toggled by JS */
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    padding: 0 !important;
+    min-width: 100% !important;
+  }
+
+  .dropdown-content h4 {
+    color: #fff;
+    border-bottom: 1px solid #55ffbe;
+    margin-bottom: 5px;
+  }
+
+  .dropdown-column ul li a {
+    color: #fff;
+  }
+
+  .dropdown-column ul li .desc {
+    color: #ccc;
+    font-size: 0.8rem;
+    padding-top: 2px;
+    margin: 0;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .two-column-dropdown {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .right-icons,
+  .contact-button.desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .logo {
+    padding: 10px 20px;
+  }
+}
+
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -942,7 +1005,6 @@ header.scrolled {
   background-color: #0a1f44;
 }
 .desc{
-  
   font-size: 0.85rem;
   color: #0a1f44;
   margin: 4px 0 0;
@@ -955,7 +1017,7 @@ header.scrolled {
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+                <img src="images/Saasify logo.png" alt="Saasify Logo" />
             </a>
         </div>
         <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
@@ -1013,20 +1075,17 @@ header.scrolled {
                       d="M19 9l-7 7-7-7" />
               </svg>
               
-           <div class="dropdown-content expertise-dropdown">
-              <h4>Services</h4>
-              <div class="two-column-dropdown">
+                <div class="dropdown-content" style="min-width: 200px !important;">
+                   <div class="dropdown-column">
+                      <h4>Services</h4>
                         <ul>
                             <li><a href="consulting-services.html">Consulting</a></li>
                             <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
                             <li><a href="Imp-Cust-service.html">Implementation and Customisation</a></li>
-                            
-                        </ul>
-                        <ul>
                             <li><a href="training-services.html">Training & Enablement</a></li>
                             <li><a href="Ongoing_support.html">Ongoing Support</a></li>
                             <li><a href="managed-services.html">Managed Services</a></li>
-                         </ul>
+                          </ul>
                     </div>
                     <!-- <div class="dropdown-column">
                         <h4>Solutions</h4>
@@ -1039,8 +1098,7 @@ header.scrolled {
                         </ul>
                     </div> -->
                 </div>
-            </div>
-
+             </div>
             <div class="dropdown">
                 <div class="dropdown-trigger">
                   <span>Company Overview</span>
@@ -1051,7 +1109,7 @@ header.scrolled {
                           d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
-                <div class="dropdown-content about-dropdown">
+                <div class="dropdown-content" style="min-width: 200px !important;">
                    <div class="dropdown-column">
                       <h4>About</h4>
                     <ul>
@@ -1062,20 +1120,10 @@ header.scrolled {
                 </div>
               </div>
             </div>
-            <div class="dropdown">
-                <span style="color: white;">Careers</span>
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                    fill="none" viewBox="0 0 24 24" stroke="white" 
-                    style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                        d="M19 9l-7 7-7-7" />
-                </svg>
-                <div class="dropdown-content">
-                    <ul>
-                        <li><a href="saasify-careers.html">Job Vacancy</a></li>
-                    </ul>
-                </div>
-            </div>
+            
+            <ul>
+                <li><a href="saasify-careers.html" style="color: white;">Careers</a></li>
+            </ul>
             <ul>
                 <li><a href="insight-page.html" style="color: white;">Insights</a></li>
             </ul>
@@ -1392,7 +1440,7 @@ header.scrolled {
   const swiper = new Swiper('.heroSwiper', {
     loop: true,
     autoplay: {
-      delay: 2000,
+      delay: 5000,
     },
     pagination: {
       el: '.swiper-pagination',
