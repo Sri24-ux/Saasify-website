@@ -44,15 +44,13 @@
 </script>
 
  <style>
-    body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4faff;
-    color: #2a2a2a;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+ body {
+  
+            margin: 0;
+            font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #2a2a2a;
+        }
  
     header {
             display: flex;
@@ -85,32 +83,78 @@
         }
         
         nav .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(10, 31, 68, 0.95);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            z-index: 999;
-            min-width: 200px;
-            color: white;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #ffffff; /* ✅ White background */
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 1.1); /* ✅ Smooth card shadow */
+          padding: 20px 30px;
+          z-index: 999;
+          min-width: 500px;
+          border-radius: 1px;
+          color: #0a1f44; /* Dark text color */
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+      }
+      .dropdown-trigger {
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
         }
-        
+.desc{
+  font-size: 0.85rem;
+  color: #0a1f44;
+  margin: 4px 0 0;
+  padding-top: 20px;
+}
         .two-column-dropdown {
             display: flex;
             gap: 40px;
-            min-width: 500px !important;
+            justify-content: space-between;
         }
-        
+        .two-column-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.two-column-dropdown ul li {
+  margin: 6px 0;
+}
+
+.two-column-dropdown ul li a {
+  text-decoration: none;
+  color: #0a1f44;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.two-column-dropdown ul li a:hover {
+  color: #00c896;
+}
+
         .dropdown-column {
             flex: 1;
         }
-        
+        .expertise-dropdown h4 {
+          font-size: 1rem;
+          margin-bottom: 12px;
+          color: #000;
+          border-bottom: 2px solid #55ffbe;
+          padding-bottom: 8px;
+        }
+
         .dropdown-column h4 {
             font-size: 1rem;
             margin-bottom: 10px;
-            color: #55ffbe;
+            color: #000;
             border-bottom: 1px solid #55ffbe;
             padding-bottom: 5px;
         }
@@ -122,32 +166,45 @@
         }
         
         .dropdown-column ul li {
-            margin: 6px 0;
+           margin: 12px 0;
+           line-height: 1.2;
         }
         
         .dropdown-column ul li a {
-            text-decoration: none;
-            color: white;
-            transition: 0.3s;
-            padding-bottom: 2px;
             display: inline-block;
-            border-bottom: 2px solid transparent;
-        }
-        
+            text-decoration: none;
+            color: #0a1f44;
+            position: relative;
+            padding-bottom: 2px;
+          }
+        .dropdown-column ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: #00c896;
+            transition: width 0.3s ease;
+          }
+          .dropdown-column ul li a:hover::after {
+              width: 100%;
+            }
         nav .dropdown:hover .dropdown-content {
-            display: flex;
-        }
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+       }
         
         nav .dropdown-content ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        
+       
         nav .dropdown-content ul li a {
             display: block;
-            padding: 10px 20px;
-            color: white;
+            color: #000;
             text-decoration: none;
             position: relative;
             font-size: 0.95rem;
@@ -157,8 +214,8 @@
         nav .dropdown-content ul li a::after {
             content: '';
             position: absolute;
-            left: 20px;
-            bottom: 8px;
+            left: 1px;
+            bottom: 2px;
             width: 0;
             height: 2px;
             background-color: #00c896;
@@ -170,22 +227,25 @@
         }
         
         nav .dropdown-content ul li a:hover {
-            color: rgba(244, 248, 248, 0.966);
+            color: rgb(8, 0, 0);
         }
-       
-        .right-icons, .contact-button desktop-only {
+        
+       .right-icons, 
+        .contact-button desktop-only {
             display: flex;
             gap: 15px;
             align-items: center;
         }
         
-        .right-icons, .contact-button desktop-only i {
+        .right-icons,
+         .contact-button desktop-only i {
             font-size: 1.2rem;
             cursor: pointer;
             color: white;
         }
         
-        .right-icons, .contact-button desktop-only i:hover {
+        .right-icons, 
+        .contact-button desktop-only i:hover {
             color: #f4c300;
         }
         
@@ -197,16 +257,6 @@
             color: #000;
             border-radius: 4px;
             cursor: pointer;
-        }
-        
-        .about-dropdown {
-            display: none;
-            flex-direction: row;
-            gap: 40px;
-        }
-        
-        .dropdown:hover .about-dropdown {
-            display: flex;
         }
         
         ul,
@@ -227,6 +277,79 @@
         .navbar li {
             list-style-type: none !important;
         }
+        @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #0a1f44;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none; /* Will be toggled by JS */
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    padding: 0 !important;
+    min-width: 100% !important;
+  }
+
+  .dropdown-content h4 {
+    color: #fff;
+    border-bottom: 1px solid #55ffbe;
+    margin-bottom: 5px;
+  }
+
+  .dropdown-column ul li a {
+    color: #fff;
+  }
+
+  .dropdown-column ul li .desc {
+    color: #ccc;
+    font-size: 0.8rem;
+    padding-top: 2px;
+    margin: 0;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .two-column-dropdown {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .right-icons,
+  .contact-button.desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .logo {
+    padding: 10px 20px;
+  }
+}
         
         .mobile-menu {
             display: none;
@@ -378,10 +501,6 @@
     }  
 }
   
-    /* Icons section */
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;margin-bottom:2rem; }
-    .feature-card { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
-    .feature-card i { font-size: 2.5rem; color: #0077cc; margin-bottom: 1rem; }
 
 .vision-mission-wrapper {
   display: flex;
@@ -496,43 +615,119 @@
       background-color: #ffdb4d;
     }
  .cta-section a { background: #fff; color: #0077cc; padding: .75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: bold; }
- .why-saasify {
-    padding: 60px 40px;
-background-image: linear-gradient(-35deg, #03081e 0%, #0a1f44 100%);
-    text-align: center;
-    }
+ 
 
-.services-section {
+.benefits-section {
+  background-image: url('images/your-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.benefit-overlay {
+  background-color: rgba(10, 31, 68, 0.85);
   padding: 60px 20px;
+}
+
+.benefit-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2a2a2a;
   text-align: center;
 }
 
-h2.main-heading {
-    position: relative;
-    margin-bottom: 56px;
-    text-align: center;
+.benefit-card h3 {
+  color: #27ae60;
+  margin-bottom: 10px;
 }
-.span-border-bottom {
-    border-bottom: 3px solid #55ffbe;
+
+.benefit-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+.benefit-overlay {
+  padding: 40px 15px;
+}
+
+.benefit-card {
+  padding: 20px 15px;
+}
+}
+@media (max-width: 1024px) {
+  .benefit-overlay {
+    padding: 40px 16px;
+  }
+}
+
+.services-section {
+  padding: 20px 40px;
+}
+
+.sub-heading {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #7a76a3;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0a1f44;
 }
 
 .services-grid {
-  display: grid;
-  gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* ensures all cards take full height */
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 20px;
 }
 
 .service-card {
-  padding: 24px 16px;
+  background-color: transparent;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 300px;
+  padding: 20px;
   border-radius: 12px;
-  text-align: center;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center; /* vertically centers content */
+  height: 100%; /* equal height across cards */
 }
+
+.service-card:hover {
+  background-color: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
 
 .service-card img {
   max-width: 80px;
@@ -540,10 +735,27 @@ h2.main-heading {
 }
 
 .service-card h3 {
-  margin: 0 0 12px;
-  font-size: 1.1rem;
-  color: #0a1f44;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color:#0a1f44;
 }
+
+.service-card h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #00c896; /* Your highlight color */
+  transition: width 0.4s ease;
+}
+
+.service-card h3:hover::after {
+  width: 100%;
+}
+
 
 .service-card p {
   margin: 0;
@@ -561,7 +773,7 @@ h2.main-heading {
 
 @media (max-width: 480px) {
   .services-section {
-    padding: 40px 10px;
+    padding: 40px 41px;
   }
   .services-grid {
     gap: 16px;
@@ -573,66 +785,56 @@ h2.main-heading {
 }
     
 .careers-section {
- position: relative;
-    background-image: url(your-careers-bg.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    overflow: hidden;
-    margin: 5px 0;
-}
-
-.careers-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+  background-color: #f4faff; /* Soft light blue background */
   width: 100%;
-  height: 68%;
-  background-color: #f4faff; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 60px 20px;
+  border-radius: 12px;
   box-sizing: border-box;
 }
 
-.careers-content {
-  text-align: center;
-  max-width: 700px;
-  color: white;
-  z-index: 1;
+.careers-overlay {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.careers-content h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.careers-content p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #0a1f44;
+.careers-section .main-heading {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1a1a1a;
 }
 
 .careers-button {
-  display: inline-block;
   background-color: #f4c300;
   color: #000;
-  padding: 12px 28px;
-  border-radius: 30px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .careers-button:hover {
   background-color: #ffdb4d;
 }
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .careers-section .main-heading {
+    font-size: 22px;
+  }
+
+  .careers-section p {
+    font-size: 14px;
+  }
+
+  .careers-button {
+    width: 100%;
+    padding: 12px;
+    display: inline-block;
+  }
+}
+
 .hero-images img {
   width: 85%;
   max-width: 400px;
@@ -735,16 +937,23 @@ footer {
     justify-content: center;
   }
 }
-
-.quote-section {
-  background-color: #0a1f44;
+.quote-section{
+  padding: 20px 40px;
+}
+.quote-bg {
+ 
   padding: 40px 20px;
+  background: linear-gradient(135deg, #1abc9c, #3498db);
+  background-image: url('images/2968880.jpg');
+  background-repeat: repeat;
+  background-size: contain;
 }
 
+
 .quote-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  background: #ffffff;
+ 
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   overflow: hidden;
@@ -753,6 +962,8 @@ footer {
   gap: 40px;
   padding: 40px;
   flex-wrap: wrap;
+ background: white;
+  backdrop-filter: blur(3px);
 }
 
 .quote-content {
@@ -861,16 +1072,66 @@ footer {
  <header>
         <div class="logo">
             <a href="index.html">
-                <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+                 <img src="images/Saasify logo.png" alt="Saasify Logo" />
             </a>
         </div>
         <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
         <nav>
-            <div class="dropdown">
-                <span style="color: white;">Services & Solutions</span>
-                <div class="dropdown-content two-column-dropdown">
-                    <div class="dropdown-column">
-                        <h4>Services</h4>
+           <div class="dropdown">
+            <span style="color: white;">Saasify Expertise </span>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                fill="none" viewBox="0 0 24 24" stroke="white" 
+                style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M19 9l-7 7-7-7" />
+            </svg>   
+            <div class="dropdown-content expertise-dropdown">
+              <h4>Expertise</h4>
+              <div class="two-column-dropdown">
+                <ul>
+                
+                  <li>
+                    <a href="IAM.html">IAM</a>
+                    <span class="desc">Identity and access management solutions</span>
+                  </li>
+                  <li>
+                    <a href="ITSM.html">ITSM</a>
+                    <span class="desc">Streamline service delivery and operations</span>
+                  </li>
+                  <li>
+                    <a href="ITOM.html">ITOM</a>
+                    <span class="desc">Optimize infrastructure performance</span>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="IT-Analysis.html">IT Analysis</a>
+                    <span class="desc">Insights and metrics for better decisions</span>
+                  </li>
+                  <li>
+                    <a href="SIEM.html">SIEM</a>
+                    <span class="desc">Real-time security event monitoring</span>
+                  </li>
+                  <li>
+                    <a href="UEM.html">UEM</a>
+                    <span class="desc">Unified endpoint management</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+                <span style="color: white;">Services</span>
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" viewBox="0 0 24 24" stroke="white" 
+                  style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M19 9l-7 7-7-7" />
+              </svg>
+              
+                <div class="dropdown-content" style="min-width: 200px !important;">
+                   <div class="dropdown-column">
+                      <h4>Services</h4>
                         <ul>
                             <li><a href="consulting-services.html">Consulting</a></li>
                             <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
@@ -878,51 +1139,36 @@ footer {
                             <li><a href="training-services.html">Training & Enablement</a></li>
                             <li><a href="Ongoing_support.html">Ongoing Support</a></li>
                             <li><a href="managed-services.html">Managed Services</a></li>
-                        </ul>
-                    </div>
-                    <div class="dropdown-column">
-                        <h4>Solutions</h4>
-                        <ul>
-                            <li><a href="it-operations-management.html">IT Operations Management</a></li>
-                            <li><a href="it-security-management.html">IT Security Management</a></li>
-                            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-                            <li><a href="Business-analytics.html">Business Analytics</a></li>
-                            <li><a href="business-pro-management.html">Business Process Management</a></li>
-                        </ul>
+                          </ul>
                     </div>
                 </div>
-            </div>
+             </div>
+
             <div class="dropdown">
-                <span style="color: white;">Platform Proficiency</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <li><a href="IAM.html">IAM</a></li>
-                        <li><a href="ITSM.html">ITSM</a></li>
-                        <li><a href="ITOM.html">ITOM</a></li>
-                        <li><a href="IT-Analysis.html">IT Analysis</a></li>
-                        <li><a href="SIEM.html">SIEM</a></li>
-                        <li><a href="UEM.html">UEM</a></li>
-                    </ul>
+                <div class="dropdown-trigger">
+                  <span>Company Overview</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                      fill="none" viewBox="0 0 24 24" stroke="white" 
+                      style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
-            </div>
-            <div class="dropdown">
-                <span style="color: white;">Company Overview</span>
-                <div class="dropdown-content about-dropdown">
+                <div class="dropdown-content" style="min-width: 200px !important;">
+                   <div class="dropdown-column">
+                      <h4>About</h4>
                     <ul>
                         <li><a href="about_us.html">About Saasify</a></li>
                         <li><a href="our-team.html">Our Team</a></li>
                         <li><a href="our-presence.html">Our Presence</a></li>
                     </ul>
                 </div>
+              </div>
             </div>
-            <div class="dropdown">
-                <span style="color: white;">Careers</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <li><a href="saasify-careers.html">Job Vacancy</a></li>
-                    </ul>
-                </div>
-            </div>
+            
+            <ul>
+                <li><a href="saasify-careers.html" style="color: white;">Careers</a></li>
+            </ul>
             <ul>
                 <li><a href="insight-page.html" style="color: white;">Insights</a></li>
             </ul>
@@ -933,7 +1179,6 @@ footer {
             </a>
         </div>
     </header>
-
 
     <div class="mobile-menu" id="mobileMenu" style="display: none;">
         <!-- Services -->
@@ -977,10 +1222,7 @@ footer {
         </div>
 
         <!-- Careers -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Careers ▼</div>
-        <div class="submenu">
-            <a href="saasify-careers.html">Job Vacancy</a>
-        </div>
+        <a href="saasify-careers.html" style="display:block; margin-top: 10px;">Careers</a>
 
         <!-- Insights -->
         <a href="insight-page.html" style="display:block; margin-top: 10px;">Insights</a>
@@ -1017,43 +1259,39 @@ footer {
     <span>About Saasify</span>
   </div>
 </section>
-<section class="why-saasify">
 
-<h2 class="main-heading" style="color: white;"><span class="span-border-bottom">Why choose Saasify?</span></h2>
-      <div class="features">
-        <div class="feature-card">
+<section class="benefits-section">
+  <div class="benefit-overlay">
+    <div class="benefit-content">
+      <p class="sub-heading">WHY SAASIFY?</p>
+       <h2 class="main-heading" style="color: #ffffff">Where technology meets <span style="color: #00c896">transformative outcomes.</span></h2>
+ 
+      <div class="benefit-grid">
+        <div class="benefit-card">
           <i class="fa-solid fa-robot"></i>
           <h3>Rapid Deployment</h3>
           <p>Get operational in days—no heavy integrations or engineering overhead.</p>
         </div>
-        <div class="feature-card">
+        <div class="benefit-card">
           <i class="fa-solid fa-brain"></i>
           <h3>Scalable &amp; Secure</h3>
           <p>Handles thousands of devices with enterprise-grade security and compliance.</p>
         </div>
-        <div class="feature-card">
+        <div class="benefit-card">
           <i class="fa-solid fa-shield-alt"></i>
-          <h3>Actionable Analytics</h3>
+         <h3>Actionable Analytics</h3>
           <p>Insights-driven decisions with smart reporting and optimization flags.</p>
-        </div>
-        <div class="feature-card">
+       </div>
+        <div class="benefit-card">
           <i class="fa-solid fa-cloud"></i>
           <h3>Expert Support</h3>
           <p>Guided onboarding plus ongoing 24×7 technical support.</p>
         </div>
-        <div class="feature-card">
-          <i class="fa-solid fa-code"></i>
-          <h3>Seamless Integrations</h3>
-          <p>Plug into your existing IT ecosystem effortlessly, including ITSM, cloud platforms, and monitoring tools.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fa-solid fa-chart-line"></i>
-          <h3>Data &amp; Analytics</h3>
-          <p>Deliver real-time insights across operations and CX with BI, streaming pipelines, and embedded analytics.</p>
-        </div>
       </div>
-    </section>
-    
+    </div>
+  </div>
+</section>
+  
 <section class="vision-mission-wrapper">
   <div class="vision-mission-card">
     <div class="vision-mission-left">
@@ -1074,9 +1312,8 @@ footer {
 </section>
 
 <section class="services-section">
-  <h2 class="main-heading">
-    <span class="span-border-bottom">Our Services</span>
-  </h2>
+  <p class="sub-heading">FEATURES</p>
+    <h2 class="main-heading">Purposeful Principles Powering  <span style="color: #00c896">Our Expansion.</span></h2>
 
   <div class="services-grid">
     <div class="service-card">
@@ -1103,13 +1340,16 @@ footer {
 </section>
 
 <section class="quote-section">
+  <p class="sub-heading" style="margin-bottom: 23px;">FROM OUR DIRECTOR</p>
+<div class="quote-bg">
+  
   <div class="quote-inner">
     <div class="quote-content">
       <div class="quote-mark">❝</div>
       <h2 class="quote-text">
         “At Saasify, we don’t just build solutions — we architect experiences that empower enterprises to evolve faster, smarter, and more securely. Innovation is not our goal — it’s our responsibility.”
       </h2>
-      <p class="quote-author">Madhusoodhanan</p>
+      <p class="quote-author" style="font-family: 'Great Vibes', cursive; font-size: 1.5rem;">Madhusoodhanan</p>
       <p class="quote-title">Director, Saasify Solutions</p>
       <a href="our-team.html" class="quote-btn">Meet Our Leadership</a>
     </div>
@@ -1118,15 +1358,15 @@ footer {
       <img src="images/Director_Image.png" alt="Madhusoodhanan" />
     </div>
   </div>
+</div>
 </section>
 
  <section class="careers-section">
   <div class="careers-overlay">
-    <div class="careers-content">
-       <h2 class="main-heading" style="color: #0a1f44;"><span class="span-border-bottom">Join the Future of Innovation</span></h2>
-      <p>Be part of a team that empowers enterprises through cutting-edge technologies and transformative solutions.</p>
+      <p class="sub-heading">NEXT HORIZON</p>
+    <h2 class="main-heading">Step Into the World of  <span style="color: #00c896">Innovation.</span></h2>
+      <p style="margin-bottom: 25px; line-height: 1.6;">Be part of a team that empowers enterprises through cutting-edge technologies and transformative solutions.</p>
       <a href="saasify-careers.html" class="careers-button">Explore Careers</a>
-    </div>
   </div>
 </section>
 <footer>
@@ -1158,13 +1398,6 @@ footer {
     &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
   </div>
 </footer>
-
-<script>
-  fetch('header_section.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('header').innerHTML = data);
-
-</script>
 
 </body>
 </html>

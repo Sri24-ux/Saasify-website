@@ -41,14 +41,11 @@
 </script>
 
  <style>
-  body {
-    font-family: 'Inter', sans-serif;
+   body {
     margin: 0;
-    padding: 0;
-    background-color: #f4faff;
+    font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
     color: #2a2a2a;
-    max-width: 100%;
-    overflow-x: hidden;
   }
   
     header {
@@ -77,37 +74,78 @@
             color: white;
         }
         
-        nav .dropdown {
+       nav .dropdown {
             position: relative;
         }
         
         nav .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(10, 31, 68, 0.95);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            z-index: 999;
-            min-width: 200px;
-            color: white;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #ffffff; /* ✅ White background */
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 1.1); /* ✅ Smooth card shadow */
+          padding: 20px 30px;
+          z-index: 999;
+          min-width: 500px;
+          border-radius: 1px;
+          color: #0a1f44; /* Dark text color */
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+      }
+      .dropdown-trigger {
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
         }
-        
+
         .two-column-dropdown {
             display: flex;
             gap: 40px;
-            min-width: 500px !important;
+            justify-content: space-between;
         }
-        
+        .two-column-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.two-column-dropdown ul li {
+  margin: 6px 0;
+}
+
+.two-column-dropdown ul li a {
+  text-decoration: none;
+  color: #0a1f44;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.two-column-dropdown ul li a:hover {
+  color: #00c896;
+}
+
         .dropdown-column {
             flex: 1;
         }
-        
+        .expertise-dropdown h4 {
+          font-size: 1rem;
+          margin-bottom: 12px;
+          color: #000;
+          border-bottom: 2px solid #55ffbe;
+          padding-bottom: 8px;
+        }
+
         .dropdown-column h4 {
             font-size: 1rem;
             margin-bottom: 10px;
-            color: #55ffbe;
+            color: #000;
             border-bottom: 1px solid #55ffbe;
             padding-bottom: 5px;
         }
@@ -117,34 +155,52 @@
             padding: 0;
             margin: 0;
         }
-        
+        .desc{
+  font-size: 0.85rem;
+  color: #0a1f44;
+  margin: 4px 0 0;
+  padding-top: 20px;
+}
         .dropdown-column ul li {
-            margin: 6px 0;
+           margin: 12px 0;
+           line-height: 1.2;
         }
         
         .dropdown-column ul li a {
-            text-decoration: none;
-            color: white;
-            transition: 0.3s;
-            padding-bottom: 2px;
             display: inline-block;
-            border-bottom: 2px solid transparent;
-        }
-        
+            text-decoration: none;
+            color: #0a1f44;
+            position: relative;
+            padding-bottom: 2px;
+          }
+        .dropdown-column ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: #00c896;
+            transition: width 0.3s ease;
+          }
+          .dropdown-column ul li a:hover::after {
+              width: 100%;
+            }
         nav .dropdown:hover .dropdown-content {
-            display: flex;
-        }
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+       }
         
         nav .dropdown-content ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        
+       
         nav .dropdown-content ul li a {
             display: block;
-            padding: 10px 20px;
-            color: white;
+            color: #000;
             text-decoration: none;
             position: relative;
             font-size: 0.95rem;
@@ -154,8 +210,8 @@
         nav .dropdown-content ul li a::after {
             content: '';
             position: absolute;
-            left: 20px;
-            bottom: 8px;
+            left: 1px;
+            bottom: 2px;
             width: 0;
             height: 2px;
             background-color: #00c896;
@@ -167,9 +223,10 @@
         }
         
         nav .dropdown-content ul li a:hover {
-            color: rgba(244, 248, 248, 0.966);
+            color: rgb(8, 0, 0);
         }
-        .right-icons, 
+        
+       .right-icons, 
         .contact-button desktop-only {
             display: flex;
             gap: 15px;
@@ -198,16 +255,6 @@
             cursor: pointer;
         }
         
-        .about-dropdown {
-            display: none;
-            flex-direction: row;
-            gap: 40px;
-        }
-        
-        .dropdown:hover .about-dropdown {
-            display: flex;
-        }
-        
         ul,
         li {
             list-style: none;
@@ -226,7 +273,80 @@
         .navbar li {
             list-style-type: none !important;
         }
-        
+        @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #0a1f44;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none; /* Will be toggled by JS */
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    padding: 0 !important;
+    min-width: 100% !important;
+  }
+
+  .dropdown-content h4 {
+    color: #fff;
+    border-bottom: 1px solid #55ffbe;
+    margin-bottom: 5px;
+  }
+
+  .dropdown-column ul li a {
+    color: #fff;
+  }
+
+  .dropdown-column ul li .desc {
+    color: #ccc;
+    font-size: 0.8rem;
+    padding-top: 2px;
+    margin: 0;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .two-column-dropdown {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .right-icons,
+  .contact-button.desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .logo {
+    padding: 10px 20px;
+  }
+}
+
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -264,16 +384,15 @@
                 display: flex;
             }
         }
-         .submenu {
+.submenu {
             display: none;
             padding-left: 15px;
-            padding-bottom: 7px;
         }
         
         .submenu-toggle {
             font-size: 1rem;
             margin-bottom: 10px;
-            color: #ffffff;
+            color: #55ffbe;
             border-bottom: 1px solid #55ffbe;
             padding-bottom: 5px;
             flex: 1;
@@ -288,11 +407,53 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
         }
-         @media (max-width: 767px) {
+          @media (max-width: 767px) {
+            .contact-button.desktop-only {
+            display: none;
+            }
+        }.submenu {
+            display: none;
+            padding-left: 15px;
+        }
+        
+        .submenu-toggle {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #55ffbe;
+            border-bottom: 1px solid #55ffbe;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+        
+        .submenu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+          @media (max-width: 767px) {
             .contact-button.desktop-only {
             display: none;
             }
         }
+
+  .sub-heading {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #7a76a3;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0a1f44;
+}
 
  section.hero-iom {
   display: flex;
@@ -395,14 +556,6 @@ input, select, textarea {
   width: 100%;
 }
 
-h2.main-heading {
-    position: relative;
-    margin-bottom: 56px;
-    text-align: center;
-}
-.span-border-bottom {
-    border-bottom: 3px solid #55ffbe;
-}
 .contact-section {
   padding: 60px 20px;
 }
@@ -813,16 +966,66 @@ footer {
 <header>
         <div class="logo">
             <a href="index.html">
-                <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+                <img src="images/Saasify logo.png" alt="Saasify Logo" />
             </a>
         </div>
         <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
         <nav>
-            <div class="dropdown">
-                <span style="color: white;">Services & Solutions</span>
-                <div class="dropdown-content two-column-dropdown">
-                    <div class="dropdown-column">
-                        <h4>Services</h4>
+           <div class="dropdown">
+            <span style="color: white;">Saasify Expertise </span>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                fill="none" viewBox="0 0 24 24" stroke="white" 
+                style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M19 9l-7 7-7-7" />
+            </svg>   
+            <div class="dropdown-content expertise-dropdown">
+              <h4>Expertise</h4>
+              <div class="two-column-dropdown">
+                <ul>
+                
+                  <li>
+                    <a href="IAM.html">IAM</a>
+                    <span class="desc">Identity and access management solutions</span>
+                  </li>
+                  <li>
+                    <a href="ITSM.html">ITSM</a>
+                    <span class="desc">Streamline service delivery and operations</span>
+                  </li>
+                  <li>
+                    <a href="ITOM.html">ITOM</a>
+                    <span class="desc">Optimize infrastructure performance</span>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="IT-Analysis.html">IT Analysis</a>
+                    <span class="desc">Insights and metrics for better decisions</span>
+                  </li>
+                  <li>
+                    <a href="SIEM.html">SIEM</a>
+                    <span class="desc">Real-time security event monitoring</span>
+                  </li>
+                  <li>
+                    <a href="UEM.html">UEM</a>
+                    <span class="desc">Unified endpoint management</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+                <span style="color: white;">Services</span>
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" viewBox="0 0 24 24" stroke="white" 
+                  style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M19 9l-7 7-7-7" />
+              </svg>
+              
+                <div class="dropdown-content" style="min-width: 200px !important;">
+                   <div class="dropdown-column">
+                      <h4>Services</h4>
                         <ul>
                             <li><a href="consulting-services.html">Consulting</a></li>
                             <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
@@ -830,51 +1033,36 @@ footer {
                             <li><a href="training-services.html">Training & Enablement</a></li>
                             <li><a href="Ongoing_support.html">Ongoing Support</a></li>
                             <li><a href="managed-services.html">Managed Services</a></li>
-                        </ul>
-                    </div>
-                    <div class="dropdown-column">
-                        <h4>Solutions</h4>
-                        <ul>
-                            <li><a href="it-operations-management.html">IT Operations Management</a></li>
-                            <li><a href="it-security-management.html">IT Security Management</a></li>
-                            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-                            <li><a href="Business-analytics.html">Business Analytics</a></li>
-                            <li><a href="business-pro-management.html">Business Process Management</a></li>
-                        </ul>
+                          </ul>
                     </div>
                 </div>
-            </div>
+             </div>
+
             <div class="dropdown">
-                <span style="color: white;">Platform Proficiency</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <li><a href="IAM.html">IAM</a></li>
-                        <li><a href="ITSM.html">ITSM</a></li>
-                        <li><a href="ITOM.html">ITOM</a></li>
-                        <li><a href="IT-Analysis.html">IT Analysis</a></li>
-                        <li><a href="SIEM.html">SIEM</a></li>
-                        <li><a href="UEM.html">UEM</a></li>
-                    </ul>
+                <div class="dropdown-trigger">
+                  <span>Company Overview</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                      fill="none" viewBox="0 0 24 24" stroke="white" 
+                      style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
-            </div>
-            <div class="dropdown">
-                <span style="color: white;">Company Overview</span>
-                <div class="dropdown-content about-dropdown">
+                <div class="dropdown-content" style="min-width: 200px !important;">
+                   <div class="dropdown-column">
+                      <h4>About</h4>
                     <ul>
                         <li><a href="about_us.html">About Saasify</a></li>
                         <li><a href="our-team.html">Our Team</a></li>
                         <li><a href="our-presence.html">Our Presence</a></li>
                     </ul>
                 </div>
+              </div>
             </div>
-            <div class="dropdown">
-                <span style="color: white;">Careers</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <li><a href="saasify-careers.html">Job Vacancy</a></li>
-                    </ul>
-                </div>
-            </div>
+            
+            <ul>
+                <li><a href="saasify-careers.html" style="color: white;">Careers</a></li>
+            </ul>
             <ul>
                 <li><a href="insight-page.html" style="color: white;">Insights</a></li>
             </ul>
@@ -885,7 +1073,7 @@ footer {
             </a>
         </div>
     </header>
-
+    
     <div class="mobile-menu" id="mobileMenu" style="display: none;">
         <!-- Services -->
         <div class="submenu-toggle" onclick="toggleSubmenu(this)">Services ▼</div>
@@ -928,11 +1116,8 @@ footer {
         </div>
 
         <!-- Careers -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Careers ▼</div>
-        <div class="submenu">
-            <a href="saasify-careers.html">Job Vacancy</a>
-        </div>
-
+       
+        <a href="saasify-careers.html" style="display:block; margin-top: 10px;">Careers</a>
         <!-- Insights -->
         <a href="insight-page.html" style="display:block; margin-top: 10px;">Insights</a>
 
@@ -1165,13 +1350,6 @@ footer {
     &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
   </div>
 </footer>
-
-  <script>
-    fetch('header_section.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header').innerHTML = data);
-  </script>
-
 
 </body>
 </html>

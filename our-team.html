@@ -39,14 +39,12 @@
 </script>
   <style>
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4faff;
-    color: #2a2a2a;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+  
+            margin: 0;
+            font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #2a2a2a;
+        }
   
     header {
             display: flex;
@@ -79,32 +77,73 @@ body {
         }
         
         nav .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(10, 31, 68, 0.95);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            z-index: 999;
-            min-width: 200px;
-            color: white;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #ffffff; /* ✅ White background */
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 1.1); /* ✅ Smooth card shadow */
+          padding: 20px 30px;
+          z-index: 999;
+          min-width: 500px;
+          border-radius: 1px;
+          color: #0a1f44; /* Dark text color */
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+      }
+      .dropdown-trigger {
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
         }
-        
+
         .two-column-dropdown {
             display: flex;
             gap: 40px;
-            min-width: 500px !important;
+            justify-content: space-between;
         }
-        
+        .two-column-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.two-column-dropdown ul li {
+  margin: 6px 0;
+}
+
+.two-column-dropdown ul li a {
+  text-decoration: none;
+  color: #0a1f44;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.two-column-dropdown ul li a:hover {
+  color: #00c896;
+}
+
         .dropdown-column {
             flex: 1;
         }
-        
+        .expertise-dropdown h4 {
+          font-size: 1rem;
+          margin-bottom: 12px;
+          color: #000;
+          border-bottom: 2px solid #55ffbe;
+          padding-bottom: 8px;
+        }
+
         .dropdown-column h4 {
             font-size: 1rem;
             margin-bottom: 10px;
-            color: #55ffbe;
+            color: #000;
             border-bottom: 1px solid #55ffbe;
             padding-bottom: 5px;
         }
@@ -114,34 +153,52 @@ body {
             padding: 0;
             margin: 0;
         }
-        
+        .desc{
+  font-size: 0.85rem;
+  color: #0a1f44;
+  margin: 4px 0 0;
+  padding-top: 20px;
+}
         .dropdown-column ul li {
-            margin: 6px 0;
+           margin: 12px 0;
+           line-height: 1.2;
         }
         
         .dropdown-column ul li a {
-            text-decoration: none;
-            color: white;
-            transition: 0.3s;
-            padding-bottom: 2px;
             display: inline-block;
-            border-bottom: 2px solid transparent;
-        }
-        
+            text-decoration: none;
+            color: #0a1f44;
+            position: relative;
+            padding-bottom: 2px;
+          }
+        .dropdown-column ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: #00c896;
+            transition: width 0.3s ease;
+          }
+          .dropdown-column ul li a:hover::after {
+              width: 100%;
+            }
         nav .dropdown:hover .dropdown-content {
-            display: flex;
-        }
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+       }
         
         nav .dropdown-content ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        
+       
         nav .dropdown-content ul li a {
             display: block;
-            padding: 10px 20px;
-            color: white;
+            color: #000;
             text-decoration: none;
             position: relative;
             font-size: 0.95rem;
@@ -151,8 +208,8 @@ body {
         nav .dropdown-content ul li a::after {
             content: '';
             position: absolute;
-            left: 20px;
-            bottom: 8px;
+            left: 1px;
+            bottom: 2px;
             width: 0;
             height: 2px;
             background-color: #00c896;
@@ -164,9 +221,10 @@ body {
         }
         
         nav .dropdown-content ul li a:hover {
-            color: rgba(244, 248, 248, 0.966);
+            color: rgb(8, 0, 0);
         }
-        .right-icons, 
+        
+       .right-icons, 
         .contact-button desktop-only {
             display: flex;
             gap: 15px;
@@ -194,15 +252,6 @@ body {
             border-radius: 4px;
             cursor: pointer;
         }
-        .about-dropdown {
-            display: none;
-            flex-direction: row;
-            gap: 40px;
-        }
-        
-        .dropdown:hover .about-dropdown {
-            display: flex;
-        }
         
         ul,
         li {
@@ -222,7 +271,80 @@ body {
         .navbar li {
             list-style-type: none !important;
         }
-        
+        @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #0a1f44;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none; /* Will be toggled by JS */
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    padding: 0 !important;
+    min-width: 100% !important;
+  }
+
+  .dropdown-content h4 {
+    color: #fff;
+    border-bottom: 1px solid #55ffbe;
+    margin-bottom: 5px;
+  }
+
+  .dropdown-column ul li a {
+    color: #fff;
+  }
+
+  .dropdown-column ul li .desc {
+    color: #ccc;
+    font-size: 0.8rem;
+    padding-top: 2px;
+    margin: 0;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .two-column-dropdown {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .right-icons,
+  .contact-button.desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .logo {
+    padding: 10px 20px;
+  }
+}
+
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -260,16 +382,15 @@ body {
                 display: flex;
             }
         }
-         .submenu {
+.submenu {
             display: none;
             padding-left: 15px;
-            padding-bottom: 7px;
         }
         
         .submenu-toggle {
             font-size: 1rem;
             margin-bottom: 10px;
-            color: #ffffff;
+            color: #55ffbe;
             border-bottom: 1px solid #55ffbe;
             padding-bottom: 5px;
             flex: 1;
@@ -284,11 +405,54 @@ body {
             font-size: 0.95rem;
             transition: all 0.3s ease;
         }
-         @media (max-width: 767px) {
+          @media (max-width: 767px) {
+            .contact-button.desktop-only {
+            display: none;
+            }
+        }.submenu {
+            display: none;
+            padding-left: 15px;
+        }
+        
+        .submenu-toggle {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #55ffbe;
+            border-bottom: 1px solid #55ffbe;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+        
+        .submenu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+          @media (max-width: 767px) {
             .contact-button.desktop-only {
             display: none;
             }
         }
+
+  .sub-heading {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #7a76a3;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0a1f44;
+}
+
  section.hero-iom {
   display: flex;
   flex-wrap: wrap;
@@ -371,92 +535,86 @@ body {
         max-width: 90% !important;
     }  
 }
+.team-section {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 40px 20px;
+  background: #f4faff;
+}
 
-    section.team-section {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(to bottom, #0a1f44 0%, #ffffff 100%);
-    }
-    .team-section h2,
-    .team-section p {
-      color: #fff;
-    }
-    
-    .team-card {
-      background: #fff;
-      color: #0a1f44;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+    max-width: 1200px;
+    margin: 55px auto;
     }
 
     .team-card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
+     max-width: 281px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+}
 
     .team-card:hover {
       transform: translateY(-5px);
     }
 
-    .team-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00bfa6;
-      margin-bottom: 15px;
-    }
-
-    .team-card h4 {
-      margin: 10px 0 5px;
-      font-size: 1.2rem;
-      color: #0a1f44;
-    }
-
-    .team-card small {
-      color: #00bfa6;
-      font-weight: 600;
-    }
-
-    .team-card p {
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 10px;
-      margin-bottom: 15px;
-    }
-
-    .team-social {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .team-social a {
-      color: #00bfa6;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-
-    .team-social a:hover {
-      color: #0077cc;
-    }
-     h2.main-heading {
+    .image-wrapper {
       position: relative;
-      margin-bottom: 35px;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-info {
+      padding: 20px;
       text-align: center;
     }
-    .span-border-bottom {
-      border-bottom: 3px solid #55ffbe;
-     }
+
+    .team-info h3 {
+      margin: 0;
+      color: #0a1f44;
+      font-size: 1.2rem;
+    }
+
+    .team-info h4 {
+      margin: 5px 0 10px;
+      color: #888;
+      font-weight: normal;
+      font-size: 0.95rem;
+    }
+
+    .team-info p {
+      color: #444;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    @media screen and (max-width: 600px) {
+      .image-wrapper {
+        height: 220px;
+      }
+    }
+@media (max-width: 768px) {
+      .team-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+   
 footer {
   background-color: #0a1f44;
   color: white;
@@ -539,16 +697,66 @@ footer {
 <header>
         <div class="logo">
             <a href="index.html">
-                <img src="images/Saasify_logo.png" alt="Saasify Logo" />
+                <img src="images/Saasify logo.png" alt="Saasify Logo" />
             </a>
         </div>
         <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
         <nav>
-            <div class="dropdown">
-                <span style="color: white;">Services & Solutions</span>
-                <div class="dropdown-content two-column-dropdown">
-                    <div class="dropdown-column">
-                        <h4>Services</h4>
+           <div class="dropdown">
+            <span style="color: white;">Saasify Expertise </span>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                fill="none" viewBox="0 0 24 24" stroke="white" 
+                style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M19 9l-7 7-7-7" />
+            </svg>   
+            <div class="dropdown-content expertise-dropdown">
+              <h4>Expertise</h4>
+              <div class="two-column-dropdown">
+                <ul>
+                
+                  <li>
+                    <a href="IAM.html">IAM</a>
+                    <span class="desc">Identity and access management solutions</span>
+                  </li>
+                  <li>
+                    <a href="ITSM.html">ITSM</a>
+                    <span class="desc">Streamline service delivery and operations</span>
+                  </li>
+                  <li>
+                    <a href="ITOM.html">ITOM</a>
+                    <span class="desc">Optimize infrastructure performance</span>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="IT-Analysis.html">IT Analysis</a>
+                    <span class="desc">Insights and metrics for better decisions</span>
+                  </li>
+                  <li>
+                    <a href="SIEM.html">SIEM</a>
+                    <span class="desc">Real-time security event monitoring</span>
+                  </li>
+                  <li>
+                    <a href="UEM.html">UEM</a>
+                    <span class="desc">Unified endpoint management</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+                <span style="color: white;">Services</span>
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" viewBox="0 0 24 24" stroke="white" 
+                  style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M19 9l-7 7-7-7" />
+              </svg>
+              
+                <div class="dropdown-content" style="min-width: 200px !important;">
+                   <div class="dropdown-column">
+                      <h4>Services</h4>
                         <ul>
                             <li><a href="consulting-services.html">Consulting</a></li>
                             <li><a href="evaluation-assistance.html">Evaluation Assistance</a></li>
@@ -556,51 +764,36 @@ footer {
                             <li><a href="training-services.html">Training & Enablement</a></li>
                             <li><a href="Ongoing_support.html">Ongoing Support</a></li>
                             <li><a href="managed-services.html">Managed Services</a></li>
-                        </ul>
-                    </div>
-                    <div class="dropdown-column">
-                        <h4>Solutions</h4>
-                        <ul>
-                            <li><a href="it-operations-management.html">IT Operations Management</a></li>
-                            <li><a href="it-security-management.html">IT Security Management</a></li>
-                            <li><a href="enterprise-service.html">Enterprise Service Management</a></li>
-                            <li><a href="Business-analytics.html">Business Analytics</a></li>
-                            <li><a href="business-pro-management.html">Business Process Management</a></li>
-                        </ul>
+                          </ul>
                     </div>
                 </div>
-            </div>
+             </div>
+
             <div class="dropdown">
-                <span style="color: white;">Platform Proficiency</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <li><a href="IAM.html">IAM</a></li>
-                        <li><a href="ITSM.html">ITSM</a></li>
-                        <li><a href="ITOM.html">ITOM</a></li>
-                        <li><a href="IT-Analysis.html">IT Analysis</a></li>
-                        <li><a href="SIEM.html">SIEM</a></li>
-                        <li><a href="UEM.html">UEM</a></li>
-                    </ul>
+                <div class="dropdown-trigger">
+                  <span>Company Overview</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                      fill="none" viewBox="0 0 24 24" stroke="white" 
+                      style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
-            </div>
-            <div class="dropdown">
-                <span style="color: white;">Company Overview</span>
-                <div class="dropdown-content about-dropdown">
+                <div class="dropdown-content" style="min-width: 200px !important;">
+                   <div class="dropdown-column">
+                      <h4>About</h4>
                     <ul>
                         <li><a href="about_us.html">About Saasify</a></li>
                         <li><a href="our-team.html">Our Team</a></li>
                         <li><a href="our-presence.html">Our Presence</a></li>
                     </ul>
                 </div>
+              </div>
             </div>
-            <div class="dropdown">
-                <span style="color: white;">Careers</span>
-                <div class="dropdown-content">
-                    <ul>
-                        <li><a href="saasify-careers.html">Job Vacancy</a></li>
-                    </ul>
-                </div>
-            </div>
+            
+            <ul>
+                <li><a href="saasify-careers.html" style="color: white;">Careers</a></li>
+            </ul>
             <ul>
                 <li><a href="insight-page.html" style="color: white;">Insights</a></li>
             </ul>
@@ -611,7 +804,6 @@ footer {
             </a>
         </div>
     </header>
-
 
     <div class="mobile-menu" id="mobileMenu" style="display: none;">
         <!-- Services -->
@@ -655,11 +847,8 @@ footer {
         </div>
 
         <!-- Careers -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Careers ▼</div>
-        <div class="submenu">
-            <a href="saasify-careers.html">Job Vacancy</a>
-        </div>
-
+       
+        <a href="saasify-careers.html" style="display:block; margin-top: 10px;">Careers</a>
         <!-- Insights -->
         <a href="insight-page.html" style="display:block; margin-top: 10px;">Insights</a>
 
@@ -693,14 +882,14 @@ footer {
 </section>
 
 <div>
-<section class="team-section">
-<h2 class="main-heading"><span class="span-border-bottom">Our People</span></h2>
-  <p>Meet the brilliant minds behind our mission.</p>
-
-  <div class="team-grid" id="teamContainer">
-    <!-- Cards injected by JavaScript -->
-  </div>
-</section>
+  <section class="team-section">
+     <p class="sub-heading">OUR PEOPLE</p>
+      <h2>Meet the brilliant minds behind  <span style="color: #00c896">our mission.</span></h2>
+      <p>Exceptional service across industries. Our proven track record drives growth and ensures maximum ROI for your enterprise.</p>
+    
+    <div class="team-container" id="teamContainer">
+      </div>
+  </section>
 
 <footer>
   <div class="footer-grid">
@@ -733,100 +922,60 @@ footer {
 </footer>
 
 <script>
-    fetch('header_section.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('header').innerHTML = data);
 
-  const teamData = [
-    {
-      name: "Madhusoodhanan",
-      role: "Director",
-      bio: "Driving vision and innovation at Saasify with purpose and passion.",
-      image: "Madhu.png",
-      social: {
-        linkedIn: "https://www.linkedin.com/in/madhusoodhanan-sridharan-93a30a21?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+   const teamMembers = [
+      {
+        name: "Sanjana Rao",
+        role: "Chief People Officer",
+        description: "Sanjana leads our people-first culture and HR initiatives across global teams.",
+        image: "images/lifestyle-people.jpg"
+      },
+      {
+        name: "Madhusoodhanan",
+        role: "Director",
+        description: "Michael builds scalable systems and ensures the tech architecture meets enterprise goals.",
+        image: "images/lifestyle-people.jpg"
+      },
+      {
+        name: "Priya Sharma",
+        role: "Marketing Head",
+        description: "Priya crafts data-driven marketing strategies and creative campaigns for global outreach.",
+        image: "images/lifestyle-people.jpg"
+      },
+      {
+        name: "Rahul Verma",
+        role: "Lead Developer",
+        description: "Rahul leads the development team, ensuring code quality and timely feature releases.",
+        image: "images/lifestyle-people.jpg"
+      },
+       {
+        name: "Rahul Verma",
+        role: "Lead Developer",
+        description: "Rahul leads the development team, ensuring code quality and timely feature releases.",
+        image: "images/lifestyle-people.jpg"
       }
-    },
-    {
-      name: "Raghunath",
-      role: "Operation",
-      bio: "Bridging customer needs and technical excellence.",
-      image: "Raghu.png",
-      social: {
-        linkedIn: "#"
-      }
-    },
-    {
-      name: "Sakthi",
-      role: "CSM",
-      bio: "Architect of scalable solutions with secure coding principles.",
-      image: "Sakthi.png",
-      social: {
-        linkedIn: "#"
-      }
-    },
-    {
-      name: "Aravindhan",
-      role: "Technical",
-      bio: "Crafting seamless user journeys that delight and perform.",
-      image: "Aravindhan.png",
-      social: {
-        linkedIn: "#"
-      }
-    },
-   {
-      name: "Baskaran Gopal",
-      role: "PMO",
-      bio: "Crafting seamless user journeys that delight and perform.",
-      image: "Baskaran.png",
-      social: {
-        linkedIn: "#"
-      }
-    },
-    {
-      name: "Kalyani",
-      role: "HR",
-      bio: "Crafting seamless user journeys that delight and perform.",
-      image: "Kalyani.png",
-      social: {
-        linkedIn: "#"
-      }
-    },
-   {
-      name: "Rahul Desai",
-      role: "Technical",
-      bio: "Crafting seamless user journeys that delight and perform.",
-      image: "https://randomuser.me/api/portraits/men/45.jpg",
-      social: {
-        linkedIn: "#"
-      }
-    },
-    {
-      name: "Priya Sinha",
-      role: "Technical",
-      bio: "Crafting seamless user journeys that delight and perform.",
-      image: "https://randomuser.me/api/portraits/women/22.jpg",
-      social: {
-        linkedIn: "#"
-      }
-    }
-  ];
+    ];
 
-  const container = document.getElementById('teamContainer');
+    const container = document.getElementById("teamContainer");
 
-  teamData.forEach(member => {
-    container.innerHTML += `
-      <div class="team-card">
-        <img src="${member.image}" alt="${member.name}" />
-        <h4>${member.name}</h4>
-        <small>${member.role}</small>
-        <p>${member.bio}</p>
-        <div class="team-social">
-          <a href="${member.social.linkedin}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    teamMembers.forEach(member => {
+      const card = document.createElement("div");
+      card.className = "team-card";
+
+      card.innerHTML = `
+        <div class="image-wrapper">
+          <img src="${member.image}" alt="${member.name}">
         </div>
-      </div>
-    `;
-  });
+        <div class="team-info">
+          <h3>${member.name}</h3>
+          <h4>${member.role}</h4>
+          <p>${member.description}</p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
 </script>
 
 </div>
