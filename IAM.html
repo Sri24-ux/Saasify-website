@@ -716,145 +716,77 @@ button[type="submit"]:hover {
   font-weight: 500;
 }
 
-.implementation-section {
-  background: #f4faff;
+
+.benefits-section {
+  background-image: url('images/section-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.benefit-overlay {
+  background-color: rgba(10, 31, 68, 0.85);
   padding: 60px 20px;
-  text-align: center;
-}
-.arrow-flow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 60px;
 }
 
-.step-block {
-  flex: 1 1 240px;
-  max-width: 260px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.arrow {
-  background-color: #0a1f44;
+.benefit-content {
+  max-width: 1200px;
+  margin: 0 auto;
   color: white;
-  padding: 15px 20px;
-  font-weight: bold;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  border-radius: 5px 0 0 5px;
 }
 
-.arrow::after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  right: -25px;
-  width: 0;
-  height: 0;
-  border-top: 35px solid transparent;
-  border-bottom: 35px solid transparent;
-  border-left: 25px solid #0a1f44;
-  z-index: 1;
-}
-.step-block:last-child .arrow::after {
-  display: none;
-}
-.arrowdesc {
-  background-color: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  text-align: center;
-  margin-top: 10px;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .step-block {
-    align-items: center;
-  }
-  .arrow {
-    text-align: center;
-  }
-  .arrowdesc {
-    text-align: center;
-  }
-}
-
-.iam-capabilities-section {
-  background-color: #071c41;
-  padding: 60px 20px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.section-heading span {
-  font-size: 28px;
-  font-weight: bold;
-  color: #ffffff;
-  border-bottom: 4px solid #00e6e6;
-  padding-bottom: 5px;
-}
-
-.capabilities-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
-
-.capability-card {
-  background-color: #ffffff;
-  color: #2e2e2e;
-  width: 270px;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.capability-card:hover {
-  transform: translateY(-6px);
-}
-
-.capability-icon {
+.benefit-icon {
   width: 40px;
   height: 40px;
-  margin-bottom: 15px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
 }
 
-.capability-card h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.capability-card p {
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.section-title {
+.benefit-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2a2a2a;
   text-align: center;
-  font-size: 32px;  
-  font-weight: 700;
-  margin-bottom: 50px;
-  color: #062b5b;
-}
-.access-risks {
-  list-style-type: disc;
-  padding-left: 20px;
-  color: #0a1f44;
 }
 
-.access-risks li {
+.benefit-card h3 {
+  color: #0a1f44;
   margin-bottom: 10px;
-  font-weight: 600;
 }
+
+.benefit-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+.benefit-overlay {
+  padding: 40px 15px;
+}
+
+.benefit-card {
+  padding: 20px 15px;
+}
+}
+@media (max-width: 1024px) {
+  .benefit-overlay {
+    padding: 40px 16px;
+  }
+}
+
 
 .row {
   display: flex;
@@ -869,9 +801,9 @@ button[type="submit"]:hover {
 }
 
 .column.image img {
-  width: 100%;
-  height: auto;
-  max-width: 500px;
+  width: 360px;
+  height: 269px;        
+  object-fit: contain;
 }
 
 .column.image {
@@ -882,11 +814,11 @@ button[type="submit"]:hover {
   flex: 1 1 60%;
 }
 
-.row:nth-child(even) .column.image {
+.row:nth-child(odd) .column.image {
   order: 2;
 }
 
-.row:nth-child(even) .column.text {
+.row:nth-child(odd) .column.text {
   order: 1;
 }
 
@@ -902,10 +834,15 @@ button[type="submit"]:hover {
     flex: 1 1 100%;
   }
 
-  .row:nth-child(even) .column.image,
-  .row:nth-child(even) .column.text {
+  .row:nth-child(odd) .column.image,
+  .row:nth-child(odd) .column.text {
     order: initial;
   }
+  .column.image img {
+  width: 280px;
+  height: 180px;        
+  object-fit: contain;
+}
 }
 
   </style>
@@ -934,7 +871,7 @@ button[type="submit"]:hover {
                 
                   <li>
                     <a href="IAM.html">IAM</a>
-                    <span class="desc">Identity and access management solutions</span>
+                    <span class="desc">Centralized Identity and Access Management</span>
                   </li>
                   <li>
                     <a href="ITSM.html">ITSM</a>
@@ -952,11 +889,11 @@ button[type="submit"]:hover {
                   </li>
                   <li>
                     <a href="SIEM.html">SIEM</a>
-                    <span class="desc">Real-time security event monitoring</span>
+                    <span class="desc">Security Monitoring and Incident Management</span>
                   </li>
                   <li>
                     <a href="UEM.html">UEM</a>
-                    <span class="desc">Unified endpoint management</span>
+                    <span class="desc">Manage All Devices From One</span>
                   </li>
                 </ul>
               </div>
@@ -1099,117 +1036,101 @@ button[type="submit"]:hover {
   </div>
 </section>
 
-<section class="iam-capabilities-section">
-  <h2 class="main-heading"><span class="span-border-bottom">Our IAM Capabilities</span></h2>
-  <div class="capabilities-container">
-    <div class="capability-card">
-      <img src="images/tool-comparison-icon.jpg" alt="Tool Icon" class="capability-icon">
-      <h3>Single Sign-On (SSO)</h3>
-      <p>Enable one-click access to multiple applications securely.</p>
-    </div>
-    <div class="capability-card">
-      <img src="images/analysis-icon.jpg" alt="Analysis Icon" class="capability-icon">
-      <h3>Multi-Factor Authentication</h3>
-      <p>Protect critical systems with layered authentication methods.</p>
-    </div>
-    <div class="capability-card">
-      <img src="images/demo-img.jpg" alt="Demo Icon" class="capability-icon">
-      <h3>Role-Based Access Control (RBAC)</h3>
-      <p>Ensure least-privilege access based on user roles and context.</p>
-    </div>
-    <div class="capability-card">
-      <img src="images/POC-img.jpg" alt="POC Icon" class="capability-icon">
-      <h3>Provisioning & Deprovisioning</h3>
-      <p>Automate user onboarding/offboarding across systems.</p>
+<section class="benefits-section">
+  <div class="benefit-overlay">
+    <div class="benefit-content">
+      <p class="sub-heading">Secure. Simplify. Scale.</p>
+      <h2 class="main-heading" style="color: #ffffff">Enterprise-Grade <span style="color: #00c896">IAM Capabilities.</span></h2>
+  
+      <div class="benefit-grid">
+        <div class="benefit-card">
+           <img src="images/POC-img.jpg" alt="POC Icon" class="benefit-icon" />
+            <h3>Provisioning & Deprovisioning</h3>
+            <p>Automate user onboarding/offboarding across systems.</p>
+        </div>
+        <div class="benefit-card">
+            <img src="images/demo-img.jpg" alt="Demo Icon" class="benefit-icon" />
+             <h3>Role-Based Access Control (RBAC)</h3>
+             <p>Ensure least-privilege access based on user roles and context.</p>
+        </div>
+        <div class="benefit-card">
+         <img src="images/analysis-icon.jpg" alt="Analysis Icon" class="benefit-icon" />
+          <h3>Multi-Factor Authentication</h3>
+          <p>Protect critical systems with layered authentication methods.</p>
+       </div>
+        <div class="benefit-card">
+          <img src="images/tool-comparison-icon.jpg" alt="Tool Icon" class="benefit-icon" />
+            <h3>Single Sign-On (SSO)</h3>
+            <p>Enable one-click access to multiple applications securely.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding: 60px 20px; background-color: #ffffff;">
-  <h2 class="main-heading" style="text-align: center; margin-bottom: 10px;">
-    <span class="span-border-bottom">Why IAM Matters ?</span>
+<section style="padding: 60px 20px;">
+  <p class="sub-heading">Why IAM Matters?</p>
+  <h2 class="main-heading">
+    Empower Your Workforce Without <span style="color: #00c896;">Compromising Security.</span>
   </h2>
 
- <!-- Row 1 -->
-<div class="row">
-  <div class="column image">
-   <img src="images/secure-access-img.jpg" alt="Secure Access Control"/>
-  </div>
-  <div class="column text">
-   <h3 style="color: #0a1f44;">Secure Access Control</h3>
-      <p> today’s digital ecosystem, managing who can access what — and when — is fundamental to organizational security and operational efficiency. Saasify’s Secure Access Control framework ensures that only authenticated, authorized, and contextually verified users can interact with your most sensitive systems and data.<br>
-          Through advanced identity management, we establish clear access boundaries across your IT environment. Role-based access control (RBAC) ensures users are granted permissions strictly aligned with their job functions, while attribute-based policies add an additional layer of contextual security based on factors such as device, location, and time of access.</p>
-  </div>
-</div>
-
-<!-- Row 2 -->
-<div class="row bg-alt">
-  <div class="column image reverse">
-     <img src="images/compliance-img.png" alt="Compliance"/>
-  </div>
-  <div class="column text">
-    <h3 style="color: #0a1f44;">Regulatory Compliance</h3>
-      <p>Meet industry standards like GDPR, HIPAA, and ISO 27001 by implementing a robust identity and access management (IAM) framework. Saasify enables you to enforce strict authentication protocols, manage user roles and permissions centrally, and maintain comprehensive audit trails. This ensures not only data privacy and protection, but also streamlines compliance reporting and reduces the risk of regulatory penalties. Our solutions support secure onboarding and offboarding, policy enforcement, and access recertification — key practices for staying compliant in dynamic IT environments.</p>
-  </div>
-</div>
-
-<!-- Row 3 -->
-
-<div class="row">
-  <div class="column image reverse">
-    <img src="images/securityandpatch-img.png" alt="Efficiency" />
-   
-  </div>
-  <div class="column text">
-   <h3 style="color: #0a1f44;">Security & Patch Updates</h3>
+  <!-- Row 1 -->
+  <div class="row">
+    <div class="column image">
+      <img src="images/secure-access-img.jpg" alt="Secure Access Control" />
+    </div>
+    <div class="column text">
+      <h3 style="color: #0a1f44;">Secure Access Control</h3>
       <p>
-       Enable seamless Single Sign-On (SSO) to streamline access across multiple applications and systems with a single set of secure credentials. Saasify’s SSO integration reduces login fatigue, eliminates the need to remember multiple passwords, and simplifies access for both on-site and remote employees.<br>
-       By minimizing authentication barriers, SSO enhances workforce productivity and reduces helpdesk requests related to password resets. It also strengthens overall security by centralizing login control and enabling consistent enforcement of authentication policies across all platforms — creating a smoother, more efficient user experience without compromising on security. </div>
+        In today’s digital ecosystem, managing who can access what — and when — is fundamental to organizational security and operational efficiency. Saasify’s Secure Access Control framework ensures that only authenticated, authorized, and contextually verified users can interact with your most sensitive systems and data.<br><br>
+        Through advanced identity management, we establish clear access boundaries across your IT environment. Role-based access control (RBAC) ensures users are granted permissions strictly aligned with their job functions, while attribute-based policies add an additional layer of contextual security based on factors such as device, location, and time of access.
+      </p>
+    </div>
   </div>
-</div>
 
-<!-- Row 4 -->
-<div class="row bg-alt">
-  <div class="column image reverse">
-   <img src="images/Efficiency.png" alt="Monitoring" />
+  <!-- Row 2 -->
+  <div class="row bg-alt">
+    <div class="column image">
+      <img src="images/compliance-img.png" alt="Regulatory Compliance" />
+    </div>
+    <div class="column text">
+      <h3 style="color: #0a1f44;">Regulatory Compliance</h3>
+      <p>
+        Meet industry standards like GDPR, HIPAA, and ISO 27001 by implementing a robust identity and access management (IAM) framework. Saasify enables you to enforce strict authentication protocols, manage user roles and permissions centrally, and maintain comprehensive audit trails.<br><br>
+        This ensures not only data privacy and protection, but also streamlines compliance reporting and reduces the risk of regulatory penalties. Our solutions support secure onboarding and offboarding, policy enforcement, and access recertification — key practices for staying compliant in dynamic IT environments.
+      </p>
+    </div>
   </div>
-  <div class="column text">
-    <h3 style="color: #0a1f44;">Centralized Monitoring</h3>
-      <p>Track user behavior and access logs in real time to gain complete visibility into who is accessing your systems, when, and from where. With Saasify’s monitoring tools, every login attempt, privilege escalation, or resource access is captured and recorded — providing a granular view of user activity across the enterprise.<br>
-         This real-time insight plays a crucial role in audit readiness and incident response. By detecting unusual behavior patterns or unauthorized access attempts instantly, security teams can respond faster, investigate anomalies with precision, and maintain a defensible audit trail. This proactive approach not only strengthens organizational security posture but also ensures compliance with strict regulatory requirements.</p>
+
+  <!-- Row 3 -->
+  <div class="row">
+    <div class="column image">
+      <img src="images/securityandpatch-img.png" alt="Security and Patch Updates" />
+    </div>
+    <div class="column text">
+      <h3 style="color: #0a1f44;">Security & Patch Updates</h3>
+      <p>
+        Enable seamless Single Sign-On (SSO) to streamline access across multiple applications and systems with a single set of secure credentials. Saasify’s SSO integration reduces login fatigue, eliminates the need to remember multiple passwords, and simplifies access for both on-site and remote employees.<br><br>
+        By minimizing authentication barriers, SSO enhances workforce productivity and reduces helpdesk requests related to password resets. It also strengthens overall security by centralizing login control and enabling consistent enforcement of authentication policies across all platforms — creating a smoother, more efficient user experience without compromising on security.
+      </p>
+    </div>
   </div>
-</div>
+
+  <!-- Row 4 -->
+  <div class="row bg-alt">
+    <div class="column image">
+      <img src="images/Efficiency.png" alt="Centralized Monitoring" />
+    </div>
+    <div class="column text">
+      <h3 style="color: #0a1f44;">Centralized Monitoring</h3>
+      <p>
+        Track user behavior and access logs in real time to gain complete visibility into who is accessing your systems, when, and from where. With Saasify’s monitoring tools, every login attempt, privilege escalation, or resource access is captured and recorded — providing a granular view of user activity across the enterprise.<br><br>
+        This real-time insight plays a crucial role in audit readiness and incident response. By detecting unusual behavior patterns or unauthorized access attempts instantly, security teams can respond faster, investigate anomalies with precision, and maintain a defensible audit trail. This proactive approach not only strengthens organizational security posture but also ensures compliance with strict regulatory requirements.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section class="implementation-section">
-  <h2 class="main-heading"><span class="span-border-bottom">Implementation Stages</span></h2>
-<div class="arrow-flow">
-  <div class="step-block">
-    <div class="arrow">Assessment</div>
-    <div class="arrowdesc">
-      <ul><li>Understand current identity landscape and risks.</li></ul>
-    </div>
-  </div>
-  <div class="step-block">
-    <div class="arrow">Design</div>
-    <div class="arrowdesc">
-      <ul><li>Architect a scalable IAM model with SSO, MFA, and RBAC.</li></ul>
-    </div>
-  </div>
-  <div class="step-block">
-    <div class="arrow">Deployment</div>
-    <div class="arrowdesc">
-      <ul><li>Integrate tools with HR, ITSM, and business systems.</li></ul>
-    </div>
-  </div>
-  <div class="step-block">
-    <div class="arrow">Monitoring</div>
-    <div class="arrowdesc">
-      <ul><li>Enable reporting, alerts, and periodic reviews.</li></ul>
-    </div>
-  </div>
-</div>
-</section>
 
 <section class="contact-section">
   <div class="contact-container">

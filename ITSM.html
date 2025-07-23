@@ -720,81 +720,79 @@ footer {
       color: #666;
       font-weight: 500;
     }
-    .why-itsm-section {
-  background: #0a1f44;
-  padding: 60px 20px;
-  text-align: center;
+
+    
+.benefits-section {
+  background-image: url('images/section-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.why-itsm-container {
+.benefit-overlay {
+  background-color: rgba(10, 31, 68, 0.85);
+  padding: 60px 20px;
+}
+
+.benefit-content {
   max-width: 1200px;
   margin: 0 auto;
+  color: white;
 }
 
-.why-itsm-title {
-  font-size: 32px;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.why-itsm-description {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  font-size: 16px;
-  color: #f4faff;
-  line-height: 1.6;
-}
-
-.why-itsm-cards {
-  display: flex;
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
 }
 
-.why-itsm-card {
-  background-color: #fff;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  max-width: 300px;
-  flex: 1 1 260px;
+.benefit-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2a2a2a;
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
-.why-itsm-card:hover {
-  transform: translateY(-5px);
-}
-
-.why-itsm-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.why-itsm-card h3 {
-  font-size: 20px;
-  color: #0b2c5d;
+.benefit-card h3 {
+  color: #0a1f44;
   margin-bottom: 10px;
 }
 
-.why-itsm-card p {
-  font-size: 14px;
-  color: #444;
+.benefit-card p {
+  font-size: 0.95rem;
   line-height: 1.5;
+  margin: 0;
 }
 
+/* Responsive Tweaks */
 @media (max-width: 768px) {
-  .why-itsm-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+.benefit-overlay {
+  padding: 40px 15px;
+}
 
-  .why-itsm-card {
-    width: 90%;
+.benefit-card {
+  padding: 20px 15px;
+}
+}
+@media (max-width: 1024px) {
+  .benefit-overlay {
+    padding: 40px 16px;
   }
 }
+
+
 .itsm-benefits-section {
   background-color: #f4faff;
   padding: 60px 20px;
@@ -853,7 +851,7 @@ footer {
   background: #7367f0;
 }
 
-.benefit-content h3 {
+/* .benefit-content h3 {
   font-size: 18px;
   margin: 30px 0 10px;
   color: #2c2c2c;
@@ -865,7 +863,7 @@ footer {
   margin: 8px 0;
   line-height: 1.5;
   color: #444;
-}
+} */
 
 @media (max-width: 768px) {
   .itsm-benefits-container {
@@ -876,7 +874,7 @@ footer {
   .benefit-card {
     width: 90%;
   }
-}
+} 
 
 .core-values-section {
   background-color: #fff;
@@ -1134,36 +1132,34 @@ footer {
     <span>ITSM</span>
     </div>
   </section>
-  
-<section class="why-itsm-section">
-  <div class="why-itsm-container">
-    <h2 class="main-heading" style="color:#f4faff"><span class="span-border-bottom">Why ITSM Matters for Your Business</span></h2>
-    <p class="why-itsm-description">
-      IT Service Management (ITSM) plays a crucial role in ensuring that IT systems are aligned with business needs. It streamlines operations, improves incident handling, enhances service delivery, and boosts user satisfaction.
-    </p>
 
-    <div class="why-itsm-cards">
-      <div class="why-itsm-card">
-        <div class="why-itsm-icon">⏱️</div>
+<section class="benefits-section">
+  <div class="benefit-overlay">
+    <div class="benefit-content">
+      <p class="sub-heading">Improved IT Efficiency.</p>
+      <h2 class="main-heading" style="color: #ffffff">Why ITSM Matters for  <span style="color: #00c896">Your Business ?</span></h2>
+  
+      <div class="benefit-grid">
+        <div class="benefit-card">
+         <i class="fas fa-dollar-sign"></i>
         <h3>Faster Resolution</h3>
         <p>Accelerate issue handling and reduce downtime across systems and teams.</p>
-      </div>
-
-      <div class="why-itsm-card">
-        <div class="why-itsm-icon">🎯</div>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-user-friends"></i>
         <h3>Aligned Business Goals</h3>
         <p>Ensure IT operations support your overall business objectives and KPIs.</p>
-      </div>
-
-      <div class="why-itsm-card">
-        <div class="why-itsm-icon">🔒</div>
+        </div>
+        <div class="benefit-card">
+           <i class="fas fa-chart-line"></i>
         <h3>Better Governance</h3>
         <p>Implement structured processes that improve security, compliance, and control.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <section class="core-values-section">
   <div class="core-values-container">
     <div class="core-values-image">
