@@ -428,7 +428,21 @@
   color: #0a1f44;
 }
 
-  section.hero-iom {
+.cta-button {
+  background-color: #f4c300;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.cta-button:hover {
+  background-color: #ffdb4d;
+}
+
+  /* section.hero-iom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -459,19 +473,6 @@
   color: #2a2a2a;
 }
 
-.cta-button {
-  background-color: #f4c300;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: 20px 0;
-}
-
-.cta-button:hover {
-  background-color: #ffdb4d;
-}
 
 .hero-iom img {
   max-width: 100%;
@@ -509,7 +510,7 @@
     section.hero-iom {
         max-width: 90% !important;
     }
-}
+} */
     .contact-left, .contact-right {
       flex: 1 1 45%;
     }
@@ -671,13 +672,6 @@ button[type="submit"]:hover {
  .consulting-expertise {
   padding: 40px 20px;
   background-color: #f4faff;
-  text-align: center;
-}
-
-.section-subtext {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 40px;
 }
 
 .expertise-grid {
@@ -731,7 +725,6 @@ button[type="submit"]:hover {
  .approach-section {
       max-width: 100%;
       margin: auto;
-      text-align: center;
       padding: 60px 40px;
       background-color: #0a1f44;
     }
@@ -824,6 +817,86 @@ button[type="submit"]:hover {
       color: #666;
       font-weight: 500;
     }
+
+     
+.hero-glass {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.glass-card {
+  width: 88%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Left: Text */
+.hero-text {
+  flex: 1 1 500px;
+  color: #0a1f44;
+}
+
+.hero-text .sub-heading {
+  font-size: 18px;
+  
+  margin-bottom: 10px;
+}
+
+.hero-text .main-heading {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-text .description {
+  font-size: 18px;
+  line-height: 1.6;
+ 
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .glass-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+}
+.hero-glass-with-bg {
+  position: relative;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-base-bg {
+    position: absolute;
+    top: 0;
+    left: 6%;
+    width: 94%;
+    height: 82%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-glass-with-bg .glass-card {
+  position: relative;
+  z-index: 1;
+}
+
 </style>
 </head>
 <body>
@@ -848,12 +921,12 @@ button[type="submit"]:hover {
               <div class="two-column-dropdown">
                 <ul>
                 
-                  <li>
+                 <li>
                     <a href="IAM.html">IAM</a>
                     <span class="desc">Identity and access management solutions</span>
                   </li>
                   <li>
-                    <a href="ITSM.html">ITSM</a>
+                    <a href="ITSM.html">ITSM/ESM</a>
                     <span class="desc">Streamline service delivery and operations</span>
                   </li>
                   <li>
@@ -993,7 +1066,7 @@ button[type="submit"]:hover {
         </div>
       </div>
 
-<section class="hero-iom">
+<!-- <section class="hero-iom">
   <div class="hero-text">
     <h1>Consulting Services</h1>
     <p>
@@ -1006,6 +1079,22 @@ button[type="submit"]:hover {
   <div class="hero-image">
     <img src="images/consulting-img.jpg" alt="Consulting" />
   </div>
+</section> -->
+
+<section class="hero-glass-with-bg">
+    <img src="images/istockphoto-1304959074-170667a.jpg" alt="Base Background" class="hero-base-bg" />
+  <div class="glass-card">
+    <div class="hero-text">
+      <p class="sub-heading">Consulting Services</p>
+      <h1 class="main-heading">Transform Your Business with Expert Consulting.</h1>
+      <p class="description">
+        At Saasify, our consulting services are designed to solve real-world IT challenges—whether it's managing complex infrastructure, securing enterprise data, streamlining services, or automating business workflows. We take a holistic view of your current setup, digital goals, and transformation roadmap. From identifying technology gaps to recommending the right tools, our goal is to help you achieve long-term efficiency, agility, and value through tailored digital strategies.</p>
+      <a href="contact_us_page.html">
+          <button class="cta-button">Book a Demo</button>
+      </a>     
+    </div>
+
+  </div>
 </section>
 
   <section class="breadcrumb">
@@ -1015,10 +1104,12 @@ button[type="submit"]:hover {
       <span>Consulting</span>
     </div>
   </section>
+
   <section class="approach-section">
-     <h2 class="main-heading" style="color: #ffffff">
-        <span class="span-border-bottom">Our Consulting Approach</span>
-      </h2>
+
+      <p class="sub-heading">Our Consulting Approach</p>
+      <h2 class="main-heading" style="color: #ffffff">Your SaaS Vision,  <span style="color: #00c896">Our Consulting Expertise.</span></h2>
+  
     <div class="approach-steps">
 
       <!-- Step 1 -->
@@ -1062,10 +1153,10 @@ button[type="submit"]:hover {
 
 <section class="consulting-expertise">
   <div class="container">
-    <h2 class="main-heading"><span class="span-border-bottom">What We Consult On</span></h2>
-    <p class="section-subtext">Empowering businesses with domain-focused, scalable, and standards-aligned consulting.</p>
-     
-   <div class="expertise-grid">
+     <p class="sub-heading">What We Consult On</p>
+      <h2 class="main-heading" >Where Our Expertise   <span style="color: #00c896">Delivers Impact.</span></h2>
+
+  <div class="expertise-grid">
  <div class="expertise-card">
   <img class="card-img-top" src="images/infrastructure-img.jpg" alt="IT Infrastructure" >
   <div class="card-content">

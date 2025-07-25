@@ -440,7 +440,7 @@
             }
         }
 
-  .sub-heading {
+.sub-heading {
   text-transform: uppercase;
   font-size: 0.85rem;
   color: #7a76a3;
@@ -455,7 +455,7 @@
   color: #0a1f44;
 }
 
-   section.hero-iom {
+section.hero-iom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -769,22 +769,25 @@ footer {
       color: #666;
       font-weight: 500;
     }
+
  .row {
   display: flex;
   align-items: center;
-  padding: 20px;
   gap: 20px;
+  padding: 30px 0px;
 }
 
 .row.bg-alt {
   background-color: #f4faff;
   border-radius: 12px;
+  gap: 82px;
 }
 
 .column.image img {
   width: 100%;
   height: auto;
   max-width: 500px;
+  border-radius: 12px;
 }
 
 .column.image {
@@ -793,7 +796,8 @@ footer {
 
 .column.text {
   flex: 1 1 60%;
-}
+  margin-left: 46px;
+}  
 
 .row:nth-child(even) .column.image {
   order: 2;
@@ -850,7 +854,7 @@ footer {
                     <span class="desc">Identity and access management solutions</span>
                   </li>
                   <li>
-                    <a href="ITSM.html">ITSM</a>
+                    <a href="ITSM.html">ITSM/ESM</a>
                     <span class="desc">Streamline service delivery and operations</span>
                   </li>
                   <li>
@@ -1010,11 +1014,12 @@ footer {
     <span>Ongoing Support</span>
   </div>
 </section>
+
 <section style="background-color: #0a1f44; padding: 60px 20px;">
-  <div style="max-width: 1200px; margin: auto; text-align: center; color: white;">
-    <h2 class="main-heading" style="color: white;">
-      <span class="span-border-bottom">Saasify Support in Action</span>
-    </h2>
+  <div style="max-width: 1200px; margin: auto;" >
+    <p class="sub-heading">Saasify Support in Action</p>
+      <h2 class="main-heading" style="color:#ccc">Behind the Scenes of <span style="color: #00c896">Our Support.</span></h2>
+
     <div class="support-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
       
       <!-- Card 1 -->
@@ -1022,8 +1027,9 @@ footer {
         <div style="font-size: 2.5rem; color: #00c896; margin-bottom: 16px;">
           <i class="fas fa-shield-alt"></i> <!-- corrected icon -->
         </div>
-        <h3 style="margin-bottom: 10px;">97% SLA Adherence</h3>
-        <p>Our commitment ensures your issues are acknowledged and resolved on time.</p>
+       
+        <h3 style="margin-bottom: 10px;">Tiered Support Options</h3>
+        <p>Choose from Basic, Standard, or Premium plans tailored to your operational needs and criticality.</p>
       </div>
 
       <!-- Card 2 -->
@@ -1031,8 +1037,9 @@ footer {
         <div style="font-size: 2.5rem; color: #00c896; margin-bottom: 16px;">
           <i class="fas fa-clock"></i>
         </div>
-        <h3 style="margin-bottom: 10px;">6-Hour Avg Resolution</h3>
-        <p>Fast, efficient, and transparent—your team never waits in the dark.</p>
+      
+        <h3 style="margin-bottom: 10px;">9/5 Helpdesk Access</h3>
+        <p>Round-the-clock support availability with guaranteed response SLAs, ensuring peace of mind.</p>
       </div>
 
       <!-- Card 3 -->
@@ -1040,8 +1047,9 @@ footer {
         <div style="font-size: 2.5rem; color: #00c896; margin-bottom: 16px;">
           <i class="fas fa-users"></i>
         </div>
-        <h3 style="margin-bottom: 10px;">Trusted by 45+ Clients</h3>
-        <p>Global enterprises rely on SaaSify for ongoing support—every single day.</p>
+    
+        <h3 style="margin-bottom: 10px;">Dedicated Account Manager</h3>
+        <p>Your single point of contact for escalations, reporting, and proactive account health check-ins.</p>
       </div>
 
     </div>
@@ -1049,17 +1057,15 @@ footer {
 </section>
 
 <section style="padding: 60px 20px; background-color: #ffffff;">
-  <h2 class="main-heading" style="text-align: center; margin-bottom: 10px;">
-    <span class="span-border-bottom">What We Cover</span>
-  </h2>
-
+  <p class="sub-heading">What We Cover — From Start to Support</p>
  <!-- Row 1 -->
 <div class="row">
-  <div class="column image">
-    <img src="images/handling-img.jpg" alt="Issue Handling" />
+  <div class="column image reverse">
+    <img src="images/siem-img.jpg" alt="Issue Handling" />
   </div>
   <div class="column text">
-    <h3>Comprehensive Issue Handling</h3>
+    
+     <h2 class="main-heading">Comprehensive <span style="color: #00c896">Issue Handling.</span></h2>
     <p>
         Once our solution is live, we don’t just walk away — we stay connected. <br>
         Whether you're facing bugs, performance lags, or unexpected system behavior,
@@ -1072,11 +1078,12 @@ footer {
 
 <!-- Row 2 -->
 <div class="row bg-alt">
-  <div class="column image reverse">
-    <img src="images/report-img.jpg" alt="Reports and Insights" />
+  <div class="column image">
+    <img src="images/business-process-man.jpg" alt="Reports and Insights" />
   </div>
   <div class="column text">
-    <h3>Reports & Usage Insights</h3>
+    
+     <h2 class="main-heading">Reports &  <span style="color: #00c896">Usage Insights.</span></h2>
     <p>
         We deliver regular reports that offer complete visibility into your system's usage.<br>
         From performance trends to user activity, every insight is captured and shared.<br>
@@ -1092,10 +1099,11 @@ footer {
 
 <div class="row">
   <div class="column image reverse">
-    <img src="images/report-img.jpg" alt="Reports and Insights" />
+    <img src="images/security-img.jpg" alt="Security" />
   </div>
   <div class="column text">
-    <h3>Security & Patch Updates</h3>
+    
+     <h2 class="main-heading">Security &  <span style="color: #00c896">Patch Updates.</span></h2>
    <p>
         We help you stay protected from evolving cyber threats with proactive patching.<br>
         Our team delivers regular security updates tailored to your solution landscape.<br>
@@ -1109,10 +1117,11 @@ footer {
 <!-- Row 4 -->
 <div class="row bg-alt">
   <div class="column image reverse">
-    <img src="images/report-img.jpg" alt="Reports and Insights" />
+    <img src="images/uem-img.jpg" alt="Minor Enhancements" />
   </div>
   <div class="column text">
-    <h3>Minor Enhancements</h3>
+    
+     <h2 class="main-heading">Minor <span style="color: #00c896">Enhancements.</span></h2>
      <p>
         After go-live, we understand that new needs and refinements often emerge.<br>
         Whether it's renaming field labels or adjusting approval workflows, we’ve got you covered.<br>
@@ -1122,44 +1131,6 @@ footer {
         With Saasify, your solution grows in sync with your organizational goals.</p>
   </div>
 </div>
-</section>
-
-
-<section style="padding: 60px 20px; background-color: #0a1f44; color: #fff;">
-  <div style="max-width: 1200px; margin: auto;">
-    <h2 class="main-heading" style=" color: white; margin-bottom: 40px;">
-      <span class="span-border-bottom">Our Support Model</span>
-    </h2>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 30px;">
-      <!-- Support Point 1 -->
-      <div style="flex: 1 1 30%; display: flex; align-items: flex-start; gap: 15px;">
-        <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
-        <div>
-          <h4 style="margin: 0 0 10px;">Tiered Support Options</h4>
-          <p style="margin: 0;">Choose from Basic, Standard, or Premium plans tailored to your operational needs and criticality.</p>
-        </div>
-      </div>
-
-      <!-- Support Point 2 -->
-      <div style="flex: 1 1 30%; display: flex; align-items: flex-start; gap: 15px;">
-        <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
-        <div>
-          <h4 style="margin: 0 0 10px;">24/7 Helpdesk Access</h4>
-          <p style="margin: 0;">Round-the-clock support availability with guaranteed response SLAs, ensuring peace of mind.</p>
-        </div>
-      </div>
-
-      <!-- Support Point 3 -->
-      <div style="flex: 1 1 30%; display: flex; align-items: flex-start; gap: 15px;">
-        <i class="fas fa-check" style="color: #00e6ac; font-size: 20px; margin-top: 4px;"></i>
-        <div>
-          <h4 style="margin: 0 0 10px;">Dedicated Account Manager</h4>
-          <p style="margin: 0;">Your single point of contact for escalations, reporting, and proactive account health check-ins.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section class="contact-section">

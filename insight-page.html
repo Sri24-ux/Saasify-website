@@ -461,7 +461,7 @@
 }
 
 .glass-card {
-  width: 100%;
+  width: 88%;
   max-width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -483,7 +483,7 @@
 
 .hero-text .sub-heading {
   font-size: 18px;
-  color: #00c896;
+  
   margin-bottom: 10px;
 }
 
@@ -491,10 +491,6 @@
   font-size: 42px;
   font-weight: bold;
   margin-bottom: 20px;
-}
-
-.hero-text .main-heading span {
-  color: #00c896;
 }
 
 .hero-text .description {
@@ -512,7 +508,12 @@
   flex: 1 1 320px;
 }
 
-
+.photo-collage img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
 /* Responsive */
 @media (max-width: 900px) {
   .glass-card {
@@ -524,12 +525,35 @@
     margin-top: 30px;
   }
 }
+.hero-glass-with-bg {
+  position: relative;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-base-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 61%;
+    height: 82%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-glass-with-bg .glass-card {
+  position: relative;
+  z-index: 1;
+}
+
 
     .insights-nav {
       display: flex;
       justify-content: center;
       border-bottom: 2px solid #ccc;
-      background: rgba(10, 31, 68, 0.85);
+      background: #0a1f44;
     }
     .insights-nav button {
       background: none;
@@ -608,22 +632,7 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.insight-contact-text small {
-  display: block;
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 8px;
-}
-.insight-contact-text h2 {
-  font-size: 2rem;
-  color: #0c2d3f;
-  margin-bottom: 10px;
-}
-.insight-contact-text p {
-  font-size: 1rem;
-  color: #333;
-  max-width: 600px;
-}
+
 .insight-contact-btn {
   background-color: #f4c300;
   color: #000;
@@ -716,12 +725,6 @@ footer {
   color: #666;
   font-weight: 500;
 }
-.photo-collage img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
 
   </style>
 </head>
@@ -752,7 +755,7 @@ footer {
                     <span class="desc">Identity and access management solutions</span>
                   </li>
                   <li>
-                    <a href="ITSM.html">ITSM</a>
+                    <a href="ITSM.html">ITSM/ESM</a>
                     <span class="desc">Streamline service delivery and operations</span>
                   </li>
                   <li>
@@ -892,15 +895,17 @@ footer {
         </div>
       </div>
 
-<section class="hero-glass">
+
+<section class="hero-glass-with-bg">
+  <img src="images/abstract_shapes_7.jpg" alt="Base Background" class="hero-base-bg" />
+
   <div class="glass-card">
     <!-- Left Side: Text -->
     <div class="hero-text">
       <p class="sub-heading">Empowering Identity & Access</p>
-      <h1 class="main-heading">Simplify IAM with <span>Saasify</span></h1>
+      <h1 class="main-heading">Explore What Drives Saasify Forward.</h1>
       <p class="description">
-        Saasify streamlines how businesses manage identities, access, and compliance — all from a centralized, secure, and scalable platform.
-      </p>
+        Discover the latest trends, compelling success stories, and expert-driven insights that are shaping the future of enterprise technology. At Saasify, we go beyond the surface—exploring innovation, digital transformation strategies, and real-world impact across industries.</p>
     </div>
 
     <!-- Right Side: Collage -->
@@ -909,7 +914,6 @@ footer {
     </div>
   </div>
 </section>
-
 
 <section class="breadcrumb">
   <div class="breadcrumb-container">
@@ -939,8 +943,9 @@ footer {
  <section class="insight-contact">
   <div class="insight-contact-wrapper">
     <div class="insight-contact-text">
-      <small>Connect with Saasify</small>
-      <h2>Connect to explore possibilities.</h2>
+      <p class="sub-heading">Connect with Saasify.</p>
+      <h2 class="main-heading">Connect to explore <span style="color: #00c896">possibilities.</span></h2>
+
       <p>We’d love to hear from you and answer any questions. Let’s start a conversation that matters.</p>
     </div>
     <div>

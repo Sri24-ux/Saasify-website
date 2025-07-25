@@ -343,98 +343,80 @@
   }
 }
 
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            background-color: #0a1f44;
-            position: fixed;
-            top: 63px;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            z-index: 1001;
-        }
-        
-        .mobile-menu a {
-            color: white;
-            padding: 10px 0;
-            text-decoration: none;
-        }
-        
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        @media screen and (max-width: 1024px) {
-            nav {
-                display: none;
-            }
-            .hamburger {
-                display: block;
-            }
-            .mobile-menu.show {
-                display: flex;
-            }
-        }
-        .submenu {
-            display: none;
-            padding-left: 15px;
-        }
-        
-        .submenu-toggle {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #55ffbe;
-            border-bottom: 1px solid #55ffbe;
-            padding-bottom: 5px;
-            flex: 1;
-        }
-        
-        .submenu a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-          @media (max-width: 767px) {
-            .contact-button.desktop-only {
-            display: none;
-            }
-        }.submenu {
-            display: none;
-            padding-left: 15px;
-        }
-        
-        .submenu-toggle {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #55ffbe;
-            border-bottom: 1px solid #55ffbe;
-            padding-bottom: 5px;
-            flex: 1;
-        }
-        
-        .submenu a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-          @media (max-width: 767px) {
-            .contact-button.desktop-only {
-            display: none;
-            }
-        }
+ .mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #ffffff; /* White background */
+    position: fixed;
+    top: 63px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1001;
+}
+
+.mobile-menu a {
+    color: #0a1f44; /* Blue text */
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .mobile-menu.show {
+        display: flex;
+    }
+}
+
+.submenu {
+    display: none;
+    padding-left: 15px;
+}
+
+.submenu-toggle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #0a1f44; /* Blue text */
+    border-bottom: 1px solid #0a1f44;
+    padding-bottom: 5px;
+    flex: 1;
+    font-weight: 600;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 20px;
+    color: #0a1f44;
+    text-decoration: none;
+    position: relative;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.submenu a:hover {
+    color: #00c896; /* Optional hover color */
+}
+
+@media (max-width: 767px) {
+    .contact-button.desktop-only {
+        display: none;
+    }
+}
+
+
  .sub-heading {
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -533,7 +515,7 @@
 }
     
 .presence-section {
-  padding: 20px 20px;
+  padding: 60px 40px;
 }
 .section-title {
   text-align: center;
@@ -695,7 +677,7 @@ footer {
                     <span class="desc">Identity and access management solutions</span>
                   </li>
                   <li>
-                    <a href="ITSM.html">ITSM</a>
+                    <a href="ITSM.html">ITSM/ESM</a>
                     <span class="desc">Streamline service delivery and operations</span>
                   </li>
                   <li>
@@ -705,7 +687,7 @@ footer {
                 </ul>
                 <ul>
                   <li>
-                    <a href="IT-Analysis.html">IT Analysis</a>
+                    <a href="IT-Analysis.html">IT Analytics</a>
                     <span class="desc">Insights and metrics for better decisions</span>
                   </li>
                   <li>
@@ -860,12 +842,14 @@ footer {
   </section>
 
   <section class="presence-section">
-    <h2 class="main-heading"><span class="span-border-bottom">Registered Offices</span></h2>
-    <div class="location-grid" id="registered-offices"></div>
+     <p class="sub-heading">Saasify Everywhere</p>
+      <h2 class="main-heading">Our Registered  <span style="color: #00c896">Office Locations.</span></h2>
+      
+  <div class="location-grid" id="registered-offices"></div>
   </section>
 
   <section class="presence-section">
-    <h2 class="main-heading"><span class="span-border-bottom">Remote Locations</span></h2>
+    <h2 class="main-heading">Our Remote <span style="color: #00c896">Work Locations.</span></h2>
     <div class="location-grid" id="remote-locations"></div>
   </section>
    
@@ -924,6 +908,16 @@ footer {
         "city": "Hyderabad",
         "image": "Hyderabad.jpg",
         "address": "Remote Office – Hyderabad, Telangana"
+      },
+      {
+        "city": "Kerala",
+        "image": "Coimbatore.jpg",
+        "address": "Remote Office – Kochi, Kerala"
+      },
+      {
+        "city": "Mumbai",
+        "image": "Hyderabad.jpg",
+        "address": "Remote Office – Hyderabad, Mumbai"
       },
       {
         "city": "Coimbatore",

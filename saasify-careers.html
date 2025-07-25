@@ -519,8 +519,6 @@ body {
 .hover-underline {
   display: inline-block;
   color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 600;
   position: relative;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -530,20 +528,23 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px; /* Adjust as needed */
+  bottom: -4px;
   width: 0;
   height: 2px;
   background-color: #00c896;
   transition: width 0.3s ease;
+  pointer-events: none;
 }
 
-.hover-underline:hover {
+
+.why-card:hover .hover-underline {
   color: #0a1f44;
 }
 
-.hover-underline:hover::after {
+.why-card:hover .hover-underline::after {
   width: 100%;
 }
+
 
 .why-card {
   border-radius: 20px;
@@ -564,25 +565,22 @@ body {
   background-color: rgba(10, 31, 68, 0.3); /* Optional dark overlay for text readability */
 }
 
-.bg-color-card1 {
-  background: linear-gradient(270deg, #50D387 0%, #296D46 100%);
-}
 .bg-image-card {
   color: #fff;
   background-blend-mode: overlay;
   background-color: rgba(10, 31, 68, 0.3); /* Optional dark overlay for text readability */
 }
 
-.card-text h4 {
+ .card-text h4 {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 12px;
 }
-
+/*
 .card-text p {
   font-size: 0.95rem;
   line-height: 1.5;
-}
+} */
 
 
   .apply-role{
@@ -969,7 +967,7 @@ footer {
                     <span class="desc">Identity and access management solutions</span>
                   </li>
                   <li>
-                    <a href="ITSM.html">ITSM</a>
+                    <a href="ITSM.html">ITSM/ESM</a>
                     <span class="desc">Streamline service delivery and operations</span>
                   </li>
                   <li>
@@ -1118,11 +1116,10 @@ footer {
     <div class="hero-icon">
       <img src="images/saas-icon.png" alt="SaaS Icon">
     </div>
-    <h1><span class="highlight">saas</span>.connect</h1>
+    <h1><span class="highlight">Join the Saasify team</h1>
     <p>
-      Exciting events providing insights into B2B market combined with fantastic networking opportunities.
-      With <strong>saas.connect</strong>, we are on a mission to bring together founders of wonderful SaaS businesses
-      to share ideas and grow further.
+      At Saasify, we empower enterprises with next-gen digital solutions in ITSM, automation, security, and analytics. Whether you're starting your journey or advancing your career, you'll thrive in a culture built on collaboration, innovation, and impact. 
+      We believe in people-first growth—where your talent meets purpose and your passion shapes the digital future. Explore open roles and unlock your full potential with Saasify.
     </p>
   </div>
 </section>
@@ -1159,52 +1156,49 @@ footer {
   <img src="images/team-overlay.png" alt="Team Image" class="team-overlay-img">
 </section>
 
-
-
 <section class="why-work-section">
    <p class="sub-heading">WHY WORK WITH US?</p>
-      <h2>Where Passion Meets  <span style="color: #00c896">Purpose and Growth.</span></h2>
-      
-
+    <h2 class="main-heading">Where Passion Meets  <span style="color: #00c896">Purpose and Growth.</span></h2>
+    
   <div class="why-grid">
     <!-- Card 1 - Background Image -->
     <div class="why-card bg-image-card" style="background-image: url('images/three-engineers.jpg');">
       <div class="card-text">
-        <h3 class="hover-underline">Inclusive Culture</h3>
+        <h2 class="hover-underline">Inclusive Culture</h2>
         <p>We embrace diversity and unique perspectives to build a thriving, inclusive workplace.</p>
       </div>
     </div>
 
     <!-- Card 2 - Soft background -->
-    <div class="why-card bg-color-card" style="background-image: url('images/corevalues2.png');">
+    <div class="why-card bg-image-card" style="background-image: url('images/corevalues2.jpg');">
       <div class="card-text">
-        <h4>Competitive CompensationWork-Life Balance</h4>
-        <p>Flexible hours, remote options, and wellness-first culture to support your life.</p>
+        <h2 class="hover-underline">Work-Life Balance</h2>
+        <p>Saasify promotes a healthy, flexible work-life balance for all team members.</p>
       </div>
     </div>
 
     <!-- Card 3 - Soft background -->
-    <div class="why-card bg-color-card" style="background-image: url('images/corevalue-sal.png');">
+    <div class="why-card bg-image-card" style="background-image: url('images/corevalue-sal.jpg');">
       <div class="card-text">
-        <h4>Competitive Compensation</h4>
-        <p>Salary, bonuses, equity, and benefits better than market standards.</p>
+        <h2 class="hover-underline">Fair Compensation</h2>
+        <p>Saasify offers fair, transparent, and performance-based pay.</p>
       </div>
     </div>
     
     <!-- Card 4 - Background Image -->
     <div class="why-card bg-image-card" style="background-image: url('images/corevalue.jpg');">
       <div class="card-text">
-        <h4>Continuous Learning</h4>
+        <h2 class="hover-underline">Continuous Learning</h2>
         <p>Upskill through certifications, training programs, and mentorship opportunities.</p>
       </div>
     </div>
   </div>
 </section>
 
-
  <section class="apply-role">
-  <h4 class="sub-heading" >WE ARE HIRING!</h4>
-  <h2>Our Current  <span style="color: #00c896">Job Openings.</span></h2>
+  <p class="sub-heading">WE ARE HIRING!</p>
+  <h2 class="main-heading">Our Current  <span style="color: #00c896">Job Openings.</span></h2>
+  
   <div class="glass-card" style="max-width: 1186px !important;">
   <div class="job-grid" id="jobList"></div>
   </div> 
@@ -1228,10 +1222,9 @@ footer {
 <section class="apply-split-v2">
   
   <div class="apply-content">
-    <h4 class="sub-heading" >JOIN OUR TEAM!</h4>
-  <h2> Email your details to: <span style="color: #00c896">kalyani@saasifysolutions.com.</span></h2>
-  <!-- <P>Be part of a fast-growing team that’s transforming enterprise solutions through innovation. Share your profile and join us in creating smarter, scalable technologies.</P> 
-  -->
+    <p class="sub-heading">JOIN OUR TEAM!</p>
+      <h2 class="main-heading">Email your details to: <span style="color: #00c896">kalyani@saasifysolutions.com.</span></h2>
+  
   <h4>How to Contact Us:</h4> 
   <ul>
   <li> Email: <a href="mailto:contact@saasifysolutions.com">contact@saasifysolutions.com</a></li>
