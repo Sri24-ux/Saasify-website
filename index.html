@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saasify Solutions</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/style.css">
     <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-rp+U0FfB9bW9yYQgszAlDKsJc7TYItDQn4IgfPlXDe5hklXmdFO3sfYQshG9K4kPsfY5iWTCp1u6IQKl5zRQWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,345 +15,28 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
   <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #ffffff;
-            color: #2a2a2a;
-        }
-        
-        header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px 40px;
-          background-color: transparent;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          z-index: 1000;
-          box-sizing: border-box;
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .logo img {
-            height: 40px;
-        }
-        
-        nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            color: white;
-        }
-        
-        nav .dropdown {
-            position: relative;
-        }
-        
-        nav .dropdown-content {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background-color: #ffffff; /* ✅ White background */
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 1.1); /* ✅ Smooth card shadow */
-          padding: 20px 30px;
-          z-index: 999;
-          min-width: 500px;
-          border-radius: 1px;
-          color: #0a1f44; /* Dark text color */
-          opacity: 0;
-          transform: translateY(10px);
-          transition: all 0.3s ease;
-      }
-      .dropdown-trigger {
-          color: white;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          cursor: pointer;
-        }
-
-        .two-column-dropdown {
-            display: flex;
-            gap: 40px;
-            justify-content: space-between;
-        }
-        .two-column-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.two-column-dropdown ul li {
-  margin: 6px 0;
-}
-
-.two-column-dropdown ul li a {
-  text-decoration: none;
-  color: #0a1f44;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.two-column-dropdown ul li a:hover {
-  color: #00c896;
-}
-
-        .dropdown-column {
-            flex: 1;
-        }
-        .expertise-dropdown h4 {
-          font-size: 1rem;
-          margin-bottom: 12px;
-          color: #000;
-          border-bottom: 2px solid #55ffbe;
-          padding-bottom: 8px;
-        }
-
-        .dropdown-column h4 {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #000;
-            border-bottom: 1px solid #55ffbe;
-            padding-bottom: 5px;
-        }
-        
-        .dropdown-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .dropdown-column ul li {
-           margin: 12px 0;
-           line-height: 1.2;
-        }
-        
-        .dropdown-column ul li a {
-            display: inline-block;
-            text-decoration: none;
-            color: #0a1f44;
-            position: relative;
-            padding-bottom: 2px;
-          }
-        .dropdown-column ul li a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 0;
-            background-color: #00c896;
-            transition: width 0.3s ease;
-          }
-          .dropdown-column ul li a:hover::after {
-              width: 100%;
-            }
-        nav .dropdown:hover .dropdown-content {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-       }
-        
-        nav .dropdown-content ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-       
-        nav .dropdown-content ul li a {
-            display: block;
-            color: #000;
-            text-decoration: none;
-            position: relative;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-        
-        nav .dropdown-content ul li a::after {
-            content: '';
-            position: absolute;
-            left: 1px;
-            bottom: 2px;
-            width: 0;
-            height: 2px;
-            background-color: #00c896;
-            transition: width 0.3s ease;
-        }
-        
-        nav .dropdown-content ul li a:hover::after {
-            width: calc(100% - 40px);
-        }
-        
-        nav .dropdown-content ul li a:hover {
-            color: rgb(8, 0, 0);
-        }
-        
-       .right-icons, 
-        .contact-button desktop-only {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .right-icons,
-         .contact-button desktop-only i {
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: white;
-        }
-        
-        .right-icons, 
-        .contact-button desktop-only i:hover {
-            color: #f4c300;
-        }
-        
-        .right-icons button,
-        .contact-button.desktop-only button {
-            padding: 8px 16px;
-            border: none;
-            background-color: #f4c300;
-            color: #000;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        ul,
-        li {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav a {
-            text-decoration: none;
-        }
-        
-        .navbar {
-            list-style: none !important;
-        }
-        
-        .navbar li {
-            list-style-type: none !important;
-        }
-        @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 10px 20px;
-    background-color: #0a1f44;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    display: none; /* Will be toggled by JS */
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .dropdown-content {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    box-shadow: none !important;
-    background-color: transparent;
-    padding: 0 !important;
-    min-width: 100% !important;
-  }
-
-  .dropdown-content h4 {
-    color: #fff;
-    border-bottom: 1px solid #55ffbe;
-    margin-bottom: 5px;
-  }
-
-  .dropdown-column ul li a {
-    color: #fff;
-  }
-
-  .dropdown-column ul li .desc {
-    color: #ccc;
-    font-size: 0.8rem;
-    padding-top: 2px;
+body {
     margin: 0;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .two-column-dropdown {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .right-icons,
-  .contact-button.desktop-only {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: white;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-  }
-
-  .logo {
-    padding: 10px 20px;
-  }
+    font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #2a2a2a;
 }
 
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            background-color: #0a1f44;
-            position: fixed;
-            top: 63px;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            z-index: 1001;
-        }
-        
-        .mobile-menu a {
-            color: white;
-            padding: 10px 0;
-            text-decoration: none;
-        }
-        
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        @media screen and (max-width: 1024px) {
-            nav {
-                display: none;
-            }
-            .hamburger {
-                display: block;
-            }
-            .mobile-menu.show {
-                display: flex;
-            }
-        }
+ .sub-heading {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #7a76a3;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0a1f44;
+}
+       
  .hero {
   width: 100%;
   height: 100vh;
@@ -487,8 +170,6 @@ margin-top: 0;
   }
 }
 
-
-        
         footer {
             background-color: #0a1f44;
             color: white;
@@ -554,35 +235,7 @@ margin-top: 0;
             font-size: 0.85rem;
             color: #ddd;
         }
-        
-        .submenu {
-            display: none;
-            padding-left: 15px;
-        }
-        
-        .submenu-toggle {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #55ffbe;
-            border-bottom: 1px solid #55ffbe;
-            padding-bottom: 5px;
-            flex: 1;
-        }
-        
-        .submenu a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-          @media (max-width: 767px) {
-            .contact-button.desktop-only {
-            display: none;
-            }
-        }
+     
 .testimonial-section {
   background : #f4faff ;
   padding: 20px 20px;
@@ -1084,21 +737,6 @@ header.scrolled {
   flex: 1 1 500px;
 }
 
-.sub-heading {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: #7a76a3;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-}
-
-.main-heading {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #0a1f44;
-}
-
 .why-point {
   display: flex;
   align-items: flex-start;
@@ -1215,16 +853,17 @@ header.scrolled {
 </head>
 
 <body>
-    <header>
+<header>
         <div class="logo">
             <a href="index.html">
                 <img src="images/Saasify logo.png" alt="Saasify Logo" />
             </a>
         </div>
-        <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+        <div class="hamburger" id="hamburgerIcon" onclick="toggleMobileMenu()">☰</div>
+
         <nav>
-          <div class="dropdown">
-            <span style="color: white;">Saasify Expertise </span>
+           <div class="dropdown">
+            <span style="color: white;">Our Expertise </span>
             <svg xmlns="http://www.w3.org/2000/svg" 
                 fill="none" viewBox="0 0 24 24" stroke="white" 
                 style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
@@ -1235,39 +874,37 @@ header.scrolled {
               <h4>Expertise</h4>
               <div class="two-column-dropdown">
                 <ul>
-                
                   <li>
                     <a href="IAM.html">IAM</a>
-                    <span class="desc">Identity and access management solutions</span>
+                    <span class="desc">Manage, govern, and secure digital identities and privileged access.</span>
                   </li>
                   <li>
                     <a href="ITSM.html">ITSM/ESM</a>
-                    <span class="desc">Streamline service delivery and operations</span>
+                    <span class="desc">Design, automate, deliver, and manage IT and business services.</span>
                   </li>
                   <li>
-                    <a href="ITOM.html">ITOM</a>
-                    <span class="desc">Optimize infrastructure performance</span>
+                    <a href="UEM.html">UEM</a>
+                    <span class="desc">Integrated endpoint management and protection platform.</span>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <a href="IT-Analysis.html">IT Analysis</a>
-                    <span class="desc">Insights and metrics for better decisions</span>
+                    <a href="ITOM.html">ITOM</a>
+                    <span class="desc">Full-Stack Observability of your enterprise IT infrastructure.</span>
                   </li>
                   <li>
                     <a href="SIEM.html">SIEM</a>
-                    <span class="desc">Real-time security event monitoring</span>
+                    <span class="desc">Secure your network from cyberattacks and ensure compliance.</span>
                   </li>
                   <li>
-                    <a href="UEM.html">UEM</a>
-                    <span class="desc">Unified endpoint management</span>
+                    <a href="IT-Analysis.html">IT Analytics</a>
+                    <span class="desc">Visualize IT data and gain actionable insights into IT operations.</span>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-
-            <div class="dropdown">
+          <div class="dropdown">
                 <span style="color: white;">Services</span>
                 <svg xmlns="http://www.w3.org/2000/svg" 
                   fill="none" viewBox="0 0 24 24" stroke="white" 
@@ -1325,11 +962,40 @@ header.scrolled {
                 <button>Contact Us</button>
             </a>
         </div>
-    </header>
+</header>
+   
+<div id="overlay" class="overlay" onclick="toggleMobileMenu()"> </div>
 
-    <div class="mobile-menu" id="mobileMenu" style="display: none;">
+<div id="mobileMenu">
+      <!-- Platform Proficiency -->
+      
+       <div class="submenu-toggle" onclick="toggleSubmenu(this)"> Our Expertise 
+            <img src="images/Arrow.png" alt="Arrow" style=" height: 24px;" />
+       </div>
+        <div class="submenu">
+            <a href="IAM.html">IAM</a>
+            <span class="desc">Manage, govern, and secure digital identities and privileged access</span>
+
+            <a href="ITSM.html">ITSM/ESM</a>
+            <span class="desc">Design, automate, deliver, and manage IT and business services</span>
+
+            <a href="UEM.html">UEM</a>
+            <span class="desc">Integrated endpoint management and protection platform</span>
+
+            <a href="ITOM.html">ITOM</a>
+            <span class="desc">Full-Stack Observability of your enterprise IT infrastructure</span>
+
+            <a href="SIEM.html">SIEM</a>
+            <span class="desc">Secure your network from cyberattacks and ensure compliance</span>
+
+            <a href="IT-Analysis.html">IT Analytics</a>
+            <span class="desc">Visualize IT data and gain actionable insights into IT operations</span>
+        </div>
+
         <!-- Services -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Services ▼</div>
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Services 
+           <img src="images/Arrow.png" alt="Arrow" style=" height: 24px;" />
+        </div>
         <div class="submenu">
             <a href="consulting-services.html">Consulting</a>
             <a href="evaluation-assistance.html">Evaluation Assistance</a>
@@ -1339,29 +1005,10 @@ header.scrolled {
             <a href="managed-services.html">Managed Services</a>
         </div>
 
-        <!-- Solutions -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Solutions ▼</div>
-        <div class="submenu">
-            <a href="it-operations-management.html">IT Operations Management</a>
-            <a href="it-security-management.html">IT Security Management</a>
-            <a href="enterprise-service.html">Enterprise Service Management</a>
-            <a href="Business-analytics.html">Business Analytics</a>
-            <a href="business-pro-management.html">Business Process Management</a>
-        </div>
-
-        <!-- Platform Proficiency -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Platform Proficiency ▼</div>
-        <div class="submenu">
-            <a href="IAM.html">IAM</a>
-            <a href="ITSM.html">ITSM</a>
-            <a href="ITOM.html">ITOM</a>
-            <a href="IT-Analysis.html">IT Analysis</a>
-            <a href="SIEM.html">SIEM</a>
-            <a href="UEM.html">UEM</a>
-        </div>
-
         <!-- Company Overview -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Company Overview ▼</div>
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Company Overview 
+           <img src="images/Arrow.png" alt="Arrow" style=" height: 24px;" />
+        </div>
         <div class="submenu">
             <a href="about_us.html">About Saasify</a>
             <a href="our-team.html">Our Team</a>
@@ -1369,57 +1016,23 @@ header.scrolled {
         </div>
 
         <!-- Careers -->
-        <a href="saasify-careers.html" style="display:block; margin-top: 10px;">Careers</a>
+        <div class="submenu-toggle">
+            <a href="saasify-careers.html" style="display:block;">Careers</a>
+        </div>   
 
         <!-- Insights -->
-        <a href="insight-page.html" style="display:block; margin-top: 10px;">Insights</a>
-
+        <div class="submenu-toggle">
+            <a href="insight-page.html" style="display:block;">Insights</a>
+        </div>
         <!-- Contact Us -->
-         <div class="right-icons">
+        <div class="right-icons">
             <a href="contact_us_page.html">
                 <button>Contact Us</button>
             </a>
         </div>
-    </div>
-    <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu.style.display === 'block') {
-                mobileMenu.style.display = 'none';
-            } else {
-                mobileMenu.style.display = 'block';
-            }
-        }
+</div>
 
-        function toggleSubmenu(element) {
-            const submenu = element.nextElementSibling;
-            if (submenu.style.display === 'block') {
-                submenu.style.display = 'none';
-                element.textContent = element.textContent.replace('▲', '▼');
-            } else {
-                submenu.style.display = 'block';
-                element.textContent = element.textContent.replace('▼', '▲');
-            }
-        }
-
-        function toggleDropdown(el) {
-            const dropdown = el.nextElementSibling;
-            // Close all others first
-            document.querySelectorAll('.dropdown-content.active').forEach(menu => {
-                if (menu !== dropdown) menu.classList.remove('active');
-            });
-            // Toggle clicked
-            dropdown.classList.toggle('active');
-        }
-        // Optional: close dropdowns when clicking outside
-        window.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('dropdown-toggle')) {
-                document.querySelectorAll('.dropdown-content.active').forEach(menu => menu.classList.remove('active'));
-            }
-        });
-    </script>
-
-    <!-- Other sections -->
+ <!-- Other sections -->
   <section class="hero">
   <div class="swiper heroSwiper">
   <div class="swiper-wrapper">  
@@ -1923,7 +1536,7 @@ observer.observe(document.querySelector(".key-stats-section"));
     }
   });
 </script>
-
+         
+<script src="js/main.js"></script>
 </body>
-
 </html>

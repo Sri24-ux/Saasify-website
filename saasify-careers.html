@@ -5,38 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Careers – Join Saasify Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-    window.toggleMobileMenu = function () {
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
-    };
-
-    window.toggleSubmenu = function (element) {
-      const submenu = element.nextElementSibling;
-      if (submenu.style.display === 'block') {
-        submenu.style.display = 'none';
-        element.textContent = element.textContent.replace('▲', '▼');
-      } else {
-        submenu.style.display = 'block';
-        element.textContent = element.textContent.replace('▼', '▲');
-      }
-    };
-
-    window.toggleDropdown = function (el) {
-      const dropdown = el.nextElementSibling;
-      // Close all others first
-      document.querySelectorAll('.dropdown-content.active').forEach(menu => {
-        if (menu !== dropdown) menu.classList.remove('active');
-      });
-      // Toggle clicked
-      dropdown.classList.toggle('active');
-    };
-
-  });
-</script>
-  <style>
+   <link rel="stylesheet" href="css/style.css">
+<style>
 body {
   
     margin: 0;
@@ -45,398 +15,6 @@ body {
     color: #2a2a2a;
  }
   
-    header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 40px;
-            background-color: #0a1f44;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            box-sizing: border-box;
-        }
-        
-        .logo img {
-            height: 40px;
-        }
-        
-     nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            color: white;
-        }
-        
-        nav .dropdown {
-            position: relative;
-        }
-        
-        nav .dropdown-content {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background-color: #ffffff; /* ✅ White background */
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 1.1); /* ✅ Smooth card shadow */
-          padding: 20px 30px;
-          z-index: 999;
-          min-width: 500px;
-          border-radius: 1px;
-          color: #0a1f44; /* Dark text color */
-          opacity: 0;
-          transform: translateY(10px);
-          transition: all 0.3s ease;
-      }
-      .dropdown-trigger {
-          color: white;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          cursor: pointer;
-        }
-
-        .two-column-dropdown {
-            display: flex;
-            gap: 40px;
-            justify-content: space-between;
-        }
-        .two-column-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.two-column-dropdown ul li {
-  margin: 6px 0;
-}
-
-.two-column-dropdown ul li a {
-  text-decoration: none;
-  color: #0a1f44;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.two-column-dropdown ul li a:hover {
-  color: #00c896;
-}
-
-        .dropdown-column {
-            flex: 1;
-        }
-        .expertise-dropdown h4 {
-          font-size: 1rem;
-          margin-bottom: 12px;
-          color: #000;
-          border-bottom: 2px solid #55ffbe;
-          padding-bottom: 8px;
-        }
-
-        .dropdown-column h4 {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #000;
-            border-bottom: 1px solid #55ffbe;
-            padding-bottom: 5px;
-        }
-        
-        .dropdown-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .desc{
-  font-size: 0.85rem;
-  color: #0a1f44;
-  margin: 4px 0 0;
-  padding-top: 20px;
-}
-        .dropdown-column ul li {
-           margin: 12px 0;
-           line-height: 1.2;
-        }
-        
-        .dropdown-column ul li a {
-            display: inline-block;
-            text-decoration: none;
-            color: #0a1f44;
-            position: relative;
-            padding-bottom: 2px;
-          }
-        .dropdown-column ul li a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 0;
-            background-color: #00c896;
-            transition: width 0.3s ease;
-          }
-          .dropdown-column ul li a:hover::after {
-              width: 100%;
-            }
-        nav .dropdown:hover .dropdown-content {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-       }
-        
-        nav .dropdown-content ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-       
-        nav .dropdown-content ul li a {
-            display: block;
-            color: #000;
-            text-decoration: none;
-            position: relative;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-        
-        nav .dropdown-content ul li a::after {
-            content: '';
-            position: absolute;
-            left: 1px;
-            bottom: 2px;
-            width: 0;
-            height: 2px;
-            background-color: #00c896;
-            transition: width 0.3s ease;
-        }
-        
-        nav .dropdown-content ul li a:hover::after {
-            width: calc(100% - 40px);
-        }
-        
-        nav .dropdown-content ul li a:hover {
-            color: rgb(8, 0, 0);
-        }
-        
-       .right-icons, 
-        .contact-button desktop-only {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .right-icons,
-         .contact-button desktop-only i {
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: white;
-        }
-        
-        .right-icons, 
-        .contact-button desktop-only i:hover {
-            color: #f4c300;
-        }
-        
-        .right-icons button,
-        .contact-button.desktop-only button {
-            padding: 8px 16px;
-            border: none;
-            background-color: #f4c300;
-            color: #000;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        ul,
-        li {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav a {
-            text-decoration: none;
-        }
-        
-        .navbar {
-            list-style: none !important;
-        }
-        
-        .navbar li {
-            list-style-type: none !important;
-        }
-        @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 10px 20px;
-    background-color: #0a1f44;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    display: none; /* Will be toggled by JS */
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .dropdown-content {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    box-shadow: none !important;
-    background-color: transparent;
-    padding: 0 !important;
-    min-width: 100% !important;
-  }
-
-  .dropdown-content h4 {
-    color: #fff;
-    border-bottom: 1px solid #55ffbe;
-    margin-bottom: 5px;
-  }
-
-  .dropdown-column ul li a {
-    color: #fff;
-  }
-
-  .dropdown-column ul li .desc {
-    color: #ccc;
-    font-size: 0.8rem;
-    padding-top: 2px;
-    margin: 0;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .two-column-dropdown {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .right-icons,
-  .contact-button.desktop-only {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: white;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-  }
-
-  .logo {
-    padding: 10px 20px;
-  }
-}
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            background-color: #0a1f44;
-            position: fixed;
-            top: 63px;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            z-index: 1001;
-        }
-        
-        .mobile-menu a {
-            color: white;
-            padding: 10px 0;
-            text-decoration: none;
-        }
-        
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        @media screen and (max-width: 1024px) {
-            nav {
-                display: none;
-            }
-            .hamburger {
-                display: block;
-            }
-            .mobile-menu.show {
-                display: flex;
-            }
-        }
-.submenu {
-            display: none;
-            padding-left: 15px;
-        }
-        
-        .submenu-toggle {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #55ffbe;
-            border-bottom: 1px solid #55ffbe;
-            padding-bottom: 5px;
-            flex: 1;
-        }
-        
-        .submenu a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-          @media (max-width: 767px) {
-            .contact-button.desktop-only {
-            display: none;
-            }
-        }.submenu {
-            display: none;
-            padding-left: 15px;
-        }
-        
-        .submenu-toggle {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #55ffbe;
-            border-bottom: 1px solid #55ffbe;
-            padding-bottom: 5px;
-            flex: 1;
-        }
-        
-        .submenu a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-          @media (max-width: 767px) {
-            .contact-button.desktop-only {
-            display: none;
-            }
-        }
-
 .sub-heading {
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -452,50 +30,74 @@ body {
   color: #0a1f44;
 }
 
-.hero-iom-glass {
-  position: relative;
-  padding: 80px 40px;
-  background-color: #ffffff;
-  overflow: hidden;
-}
-
-.wave-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 350px;
-  z-index: 0;
-  background: url('images/ChatGPT.png') center/cover no-repeat;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  opacity: 0.3;
-}
-
-
 .glass-card {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
+  width: 88%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 40px;
-  z-index: 1;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.glass-card h1 {
-  font-size: 2.5rem;
+/* Left: Text */
+.hero-text {
+  flex: 1 1 500px;
   color: #0a1f44;
-  margin-bottom: 20px;
 }
 
-.glass-card p {
-  font-size: 1.1rem;
-  color: #2a2a2a;
+.hero-text .sub-heading {
+  font-size: 18px;
+  
+  margin-bottom: 10px;
+}
+
+.hero-text .description {
+  font-size: 18px;
   line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .glass-card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hero-glass-with-bg {
+  position: relative;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-base-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82%;
+    object-fit: none;
+    z-index: 0;
+}
+
+.hero-glass-with-bg .glass-card {
+  position: relative;
+  z-index: 1;
+}
+
+.family-title {
+    font-style: normal;
+    font-size: 60px;
+    letter-spacing: -.02em;
+    color: #0a1f44;
 }
 
 .why-work-section {
@@ -585,18 +187,29 @@ body {
 
   .apply-role{
     padding: 50px 40px;
-    background: #f4faff;
+    background: #ddfff2;
 
   }
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns on desktop */
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 992px) {
   .job-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    justify-content: space-between;
-    margin: auto;
-    text-align: center;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
   }
+}
+
+@media (max-width: 600px) {
+  .job-grid {
+    grid-template-columns: 1fr; /* 1 column on small devices */
+  }
+}
+
 .job-card {
   background: #fff;
   border-radius: 12px;
@@ -606,6 +219,8 @@ body {
   justify-content: space-between;
   min-height: 220px;
   color: #000000;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -622,28 +237,24 @@ body {
 }
 
 .job-card:hover h3 {
-  color: #296D46; /* Highlight text on hover */
+  color: #296D46; 
 }
 
 .job-card p {
-  font-size: 0.95rem;
-  margin-bottom: 16px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-  .view-dtls {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #f4c300;
-    color: #000000;
-    border: none;
+.view-dtls {
+    background-color: #0a1f44;
+    border: 1px solid #0a1f44;
+    padding: 8px 25px;
     border-radius: 20px;
+    width: 126px;
+    text-align: center;
     cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .view-dtls:hover {
-    background-color: #ffdb4d;
-  }
+    color: white;
+}
 
   /* Modal styles */
   .modal {
@@ -729,6 +340,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius:  12px;
 }
 
 .apply-content {
@@ -754,7 +366,7 @@ body {
   display: inline-block;
   font-size: 1rem;
   margin-bottom: 15px;
-  color: #005ea2;
+  color: #0a1f44;
   text-decoration: none;
   font-weight: bold;
 }
@@ -849,16 +461,13 @@ footer {
   color: #ddd;
 }
 .cta-button {
-  background-color: #f4c300;
+  background-color: #55ffbe;;
   color: #000;
   border: none;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 50px;
   cursor: pointer;
   margin-top: 20px;
-}
-.cta-button:hover {
-  background-color: #ffdb4d;
 }
 
 .breadcrumb {
@@ -938,6 +547,17 @@ footer {
 }
 
 
+.job-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.job-footer p {
+  margin: 0;
+}
+
 </style>
 </head>
 <body>
@@ -947,10 +567,11 @@ footer {
                 <img src="images/Saasify logo.png" alt="Saasify Logo" />
             </a>
         </div>
-        <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+        <div class="hamburger" id="hamburgerIcon" onclick="toggleMobileMenu()">☰</div>
+
         <nav>
            <div class="dropdown">
-            <span style="color: white;">Saasify Expertise </span>
+            <span style="color: white;">Our Expertise </span>
             <svg xmlns="http://www.w3.org/2000/svg" 
                 fill="none" viewBox="0 0 24 24" stroke="white" 
                 style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
@@ -961,32 +582,31 @@ footer {
               <h4>Expertise</h4>
               <div class="two-column-dropdown">
                 <ul>
-                
                   <li>
                     <a href="IAM.html">IAM</a>
-                    <span class="desc">Identity and access management solutions</span>
+                    <span class="desc">Manage, govern, and secure digital identities and privileged access.</span>
                   </li>
                   <li>
                     <a href="ITSM.html">ITSM/ESM</a>
-                    <span class="desc">Streamline service delivery and operations</span>
+                    <span class="desc">Design, automate, deliver, and manage IT and business services.</span>
                   </li>
                   <li>
-                    <a href="ITOM.html">ITOM</a>
-                    <span class="desc">Optimize infrastructure performance</span>
+                    <a href="UEM.html">UEM</a>
+                    <span class="desc">Integrated endpoint management and protection platform.</span>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <a href="IT-Analysis.html">IT Analysis</a>
-                    <span class="desc">Insights and metrics for better decisions</span>
+                    <a href="ITOM.html">ITOM</a>
+                    <span class="desc">Full-Stack Observability of your enterprise IT infrastructure.</span>
                   </li>
                   <li>
                     <a href="SIEM.html">SIEM</a>
-                    <span class="desc">Real-time security event monitoring</span>
+                    <span class="desc">Secure your network from cyberattacks and ensure compliance.</span>
                   </li>
                   <li>
-                    <a href="UEM.html">UEM</a>
-                    <span class="desc">Unified endpoint management</span>
+                    <a href="IT-Analysis.html">IT Analytics</a>
+                    <span class="desc">Visualize IT data and gain actionable insights into IT operations.</span>
                   </li>
                 </ul>
               </div>
@@ -1051,10 +671,39 @@ footer {
             </a>
         </div>
     </header>
+   
+<div id="overlay" class="overlay" onclick="toggleMobileMenu()"> </div>
 
-    <div class="mobile-menu" id="mobileMenu" style="display: none;">
+<div id="mobileMenu">
+      <!-- Platform Proficiency -->
+      
+       <div class="submenu-toggle" onclick="toggleSubmenu(this)"> Our Expertise 
+            <img src="images/Arrow.png" alt="Arrow" style=" height: 24px;" />
+       </div>
+        <div class="submenu">
+            <a href="IAM.html">IAM</a>
+            <span class="desc">Manage, govern, and secure digital identities and privileged access</span>
+
+            <a href="ITSM.html">ITSM/ESM</a>
+            <span class="desc">Design, automate, deliver, and manage IT and business services</span>
+
+            <a href="UEM.html">UEM</a>
+            <span class="desc">Integrated endpoint management and protection platform</span>
+
+            <a href="ITOM.html">ITOM</a>
+            <span class="desc">Full-Stack Observability of your enterprise IT infrastructure</span>
+
+            <a href="SIEM.html">SIEM</a>
+            <span class="desc">Secure your network from cyberattacks and ensure compliance</span>
+
+            <a href="IT-Analysis.html">IT Analytics</a>
+            <span class="desc">Visualize IT data and gain actionable insights into IT operations</span>
+        </div>
+
         <!-- Services -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Services ▼</div>
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Services 
+           <img src="images/Arrow.png" alt="Arrow" style=" height: 24px;" />
+        </div>
         <div class="submenu">
             <a href="consulting-services.html">Consulting</a>
             <a href="evaluation-assistance.html">Evaluation Assistance</a>
@@ -1064,29 +713,10 @@ footer {
             <a href="managed-services.html">Managed Services</a>
         </div>
 
-        <!-- Solutions -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Solutions ▼</div>
-        <div class="submenu">
-            <a href="it-operations-management.html">IT Operations Management</a>
-            <a href="it-security-management.html">IT Security Management</a>
-            <a href="enterprise-service.html">Enterprise Service Management</a>
-            <a href="Business-analytics.html">Business Analytics</a>
-            <a href="business-pro-management.html">Business Process Management</a>
-        </div>
-
-        <!-- Platform Proficiency -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Platform Proficiency ▼</div>
-        <div class="submenu">
-            <a href="IAM.html">IAM</a>
-            <a href="ITSM.html">ITSM</a>
-            <a href="ITOM.html">ITOM</a>
-            <a href="IT-Analysis.html">IT Analysis</a>
-            <a href="SIEM.html">SIEM</a>
-            <a href="UEM.html">UEM</a>
-        </div>
-
         <!-- Company Overview -->
-        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Company Overview ▼</div>
+        <div class="submenu-toggle" onclick="toggleSubmenu(this)">Company Overview 
+           <img src="images/Arrow.png" alt="Arrow" style=" height: 24px;" />
+        </div>
         <div class="submenu">
             <a href="about_us.html">About Saasify</a>
             <a href="our-team.html">Our Team</a>
@@ -1094,53 +724,34 @@ footer {
         </div>
 
         <!-- Careers -->
-       
-        <a href="saasify-careers.html" style="display:block; margin-top: 10px;">Careers</a>
-        <!-- Insights -->
-        <a href="insight-page.html" style="display:block; margin-top: 10px;">Insights</a>
+        <div class="submenu-toggle">
+            <a href="saasify-careers.html" style="display:block;">Careers</a>
+        </div>   
 
+        <!-- Insights -->
+        <div class="submenu-toggle">
+            <a href="insight-page.html" style="display:block;">Insights</a>
+        </div>
         <!-- Contact Us -->
-         <div class="right-icons">
+        <div class="right-icons">
             <a href="contact_us_page.html">
                 <button>Contact Us</button>
             </a>
         </div>
+</div>
+
+<section class="hero-glass-with-bg">
+  <img src="images/ChatGPT Image Jul 30, 2025, 09_17_30 PM.png" alt="Base Background" class="hero-base-bg" />
+
+  <div class="glass-card">
+    <div class="hero-text">
+      <p class="sub-heading">Your Future!</p>
+      <h1 class="family-title">Join the Saasify team </h1>
+      <p class="description">
+       At Saasify, we empower enterprises with next-gen digital solutions in ITSM, automation, security, and analytics. Whether you're starting your journey or advancing your career, you'll thrive in a culture built on collaboration, innovation, and impact.</p> 
       </div>
-
-<section class="hero-section">
-  <div class="hero-bg">
-    <img src="images/blue-wave.png" alt="wave background" class="wave-img" />
-  </div>
-
-  <div class="hero-content glass-card">
-    <div class="hero-icon">
-      <img src="images/saas-icon.png" alt="SaaS Icon">
-    </div>
-    <h1><span class="highlight">Join the Saasify team</h1>
-    <p>
-      At Saasify, we empower enterprises with next-gen digital solutions in ITSM, automation, security, and analytics. Whether you're starting your journey or advancing your career, you'll thrive in a culture built on collaboration, innovation, and impact. 
-      We believe in people-first growth—where your talent meets purpose and your passion shapes the digital future. Explore open roles and unlock your full potential with Saasify.
-    </p>
   </div>
 </section>
-
-
-<!-- <section class="hero-iom">
-  <div class="hero-text">
-   <h1>Join the Saasify team</h1>
-     <p>
-      At Saasify, we empower enterprises with next-gen digital solutions in ITSM, automation, security, and analytics. Whether you're starting your journey or advancing your career, you'll thrive in a culture built on collaboration, innovation, and impact. 
-      <br><br>
-      We believe in people-first growth—where your talent meets purpose and your passion shapes the digital future. Explore open roles and unlock your full potential with Saasify.
-    </p>   
-        <a href="contact_us_page.html">
-      <button class="cta-button">Get Support</button>
-    </a>
-  </div>
-  <div class="hero-image">
-    <img src="images/Saasify-team-photo.JPG" alt="Join Saasify team">
-  </div>
-</section> -->
 
 <section class="breadcrumb">
   <div class="breadcrumb-container">
@@ -1150,11 +761,10 @@ footer {
   </div>
 </section>
 
-<section class="careers-openings-bg">
-  <div class="careers-content">
-  </div>
-  <img src="images/team-overlay.png" alt="Team Image" class="team-overlay-img">
-</section>
+ <section class="careers-openings-bg">
+ 
+  <!-- <img src="images/team-overlay.png" alt="Team Image" class="team-overlay-img"> -->
+</section> 
 
 <section class="why-work-section">
    <p class="sub-heading">WHY WORK WITH US?</p>
@@ -1162,18 +772,18 @@ footer {
     
   <div class="why-grid">
     <!-- Card 1 - Background Image -->
-    <div class="why-card bg-image-card" style="background-image: url('images/three-engineers.jpg');">
+      <div class="why-card bg-image-card" style="background-image: url('images/three-engineers.jpg');">
       <div class="card-text">
-        <h2 class="hover-underline">Inclusive Culture</h2>
-        <p>We embrace diversity and unique perspectives to build a thriving, inclusive workplace.</p>
+        <h2 class="hover-underline">Continuous Learning</h2>
+        <p>Upskill through certifications, training programs, and mentorship opportunities.</p>
       </div>
     </div>
 
     <!-- Card 2 - Soft background -->
-    <div class="why-card bg-image-card" style="background-image: url('images/corevalues2.jpg');">
+    <div class="why-card bg-image-card" style="background-image: url('images/corevalue.jpg');">
       <div class="card-text">
-        <h2 class="hover-underline">Work-Life Balance</h2>
-        <p>Saasify promotes a healthy, flexible work-life balance for all team members.</p>
+        <h2 class="hover-underline">Inclusive Culture</h2>
+        <p>We embrace diversity and unique perspectives to build a thriving, inclusive workplace.</p>
       </div>
     </div>
 
@@ -1186,22 +796,21 @@ footer {
     </div>
     
     <!-- Card 4 - Background Image -->
-    <div class="why-card bg-image-card" style="background-image: url('images/corevalue.jpg');">
+   <div class="why-card bg-image-card" style="background-image: url('images/corevalues2.jpg');">
       <div class="card-text">
-        <h2 class="hover-underline">Continuous Learning</h2>
-        <p>Upskill through certifications, training programs, and mentorship opportunities.</p>
+        <h2 class="hover-underline">Work-Life Balance</h2>
+        <p>Saasify promotes a healthy, flexible work-life balance for all team members.</p>
       </div>
     </div>
   </div>
 </section>
 
- <section class="apply-role">
+<section class="apply-role">
   <p class="sub-heading">WE ARE HIRING!</p>
   <h2 class="main-heading">Our Current  <span style="color: #00c896">Job Openings.</span></h2>
   
-  <div class="glass-card" style="max-width: 1186px !important;">
   <div class="job-grid" id="jobList"></div>
-  </div> 
+ 
   <div id="jobModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">×</span>
@@ -1214,7 +823,7 @@ footer {
       <p><strong>Requirements:</strong> <span id="modalRequirements"></span></p>
       <p><strong>Responsibilities:</strong> <span id="modalResponsibilities"></span></p>
       <p><strong>Skills Required:</strong> <span id="modalSkills"></span></p>
-      <p class="apply-email">📩 Apply via Email: <a id="modalEmail" href="#">kalyani@saasifysolutions.com</a></p>
+      <p class="apply-email">📩 Apply via Email: <a id="modalEmail" href="#">hr@saasifysolutions.com</a></p>
     </div>
   </div>
 </section>
@@ -1223,11 +832,11 @@ footer {
   
   <div class="apply-content">
     <p class="sub-heading">JOIN OUR TEAM!</p>
-      <h2 class="main-heading">Email your details to: <span style="color: #00c896">kalyani@saasifysolutions.com.</span></h2>
+      <h2 class="main-heading">Email your details to: <span style="color: #00c896">hr@saasifysolutions.com</span></h2>
   
   <h4>How to Contact Us:</h4> 
   <ul>
-  <li> Email: <a href="mailto:contact@saasifysolutions.com">contact@saasifysolutions.com</a></li>
+  <li> Email: <a href="mailto:sales@saasifysolutions.com">sales@saasifysolutions.com</a></li>
   <li> Phone: <a href="tel:+911234567890">+91 12345 67890</a></li>
   
 </ul>
@@ -1247,7 +856,7 @@ footer {
         6th Floor, Center Point 3,<br />
         Manapakkam, Chennai - 600089
       </p>
-      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+      <p>Email: sales@saasifysolutions.com<br />Phone: +91 98765 43210</p>
     </div>
     <div class="footer-col">
       <h4>Follow Us</h4>
@@ -1268,13 +877,12 @@ footer {
   </div>
 </footer>
 
-
  <script>
    const jobs = [
          {
   title: "Sales Manager",
   location: "Bangalore - India",
-  experience: "2 – 5 Years",
+  experience: "2 – 5 Years of Experience",
   posted: "17.06.2025",
   jobtype: "Full Time",
   description: [
@@ -1299,7 +907,7 @@ footer {
    {
   title: "Technical Lead",
   location: "Chennai - India",
-  experience: "5 – 8 Years",
+  experience: "5 – 8 Years Experience",
   posted: "25.06.2025",
   jobtype: "Full Time",
   description: [
@@ -1322,32 +930,7 @@ footer {
         {
   title: "Sales Manager",
   location: "Bangalore - India",
-  experience: "2 – 5 Years",
-  posted: "17.06.2025",
-  jobtype: "Full Time",
-  description: [
-    "We are seeking a motivated and results-driven Sales Manager to lead our sales team and drive revenue growth. The ideal candidate will have strong leadership skills, a track record of meeting/exceeding targets, and the ability to develop and execute strategic sales plans."
-  ],
-  requirements: [
-     "Bachelor’s degree in Business, Marketing, or a related field (MBA preferred).",
-     "Proven experience as a Sales Manager or similar role (typically 5+ years).",
-     "Excellent communication, negotiation, and leadership skills.",
-     "Proficient in CRM software (e.g., Salesforce, HubSpot)."
-  ],
-  responsibilities: [
-    "Develop and implement effective sales strategies to achieve business goals.",
-    "Lead, coach, and motivate the sales team to meet and exceed targets.",
-    "Set sales targets, monitor performance, and report on sales metrics.",
-    "Monitor market trends and competitor activities.",
-    "Prepare monthly, quarterly, and annual sales forecasts and reports.",
-    "Collaborate with marketing and product teams to align sales strategies."
-  ],
-  skills: "B2B Sales, Strategic Planning, CRM Tools"
-  },
-        {
-  title: "Sales Manager",
-  location: "Bangalore - India",
-  experience: "2 – 5 Years",
+  experience: "1 – 3 Years Experience",
   posted: "17.06.2025",
   jobtype: "Full Time",
   description: [
@@ -1378,12 +961,14 @@ footer {
       const card = document.createElement("div");
       card.className = "job-card";
       card.innerHTML = `
-        <h3>${job.title}</h3>
-        <p><strong>Location:</strong> ${job.location}</p>
-        <p><strong>Experience:</strong> ${job.experience}</p>
-        <p><strong>JobType:</strong> ${job.jobtype}</p>
+      <h3>${job.title}</h3>
+      <p>${job.location}</p>
+      <p>${job.experience}</p>
+      <div class="job-footer">
+        <p>Posted: ${job.posted}</p>
         <button class="view-dtls" onclick="openModal(${i})">View Details</button>
-      `;
+      </div>
+    `;
       jobList.appendChild(card);
     });
 
@@ -1425,5 +1010,7 @@ footer {
       }
     };
   </script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>
