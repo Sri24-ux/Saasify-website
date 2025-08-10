@@ -62,16 +62,20 @@ header {
   width: 100%;
   height: 100vh;
   z-index: -1;
-  background-image: url('images/consulting-img.jpg'); 
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.5); 
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
   animation: zoomOut 6s ease-out forwards;
 }
 
 @keyframes zoomOut {
   to {
-    transform: scale(1); /* zoom out to normal size */
+    transform: scale(1);
   }
 }
 
@@ -558,7 +562,10 @@ button[type="submit"]:hover {
         </div>
 </div>
 
-<div class="hero-image"></div>
+<div class="hero-image">
+  <img src="images/consulting-img.webp" alt="Consulting handshake" loading="lazy">
+</div>
+
 <section class="hero">
   <div class="overlay"></div>
   <div class="hero-content">
