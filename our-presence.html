@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Presence – Saasify</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="css/style.css">
  <style>
  body {
-    margin: 0;
     font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #ffffff;
     color: #2a2a2a;
-  }
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: none;
+}
   
-   
  .sub-heading {
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -168,92 +171,6 @@
   color: #00bfa6;
 }
 
-footer {
-  background-color: #0a1f44;
-  color: white;
-  padding: 60px 40px 30px;
-  font-family: 'Inter', sans-serif;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  margin-bottom: 30px;
-}
-.footer-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px; /* ⬅️ This adds spacing between logo and icons */
-}
-
-.footer-logo img {
-  height: 121px;
-}
-
-.footer-social-icons {
-  display: flex;
-  gap: 12px;
-}
-
-.icon-circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  background-color: #fff;
-  color: #021a2e;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.icon-circle:hover {
-  background-color: #00c896;
-  color: #fff;
-}
-
-.footer-col h4 {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #f4c300;
-}
-
-.footer-col p,
-.footer-col ul {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-.footer-col ul li a,
-.footer-col a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-col a:hover {
-  color: #f4c300;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 15px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #ddd;
-}
 .breadcrumb {
   padding: 15px 40px;
   font-size: 0.95rem;
@@ -593,42 +510,68 @@ footer {
 <footer>
 <div class="footer-grid">
   <div class="footer-container">
-    <!-- Saasify Logo -->
     <div class="footer-logo">
       <img src="images/Saasify logo.png" alt="Saasify Logo">
     </div>
+    
+  <h3 style="color: #00c896">Follow us</h3>
+   <div class="social-icons">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-column">
+    <i class="fa-brands fa-linkedin-in"></i>
+    <div class="social-labels">
+      <div class="social-sub">saasify-solutions-private-limited</div>
+    </div>
+  </a>
 
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-circle">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
-      <a href="https://x.com/SaasifySol" target="_blank" class="icon-circle">
-        <i class="fa-brands fa-x-twitter"></i>
-      </a>
-      <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-circle">
-        <i class="fab fa-youtube"></i>
-      </a>
-   </div>
-   
-  </div>
-  <div class="footer-col">
-      <p>
-        <h2>Headquaters :</h2> <br />
-        <strong>Registered Office</strong>  <br />     
-        6th Floor, Center Point 3,<br />
-        Manapakkam, Chennai - 600089
-      </p>
+  <!-- X (Twitter) -->
+  <a href="https://x.com/SaasifySol" target="_blank" class="icon-column">
+    <i class="fa-brands fa-x-twitter"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySol</div>
     </div>
-    <div class="footer-col">
-      <strong>Registered Office</strong><br />
-      <p>
-        ZED PINNACLE, No 77/A, 403, 4th Floor,<br />
-        Koramangala Industrial Layout, Koramangala,<br />
-        Bengaluru, Karnataka - 560095"
-      </p>
-      <p>Email: sales@saasifysolutions.com<br />Phone: +91-95510 62198</p>
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-column">
+    <i class="fab fa-youtube"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySolutions</div>
     </div>
+  </a>
 </div>
+</div>
+<div class="footer-container">
+      <p><h3 style="color: #00c896">Registered Office</h3>   
+        No.2/4, 6th Floor, Center Point,<br>
+        Mount Poonamallee High Road,<br>
+        Manapakkam, Chennai, Tamilnadu - 600089<br> 
+     </p> </br>
+      <p><h3 style="color: #00c896">Branch Office</h3> 
+        ZED PINNACLE, No 77/A, 403, 4th Floor,<br>
+        Koramangala Industrial Layout, Koramangala,<br>
+        Bengaluru, Karnataka - 560095"
+     </p>
+  </div>
+  
+  <div class="footer-container">
+    <h3 style="color: #00c896">About us</h3>   
+    <p>Our consulting services are designed to solve real-world IT 
+    challenges—whether it's managing complex infrastructure, securing enterprise data, 
+    streamlining services, or automating business workflows.</p><br />  
+
+    <h3 style="color: #00c896">Get in Touch</h3>
+    <div class="contact-info">
+      <i class="fa fa-envelope"></i>
+      <p>:  sales@saasifysolutions.com</p>
+    </div>
+      <div class="contact-info">
+      <i class="fa-solid fa-phone"></i>
+      <p>: +91-95510 62198</p>
+    </div>
+ </div>
+</div>
+
   <div class="footer-bottom">
         &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
   </div>
@@ -640,7 +583,7 @@ footer {
       {
         "city": "Chennai",
         "image": "images/Chennai.jpg",
-        "address": "No.2/4, 6th Floor, Center Point, Mount Poonamallee High Road, Chennai, Tamilnadu - 600089",
+        "address": "No.2/4, 6th Floor, Center Point, Mount Poonamallee High Road, Manapakkam, Chennai, Tamilnadu - 600089",
         "email": "sales@saasifysolutions.com",
         "hours": "Mon - Fri: 9.30 AM to 6.30 PM",
         "phone": "+91-95510 62198"
@@ -669,8 +612,8 @@ footer {
         "city": "Kerala",
         "image": "images/Kerala.jpg",
         "address": "Remote Office – Kochi, Kerala"
-      },
-      {
+      }, 
+      { 
         "city": "Mumbai",
         "image": "images/Mumbai.jpg",
         "address": "Remote Office – Mumbai"

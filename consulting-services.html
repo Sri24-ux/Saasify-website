@@ -5,16 +5,19 @@
   <title>Consulting Services - Saasify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
  
 <style>
- body {
-    margin: 0;
+  body {
     font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #ffffff;
     color: #2a2a2a;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: none;
 }
  
 .sub-heading {
@@ -32,6 +35,15 @@
   color: #0a1f44;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease !important;
+}
+
 .cta-button {
   background-color: #f4c300;
   color: #000;
@@ -42,91 +54,90 @@
   margin: 20px 0;
 }
 
-.cta-button:hover {
-  background-color: #ffdb4d;
-}
-
-  /* section.hero-iom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 40px;
-  background-color: #f4faff;
-}
-
-.hero-text {
-  flex: 1 1 50%;
-  padding-right: 20px;
-}
-
+ /* Hero Section */
 .hero-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('images/consulting-img.jpg'); 
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.5); 
+  animation: zoomOut 6s ease-out forwards;
+}
+
+@keyframes zoomOut {
+  to {
+    transform: scale(1); /* zoom out to normal size */
+  }
+}
+
+.hero {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: flex-start; /* Top align */
+  justify-content: flex-start; /* Left align */
+  padding-top: 120px; /* Adjust this to match TCS vertical spacing */
+  padding-left: 10%;  /* Adds left offset */
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px; /* Keeps text from stretching too far */
+}
+.hero-content h1{
+    font-size: 4rem;
+    line-height: 4rem;
+}
+.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+  border-bottom: 0.0625rem solid hsla(0, 0%, 100%, .3);
+  padding-bottom: 10px;
+}
+
+.hero-description{
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    letter-spacing: .03125rem;
+    color: #f4f3f9;
+    margin-bottom: 1rem;
+    text-transform: none;
+    width: 70%;
+}
+.overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.content {
+  background: white;
+  position: relative;
+  z-index: 3;
+}
+ 
+.contact-left, .contact-right {
   flex: 1 1 45%;
-  text-align: center;
 }
-
-.hero-iom h1 {
-  font-size: 2.5rem;
-  color: #0a1f44;
-  margin-bottom: 20px;
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
-.hero-iom p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #2a2a2a;
+input, select, textarea {
+  padding: 8px;
+  width: 100%;
 }
-
-
-.hero-iom img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 767px) {
-  section.hero-iom {
-    flex-direction: column-reverse;
-    text-align: center;
-    max-width: 90%;
-  }
-
-  .hero-text,
-  .hero-image {
-    flex: 1 1 100%;
-    padding: 0;
-  }
-
-  .hero-iom h1 {
-    font-size: 2rem;
-  }
-
-  .hero-iom p {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 580px) {
-    section.hero-iom {
-        max-width: 95% !important;
-    }
-}
-
-@media (max-width: 1500px) {
-    section.hero-iom {
-        max-width: 90% !important;
-    }
-} */
-    .contact-left, .contact-right {
-      flex: 1 1 45%;
-    }
-    .contact-right form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, select, textarea {
-      padding: 8px;
-      width: 100%;
-    }
 
 .contact-section {
   padding: 60px 20px;
@@ -203,62 +214,6 @@ button[type="submit"] {
 }
 button[type="submit"]:hover {
   background: #ffd500;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  margin-bottom: 30px;
-}
-.footer {
-  background-color: #0a1f44;
-  color: white;
-  padding: 60px 40px 30px;
-  font-family: 'Inter', sans-serif;
-}
-.footer-col h4 {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #f4c300;
-}
-.footer-col p,
-.footer-col ul {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-.footer-col ul li a,
-.footer-col a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-col a:hover {
-  color: #f4c300;
-}
-.footer-social a {
-  margin-right: 15px;
-  font-size: 1.2rem;
-  color: white;
-  transition: color 0.3s ease;
-}
-.footer-social a:hover {
-  color: #f4c300;
-}
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 15px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #ddd;
 }
 
 /* Responsive */
@@ -421,86 +376,6 @@ button[type="submit"]:hover {
       color: #666;
       font-weight: 500;
     }
-
-     
-.hero-glass {
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.glass-card {
-  width: 88%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-/* Left: Text */
-.hero-text {
-  flex: 1 1 500px;
-  color: #0a1f44;
-}
-
-.hero-text .sub-heading {
-  font-size: 18px;
-  
-  margin-bottom: 10px;
-}
-
-.hero-text .main-heading {
-  font-size: 42px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero-text .description {
-  font-size: 18px;
-  line-height: 1.6;
- 
-}
-
-
-/* Responsive */
-@media (max-width: 900px) {
-  .glass-card {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  
-}
-.hero-glass-with-bg {
-  position: relative;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-base-bg {
-    position: absolute;
-    top: 0;
-    left: 6%;
-    width: 94%;
-    height: 82%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.hero-glass-with-bg .glass-card {
-  position: relative;
-  z-index: 1;
-}
-
 </style>
 </head>
 <body>
@@ -683,27 +558,25 @@ button[type="submit"]:hover {
         </div>
 </div>
 
-<!-- <section class="hero-iom">
-  <div class="hero-text">
-    <h1>Consulting Services</h1>
-    <p>
-      At Saasify, our consulting services are designed to solve real-world IT challenges—whether it's managing complex infrastructure, securing enterprise data, streamlining services, or automating business workflows. We take a holistic view of your current setup, digital goals, and transformation roadmap. From identifying technology gaps to recommending the right tools, our goal is to help you achieve long-term efficiency, agility, and value through tailored digital strategies.
-    </p>
-    <a href="contact_us_page.html">
-      <button class="cta-button">Book a Demo</button>
-    </a>
+<div class="hero-image"></div>
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <p class="subtitle">Consulting Services</p>
+    <h1>Transform Your Business with Expert Consulting.</h1>
+    <p class="hero-description"> Saasify delivers tailored IT solutions to optimize infrastructure, secure data, streamline services, and drive long-term business efficiency.
+     </p>
   </div>
-  <div class="hero-image">
-    <img src="images/consulting-img.jpg" alt="Consulting" />
-  </div>
-</section> -->
+</section>
 
-<section class="hero-glass-with-bg">
+<main class="content">
+
+<!-- <section class="hero-glass-with-bg">
     <img src="images/istockphoto-1304959074-170667a.jpg" alt="Base Background" class="hero-base-bg" />
   <div class="glass-card">
     <div class="hero-text">
-      <p class="sub-heading">Consulting Services</p>
-      <h1 class="main-heading">Transform Your Business with Expert Consulting.</h1>
+      <p class="sub-heading"></p>
+      <h1 class="main-heading"></h1>
       <p class="description">
         At Saasify, our consulting services are designed to solve real-world IT challenges—whether it's managing complex infrastructure, securing enterprise data, streamlining services, or automating business workflows. We take a holistic view of your current setup, digital goals, and transformation roadmap. From identifying technology gaps to recommending the right tools, our goal is to help you achieve long-term efficiency, agility, and value through tailored digital strategies.</p>
       <a href="contact_us_page.html">
@@ -712,7 +585,7 @@ button[type="submit"]:hover {
     </div>
 
   </div>
-</section>
+</section> -->
 
   <section class="breadcrumb">
     <div class="breadcrumb-container">
@@ -890,40 +763,90 @@ button[type="submit"]:hover {
 </section>
 
 <footer>
-  <div style="background-color: #0a1f44;
-  color: white;
-  padding: 60px 40px 30px;
-  font-family: 'Inter', sans-serif;">
+<div class="footer-grid">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="images/Saasify logo.png" alt="Saasify Logo">
+    </div>
+    
+  <h3 style="color: #00c896">Follow us</h3>
+   <div class="social-icons">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-column">
+    <i class="fa-brands fa-linkedin-in"></i>
+    <div class="social-labels">
+      <div class="social-sub">saasify-solutions-private-limited</div>
+    </div>
+  </a>
 
-  <div class="footer-grid">
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <p>
-        Saasify Solutions Pvt Ltd<br />
-        6th Floor, Center Point 3,<br />
-        Manapakkam, Chennai - 600089
-      </p>
-      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+  <!-- X (Twitter) -->
+  <a href="https://x.com/SaasifySol" target="_blank" class="icon-column">
+    <i class="fa-brands fa-x-twitter"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySol</div>
     </div>
-    <div class="footer-col">
-      <h4>Follow Us</h4>
-      <div class="footer-social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-column">
+    <i class="fab fa-youtube"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySolutions</div>
     </div>
-    <div class="footer-col">
-      <h4>Chat With Us</h4>
-      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
-    </div>
+  </a>
+</div>
+</div>
+<div class="footer-container">
+      <p><h3 style="color: #00c896">Registered Office</h3>   
+        No.2/4, 6th Floor, Center Point,<br>
+        Mount Poonamallee High Road,<br>
+        Manapakkam, Chennai, Tamilnadu - 600089<br> 
+     </p> </br>
+      <p><h3 style="color: #00c896">Branch Office</h3> 
+        ZED PINNACLE, No 77/A, 403, 4th Floor,<br>
+        Koramangala Industrial Layout, Koramangala,<br>
+        Bengaluru, Karnataka - 560095"
+     </p>
   </div>
+  
+  <div class="footer-container">
+    <h3 style="color: #00c896">About us</h3>   
+    <p>Our consulting services are designed to solve real-world IT 
+    challenges—whether it's managing complex infrastructure, securing enterprise data, 
+    streamlining services, or automating business workflows.</p><br />  
+
+    <h3 style="color: #00c896">Get in Touch</h3>
+    <div class="contact-info">
+      <i class="fa fa-envelope"></i>
+      <p>:  sales@saasifysolutions.com</p>
+    </div>
+      <div class="contact-info">
+      <i class="fa-solid fa-phone"></i>
+      <p>: +91-95510 62198</p>
+    </div>
+ </div>
+</div>
+
   <div class="footer-bottom">
-    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
-  </div>
+        &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
   </div>
 </footer>
+</main>
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.remove('transparent');
+      header.classList.add('scrolled');
+    } else {
+      header.classList.add('transparent');
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Run once on load in case page starts scrolled
+  window.dispatchEvent(new Event('scroll'));
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>

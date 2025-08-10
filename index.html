@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-rp+U0FfB9bW9yYQgszAlDKsJc7TYItDQn4IgfPlXDe5hklXmdFO3sfYQshG9K4kPsfY5iWTCp1u6IQKl5zRQWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-   <!-- Google Font (Optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
   <style>
-body {
-    margin: 0;
+ body {
     font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #ffffff;
     color: #2a2a2a;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: none;
 }
 
  .sub-heading {
@@ -169,73 +170,22 @@ margin-top: 0;
     height: 50px;
   }
 }
+/* Pagination dots container (optional for positioning) */
+.swiper-pagination {
+  bottom: 20px !important; /* Adjust distance from bottom */
+}
 
-        footer {
-            background-color: #0a1f44;
-            color: white;
-            padding: 60px 40px 30px;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-col h4 {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            color: #f4c300;
-        }
-        
-        .footer-col p,
-        .footer-col ul {
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col ul li a,
-        .footer-col a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-col a:hover {
-            color: #f4c300;
-        }
-        
-        .footer-social a {
-            margin-right: 15px;
-            font-size: 1.2rem;
-            color: white;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-social a:hover {
-            color: #f4c300;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #ddd;
-        }
-     
+/* Default (inactive) dot */
+.swiper-pagination-bullet {
+  background-color: #888; /* Light gray */
+  opacity: 1;
+}
+
+/* Active dot */
+.swiper-pagination-bullet-active {
+  background-color: #007bff; /* Bright blue for active */
+}
+  
 .testimonial-section {
   background : #f4faff ;
   padding: 20px 20px;
@@ -709,9 +659,26 @@ button[type="submit"]:hover {
     flex-direction: column;
   }
 }
-header.scrolled {
-  background-color: #0a1f44;
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease !important;
 }
+/* 
+
+header.transparent {
+  background-color: transparent;
+}
+
+
+header.scrolled {
+  background-color: #031A44; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+} */
+
 .desc{
   font-size: 0.85rem;
   color: #0a1f44;
@@ -859,7 +826,7 @@ header.scrolled {
                 <img src="images/Saasify logo.png" alt="Saasify Logo" />
             </a>
         </div>
-        <div class="hamburger" id="hamburgerIcon" onclick="toggleMobileMenu()">☰</div>
+        <div class="hamburger" id="hamburgerIcon" onclick="toggleMobileMenu()" style="display:none">☰</div>
 
         <nav>
            <div class="dropdown">
@@ -1033,7 +1000,7 @@ header.scrolled {
 </div>
 
  <!-- Other sections -->
-  <section class="hero">
+<section class="hero">
   <div class="swiper heroSwiper">
   <div class="swiper-wrapper">  
     <div class="swiper-slide hero-slide" data-direction="from-left" style="background-image:  url('images/hero-img2.jpg');">
@@ -1130,10 +1097,6 @@ header.scrolled {
     </div>
   </div>
 </section>
-
-
-
-
 
 <section class="testimonial-section">
   <div class="testimonial-container">
@@ -1266,34 +1229,76 @@ header.scrolled {
   </div>
 </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <p>
-                    Saasify Solutions Pvt Ltd<br /> 6th Floor, Center Point 3,<br /> Manapakkam, Chennai - 600089
-                </p>
-                <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
-            </div>
+<footer>
+<div class="footer-grid">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="images/Saasify logo.png" alt="Saasify Logo">
+    </div>
+    
+  <h3 style="color: #00c896">Follow us</h3>
+   <div class="social-icons">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-column">
+    <i class="fa-brands fa-linkedin-in"></i>
+    <div class="social-labels">
+      <div class="social-sub">saasify-solutions-private-limited</div>
+    </div>
+  </a>
 
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Chat With Us</h4>
-                <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
-        </div>
-    </footer>
+  <!-- X (Twitter) -->
+  <a href="https://x.com/SaasifySol" target="_blank" class="icon-column">
+    <i class="fa-brands fa-x-twitter"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySol</div>
+    </div>
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-column">
+    <i class="fab fa-youtube"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySolutions</div>
+    </div>
+  </a>
+</div>
+</div>
+<div class="footer-container">
+      <p><h3 style="color: #00c896">Registered Office</h3>   
+        No.2/4, 6th Floor, Center Point,<br>
+        Mount Poonamallee High Road,<br>
+        Manapakkam, Chennai, Tamilnadu - 600089<br> 
+     </p> </br>
+      <p><h3 style="color: #00c896">Branch Office</h3> 
+        ZED PINNACLE, No 77/A, 403, 4th Floor,<br>
+        Koramangala Industrial Layout, Koramangala,<br>
+        Bengaluru, Karnataka - 560095"
+     </p>
+  </div>
+  
+  <div class="footer-container">
+    <h3 style="color: #00c896">About us</h3>   
+    <p>Our consulting services are designed to solve real-world IT 
+    challenges—whether it's managing complex infrastructure, securing enterprise data, 
+    streamlining services, or automating business workflows.</p><br />  
+
+    <h3 style="color: #00c896">Get in Touch</h3>
+    <div class="contact-info">
+      <i class="fa fa-envelope"></i>
+      <p>:  sales@saasifysolutions.com</p>
+    </div>
+      <div class="contact-info">
+      <i class="fa-solid fa-phone"></i>
+      <p>: +91-95510 62198</p>
+    </div>
+ </div>
+</div>
+
+  <div class="footer-bottom">
+        &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+
 
     <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -1301,7 +1306,7 @@ header.scrolled {
   const swiper = new Swiper('.heroSwiper', {
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 6000,
     },
     pagination: {
       el: '.swiper-pagination',
@@ -1527,16 +1532,21 @@ observer.observe(document.querySelector(".key-stats-section"));
 
 </script>
 <script>
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
-    if (window.scrollY > 10) {
-      header.classList.add("scrolled");
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.remove('transparent');
+      header.classList.add('scrolled');
     } else {
-      header.classList.remove("scrolled");
+      header.classList.add('transparent');
+      header.classList.remove('scrolled');
     }
   });
+
+  // Run once on load in case page starts scrolled
+  window.dispatchEvent(new Event('scroll'));
 </script>
-         
+     
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,21 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Saasify – About Us</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-Fd...Omf"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
 
  <style>
  body {
-
-    margin: 0;
     font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #ffffff;
     color: #2a2a2a;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: none;
 }
  
 .sub-heading {
@@ -35,85 +33,7 @@
   margin-bottom: 30px;
   color: #0a1f44;
 }
- section.hero-iom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 40px;
-  background-color: #f4faff;
-}
-
-.hero-text {
-  flex: 1 1 50%;
-  padding-right: 20px;
-}
-
-.hero-image {
-  flex: 1 1 45%;
-  text-align: center;
-}
-
-.hero-iom h1 {
-  font-size: 2.5rem;
-  color: #0a1f44;
-  margin-bottom: 20px;
-}
-
-.hero-iom p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #2a2a2a;
-}
-
-.cta-button {
-  background-color:#f4c300;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.hero-iom img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 767px) {
-  section.hero-iom {
-    flex-direction: column-reverse;
-    text-align: center;
-    max-width: 90%;
-  }
-
-  .hero-text,
-  .hero-image {
-    flex: 1 1 100%;
-    padding: 0;
-  }
-
-  .hero-iom h1 {
-    font-size: 2rem;
-  }
-
-  .hero-iom p {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 580px) {
-    section.hero-iom {
-        max-width: 95% !important;
-    }
-}
-
-@media (max-width: 1500px) {
-    section.hero-iom {
-        max-width: 90% !important;
-    }  
-}
-  
+ 
 
 .vision-mission-wrapper {
   display: flex;
@@ -428,69 +348,6 @@
   }
 }
 
-.hero-images img {
-  width: 85%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  margin: auto;
-  display: block;
-}
-footer {
-  background-color: #0a1f44;
-  color: white;
-  padding: 60px 40px 30px;
-  font-family: 'Inter', sans-serif;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  margin-bottom: 30px;
-}
-.footer-col h4 {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #f4c300;
-}
-.footer-col p,
-.footer-col ul {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-.footer-col ul li a,
-.footer-col a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-col a:hover {
-  color: #f4c300;
-}
-.footer-social a {
-  margin-right: 15px;
-  font-size: 1.2rem;
-  color: white;
-  transition: color 0.3s ease;
-}
-.footer-social a:hover {
-  color: #f4c300;
-}
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 15px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #ddd;
-}
 .breadcrumb {
   padding: 15px 40px;
   font-size: 0.95rem;
@@ -519,15 +376,6 @@ footer {
   .breadcrumb {
     padding: 10px 20px;
     font-size: 0.85rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-social {
-    justify-content: center;
   }
 }
 .quote-section {
@@ -676,94 +524,63 @@ footer {
   }
 }
 
-.glass-card {
-  width: 88%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-/* Left: Text */
-.hero-text {
-  flex: 1 1 500px;
-  color: #0a1f44;
-}
-
-.hero-text .sub-heading {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.hero-text .description {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .glass-card {
-    flex-direction: column;
-    align-items: center;
-  }
-  .photo-collage {
-    margin-top: 30px;
-  }
-}
-
-.hero-glass-with-bg {
-  position: relative;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ddfff2;
-}
-
-.hero-base-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 82%;
-    object-fit: none;
-    z-index: 0;
-}
-
-.hero-glass-with-bg .glass-card {
-  position: relative;
-  z-index: 1;
-  background-color: #fff; 
-}
-
 .family-title {
     font-style: normal;
     font-size: 60px;
     letter-spacing: -.02em;
     color: #0a1f44;
 }
-/* Right: Collage */
-.photo-collage {
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 16px;
-  position: relative;
-  flex: 1 1 320px;
+
+.hero-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.photo-collage img {
+.hero-video video {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  height: 100%;
   object-fit: cover;
 }
+
+.hero {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+  border-bottom: .0625rem solid hsla(0, 0%, 100%, .3);
+}
+
+.content {
+  background: white;
+  position: relative;
+  z-index: 3;
+}
+
 </style>
 </head>
 <body>
@@ -946,45 +763,21 @@ footer {
         </div>
 </div>
 
-<section class="hero-glass-with-bg">
-  <!-- <img src="images/abstract_shapes_7.jpg" alt="Base Background" class="hero-base-bg" /> -->
+<div class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="Videos/1110205_Businesswomen_Architecture_1920x1080.mp4" type="video/mp4">
+  </video>
+</div>
 
-  <div class="glass-card">
-    <!-- Left Side: Text -->
-    <div class="hero-text">
-      <p class="sub-heading">About Us!</p>
-      <h1 class="family-title">Empowering the Autonomous Enterprise</h1>
-      <p class="description">
-       We are a boutique consulting firm specializing in IT automation and digital transformation. Our team of young yet experienced professionals brings deep expertise in IT management, automation, security, BPM, and analytics.
-     </p>
-    <a href="contact_us_page.html">
-      <button class="cta-button">Book a Free Consultation</button>
-    </a>
-  </div>
-    <!-- Right Side: Collage -->
-    <div class="photo-collage">
-      <img src="images\About-us.png" alt="Collage" />
-    </div>
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <p class="subtitle">WHO WE ARE!</p>
+    <h1>Empowering the Autonomous Enterprise</h1>
   </div>
 </section>
 
-<!-- <section class="hero-iom">
-  <div class="hero-text">
-   <h1>Empowering the Autonomous Enterprise</h1>
-     <p> We are a boutique consulting firm specializing in IT automation and digital transformation.
-      Our team of young yet experienced professionals brings deep expertise in IT management, automation, security, BPM, and analytics.
-      We guide enterprises in selecting the right technologies, implementing them effectively, and ensuring measurable ROI.
-      With hands-on experience and strategic insight, we help businesses modernize their tech landscape.
-      Our support doesn’t end at go-live — we stay with you to ensure long-term success.</p>
-         <a href="contact_us_page.html">
-      <button class="cta-button">Book a Free Consultation</button>
-    </a>
-  </div>
-  <div class="hero-image">
-    <img src="images\About-us.png" alt="Digital transformation">
-  </div>
-</section> -->
-
+<main class="content">
 <section class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> &gt;
@@ -1028,7 +821,7 @@ footer {
 <section class="vision-mission-wrapper">
   <div class="vision-mission-card">
     <div class="vision-mission-left">
-      <img src="images\visionmission.jpg" alt="Saasify meeting" />
+      <img src="images/3d-rendering-arrow-hitting-target.jpg" alt="Saasify meeting" />
     </div>
     <div class="vision-mission-right">
       <h2><i class="fa-solid fa-eye"></i> Vision</h2>
@@ -1104,34 +897,76 @@ footer {
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <p>
-        Saasify Solutions Pvt Ltd<br />
-        6th Floor, Center Point 3,<br />
-        Manapakkam, Chennai - 600089
-      </p>
-      <p>Email: contact@saasifysolutions.com<br />Phone: +91 98765 43210</p>
+<div class="footer-grid">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="images/Saasify logo.png" alt="Saasify Logo">
     </div>
-    <div class="footer-col">
-      <h4>Follow Us</h4>
-      <div class="footer-social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
+    
+  <h3 style="color: #00c896">Follow us</h3>
+   <div class="social-icons">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-column">
+    <i class="fa-brands fa-linkedin-in"></i>
+    <div class="social-labels">
+      <div class="social-sub">saasify-solutions-private-limited</div>
     </div>
-    <div class="footer-col">
-      <h4>Chat With Us</h4>
-      <p><a href="https://wa.me/919876543210">WhatsApp Chat</a></p>
+  </a>
+
+  <!-- X (Twitter) -->
+  <a href="https://x.com/SaasifySol" target="_blank" class="icon-column">
+    <i class="fa-brands fa-x-twitter"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySol</div>
     </div>
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-column">
+    <i class="fab fa-youtube"></i>
+    <div class="social-labels">
+      <div class="social-sub">@SaasifySolutions</div>
+    </div>
+  </a>
+</div>
+</div>
+<div class="footer-container">
+      <p><h3 style="color: #00c896">Registered Office</h3>   
+        No.2/4, 6th Floor, Center Point,<br>
+        Mount Poonamallee High Road,<br>
+        Manapakkam, Chennai, Tamilnadu - 600089<br> 
+     </p> </br>
+      <p><h3 style="color: #00c896">Branch Office</h3> 
+        ZED PINNACLE, No 77/A, 403, 4th Floor,<br>
+        Koramangala Industrial Layout, Koramangala,<br>
+        Bengaluru, Karnataka - 560095"
+     </p>
   </div>
+  
+  <div class="footer-container">
+    <h3 style="color: #00c896">About us</h3>   
+    <p>Our consulting services are designed to solve real-world IT 
+    challenges—whether it's managing complex infrastructure, securing enterprise data, 
+    streamlining services, or automating business workflows.</p><br />  
+
+    <h3 style="color: #00c896">Get in Touch</h3>
+    <div class="contact-info">
+      <i class="fa fa-envelope"></i>
+      <p>:  sales@saasifysolutions.com</p>
+    </div>
+      <div class="contact-info">
+      <i class="fa-solid fa-phone"></i>
+      <p>: +91-95510 62198</p>
+    </div>
+ </div>
+</div>
+
   <div class="footer-bottom">
-    &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
+        &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
   </div>
 </footer>
+
+</main>
 <script src="js/main.js"></script>
 </body>
 </html>
