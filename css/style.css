@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: #0a1f44;
+    background-color  : #0a1f44;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -18,10 +18,19 @@ header.transparent {
 
 /* When scrolled */
 header.scrolled {
-  background-color: #031A44; /* Your blue */
+  background: linear-gradient(313deg, #010512, #072254);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+  .cta-button,
+button[type="submit"] {
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
 .logo img {
     height: auto;
     max-height: 60px;
