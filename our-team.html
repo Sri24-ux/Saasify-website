@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Team – Saasify</title>
+  <title>Saasify Solutions</title>
+    <link rel="icon" type="Saasify" href="Images/saasify.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -314,7 +315,151 @@
   position: relative;
   z-index: 1;
 }
+.quote-section {
+  background-image: url('images/istockphoto-1148362306-170667a.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px; /* Add some spacing if needed */
+  position: relative;
+  z-index: 1;
+}
 
+.quote-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:  rgba(0, 0, 0, 0.7); /* Optional overlay for better text readability */
+  z-index: -1;
+}
+
+.quote-bg {
+ 
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1abc9c, #3498db);
+  background-image: url('images/2968880.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.quote-inner {
+  max-width: 1032px;
+  margin: 0 auto;
+ 
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+ background: white;
+  backdrop-filter: blur(3px);
+}
+
+.quote-content {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.quote-text {
+  color: #0a1f44;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 600;
+  margin: 0 0 30px;
+}
+
+.quote-author {
+  font-weight: bold;
+  color: #0a1f44;
+  margin-bottom: 4px;
+}
+
+.quote-title {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.quote-btn {
+  display: inline-block;
+  background-color: #f4c300;
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.quote-btn:hover {
+  background-color: #e0b800;
+}
+
+.quote-image {
+  position: relative;
+  flex: 1 1 260px;
+  min-width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-image .image-bg {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-image img {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  max-width: 335px;
+  height: auto;
+  object-fit: cover;
+  transform: translate(16px, 16px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .quote-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .quote-content,
+  .quote-image {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .quote-image img {
+    transform: none;
+    position: relative;
+    margin-top: 20px;
+    max-width: 280px;
+  }
+
+  .quote-image .image-bg {
+    display: none;
+  }
+}
 </style>
 </head>
 
@@ -536,7 +681,27 @@
     <div class="team-container" id="teamContainer">
       </div>
   </section>
-
+<section class="quote-section">
+  <p class="sub-heading" style="margin-bottom: 23px;">FROM OUR DIRECTOR</p>
+<div class="quote-bg">
+  
+  <div class="quote-inner">
+    <div class="quote-content">
+      <div class="quote-mark">❝</div>
+      <h2 class="quote-text">
+        “At Saasify, we don’t just build solutions — we architect experiences that empower enterprises to evolve faster, smarter, and more securely. Innovation is not our goal — it’s our responsibility.”
+      </h2>
+      <p class="quote-author" style="font-family: 'Great Vibes', cursive; font-size: 1.5rem;">Madhusoodhanan</p>
+      <p class="quote-title">Director, Saasify Solutions</p>
+      <a href="our-team.html" class="quote-btn">Meet Our Leadership</a>
+    </div>
+    <div class="quote-image">
+      <div class="image-bg"></div>
+      <img src="images/Director_Image.png" alt="Madhusoodhanan" />
+    </div>
+  </div>
+</div>
+</section>
 
 <footer>
 <div class="footer-grid">

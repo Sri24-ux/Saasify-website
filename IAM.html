@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IAM</title>
+  <title>Saasify Solutions</title>
+    <link rel="icon" type="Saasify" href="Images/saasify.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,11 +20,11 @@
     overflow-x: hidden !important;
     overscroll-behavior-y: none;
 }
-
+ 
 .sub-heading {
   text-transform: uppercase;
   font-size: 0.85rem;
-   color: #7a76a3;
+  color: #7a76a3;
   font-weight: 600;
   letter-spacing: 0.5px;
   margin-bottom: 8px;
@@ -35,45 +36,13 @@
   color: #0a1f44;
 }
 
-.hero-text {
-  flex: 1 1 500px;
-  color: #0a1f44;
-}
-
-.hero-text .sub-heading {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.family-title {
-    font-style: normal;
-    font-size: 45px;
-    letter-spacing: -.02em;
-    color: #fff;
-}
-
-.hero-section {
-    background: linear-gradient(313deg, #010512, #072254);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 60px 60px;
-    padding-top: 110px;
-  }
-
-.hero-content {
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  flex-wrap: wrap;
-}
-
-.hero-image {
-  flex: 1; 
-  min-width: 300px; 
-  text-align: right;
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease !important;
 }
 
   .cta-button,
@@ -86,14 +55,80 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .hero-image {
-    display: none;
-  }
+ /* Hero Section */
+.hero-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
 
-  .hero-content {
-    text-align: center;
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  animation: zoomOut 6s ease-out forwards;
+}
+
+@keyframes zoomOut {
+  to {
+    transform: scale(1);
   }
+}
+
+.hero {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: flex-start; /* Top align */
+  justify-content: flex-start; /* Left align */
+  padding-top: 120px; /* Adjust this to match TCS vertical spacing */
+  padding-left: 10%;  /* Adds left offset */
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px; /* Keeps text from stretching too far */
+}
+.hero-content h1{
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+  border-bottom: 0.0625rem solid hsla(0, 0%, 100%, .3);
+  padding-bottom: 10px;
+}
+
+.hero-description{
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    letter-spacing: .03125rem;
+    color: #f4f3f9;
+    margin-bottom: 1rem;
+    text-transform: none;
+    width: 70%;
+}
+.overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.content {
+  background: white;
+  position: relative;
+  z-index: 3;
 }
     
 .breadcrumb {
@@ -166,7 +201,7 @@ button[type="submit"] {
 
 .benefit-card p {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -243,16 +278,6 @@ button[type="submit"] {
   object-fit: contain;
 }
 }
-        header.transparent {
-  background-color: transparent;
-}
-
-/* When scrolled */
-header.scrolled {
-  background-color: #031A44; /* Your blue */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
  /* Contact Section */
  .contact-form {
       display: flex;
@@ -269,8 +294,8 @@ header.scrolled {
 
 input, select, textarea {
   width: 100%;
-  max-width: 100%; /* Make sure they don’t stop at small size */
-  box-sizing: border-box; /* prevent padding from breaking layout */
+  max-width: 100%; 
+  box-sizing: border-box;
 }
 
 .green-card {
@@ -301,7 +326,7 @@ input, select, textarea {
 textarea {
   resize: vertical;
 }
-/* Responsive */
+
  @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
@@ -311,7 +336,7 @@ textarea {
   }
  
 } 
-
+ 
 .contact-section {
   position: relative;
   padding: 161px 20px;
@@ -392,7 +417,7 @@ textarea {
     border-radius: 8px !important;
   }
 }
-/* Tablet / Surface fix */
+
 @media (max-width: 1024px) and (min-width: 769px) {
   .curved-card {
     width: 82%; 
@@ -406,6 +431,129 @@ textarea {
     display: flex;
     align-items: center;
     margin-left: 37px;
+  }
+}
+
+ /* Intro Section */
+.intro-section {
+  display: flex;
+  justify-content: center; 
+  padding: 1.5rem 2rem;
+  background-color: #f8f9fa;
+  min-height: 50vh;        
+  box-sizing: border-box;
+}
+
+.intro-content {
+  max-width: 800px;
+}
+
+.intro-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.intro-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.intro-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.intro-content ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .intro-content {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+
+.logo img {
+    transform: scale(1.5);
+    transform-origin: center;
+}
+
+.highlight-section {
+  background-image: url('images/section-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.highlight-overlay {
+  background-color: rgba(10, 31, 68, 0.85);
+  padding: 60px 20px;
+}
+
+.highlight-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.highlight-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.highlight-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2a2a2a;
+  text-align: center;
+}
+
+.highlight-card h3 {
+  color: #0a1f44;
+  margin-bottom: 10px;
+}
+
+.highlight-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .highlight-overlay {
+    padding: 40px 15px;
+  }
+  .highlight-card {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .highlight-overlay {
+    padding: 40px 16px;
   }
 }
 
@@ -591,34 +739,98 @@ textarea {
         </div>
 </div>
 
-<section class="hero-section" >
+<div class="hero-image">
+  <img src="images/IAM-optimized.webp" alt="IAM" loading="lazy">
+</div>
+
+<section class="hero">
+  <div class="overlay"></div>
   <div class="hero-content">
-    
-    <!-- Text Section -->
-    <div class="hero-text" >
-      <p class="sub-heading">Identity & Access Management!</p>
-      <h2 class="family-title" style="color: #ffffff">
-        Secure and streamline access control with 
-        <span style="color: #00c896">Saasify’s IAM solutions</span>
-      </h2>
-      <a href="contact_us_page.html">
-        <button class="cta-button">Book a Free Consultation</button>
-      </a>
-    </div>
-
-    <!-- Image Section -->
-    <div class="hero-image">
-      <img src="images/bulb.png" alt="IAM Illustration" style="max-width: 80%; height: auto;" />
-    </div>
-
+    <p class="subtitle">Identity & Access Management</p>
+    <h1>Secure and streamline access control with Saasify’s IAM solutions</h1>
+    <a href="contact_us_page.html">
+      <button class="cta-button">Book a Demo</button>
+    </a>
   </div>
 </section>
+
+<main class="content">
 
 <section class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> &gt;
     <a href="#">Platform Proficiency</a> &gt;
     <span>IAM</span>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="intro-content">
+    <h2>Centralized IAM for Seamless Security</h2>
+    <p>In today’s hyper-connected world, managing who has access to what is critical to safeguarding your business. Saasify’s Identity and Access Management (IAM) solutions empower organizations to take complete control over user identities and permissions across their entire IT ecosystem — from on-premise systems to cloud applications.
+    </br>By unifying identity governance, automated provisioning, and secure authentication into a single, streamlined platform, we ensure that only the right people have the right access, at the right time — and always for the right reasons. With real-time monitoring, compliance-ready reporting, and adaptive security measures, our IAM solutions not only strengthen protection but also enhance productivity by making access frictionless and secure. </p>
+  </div>
+</section>
+
+<section class="highlight-section">
+  <div class="highlight-overlay">
+    <div class="highlight-content">
+      <p class="sub-heading">Stronger Security & Compliance</p>
+      <h2 class="main-heading" style="color: #ffffff">
+        Why IAM Matters for <span style="color: #00c896">Your Business ?</span>
+      </h2>
+
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <h3>Secure Access Control</h3>
+          <p>Ensure only verified users can access sensitive systems with role and attribute-based controls.</p>
+        </div>
+        <div class="highlight-card">
+          <h3>Regulatory Compliance</h3>
+          <p>Meet GDPR, HIPAA, ISO standards with strong authentication and centralized role management.</p>
+        </div>
+        <div class="highlight-card">
+          <h3>Two-step verification</h3>
+          <p>Protect critical systems with multiple security layers and strong authentication methods.</p>
+        </div>
+        <div class="highlight-card">
+          <h3>Centralized Monitoring</h3>
+          <p>Track and analyze all user activity in real time to prevent threats and ensure compliance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-----------------
+<section class="benefits-section">
+  <div class="benefit-overlay">
+    <div class="benefit-content">
+      <p class="sub-heading">Secure. Simplify. Scale.</p>
+      <h2 class="main-heading" style="color: #ffffff">Enterprise-Grade <span style="color: #00c896">IAM Capabilities.</span></h2>
+  
+      <div class="benefit-grid">
+        <div class="benefit-card">
+           <img src="images/POC-img.jpg" alt="POC Icon" class="benefit-icon" />
+            <h3>Provisioning & Deprovisioning</h3>
+            <p>Automate user onboarding/offboarding across systems.</p>
+        </div>
+        <div class="benefit-card">
+            <img src="images/demo-img.jpg" alt="Demo Icon" class="benefit-icon" />
+             <h3>Role-Based Access Control (RBAC)</h3>
+             <p>Ensure least-privilege access based on user roles and context.</p>
+        </div>
+        <div class="benefit-card">
+         <img src="images/analysis-icon.jpg" alt="Analysis Icon" class="benefit-icon" />
+          <h3>Multi-Factor Authentication</h3>
+          <p>Protect critical systems with layered authentication methods.</p>
+       </div>
+        <div class="benefit-card">
+          <img src="images/tool-comparison-icon.jpg" alt="Tool Icon" class="benefit-icon" />
+            <h3>Single Sign-On (SSO)</h3>
+            <p>Enable one-click access to multiple applications securely.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -681,38 +893,6 @@ textarea {
         Track user behavior and access logs in real time to gain complete visibility into who is accessing your systems, when, and from where. With Saasify’s monitoring tools, every login attempt, privilege escalation, or resource access is captured and recorded — providing a granular view of user activity across the enterprise.<br><br>
         This real-time insight plays a crucial role in audit readiness and incident response. By detecting unusual behavior patterns or unauthorized access attempts instantly, security teams can respond faster, investigate anomalies with precision, and maintain a defensible audit trail. This proactive approach not only strengthens organizational security posture but also ensures compliance with strict regulatory requirements.
       </p>
-    </div>
-  </div>
-</section>
-
-<section class="benefits-section">
-  <div class="benefit-overlay">
-    <div class="benefit-content">
-      <p class="sub-heading">Secure. Simplify. Scale.</p>
-      <h2 class="main-heading" style="color: #ffffff">Enterprise-Grade <span style="color: #00c896">IAM Capabilities.</span></h2>
-  
-      <div class="benefit-grid">
-        <div class="benefit-card">
-           <img src="images/POC-img.jpg" alt="POC Icon" class="benefit-icon" />
-            <h3>Provisioning & Deprovisioning</h3>
-            <p>Automate user onboarding/offboarding across systems.</p>
-        </div>
-        <div class="benefit-card">
-            <img src="images/demo-img.jpg" alt="Demo Icon" class="benefit-icon" />
-             <h3>Role-Based Access Control (RBAC)</h3>
-             <p>Ensure least-privilege access based on user roles and context.</p>
-        </div>
-        <div class="benefit-card">
-         <img src="images/analysis-icon.jpg" alt="Analysis Icon" class="benefit-icon" />
-          <h3>Multi-Factor Authentication</h3>
-          <p>Protect critical systems with layered authentication methods.</p>
-       </div>
-        <div class="benefit-card">
-          <img src="images/tool-comparison-icon.jpg" alt="Tool Icon" class="benefit-icon" />
-            <h3>Single Sign-On (SSO)</h3>
-            <p>Enable one-click access to multiple applications securely.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -863,9 +1043,7 @@ textarea {
         &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
   </div>
 </footer>
-
-
-<script src="js/main.js"></script>
+</main>
 <script>
   window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
@@ -881,5 +1059,8 @@ textarea {
   // Run once on load in case page starts scrolled
   window.dispatchEvent(new Event('scroll'));
 </script>
+
+<script src="js/main.js"></script>
+
 </body>
 </html>
