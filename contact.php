@@ -35,16 +35,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Content
         $mail->Subject = "New Contact from $name";
         $mail->Body = "
-            <h2>New Contact Request</h2>
-            <p><strong>Name:</strong> $name</p>
-            <p><strong>Email:</strong> $email</p>
-            <p><strong>Phone:</strong> $phone</p>
-            <p><strong>Location:</strong> $location</p>
-            <p><strong>Country:</strong> $country</p>
-            <p><strong>Enquiry:</strong> $enquiry</p>
-            <p><strong>Company:</strong> $company</p>
-            <p><strong>Message:</strong><br>" . nl2br($message) . "</p>
-        ";
+        <h2>New Contact Request</h2>
+        <p><strong>Name:</strong> $name</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Phone:</strong> $phone</p>" .
+        (!empty($location) ? "<p><strong>Location:</strong> $location</p>" : "") .
+        (!empty($country) ? "<p><strong>Country:</strong> $country</p>" : "") .
+        (!empty($enquiry) ? "<p><strong>Enquiry:</strong> $enquiry</p>" : "") .
+        (!empty($company) ? "<p><strong>Company:</strong> $company</p>" : "") .
+        "<p><strong>Message:</strong><br>" . nl2br($message) . "</p>";
+
 
         $mail->send();
         echo "Mail sent successfully!";
