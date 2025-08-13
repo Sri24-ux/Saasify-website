@@ -309,7 +309,7 @@ nav .dropdown-content {
   }
   /* Mobile-first styles */
 .hamburger {
-  display: block !important;
+  display: block ;
   font-size: 26px;
   color: white;
   padding: 15px;
@@ -318,12 +318,13 @@ nav .dropdown-content {
   position: relative;
 }
 }
+
   @media screen and (max-width: 1023px) {
             nav {
                 display: none;
             }
             .hamburger {
-              display: block  !important;
+              display: none  ;
               font-size: 26px;
               color: white;
               padding: 15px;

@@ -508,124 +508,26 @@
     <div class="location-grid" id="remote-locations"></div>
   </section>
 
-<footer>
-<div class="footer-grid">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="images/Saasify logo.png" alt="Saasify Logo">
-    </div>
-    
-  <h3 style="color: #00c896">Follow us</h3>
-   <div class="social-icons">
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-column">
-    <i class="fa-brands fa-linkedin-in"></i>
-    <div class="social-labels">
-      <div class="social-sub">saasify-solutions-private-limited</div>
-    </div>
-  </a>
 
-  <!-- X (Twitter) -->
-  <a href="https://x.com/SaasifySol" target="_blank" class="icon-column">
-    <i class="fa-brands fa-x-twitter"></i>
-    <div class="social-labels">
-      <div class="social-sub">@SaasifySol</div>
-    </div>
-  </a>
 
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-column">
-    <i class="fab fa-youtube"></i>
-    <div class="social-labels">
-      <div class="social-sub">@SaasifySolutions</div>
-    </div>
-  </a>
-</div>
-</div>
-<div class="footer-container">
-      <p><h3 style="color: #00c896">Registered Office</h3>   
-        No.2/4, 6th Floor, Center Point,<br>
-        Mount Poonamallee High Road,<br>
-        Manapakkam, Chennai, Tamilnadu - 600089<br> 
-     </p> </br>
-      <p><h3 style="color: #00c896">Branch Office</h3> 
-        ZED PINNACLE, No 77/A, 403, 4th Floor,<br>
-        Koramangala Industrial Layout, Koramangala,<br>
-        Bengaluru, Karnataka - 560095"
-     </p>
-  </div>
-  
-  <div class="footer-container">
-    <h3 style="color: #00c896">About us</h3>   
-    <p>Our consulting services are designed to solve real-world IT 
-    challenges—whether it's managing complex infrastructure, securing enterprise data, 
-    streamlining services, or automating business workflows.</p><br />  
 
-    <h3 style="color: #00c896">Get in Touch</h3>
-    <div class="contact-info">
-      <i class="fa fa-envelope"></i>
-      <p>:  sales@saasifysolutions.com</p>
-    </div>
-      <div class="contact-info">
-      <i class="fa-solid fa-phone"></i>
-      <p>: +91-95510 62198</p>
-    </div>
- </div>
-</div>
+<div id="footer-placeholder"></div>
 
-  <div class="footer-bottom">
-        &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
-  </div>
-</footer>
-
-  <script type="application/json" id="locations-data">
-  {
-    "registeredOffices": [
-      {
-        "city": "Chennai",
-        "image": "images/Chennai.jpg",
-        "address": "No.2/4, 6th Floor, Center Point, Mount Poonamallee High Road, Manapakkam, Chennai, Tamilnadu - 600089",
-        "email": "sales@saasifysolutions.com",
-        "hours": "Mon - Fri: 9.30 AM to 6.30 PM",
-        "phone": "+91-95510 62198"
-      },
-      {
-        "city": "Bengaluru",
-        "image": "images/Bangalore.jpg",
-        "address": "ZED PINNACLE, No 77/A, 403, 4th Floor, Koramangala Industrial Layout, Koramangala, Bengaluru, Karnataka - 560095",
-        "email": "sales@saasifysolutions.com",
-        "hours": "Mon - Fri: 9.30 AM to 6.30 PM",
-        "phone": "+91-95510 62198"
-      }
-    ],
-    "remoteLocations": [
-    {
-        "city": "Coimbatore",
-        "image": "images/Coimbatore.jpg",
-        "address": "Remote Office – Coimbatore, Tamil Nadu"
-      },
-      {
-        "city": "Hyderabad",
-        "image": "images/Telangana.jpg",
-        "address": "Remote Office – Hyderabad, Telangana"
-      },
-      {
-        "city": "Kerala",
-        "image": "images/Kerala.jpg",
-        "address": "Remote Office – Kochi, Kerala"
-      }, 
-      { 
-        "city": "Mumbai",
-        "image": "images/Mumbai.jpg",
-        "address": "Remote Office – Mumbai"
-      }
-    ]
-  }
-  </script>
 
   <!-- Script to Render Cards Dynamically -->
   <script>
-    const jsonData = JSON.parse(document.getElementById('locations-data').textContent);
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+   fetch('locations.json')
+    .then(response => response.json())
+    .then(jsonData => {
+      // Your logic to render cards using jsonData
+      console.log(jsonData); // Just to verify the data for now
+    
     const registeredContainer = document.getElementById('registered-offices');
     const remoteContainer = document.getElementById('remote-locations');
 
@@ -653,6 +555,8 @@
           </div>
         </div>`;
     });
+    })
+    .catch(error => console.error('Error loading JSON data:', error));
   </script>
   <script src="js/main.js"></script>
 </body>

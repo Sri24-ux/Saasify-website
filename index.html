@@ -1148,151 +1148,46 @@ header {
   </div>
 </section>
 
-<section class="contact-section">
-  <div class="contact-container">
-    <div class="contact-left">
-     <h3 class="main-heading">
-      <span class="span-border-bottom">Connect with Saasify</span>
-    </h3>
-      <h2>Together, let’s take the next step.</h2>
-      <p>Connect with us to explore tailored solutions.</p>
-      <img src="images\contact-form.png" alt="arrow graphic" class="contact-decor">
-    </div>
-    <div class="contact-right">
-      <form action="https://formspree.io/f/yourformid" method="POST">
-        <div class="form-grid">
-          <div class="form-group">
-            <label>First name*</label>
-            <input type="text" name="firstName" required />
-          </div>
-          <div class="form-group">
-            <label>Last name*</label>
-            <input type="text" name="lastName" required />
-          </div>
-          <div class="form-group">
-            <label>Business email*</label>
-            <input type="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label>Phone number</label>
-            <input type="text" name="phone" />
-          </div>
-          <div class="form-group">
-            <label>Job title</label>
-            <input type="text" name="jobTitle" />
-          </div>
-          <div class="form-group">
-            <label>Company*</label>
-            <input type="text" name="company" required />
-          </div>
-          <div class="form-group">
-            <label>Select country*</label>
-            <select name="country" required>
-              <option value="">Choose...</option>
-              <option>India</option>
-              <option>USA</option>
-              <option>UK</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Enquiry about?*</label>
-            <select name="enquiry" required>
-              <option value="">Choose...</option>
-              <option>Enterprise Solutions</option>
-              <option>Partnership</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group full">
-            <label>Comments</label>
-            <textarea rows="3" name="message"></textarea>
-          </div>
-        </div>
-       
-       <div class="form-footer">
-        <a href="thankyou.html">
-           <button type="submit">Submit</button>
-        </a>
-       </div>
-      </form>
-    </div>
-  </div>
-</section>
+<div id="contact-form-placeholder"></div>
 
-<footer>
-<div class="footer-grid">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="images/Saasify logo.png" alt="Saasify Logo">
-    </div>
-    
-  <h3 style="color: #00c896">Follow us</h3>
-   <div class="social-icons">
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-column">
-    <i class="fa-brands fa-linkedin-in"></i>
-    <div class="social-labels">
-      <div class="social-sub">saasify-solutions-private-limited</div>
-    </div>
-  </a>
 
-  <!-- X (Twitter) -->
-  <a href="https://x.com/SaasifySol" target="_blank" class="icon-column">
-    <i class="fa-brands fa-x-twitter"></i>
-    <div class="social-labels">
-      <div class="social-sub">@SaasifySol</div>
-    </div>
-  </a>
 
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-column">
-    <i class="fab fa-youtube"></i>
-    <div class="social-labels">
-      <div class="social-sub">@SaasifySolutions</div>
-    </div>
-  </a>
-</div>
-</div>
-<div class="footer-container">
-      <p><h3 style="color: #00c896">Registered Office</h3>   
-        No.2/4, 6th Floor, Center Point,<br>
-        Mount Poonamallee High Road,<br>
-        Manapakkam, Chennai, Tamilnadu - 600089<br> 
-     </p> </br>
-      <p><h3 style="color: #00c896">Branch Office</h3> 
-        ZED PINNACLE, No 77/A, 403, 4th Floor,<br>
-        Koramangala Industrial Layout, Koramangala,<br>
-        Bengaluru, Karnataka - 560095"
-     </p>
-  </div>
-  
-  <div class="footer-container">
-    <h3 style="color: #00c896">About us</h3>   
-    <p>Our consulting services are designed to solve real-world IT 
-    challenges—whether it's managing complex infrastructure, securing enterprise data, 
-    streamlining services, or automating business workflows.</p><br />  
-
-    <h3 style="color: #00c896">Get in Touch</h3>
-    <div class="contact-info">
-      <i class="fa fa-envelope"></i>
-      <p>:  sales@saasifysolutions.com</p>
-    </div>
-      <div class="contact-info">
-      <i class="fa-solid fa-phone"></i>
-      <p>: +91-95510 62198</p>
-    </div>
- </div>
-</div>
-
-  <div class="footer-bottom">
-        &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 
     <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
+   fetch('contact-form.html')
+    .then(response => response.text())
+    .then(html => {
+      const container = document.getElementById('contact-form-placeholder');
+      container.innerHTML = html;
+
+      // Extract and evaluate any scripts from the loaded HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      const scripts = tempDiv.querySelectorAll('script');
+      scripts.forEach(script => {
+        const newScript = document.createElement('script');
+        if (script.src) {
+          newScript.src = script.src;
+        } else {
+          newScript.textContent = script.textContent;
+        }
+        document.body.appendChild(newScript);
+      });
+    })
+    .catch(error => console.error('Failed to load contact form:', error));
+
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+
   const swiper = new Swiper('.heroSwiper', {
     loop: true,
     autoplay: {

@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $country = htmlspecialchars($_POST['country'] ?? '');
     $enquiry = htmlspecialchars($_POST['enquiry'] ?? '');
     $message = htmlspecialchars($_POST['message'] ?? '');
+    $company = htmlspecialchars($_POST['company'] ?? '');
 
     $mail = new PHPMailer(true);
 
@@ -41,11 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Location:</strong> $location</p>
             <p><strong>Country:</strong> $country</p>
             <p><strong>Enquiry:</strong> $enquiry</p>
+            <p><strong>Company:</strong> $company</p>
             <p><strong>Message:</strong><br>" . nl2br($message) . "</p>
         ";
 
         $mail->send();
-        echo "Message sent successfully!";
+        echo "Mail sent successfully!";
         exit;
     } catch (Exception $e) {
         echo "Mailer Error: " . $mail->ErrorInfo;

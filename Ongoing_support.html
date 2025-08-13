@@ -755,153 +755,42 @@ textarea {
   </div>
 </div>
 </section>
-
-<section class="contact-section">
-  <div class="green-card">
-    <div class="curved-card">
-       <p class="sub-heading">Connect with Saasify</p>
-       <h2 class="main-heading">Together, let’s take  <span style="color: #00c896">the next step</span></h2>
-  
-      <form class="contact-form">
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="first-name">Name <span style="color: red">*</span></label>
-            <input type="text" id="first-name" name="first-name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email ID<span style="color: red">*</span></label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number<span style="color: red">*</span></label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-
-          <div class="form-group">
-            <label for="company">Company name<span style="color: red">*</span></label>
-            <input type="text" id="company" name="company">
-          </div>
-
-          <div class="form-group full">
-            <label for="message">Queries<span style="color: red">*</span></label>
-            <textarea id="message" name="message" rows="2"></textarea>
-          </div>
-          <button type="button" class="cta-button" onclick="submitForm()">Submit</button>
-        </div>
-      </form>
-      <div id="response-message" style="margin-top:10px;"></div>
-    </div>
-  </div>
-</section>
+<div id="contact-form-placeholder"></div>
 
 <script>
- async function submitForm() {
-    const form = document.getElementById("contact-form");
+  fetch('contact-form.html')
+    .then(response => response.text())
+    .then(html => {
+      const container = document.getElementById('contact-form-placeholder');
+      container.innerHTML = html;
 
-    // Prevent manual form submission if needed (not strictly required here)
-    event?.preventDefault();
-
-    // Optional: Validate
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const formData = new FormData(form);
-    const responseDiv = document.getElementById("response-message");
-
-    try {
-      const response = await fetch("contact.php", {
-        method: "POST",
-        body: formData
+      // Extract and evaluate any scripts from the loaded HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      const scripts = tempDiv.querySelectorAll('script');
+      scripts.forEach(script => {
+        const newScript = document.createElement('script');
+        if (script.src) {
+          newScript.src = script.src;
+        } else {
+          newScript.textContent = script.textContent;
+        }
+        document.body.appendChild(newScript);
       });
+    })
+    .catch(error => console.error('Failed to load contact form:', error));
 
-      const text = await response.text();
-      responseDiv.textContent = text;
 
-      if (text.toLowerCase().includes("success")) {
-        responseDiv.style.color = "green";
-        form.reset();
-      } else {
-        responseDiv.style.color = "red";
-      }
-    } catch (error) {
-      responseDiv.textContent = "Something went wrong. Please try again.";
-      responseDiv.style.color = "red";
-    }
-  }
+
+fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
 </script>
 
-<footer>
-<div class="footer-grid">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="images/Saasify logo.png" alt="Saasify Logo">
-    </div>
-    
-  <h3 style="color: #00c896">Follow us</h3>
-   <div class="social-icons">
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/company/saasify-solutions-private-limited/" target="_blank" class="icon-column">
-    <i class="fa-brands fa-linkedin-in"></i>
-    <div class="social-labels">
-      <div class="social-sub">saasify-solutions-private-limited</div>
-    </div>
-  </a>
-
-  <!-- X (Twitter) -->
-  <a href="https://x.com/SaasifySol" target="_blank" class="icon-column">
-    <i class="fa-brands fa-x-twitter"></i>
-    <div class="social-labels">
-      <div class="social-sub">@SaasifySol</div>
-    </div>
-  </a>
-
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@SaasifySolutions" target="_blank" class="icon-column">
-    <i class="fab fa-youtube"></i>
-    <div class="social-labels">
-      <div class="social-sub">@SaasifySolutions</div>
-    </div>
-  </a>
-</div>
-</div>
-<div class="footer-container">
-      <p><h3 style="color: #00c896">Registered Office</h3>   
-        No.2/4, 6th Floor, Center Point,<br>
-        Mount Poonamallee High Road,<br>
-        Manapakkam, Chennai, Tamilnadu - 600089<br> 
-     </p> </br>
-      <p><h3 style="color: #00c896">Branch Office</h3> 
-        ZED PINNACLE, No 77/A, 403, 4th Floor,<br>
-        Koramangala Industrial Layout, Koramangala,<br>
-        Bengaluru, Karnataka - 560095
-     </p>
-  </div>
-  
-  <div class="footer-container">
-    <h3 style="color: #00c896">About us</h3>   
-    <p>Our consulting services are designed to solve real-world IT 
-    challenges—whether it's managing complex infrastructure, securing enterprise data, 
-    streamlining services, or automating business workflows.</p><br />  
-
-    <h3 style="color: #00c896">Get in Touch</h3>
-    <div class="contact-info">
-      <i class="fa fa-envelope"></i>
-      <p>:  sales@saasifysolutions.com</p>
-    </div>
-      <div class="contact-info">
-      <i class="fa-solid fa-phone"></i>
-      <p>: +91-95510 62198</p>
-    </div>
- </div>
-</div>
-
-  <div class="footer-bottom">
-        &copy; 2025 Saasify Solutions Pvt Ltd. All Rights Reserved.
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 </main>
 <script>
