@@ -494,6 +494,74 @@ textarea {
     transform: scale(1.5);
     transform-origin: center;
 }
+.key-analysis-section {
+  background-color: #ffffff;
+  padding: 60px 40px;
+}
+
+.key-analysis-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.key-analysis-left {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.key-analysis-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.key-analysis-right {
+  flex: 1 1 55%;
+}
+
+.analysis-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.analysis-item h3 {
+  font-size: 1.2rem;
+  color: #0a1f44;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px; /* Space for bullet */
+}
+
+.analysis-item h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color:#00c896;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .key-analysis-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .key-analysis-left,
+  .key-analysis-right {
+    flex: 1 1 100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -718,21 +786,57 @@ textarea {
   
       <div class="benefit-grid">
         <div class="benefit-card">
-         <i class="fas fa-dollar-sign"></i>
         <h3>Faster Resolution</h3>
         <p>Accelerate issue handling and reduce downtime across systems and teams.</p>
         </div>
         <div class="benefit-card">
-          <i class="fas fa-user-friends"></i>
         <h3>Aligned Business Goals</h3>
         <p>Ensure IT operations support your overall business objectives and KPIs.</p>
         </div>
         <div class="benefit-card">
-           <i class="fas fa-chart-line"></i>
         <h3>Better Governance</h3>
         <p>Implement structured processes that improve security, compliance, and control.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="key-analysis-section">
+  <p class="sub-heading">Efficient. Integrated. Intelligent.</p>
+  <h2 class="main-heading">
+    Key Benefits of <span style="color: #00c896">ITSM & ESM</span>
+  </h2>
+
+  <div class="key-analysis-wrapper">
+    <!-- Left Image -->
+    <div class="key-analysis-left">
+      <img src="images/ITSM_benefit_optimized.webp" alt="ITSM and ESM Benefits Illustration" />
+    </div>
+
+    <!-- Right Content -->
+    <div class="key-analysis-right">
+
+      <div class="analysis-item">
+        <h3>Lower Operational Costs</h3>
+        <p>Automate workflows and reduce manual intervention to improve service delivery efficiency.</p>
+      </div>
+
+      <div class="analysis-item">
+        <h3>Minimized Service Disruptions</h3>
+        <p>Use proactive ticketing and incident management to detect, escalate, and resolve issues faster.</p>
+      </div>
+
+      <div class="analysis-item">
+        <h3>Enhanced User Experience</h3>
+        <p>Improve satisfaction with faster turnaround times, self-service access, and unified support workflows.</p>
+      </div>
+
+      <div class="analysis-item">
+        <h3>360° Enterprise Support</h3>
+        <p>Extend ITSM best practices to HR, facilities, finance, and beyond with ESM workflows.</p>
+      </div>
+
     </div>
   </div>
 </section>

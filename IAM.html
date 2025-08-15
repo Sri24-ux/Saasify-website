@@ -557,6 +557,75 @@ textarea {
   }
 }
 
+.key-analysis-section {
+  background-color: #ffffff;
+  padding: 60px 40px;
+}
+
+.key-analysis-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.key-analysis-left {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.key-analysis-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.key-analysis-right {
+  flex: 1 1 55%;
+}
+
+.analysis-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.analysis-item h3 {
+  font-size: 1.2rem;
+  color: #0a1f44;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px; /* Space for bullet */
+}
+
+.analysis-item h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color:#00c896;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .key-analysis-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .key-analysis-left,
+  .key-analysis-right {
+    flex: 1 1 100%;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -802,100 +871,109 @@ textarea {
   </div>
 </section>
 
-<section class="benefits-section">
-  <div class="benefit-overlay">
-    <div class="benefit-content">
-      <p class="sub-heading">Secure. Simplify. Scale.</p>
-      <h2 class="main-heading" style="color: #ffffff">Enterprise-Grade <span style="color: #00c896">IAM Capabilities.</span></h2>
+<section class="key-analysis-section">
+   <p class="sub-heading">Secure. Simplify. Scale.</p>
+   <h2 class="main-heading">Key Benefits of <span style="color: #00c896">IAM</span></h2>
   
-      <div class="benefit-grid">
-        <div class="benefit-card">
-           <img src="images/POC-img.jpg" alt="POC Icon" class="benefit-icon" />
-            <h3>Provisioning & Deprovisioning</h3>
-            <p>Automate user onboarding/offboarding across systems.</p>
-        </div>
-        <div class="benefit-card">
-            <img src="images/demo-img.jpg" alt="Demo Icon" class="benefit-icon" />
-             <h3>Role-Based Access Control (RBAC)</h3>
-             <p>Ensure least-privilege access based on user roles and context.</p>
-        </div>
-        <div class="benefit-card">
-         <img src="images/analysis-icon.jpg" alt="Analysis Icon" class="benefit-icon" />
-          <h3>Multi-Factor Authentication</h3>
-          <p>Protect critical systems with layered authentication methods.</p>
-       </div>
-        <div class="benefit-card">
-          <img src="images/tool-comparison-icon.jpg" alt="Tool Icon" class="benefit-icon" />
-            <h3>Single Sign-On (SSO)</h3>
-            <p>Enable one-click access to multiple applications securely.</p>
-        </div>
+  <div class="key-analysis-wrapper">
+    <!-- Left Image -->
+    <div class="key-analysis-left">
+      <img src="images/IAM_benefit_optimized.webp" alt="IAM Benefits Illustration" />
+    </div>
+    
+    <!-- Right Content -->
+    <div class="key-analysis-right">
+       <div class="analysis-item">
+        
+        <h3>Regulatory Compliance</h3>
+        <p>Enforce Zero Trust with detailed monitoring, reporting, and governance for audit-readiness.</p>
+      </div>
+      
+      <div class="analysis-item">
+        <h3>Automated Identity Lifecycle</h3>
+        <p>Automate provisioning and de-provisioning with orchestration and smart templates for efficient onboarding and offboarding.</p>
+      </div>
+      
+      <div class="analysis-item">
+        <h3>AI-Driven Insights</h3>
+        <p>Leverage AI-powered identity analytics for anomaly detection, automation, and smarter security.</p>
+      </div>
+      
+      <div class="analysis-item">
+        <h3>Unified Access Management</h3>
+        <p>Centralize access workflows, SSO, MFA, and role-based access control from one console.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section style="padding: 60px 20px;">
-  <p class="sub-heading">Why IAM Matters?</p>
+<section style="padding: 1px 40px;">
+  <p class="sub-heading">Our IAM Capabilities</p>
   <h2 class="main-heading">
-    Why ITSM Matters for <span style="color: #00c896">Your Business ?</span>
+   Key IAM Capabilities <span style="color: #00c896">That Drive Success</span>
   </h2>
 
   <!-- Row 1 -->
-  <div class="row">
+  <div class="row bg-alt">
     <div class="column image">
-      <img src="images/secure-access-img.jpg" alt="Secure Access Control" />
+       <img src="images/Efficiency.png" alt="Centralized Monitoring" />
     </div>
     <div class="column text">
-      <h3 style="color: #0a1f44;">Secure Access Control</h3>
+      <h3 style="color: #0a1f44;">Built-in Universal Directory</h3>
       <p>
-        In today’s digital ecosystem, managing who can access what — and when — is fundamental to organizational security and operational efficiency. Saasify’s Secure Access Control framework ensures that only authenticated, authorized, and contextually verified users can interact with your most sensitive systems and data.<br><br>
-        Through advanced identity management, we establish clear access boundaries across your IT environment. Role-based access control (RBAC) ensures users are granted permissions strictly aligned with their job functions, while attribute-based policies add an additional layer of contextual security based on factors such as device, location, and time of access.
+        Store and manage identities across directories and apps through a unified cloud-native directory. (ManageEngine Identity360)  
+        This eliminates the need for multiple disconnected systems, reducing administrative overhead.  
+        It also ensures that user data is synchronized in real-time across all connected platforms.
       </p>
     </div>
   </div>
 
   <!-- Row 2 -->
-  <div class="row bg-alt">
+  <div class="row">
     <div class="column image">
-      <img src="images/compliance-img.png" alt="Regulatory Compliance" />
+       <img src="images/compliance-img.png" alt="Regulatory Compliance" />
     </div>
     <div class="column text">
-      <h3 style="color: #0a1f44;">Regulatory Compliance</h3>
+      <h3 style="color: #0a1f44;">Identity Orchestration & Lifecycle Automation</h3>
       <p>
-        Meet industry standards like GDPR, HIPAA, and ISO 27001 by implementing a robust identity and access management (IAM) framework. Saasify enables you to enforce strict authentication protocols, manage user roles and permissions centrally, and maintain comprehensive audit trails.<br><br>
-        This ensures not only data privacy and protection, but also streamlines compliance reporting and reduces the risk of regulatory penalties. Our solutions support secure onboarding and offboarding, policy enforcement, and access recertification — key practices for staying compliant in dynamic IT environments.
+        Automate onboarding, provisioning, role changes, and offboarding using smart templates and SCIM-based workflows. (ManageEngine Identity360)  
+        This reduces human error, speeds up user access provisioning, and improves operational efficiency.  
+        It also helps maintain a consistent security posture as employees move through their lifecycle.
       </p>
     </div>
   </div>
 
   <!-- Row 3 -->
-  <div class="row">
+  <div class="row bg-alt">
     <div class="column image">
-      <img src="images/securityandpatch-img.png" alt="Security and Patch Updates" />
+       <img src="images/securityandpatch-img.png" alt="Security and Patch Updates" />
     </div>
     <div class="column text">
-      <h3 style="color: #0a1f44;">Security & Patch Updates</h3>
+      <h3 style="color: #0a1f44;">Secure SSO with MFA</h3>
       <p>
-        Enable seamless Single Sign-On (SSO) to streamline access across multiple applications and systems with a single set of secure credentials. Saasify’s SSO integration reduces login fatigue, eliminates the need to remember multiple passwords, and simplifies access for both on-site and remote employees.<br><br>
-        By minimizing authentication barriers, SSO enhances workforce productivity and reduces helpdesk requests related to password resets. It also strengthens overall security by centralizing login control and enabling consistent enforcement of authentication policies across all platforms — creating a smoother, more efficient user experience without compromising on security.
+        Enable seamless, passwordless access to applications via single sign-on backed by robust, multi-factor authentication. (ManageEngine Identity360)  
+        Users can log in once and access all authorized resources without re-entering credentials.  
+        This boosts productivity while significantly reducing the risk of credential theft.
       </p>
     </div>
   </div>
 
   <!-- Row 4 -->
-  <div class="row bg-alt">
+  <div class="row">
     <div class="column image">
-      <img src="images/Efficiency.png" alt="Centralized Monitoring" />
+     <img src="images/secure-access-img.jpg" alt="Secure Access Control" />
     </div>
     <div class="column text">
-      <h3 style="color: #0a1f44;">Centralized Monitoring</h3>
+      <h3 style="color: #0a1f44;">Access Insights & Compliance Reporting</h3>
       <p>
-        Track user behavior and access logs in real time to gain complete visibility into who is accessing your systems, when, and from where. With Saasify’s monitoring tools, every login attempt, privilege escalation, or resource access is captured and recorded — providing a granular view of user activity across the enterprise.<br><br>
-        This real-time insight plays a crucial role in audit readiness and incident response. By detecting unusual behavior patterns or unauthorized access attempts instantly, security teams can respond faster, investigate anomalies with precision, and maintain a defensible audit trail. This proactive approach not only strengthens organizational security posture but also ensures compliance with strict regulatory requirements.
+        Gain visibility with comprehensive reports and dashboards to stay compliant and secure. (ManageEngine Identity360)  
+        Generate audit-ready logs and insights for regulatory frameworks like GDPR, HIPAA, and ISO.  
+        Quickly identify unusual access patterns to address potential threats proactively.
       </p>
     </div>
   </div>
 </section>
+
 <div id="contact-form-placeholder"></div>
 
 <script>

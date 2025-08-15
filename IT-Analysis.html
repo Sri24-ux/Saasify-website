@@ -359,120 +359,9 @@ textarea {
   font-weight: 500;
 }
 
-.implementation-strategy {
-  background-color: #f4faff;
-  padding: 40px 20px;
-  position: relative;
-}
-
-.timeline-container {
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-.timeline-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 5px;
-  background-color: #e0e0e0;
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  position: relative;
-  width: 50%;
-  padding: 20px 30px;
-  box-sizing: border-box;
-}
-
-.timeline-item .content-box {
-  background: #ffffff;
-  padding: 20px 18px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  position: relative;
-}
-
-.timeline-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #0a1f44;
-}
-
-.timeline-item p {
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-.timeline-item.left {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-item.right {
-  left: 50%;
-  text-align: left;
-}
-
-.timeline-item.left .content-box::after {
-  content: "";
-  position: absolute;
-  top: 25px;
-  right: -47px;
-  width: 25px;
-  height: 25px;
-  background: #0a1f44;
-  border-radius: 50%;
-  border: 4px solid #fff;
-}
-
-.timeline-item.right .content-box::after {
-  content: "";
-  position: absolute;
-  top: 25px;
-  left: -47px;
-  width: 25px;
-  height: 25px;
-  background: #0a1f44;
-  border-radius: 50%;
-  border: 4px solid #fff;
-}
-
-/* ======== Mobile Responsive Styles ======== */
-@media screen and (max-width: 768px) {
-  .timeline-container::before {
-    left: 20px;
-    transform: none;
-  }
-
-  .timeline-item {
-    width: 100%;
-    padding-left: 60px;
-    padding-right: 20px;
-    margin-bottom: 50px;
-  }
-
-  .timeline-item.left,
-  .timeline-item.right {
-    left: 0;
-    text-align: left;
-  }
-
-  .timeline-item .content-box::after {
-    left: -73px !important;
-    right: auto;
-  }
-}
-
 .key-analysis-section {
   background-color: #ffffff;
-  padding: 60px 20px;
+  padding: 60px 40px;
 }
 
 .key-analysis-wrapper {
@@ -501,20 +390,29 @@ textarea {
   flex: 1 1 55%;
 }
 
-.analysis-item {
-  margin-bottom: 25px;
-}
-
-.analysis-item h3 {
-  font-size: 1.2rem;
-  color: #0a1f44;
-  margin-bottom: 8px;
-}
-
 .analysis-item p {
   font-size: 1rem;
   color: #333;
   line-height: 1.6;
+}
+.analysis-item h3 {
+  font-size: 1.2rem;
+  color: #0a1f44;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px; /* Space for bullet */
+}
+
+.analysis-item h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color:#00c896;
+  border-radius: 50%;
 }
 
 /* Responsive */
@@ -528,7 +426,6 @@ textarea {
   .key-analysis-right {
     flex: 1 1 100%;
   }
-
 }
 
 .highlight-section {
@@ -846,16 +743,17 @@ textarea {
 </section>
 
 <section class="key-analysis-section">
+   <p class="sub-heading">Visibility. Intelligence. Response.</p>
+  <h2 class="main-heading">
+    Key Benefits of <span style="color: #00c896">IT Analysis</span>
+  </h2>
+
   <div class="key-analysis-wrapper">
     <div class="key-analysis-left">
-      <img src="images/it-analysis-benefits.jpg" alt="IT Analysis Illustration">
+      <img src="images/IT_Analytics_resize.webp" alt="IT Analysis Illustration">
     </div>
 
     <div class="key-analysis-right">
-      <h2 class="main-heading">
-        <span class="span-border-bottom">Key Benefits of IT Analysis</span>
-      </h2>
-
       <div class="analysis-item">
         <h3>Proactive Issue Detection</h3>
         <p>Identify potential system failures before they occur through real-time monitoring and alerts.</p>
@@ -879,37 +777,6 @@ textarea {
   </div>
 </section>
 
-<section class="implementation-strategy">
-  <h2 class="main-heading">
-    <span class="span-border-bottom">Implementation Strategy</span>
-  </h2>
-  <div class="timeline-container">
-    <div class="timeline-item left">
-      <div class="content-box">
-        <h3>Assessment</h3>
-        <p>Understand current infrastructure, requirements, and analysis scope.</p>
-      </div>
-    </div>
-    <div class="timeline-item right">
-      <div class="content-box">
-        <h3>Tool Integration</h3>
-        <p>Connect relevant monitoring and analysis tools into your ecosystem.</p>
-      </div>
-    </div>
-    <div class="timeline-item left">
-      <div class="content-box">
-        <h3>Dashboard Configuration</h3>
-        <p>Set up intuitive dashboards to visualize key metrics and alerts.</p>
-      </div>
-    </div>
-    <div class="timeline-item right">
-      <div class="content-box">
-        <h3>Continuous Review & Alerts</h3>
-        <p>Enable automated alerting and ongoing performance optimization.</p>
-      </div>
-    </div>
-  </div>
-</section>
 <div id="contact-form-placeholder"></div>
 
 <script>

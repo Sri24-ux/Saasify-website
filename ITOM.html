@@ -499,68 +499,6 @@ textarea {
   color: #444;
   line-height: 1.6;
 }
-.client-benefits-section {
-  background-color: #0a1f44;
-  padding: 60px 20px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.client-benefit-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.client-benefit-card {
-  flex: 1 1 22%;
-  padding: 30px 20px;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.client-benefit-card:last-child {
-  border-right: none;
-}
-
-.client-benefit-card h3 {
-  font-size: 18px;
-  color: #00e0d0;
-  margin-bottom: 12px;
-}
-
-.client-benefit-card p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #e0e0e0;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .client-benefit-card {
-    flex: 1 1 45%;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .client-benefit-card:nth-child(2n) {
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .client-benefit-card:last-child {
-    border-bottom: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .client-benefit-card {
-    flex: 1 1 100%;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-}
 
 .highlight-section {
   background-image: url('images/section-bg.jpg');
@@ -640,6 +578,75 @@ textarea {
 @media (max-width: 1024px) {
   .highlight-overlay {
     padding: 40px 16px;
+  }
+}
+
+.key-analysis-section {
+  background-color: #ffffff;
+  padding: 60px 40px;
+}
+
+.key-analysis-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.key-analysis-left {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.key-analysis-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.key-analysis-right {
+  flex: 1 1 55%;
+}
+
+.analysis-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.analysis-item h3 {
+  font-size: 1.2rem;
+  color: #0a1f44;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px; /* Space for bullet */
+}
+
+.analysis-item h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color:#00c896;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .key-analysis-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .key-analysis-left,
+  .key-analysis-right {
+    flex: 1 1 100%;
   }
 }
 </style>
@@ -894,6 +901,44 @@ textarea {
   </div>
 </section>
 
+<section class="key-analysis-section">
+  <p class="sub-heading">Reliable. Efficient. Scalable.</p>
+  <h2 class="main-heading">
+    Key Benefits of <span style="color: #00c896">IT Operations Management</span>
+  </h2>
+  
+  <div class="key-analysis-wrapper">
+  <!-- Left Image -->
+    <div class="key-analysis-left">
+      <img src="images/ITOM_benefit_resize.webp" alt="ITSM and ESM Benefits Illustration" />
+    </div>
+
+  <!-- Right Content -->
+    <div class="key-analysis-right">
+
+      <div class="analysis-item">
+        <h3>Improve Service Availability</h3>
+        <p>Prevent downtime with proactive monitoring and quick fault detection.</p>
+     </div>
+
+      <div class="analysis-item">
+        <h3>Lower Operational Costs</h3>
+        <p>Automate repetitive IT tasks to save resources and increase efficiency.</p>
+     </div>
+
+      <div class="analysis-item">
+        <h3>Enable Scalable Growth</h3>
+        <p>Handle complex, growing IT infrastructures with ease and flexibility.</p>
+     </div>
+
+      <div class="analysis-item">
+        <h3>Faster Incident Response</h3>
+        <p>Speed up problem resolution to improve SLAs and end-user satisfaction.</p>
+     </div>
+    </div>
+  </div>
+</section>
+
 <section class="itom-capabilities-section">
   <h2 class="main-heading"><span class="span-border-bottom">Key Capabilities of IT Operations Management</span></h2>
   <div class="capabilities-grid">
@@ -920,27 +965,6 @@ textarea {
   </div>
 </section>
 
-<section class="client-benefits-section">
-  <h2 class="main-heading" style="color:#ccc"></h2>><span class="span-border-bottom">Benefits to Clients</span></h2>
-  <div class="client-benefit-row">
-    <div class="client-benefit-card">
-      <h3>Improve Service Availability</h3>
-      <p>Reduce business disruptions by preventing system failures.</p>
-    </div>
-    <div class="client-benefit-card">
-      <h3>Lower Operational Costs</h3>
-      <p>Use automation to do more with less — faster resolutions, less workforce strain.</p>
-    </div>
-    <div class="client-benefit-card">
-      <h3>Enable Scalable Growth</h3>
-      <p>Manage increasing IT complexity with a modular and scalable platform.</p>
-    </div>
-    <div class="client-benefit-card">
-      <h3>Faster Incident Response</h3>
-      <p>Improve SLAs and end-user satisfaction through quicker problem resolution.</p>
-    </div>
-  </div>
-</section>
 <div id="contact-form-placeholder"></div>
 
 <script>

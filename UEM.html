@@ -543,7 +543,74 @@ textarea {
     padding: 40px 16px;
   }
 }
+.key-analysis-section {
+  background-color: #ffffff;
+  padding: 60px 40px;
+}
 
+.key-analysis-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.key-analysis-left {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.key-analysis-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.key-analysis-right {
+  flex: 1 1 55%;
+}
+
+.analysis-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.analysis-item h3 {
+  font-size: 1.2rem;
+  color: #0a1f44;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px; /* Space for bullet */
+}
+
+.analysis-item h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color:#00c896;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .key-analysis-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .key-analysis-left,
+  .key-analysis-right {
+    flex: 1 1 100%;
+  }
+}
   </style>
 </head>
 <body>
@@ -783,6 +850,39 @@ textarea {
         <h3>Cross-Platform Management</h3>
         <p>Manage Windows, macOS, iOS, Android, and more from one unified console.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="key-analysis-section">
+    <p class="sub-heading">Centralized. Secure. Scalable.</p>
+  <h2 class="main-heading">
+     Key Benefits of <span style="color: #00c896">UEM</span></h2>
+
+  <div class="key-analysis-wrapper">
+    <!-- Left Image -->
+    <div class="key-analysis-left">
+      <img src="images/UEM_benefit_optimized.webp" alt="UEM Benefits Illustration" />
+    </div>
+
+    <!-- Right Benefits List -->
+    <div class="key-analysis-right">
+      <div class="analysis-item">
+        <h3>Centralized Management</h3>
+        <p>Control desktops, mobiles, servers, and IoT devices from a single pane of glass for streamlined administration.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>Automated Updates & Security</h3>
+        <p>Automate patching, software deployment, and compliance checks to reduce manual effort and tighten endpoint protection.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>Enhanced Visibility & Insights</h3>
+        <p>Gain deep real-time visibility into hardware, software, and vulnerabilities across your endpoint ecosystem.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>Seamless User Experience</h3>
+        <p>Deliver self-service portals, remote troubleshooting, and faster onboarding—keeping employees productive and satisfied.</p>
       </div>
     </div>
   </div>
