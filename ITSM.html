@@ -221,72 +221,6 @@ button[type="submit"] {
   }
 }
 
-.core-values-section {
-  background-color: #fff;
-  color: #0a1f44;
-  padding: 60px 20px;
-}
-
-.core-values-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.core-values-text {
-  flex: 1;
-  padding: 20px 30px;
-}
-
-.core-values-text p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
-
-.core-values-text ul {
-  list-style: none;
-  padding: 2px;
-}
-
-.core-values-text li {
-  font-size: 18px;
-  margin-bottom: 15px;
-  position: relative;
-  padding-left: 30px;
-}
-
-.fa-check-circle:before, .fa-circle-check:before {
-    content: "\f058";
-    position: absolute;
-    left: 0;
-    top: 5px;
-}
-
-.core-values-image {
-  flex: 1;
-  text-align: center;
-  padding: 20px;
-}
-
-.core-values-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 25px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .core-values-container {
-    flex-direction: column;
-  }
-  .core-values-text, .core-values-image {
-    padding: 15px;
-  }
-}
- 
   /* Contact Section */
  .contact-form {
       display: flex;
@@ -442,58 +376,6 @@ textarea {
     margin-left: 37px;
   }
 }
-
- /* Intro Section */
-.intro-section {
-  display: flex;
-  justify-content: center; 
-  padding: 1.5rem 2rem;
-  background-color: #f8f9fa;
-  min-height: 50vh;        
-  box-sizing: border-box;
-}
-
-.intro-content {
-  max-width: 800px;
-}
-
-.intro-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-}
-
-.intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-.intro-content ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.intro-content ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  .intro-content {
-    max-width: 100%;
-    padding: 1rem;
-  }
-}
-
-.logo img {
-    transform: scale(1.5);
-    transform-origin: center;
-}
 .key-analysis-section {
   background-color: #ffffff;
   padding: 60px 40px;
@@ -562,6 +444,94 @@ textarea {
     flex: 1 1 100%;
   }
 }
+.capabilities-section {
+  padding: 1px 40px;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cap-overlay {
+  position: relative;
+  padding: 20px;
+  color: white;
+  z-index: 1;
+}
+
+.cap-overlay h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cap-overlay p {
+  font-size: 1.115rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.cap-overlay a {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cap-overlay a:hover {
+  text-decoration: underline;
+}
+
+.capability-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.capability-card:hover {
+  transform: scale(1.05); /* slight zoom */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35); /* depth */
+}
+
+.capability-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+  transition: background 0.4s ease;
+}
+
+.capability-card:hover::before {
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.2)); /* darker overlay */
+}
+
 </style>
 </head>
 <body>
@@ -841,29 +811,42 @@ textarea {
   </div>
 </section>
 
-<section class="core-values-section">
-  <div class="core-values-container">
-    <div class="core-values-image">
-      <img src="images/location_resized.webp" alt="Saasify Commitments">
-    </div>
-    <div class="core-values-text">
-      <h2 class="main-heading"><span class="span-border-bottom">Why Choose Saasify for ITSM?</span></h2>
-  
-      <p>At Saasify, we go beyond service delivery—we become your technology partner. Our approach is structured to ensure that your business benefits from tailored implementation, seamless setup, and ongoing support at every stage.</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i>
-               Tailored Implementations – Customized for your business model</li>
-        <li><i class="fas fa-check-circle"></i>
-              Fast Deployment – Rapid onboarding with minimal disruption</li>
-        <li><i class="fas fa-check-circle"></i>
-              Seamless Integrations – Connects with your tools & ecosystem</li>
-        <li><i class="fas fa-check-circle"></i>
-              Ongoing Support – Training, documentation, and SLA-based help</li>
-      </ul>
-    </div>
-  
+<section class="capabilities-section">
+  <p class="sub-heading">Secure. Scalable. Seamless.</p>
+    <h2 class="main-heading">Key Capabilities of  <span style="color: #00c896">ITSM/ESM</span></h2>
+    <div class="capabilities-grid">
+
+  <div class="capability-card" style="background-image: url('images/ITSM_CAP_resized.webp');">
+    <div class="cap-overlay">
+       <h3>Built-in Universal Directory</h3>
+        <p>Manage identities across apps and directories in one unified, cloud-native platform for seamless access control.</p>
+     </div>
+  </div>
+
+  <div class="capability-card" style="background-image: url('images/ITSM_CAP-resized1.webp');">
+    <div class="cap-overlay">
+      
+      <h3>Secure SSO with MFA</h3>
+        <p>Enable passwordless access with single sign-on backed by advanced multi-factor authentication.</p>
+     </div>
+  </div>
+
+  <div class="capability-card" style="background-image: url('images/ITSM_CAP_optimized2.webp');">
+    <div class="cap-overlay">
+      <h3>Identity Orchestration</h3>
+        <p>Automate onboarding, role changes, and offboarding with smart templates and SCIM-based workflows.</p>
+      </div>
+  </div>
+
+  <div class="capability-card" style="background-image: url('images/UEM_benefit_optimized.webp');">
+    <div class="cap-overlay"> 
+      <h3>Access Insights & Reporting</h3>
+        <p>Get complete visibility with detailed compliance reports and real-time access analytics.</p>
+      </div>
+  </div>
   </div>
 </section>
+
 <div id="contact-form-placeholder"></div>
 
 <script>
