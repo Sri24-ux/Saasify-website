@@ -80,42 +80,6 @@ button[type="submit"] {
   }
 }
 
-.hero {
-  position: relative;
-  height: 100vh; 
-  display: flex;
-  align-items: flex-start; /* Top align */
-  justify-content: flex-start; /* Left align */
-  padding-top: 120px; /* Adjust this to match TCS vertical spacing */
-  padding-left: 10%;  /* Adds left offset */
-  color: white;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 600px; /* Keeps text from stretching too far */
-}
-.hero-content h1{
-    font-size: 3rem;
-    line-height: 4rem;
-}
-.subtitle {
-  font-size: 20px;
-  line-height: 1.5;
-  border-bottom: 0.0625rem solid hsla(0, 0%, 100%, .3);
-  padding-bottom: 10px;
-}
-
-.hero-description{
-    font-size: 1.5rem;
-    line-height: 2.1rem;
-    letter-spacing: .03125rem;
-    color: #f4f3f9;
-    margin-bottom: 1rem;
-    text-transform: none;
-    width: 70%;
-}
 .overlay {
   position: absolute;
   top: 0; 
@@ -129,6 +93,48 @@ button[type="submit"] {
   background: white;
   position: relative;
   z-index: 3;
+}
+
+.hero {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: center;   /* Vertically center like TCS */
+  justify-content: flex-start; /* Left align */
+  padding-left: 8%;      /* Left offset */
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px; /* Slightly wider for balance */
+  text-align: left;  /* Force text to align left */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+  border-bottom: 0.0625rem solid hsla(0, 0%, 100%, .3);
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  letter-spacing: .03125rem;
+  color: #f4f3f9; 
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-transform: none;
+  width: 90%;    /* Wider so it doesn’t look boxed */
+  text-align: left;
 }
 
 /* Contact Section */
@@ -287,58 +293,6 @@ textarea {
   }
 }
 
- /* Intro Section */
-.intro-section {
-  display: flex;
-  justify-content: center; 
-  padding: 1.5rem 2rem;
-  background-color: #f8f9fa;
-  min-height: 50vh;        
-  box-sizing: border-box;
-}
-
-.intro-content {
-  max-width: 800px;
-}
-
-.intro-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-}
-
-.intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-.intro-content ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.intro-content ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  .intro-content {
-    max-width: 100%;
-    padding: 1rem;
-  }
-}
-
-.logo img {
-    transform: scale(1.5);
-    transform-origin: center;
-}
-
 .breadcrumb {
   padding: 15px 40px;
   font-size: 0.95rem;
@@ -427,6 +381,87 @@ textarea {
     flex: 1 1 100%;
   }
 }
+/* IT Analytics Section */
+.it-analytics {
+  padding: 60px 40px;
+  background: #f9fafc;
+  font-family: 'Inter', sans-serif;
+}
+
+.it-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.it-card {
+  position: relative;
+  background: url('https://picsum.photos/400/300?random=1') center/cover no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #fff;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.it-card:nth-child(2) {
+  background: url('https://picsum.photos/400/300?random=2') center/cover no-repeat;
+}
+.it-card:nth-child(3) {
+  background: url('https://picsum.photos/400/300?random=3') center/cover no-repeat;
+}
+.it-card:nth-child(4) {
+  background: url('https://picsum.photos/400/300?random=4') center/cover no-repeat;
+}
+
+.it-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Number Overlay */
+.it-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* Card Content */
+.it-content {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px;
+  border-radius: 0 0 16px 16px;
+}
+
+.it-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.it-content p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.it-content a {
+  color: #ffd700;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.it-content a:hover {
+  color: #fff;
+}
 
 .highlight-section {
   background-image: url('images/section-bg.jpg');
@@ -498,6 +533,77 @@ textarea {
     padding: 40px 16px;
   }
 }
+.capabilities-section {
+  padding: 1px 40px;
+  padding-bottom: 40px;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cap-overlay {
+  position: relative;
+  padding: 20px;
+  color: white;
+  z-index: 1;
+}
+
+.cap-overlay h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cap-overlay p {
+  font-size: 1.115rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.cap-overlay a {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cap-overlay a:hover {
+  text-decoration: underline;
+}
+
+.capability-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.capability-card:hover {
+  transform: scale(1.05); /* slight zoom */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35); /* depth */
+}
+
+.capability-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+  transition: background 0.4s ease;
+}
+
+.capability-card:hover::before {
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.2)); /* darker overlay */
+}
+
 </style>
 </head>
 <body>
@@ -774,6 +880,39 @@ textarea {
         <p>Generate actionable insights from operational data to guide IT strategy and investments.</p>
       </div>
     </div>
+  </div>
+</section>
+<section class="capabilities-section">
+  <p class="sub-heading">Our IAM Capabilities</p>
+    <h2 class="main-heading">Key Capabilities of <span style="color: #00c896">IT Analytics</span></h2>
+    <div class="capabilities-grid">
+
+  <div class="capability-card" style="background-image: url('images/IT_cap.webp');">
+    <div class="cap-overlay">
+       <h3>Business-Driven IT Alignment</h3>
+        <p>Translate IT metrics into business outcomes, ensuring data-driven decision making across teams.</p>
+        </div>
+  </div>
+
+  <div class="capability-card" style="background-image: url('images/IT_cap3.webp');">
+    <div class="cap-overlay">
+       <h3>Advanced Dashboards</h3>
+        <p>Empower teams with drag-and-drop dashboards and custom reports that provide actionable insights.</p>
+         </div>
+  </div>
+
+  <div class="capability-card" style="background-image: url('images/IT_Cap1.webp');">
+    <div class="cap-overlay">
+     <h3>AI-Powered Predictive Analytics</h3>
+        <p>Forecast capacity needs, detect anomalies, and prevent outages using machine learning.</p>
+       </div>
+  </div>
+  <div class="capability-card" style="background-image: url('images/IT_Cap2.webp');">
+    <div class="cap-overlay"> 
+       <h3>Cross-Platform Integration</h3>
+        <p>Bring together data from ITSM, monitoring tools, cloud, and business apps to build a unified view of IT operations.</p>
+        </div>
+  </div>
   </div>
 </section>
 

@@ -286,58 +286,6 @@ textarea {
     margin-left: 37px;
   }
 }
-
- /* Intro Section */
-.intro-section {
-  display: flex;
-  justify-content: center; 
-  padding: 1.5rem 2rem;
-  background-color: #f8f9fa;
-  min-height: 50vh;        
-  box-sizing: border-box;
-}
-
-.intro-content {
-  max-width: 800px;
-}
-
-.intro-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-}
-
-.intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-.intro-content ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.intro-content ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  .intro-content {
-    max-width: 100%;
-    padding: 1rem;
-  }
-}
-
-.logo img {
-    transform: scale(1.5);
-    transform-origin: center;
-}
    
 .breadcrumb {
   padding: 15px 40px;
@@ -457,41 +405,66 @@ textarea {
 }
 
 .itom-capabilities-section {
-  background-color: #f4faff;
-  padding: 60px 20px;
-  text-align: center;
+  padding: 1px 40px;
+  padding-bottom: 20px;
+}
+
+.heading-wrapper {
+  margin-bottom: 50px;
 }
 
 .capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   max-width: 1200px;
+  margin: 50px auto;
+}
+/* Responsive */
+@media (max-width: 768px) {
+.capabilities-grid {
   margin: 0 auto;
 }
-
+}
 .capability-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 4px 20px rgba(0, 43, 92, 0.08);
-  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+  text-align: center;
+}
+
+/* Revealed state */
+.capability-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .capability-card {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
 }
 
 .capability-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 43, 92, 0.15);
 }
 
 .capability-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 42px;
+  margin-bottom: 18px;
   color: #0056b3;
 }
 
 .capability-card h3 {
   font-size: 20px;
   color: #002b5c;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .capability-card p {
@@ -940,29 +913,39 @@ textarea {
 </section>
 
 <section class="itom-capabilities-section">
-  <h2 class="main-heading"><span class="span-border-bottom">Key Capabilities of IT Operations Management</span></h2>
-  <div class="capabilities-grid">
-    <div class="capability-card">
-      <div class="capability-icon">🔍</div>
-      <h3>Infrastructure Discovery</h3>
-      <p>Automatically detect devices, applications, and services across your IT network, ensuring full visibility.</p>
-    </div>
-    <div class="capability-card">
-      <div class="capability-icon">🧠</div>
-      <h3>Event Correlation & Root Cause Analysis</h3>
-      <p>Reduce alert noise and identify the true root cause faster using advanced AI-powered analytics.</p>
-    </div>
-    <div class="capability-card">
-      <div class="capability-icon">⚙️</div>
-      <h3>Automation & Orchestration</h3>
-      <p>Automate frequent incidents and standard IT workflows for faster, error-free operations.</p>
-    </div>
-    <div class="capability-card">
-      <div class="capability-icon">📊</div>
-      <h3>Operational Dashboards</h3>
-      <p>Gain insights into performance, availability, and trends with real-time, customizable dashboards.</p>
-    </div>
+  <div class="heading-wrapper">
+    <p class="sub-heading">Our IAM Capabilities</p>
+    <h2 class="main-heading">
+      Key Capabilities of <span style="color: #00c896">IT Operations Management</span>
+    </h2>
   </div>
+
+  <div class="capabilities-grid">
+  <div class="capability-card">
+    <div class="capability-icon"><i class="fa-solid fa-network-wired"></i></div>
+    <h3>Infrastructure Discovery</h3>
+    <p>Automatically detect devices, applications, and services across your IT network, ensuring full visibility.</p>
+  </div>
+  
+  <div class="capability-card">
+    <div class="capability-icon"><i class="fa-solid fa-microchip"></i></div>
+    <h3>Event Correlation & Root Cause Analysis</h3>
+    <p>Reduce alert noise and identify the true root cause faster using advanced AI-powered analytics.</p>
+  </div>
+  
+  <div class="capability-card">
+    <div class="capability-icon"><i class="fa-solid fa-gears"></i></div>
+    <h3>Automation & Orchestration</h3>
+    <p>Automate frequent incidents and standard IT workflows for faster, error-free operations.</p>
+  </div>
+  
+  <div class="capability-card">
+    <div class="capability-icon"><i class="fa-solid fa-chart-line"></i></div>
+    <h3>Operational Dashboards</h3>
+    <p>Gain insights into performance, availability, and trends with real-time, customizable dashboards.</p>
+  </div>
+</div>
+
 </section>
 
 <div id="contact-form-placeholder"></div>
@@ -1016,7 +999,43 @@ fetch('footer.html')
 
   // Run once on load in case page starts scrolled
   window.dispatchEvent(new Event('scroll'));
+
+(function () {
+    const sections = document.querySelectorAll('.itom-capabilities-section');
+
+    sections.forEach(section => {
+      const cards = section.querySelectorAll('.capability-card');
+
+      // Stagger reveal delays
+      cards.forEach((card, i) => {
+        card.style.setProperty('--reveal-delay', `${i * 120}ms`);
+      });
+
+      // Fallback if IntersectionObserver unsupported
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(c => c.classList.add('show'));
+        return;
+      }
+
+      // Observe each card individually
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            obs.unobserve(entry.target); // animate once
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px' // reveal a bit before fully in view
+      });
+
+      cards.forEach(card => observer.observe(card));
+    });
+  })();
 </script>
+
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -152,119 +152,6 @@ button[type="submit"] {
   font-weight: 500;
 }
 
-.business-benefits-section {
-  width: 100%;
-  margin: 0;
-  padding: 60px 20px;
-  box-sizing: border-box;
-}
-
-.benefit-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 20px;
-  flex-wrap: wrap;
-}
-
-.white-bg {
-  background-color: #ffffff;
-}
-
-.lightblue-bg {
-  background-color: #f4faff;
-}
-
-.benefit-image,
-.benefit-text {
-  flex: 1 1 50%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.benefit-image img {
-  width: 100%;
-  height: auto;
-  max-height: 320px;
-  display: block;
-  margin: auto;
-  object-fit: contain;
-}
-
-/* Headings & Text */
-.benefit-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #0a1f44;
-}
-
-.benefit-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .benefit-image,
-  .benefit-text {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-
-  .benefit-image img {
-    max-width: 80%;
-  }
-
-  .benefit-text h3 {
-    font-size: 1.5rem;
-  }
-
-  .benefit-text p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-}
-
-@media (max-width: 768px) {
-  .benefit-row {
-    flex-direction: column;
-    padding: 30px 15px;
-  }
-
-  .benefit-image img {
-    max-width: 90%;
-    max-height: 280px;
-  }
-
-  .benefit-text h3 {
-    font-size: 1.3rem;
-  }
-
-  .benefit-text p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-}
-
-@media (max-width: 480px) {
-  .benefit-row {
-    padding: 20px 10px;
-  }
-
-  .benefit-image img {
-    max-height: 240px;
-  }
-
-  .benefit-text h3 {
-    font-size: 1.1rem;
-  }
-
-  .benefit-text p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
-}
  /* Contact Section */
  .contact-form {
       display: flex;
@@ -420,59 +307,6 @@ textarea {
     margin-left: 37px;
   }
 }
-
- /* Intro Section */
-.intro-section {
-  display: flex;
-  justify-content: center; 
-  padding: 1.5rem 2rem;
-  background-color: #f8f9fa;
-  min-height: 50vh;        
-  box-sizing: border-box;
-}
-
-.intro-content {
-  max-width: 800px;
-}
-
-.intro-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-}
-
-.intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-.intro-content ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.intro-content ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  .intro-content {
-    max-width: 100%;
-    padding: 1rem;
-  }
-}
-
-.logo img {
-    transform: scale(1.5);
-    transform-origin: center;
-}
-
 .highlight-section {
   background-image: url('images/section-bg.jpg');
   background-size: cover;
@@ -611,6 +445,70 @@ textarea {
     flex: 1 1 100%;
   }
 }
+.uem-capabilities-section {
+  padding: 1px 40px;
+  padding-bottom: 40px;
+}
+
+.capability-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  background: #ddfff2;
+}
+
+.capability-row.reverse {
+  background: #ffffff;
+}
+
+.capability-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.capability-text h3 {
+  font-size: 20px;
+  color: #0a1f44;
+  margin-bottom: 15px;
+}
+
+.capability-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.capability-image {
+  flex: 1;
+  text-align: center;
+}
+
+.capability-image img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+.capability-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .capability-row,
+  .capability-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .capability-text {
+    padding: 10px 0;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -888,69 +786,65 @@ textarea {
   </div>
 </section>
 
-<section class="business-benefits-section">
-  <h2 class="main-heading"><span class="span-border-bottom">Business Benefits</span></h2>
+<section class="uem-capabilities-section">
+  <div class="container">
+    <p class="sub-heading">Our IAM Capabilities</p>
+    <h2 class="main-heading">Why UEM Capabilities <span style="color: #00c896">Elevate Your Business</span></h2>
 
-  <!-- Row 1 -->
-  <div class="benefit-row white-bg">
-    <div class="benefit-image">
-      <img src="images/device-uptime-img.jpg" alt="Improve Device Uptime" />
+    <!-- Capability 1 -->
+    <div class="capability-row">
+      <div class="capability-text">
+        <h3>Centralized Patch & Software Management</h3>
+        <p>Automate operating system updates, deploy critical patches, and roll out third-party applications seamlessly from a single dashboard. 
+           Eliminate security loopholes, reduce downtime, and ensure every endpoint remains compliant without manual intervention. 
+           This keeps your IT environment resilient and future-ready.</p>
+      </div>
+      <div class="capability-image">
+        <img src="images/device-uptime-img.jpg" alt="Improve Device Uptime" />
+      </div>
     </div>
-    <div class="benefit-text">
-      <h3>Improve Device Uptime</h3>
-      <p>
-        Ensure all endpoints remain updated with the latest patches, securely connected to your network, and optimized for peak performance.<br><br>
-        By maintaining device health and availability, Saasify’s UEM helps minimize downtime, prevent system failures, and avoid costly interruptions.<br><br>
-        This proactive approach enables your workforce to stay productive and ensures business operations continue seamlessly across all environments.
-      </p>
- </div>
-  </div>
 
-  <!-- Row 2 -->
-  <div class="benefit-row lightblue-bg">
-    <div class="benefit-text">
-      <h3>Strengthen Endpoint Security</h3>
-     <p>
-      Enforce robust security policies across all endpoints to ensure consistent protection against evolving threats.<br><br>
-      With Saasify’s UEM, you can remotely wipe lost or compromised devices to prevent data breaches and unauthorized access.<br><br>
-      The unified platform offers centralized control, enabling IT teams to monitor, secure, and manage sensitive information across desktops, laptops, and mobile devices in real time.
-    </p>
- </div>
-    <div class="benefit-image">
-      <img src="images/endpoint-security.jpg" alt="Strengthen Endpoint Security" />
+    <!-- Capability 2 -->
+    <div class="capability-row reverse">
+      <div class="capability-image">
+        <img src="images/endpoint-security.jpg" alt="Strengthen Endpoint Security" />
+      </div>
+      <div class="capability-text">
+        <h3>Comprehensive Asset Tracking</h3>
+        <p>Gain full visibility into your IT landscape with real-time hardware and software discovery. 
+           Track device lifecycles, monitor license usage, and prevent shadow IT with centralized control. 
+           This proactive approach helps optimize costs and ensures regulatory compliance across your business.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Row 3 -->
-  <div class="benefit-row white-bg">
-    <div class="benefit-image">
-      <img src="images/simplify-operations.jpg" alt="Simplify IT Operations" />
+    <!-- Capability 3 -->
+    <div class="capability-row">
+      <div class="capability-text">
+        <h3>Robust Endpoint Security</h3>
+        <p>Protect your workforce with multi-layered endpoint defenses including antivirus, ransomware protection, and data loss prevention. 
+           Enforce secure browsing, manage application access, and lock down vulnerabilities before they turn into threats. 
+           With continuous monitoring, your endpoints stay safeguarded against evolving cyber risks.</p>
+      </div>
+      <div class="capability-image">
+        <img src="images/simplify-operations.jpg" alt="Simplify IT Operations" />
+      </div>
     </div>
-    <div class="benefit-text">
-      <h3>Simplify IT Operations</h3>
-     <p>
-      Streamline device provisioning, configuration, software updates, and compliance enforcement through intelligent automation.<br><br>
-      Saasify’s UEM centralizes these operations into a single, intuitive dashboard—reducing manual effort and improving IT response times.<br><br>
-      With real-time monitoring and remote troubleshooting, your IT team can proactively resolve issues and maintain operational continuity across all user endpoints.
-    </p>
- </div>
-  </div>
 
-  <!-- Row 4 -->
-  <div class="benefit-row lightblue-bg">
-    <div class="benefit-text">
-      <h3>Scale Easily with Cloud-first UEM</h3>
-      <p>
-        Support remote, hybrid, and on-the-go work environments with a robust, cloud-first UEM solution tailored for modern enterprises.<br><br>
-        Saasify’s scalable platform ensures secure access, real-time updates, and centralized control across all user devices, regardless of location.<br><br>
-        Empower your workforce with uninterrupted connectivity and consistent device performance while reducing IT overhead and complexity.
-      </p>
- </div>
-    <div class="benefit-image">
-      <img src="images/cloud-scale.jpg" alt="Scale with Cloud-first UEM" />
+    <!-- Capability 4 -->
+    <div class="capability-row reverse">
+      <div class="capability-image">
+        <img src="images/cloud-scale.jpg" alt="Scale with Cloud-first UEM" />
+      </div>
+      <div class="capability-text">
+        <h3>Real-Time Analytics & Incident Response</h3>
+        <p>Leverage live analytics to monitor device health, detect unusual patterns, and predict potential failures. 
+           Automate routine issue resolution and accelerate incident response with actionable insights. 
+           This empowers IT teams to stay proactive, reduce risks, and deliver a seamless user experience at scale.</p>
+      </div>
     </div>
   </div>
 </section>
+
 <div id="contact-form-placeholder"></div>
 
 <script>
