@@ -21,7 +21,8 @@
     overscroll-behavior-y: none;
 }
 
-  .sub-heading {
+
+.sub-heading {
   text-transform: uppercase;
   font-size: 0.85rem;
   color: #7a76a3;
@@ -35,101 +36,100 @@
   margin-bottom: 30px;
   color: #0a1f44;
 }
- 
-.hero-glass {
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-}
 
-.glass-card {
-  width: 88%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-/* Left: Text */
-.hero-text {
-  flex: 1 1 500px;
-  color: #0a1f44;
-}
-
-.hero-text .sub-heading {
-  font-size: 18px;
-  
-  margin-bottom: 10px;
-}
-
-.hero-text .main-heading {
-  font-size: 42px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero-text .description {
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-/* Right: Collage */
-.photo-collage {
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 16px;
-  position: relative;
-  flex: 1 1 320px;
-}
-
-.photo-collage img {
+header {
+  position: fixed;
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease !important;
+}
+
+  .cta-button,
+button[type="submit"] {
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+ /* Hero Section */
+.hero-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transform: scale(1.5);
+  animation: zoomOut 6s ease-out forwards;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .glass-card {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .photo-collage {
-    margin-top: 30px;
+@keyframes zoomOut {
+  to {
+    transform: scale(1);
   }
 }
 
-.hero-glass-with-bg {
+.hero {
   position: relative;
-  padding: 60px 20px;
+  height: 100vh; 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Top align */
+  justify-content: flex-start; /* Left align */
+  padding-top: 120px; /* Adjust this to match TCS vertical spacing */
+  padding-left: 10%;  /* Adds left offset */
+  color: white;
 }
 
-.hero-base-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 61%;
-    height: 82%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.hero-glass-with-bg .glass-card {
+.hero-content {
   position: relative;
   z-index: 1;
+  max-width: 600px; /* Keeps text from stretching too far */
+}
+.hero-content h1{
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+  border-bottom: 0.0625rem solid hsla(0, 0%, 100%, .3);
+  padding-bottom: 10px;
+}
+
+.hero-description{
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    letter-spacing: .03125rem;
+    color: #f4f3f9;
+    margin-bottom: 1rem;
+    text-transform: none;
+    width: 70%;
+}
+.overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.content {
+  background: white;
+  position: relative;
+  z-index: 3;
 }
 
     .insights-nav {
@@ -347,7 +347,7 @@
                       <h4>About</h4>
                     <ul>
                         <li><a href="about_us.html">About Saasify</a></li>
-                        <li><a href="our-team.html">Our Team</a></li>
+                        <li><a href="our-team.html">Our Approach</a></li>
                         <li><a href="our-presence.html">Our Presence</a></li>
                     </ul>
                 </div>
@@ -415,7 +415,7 @@
         </div>
         <div class="submenu">
             <a href="about_us.html">About Saasify</a>
-            <a href="our-team.html">Our Team</a>
+            <a href="our-team.html">Our Approach</a>
             <a href="our-presence.html">Our Presence</a>
         </div>
 
@@ -435,26 +435,21 @@
             </a>
         </div>
 </div>
+<div class="hero-image">
+  <img src="images/insight_hero_img_optimized.webp" alt="Insight" loading="lazy">
+</div>
 
-<section class="hero-glass-with-bg">
-  <img src="images/abstract_shapes_7.jpg" alt="Base Background" class="hero-base-bg" />
-
-  <div class="glass-card">
-    <!-- Left Side: Text -->
-    <div class="hero-text">
-      <p class="sub-heading">Empowering Identity & Access</p>
-      <h1 class="main-heading">Explore What Drives Saasify Forward.</h1>
-      <p class="description">
-        Discover the latest trends, compelling success stories, and expert-driven insights that are shaping the future of enterprise technology. At Saasify, we go beyond the surface—exploring innovation, digital transformation strategies, and real-world impact across industries.</p>
-    </div>
-
-    <!-- Right Side: Collage -->
-    <div class="photo-collage">
-      <img src="images/Photo Collage.png" alt="Collage" />
-    </div>
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <p class="subtitle">Empowering Identity & Access</p>
+    <h1>Explore What Drives Saasify Forward</h1>
+    <a href="contact_us_page.html">
+      <button class="cta-button">Book a Demo</button>
+    </a>
   </div>
 </section>
-
+<main class="content">
 <section class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> &gt;
@@ -488,17 +483,31 @@
 
       <p>We’d love to hear from you and answer any questions. Let’s start a conversation that matters.</p>
     </div>
-    <div>
-      <a href="contact_us_page.html" class="insight-contact-btn">Contact us</a>
-    </div>
+     <a href="contact_us_page.html">
+      <button class="cta-button">Contact us</button>
+    </a>
   </div>
 </section>
 
 <div id="footer-placeholder"></div>
-
+</main>
 
 <script src="insights-data.js"></script>
   <script>
+     window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.remove('transparent');
+      header.classList.add('scrolled');
+    } else {
+      header.classList.add('transparent');
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Run once on load in case page starts scrolled
+  window.dispatchEvent(new Event('scroll'));
+
     fetch('footer.html')
     .then(response => response.text())
     .then(data => {
@@ -515,7 +524,7 @@
           <img src="${item.image}" alt="${item.title}" />
           <div class="insight-card-content">
             <h3>${item.title}</h3>
-            <p>${item.summary}</p>
+            <p>${item.description}</p>
             <a href="insight-detail.html?id=${item.id}&category=${category}" class="read-more">Read more</a>
           </div>
         `;

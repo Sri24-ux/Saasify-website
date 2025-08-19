@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saasify Solutions</title>
     <link rel="icon" type="Saasify" href="Images/saasify.ico">
+ <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css"> 
     
   <style>
  body {
@@ -19,11 +19,29 @@
     overflow-x: hidden !important;
     overscroll-behavior-y: none;
 }
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease !important;
+}
+
+  .cta-button,
+button[type="submit"] {
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
 
     .detail-wrapper {
       max-width: 900px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: #fff;
       box-shadow: 0 0 20px rgba(0,0,0,0.05);
       text-align: center;
@@ -165,7 +183,7 @@
                       <h4>About</h4>
                     <ul>
                         <li><a href="about_us.html">About Saasify</a></li>
-                        <li><a href="our-team.html">Our Team</a></li>
+                        <li><a href="our-team.html">Our Approach</a></li>
                         <li><a href="our-presence.html">Our Presence</a></li>
                     </ul>
                 </div>
@@ -233,7 +251,7 @@
         </div>
         <div class="submenu">
             <a href="about_us.html">About Saasify</a>
-            <a href="our-team.html">Our Team</a>
+            <a href="our-team.html">Our Approach</a>
             <a href="our-presence.html">Our Presence</a>
         </div>
 
@@ -259,16 +277,30 @@
     <h1 id="detailTitle"></h1>
     <p class="full-text" id="detailText"></p>
    <div class="btn-flex-center">
-      <a href="insight-page.html" class="insight-contact-btn">&larr; Back to Insights</a>
-    </div>
+    <a href="insight-page.html">
+      <button class="cta-button">Back to Insights</button>
+    </a>
   </div>
-
-
+  </div>
 
 <div id="footer-placeholder"></div>
 
   <script src="insights-data.js"></script>
   <script>
+     window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.remove('transparent');
+      header.classList.add('scrolled');
+    } else {
+      header.classList.add('transparent');
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Run once on load in case page starts scrolled
+  window.dispatchEvent(new Event('scroll'));
+
     fetch('footer.html')
     .then(response => response.text())
     .then(data => {
