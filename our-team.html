@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saasify Solutions</title>
     <link rel="icon" type="Saasify" href="Images/saasify.ico">
+ <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css">
-  <style>
+   <style>
  body {
     font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #ffffff;
@@ -35,170 +35,101 @@
   color: #0a1f44;
 }
 
-.family-title {
-    font-style: normal;
-    font-size: 60px;
-    letter-spacing: -.02em;
-    color: #0a1f44;
-}
- section.hero-iom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 40px;
-  background-color: #f4faff;
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease !important;
 }
 
-.hero-text {
-  flex: 1 1 50%;
-  padding-right: 20px;
-}
-
-.hero-image {
-  flex: 1 1 45%;
-  text-align: center;
-}
-
-.hero-iom h1 {
-  font-size: 2.5rem;
-  color: #0a1f44;
-  margin-bottom: 20px;
-}
-
-.hero-iom p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #2a2a2a;
-}
-
-.cta-button {
-  background-color:#f4c300;
+  .cta-button,
+button[type="submit"] {
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
   color: #000;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
-  margin-top: 20px;
 }
 
-.hero-iom img {
-  max-width: 100%;
-  height: auto;
+ /* Hero Section */
+.hero-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 }
 
-@media (max-width: 767px) {
-  section.hero-iom {
-    flex-direction: column-reverse;
-    text-align: center;
-    max-width: 90%;
-  }
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  animation: zoomOut 6s ease-out forwards;
+}
 
-  .hero-text,
-  .hero-image {
-    flex: 1 1 100%;
-    padding: 0;
-  }
-
-  .hero-iom h1 {
-    font-size: 2rem;
-  }
-
-  .hero-iom p {
-    font-size: 1rem;
+@keyframes zoomOut {
+  to {
+    transform: scale(1);
   }
 }
-@media (max-width: 580px) {
-    section.hero-iom {
-        max-width: 95% !important;
-    }
+
+.hero {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: flex-start; /* Top align */
+  justify-content: flex-start; /* Left align */
+  padding-top: 120px; /* Adjust this to match TCS vertical spacing */
+  padding-left: 10%;  /* Adds left offset */
+  color: white;
 }
 
-@media (max-width: 1500px) {
-    section.hero-iom {
-        max-width: 90% !important;
-    }  
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px; /* Keeps text from stretching too far */
 }
-.team-section {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 40px 20px;
-  background: #f4faff;
+.hero-content h1{
+    font-size: 3rem;
+    line-height: 4rem;
 }
-
-.team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 10px;
-    max-width: 1200px;
-    margin: 55px auto;
-    }
-
-    .team-card {
-     max-width: 281px;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    flex: 1 1 200px;
-    display: flex;
-    flex-direction: column;
+.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+  border-bottom: 0.0625rem solid hsla(0, 0%, 100%, .3);
+  padding-bottom: 10px;
 }
 
-    .team-card:hover {
-      transform: translateY(-5px);
-    }
+.hero-description{
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    letter-spacing: .03125rem;
+    color: #f4f3f9;
+    margin-bottom: 1rem;
+    text-transform: none;
+    width: 70%;
+}
+.overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
 
-    .image-wrapper {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-    }
+.content {
+  background: white;
+  position: relative;
+  z-index: 3;
+}
 
-    .image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .team-info {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .team-info h3 {
-      margin: 0;
-      color: #0a1f44;
-      font-size: 1.2rem;
-    }
-
-    .team-info h4 {
-      margin: 5px 0 10px;
-      color: #888;
-      font-weight: normal;
-      font-size: 0.95rem;
-    }
-
-    .team-info p {
-      color: #444;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-
-    @media screen and (max-width: 600px) {
-      .image-wrapper {
-        height: 220px;
-      }
-    }
-@media (max-width: 768px) {
-      .team-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-   
 .breadcrumb {
   padding: 15px 40px;
   font-size: 0.95rem;
@@ -219,247 +150,6 @@
   font-weight: 500;
 }
 
-
-.hero-glass {
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.glass-card {
-  width: 88%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-/* Left: Text */
-.hero-text {
-  flex: 1 1 500px;
-  color: #0a1f44;
-}
-
-.hero-text .sub-heading {
-  font-size: 18px;
-  
-  margin-bottom: 10px;
-}
-
-.hero-text .main-heading {
-  font-size: 42px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero-text .description {
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-/* Right: Collage */
-.photo-collage {
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 16px;
-  position: relative;
-  flex: 1 1 320px;
-}
-
-.photo-collage img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .glass-card {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .photo-collage {
-    margin-top: 30px;
-  }
-}
-
-.hero-glass-with-bg {
-  position: relative;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-base-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 61%;
-    height: 82%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.hero-glass-with-bg .glass-card {
-  position: relative;
-  z-index: 1;
-}
-.quote-section {
-  background-image: url('images/istockphoto-1148362306-170667a.jpg'); /* Replace with your image path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 40px 20px; /* Add some spacing if needed */
-  position: relative;
-  z-index: 1;
-}
-
-.quote-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color:  rgba(0, 0, 0, 0.7); /* Optional overlay for better text readability */
-  z-index: -1;
-}
-
-.quote-bg {
- 
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #1abc9c, #3498db);
-  background-image: url('images/2968880.jpg');
-  background-repeat: repeat;
-  background-size: contain;
-}
-
-.quote-inner {
-  max-width: 1032px;
-  margin: 0 auto;
- 
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 40px;
-  flex-wrap: wrap;
- background: white;
-  backdrop-filter: blur(3px);
-}
-
-.quote-content {
-  flex: 1 1 300px;
-  min-width: 280px;
-}
-
-.quote-mark {
-  font-size: 3rem;
-  color: #0a1f44;
-  margin-bottom: 20px;
-  line-height: 1;
-}
-
-.quote-text {
-  color: #0a1f44;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  font-weight: 600;
-  margin: 0 0 30px;
-}
-
-.quote-author {
-  font-weight: bold;
-  color: #0a1f44;
-  margin-bottom: 4px;
-}
-
-.quote-title {
-  color: #444;
-  margin-bottom: 20px;
-}
-
-.quote-btn {
-  display: inline-block;
-  background-color: #f4c300;
-  color: #000;
-  padding: 10px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-
-.quote-btn:hover {
-  background-color: #e0b800;
-}
-
-.quote-image {
-  position: relative;
-  flex: 1 1 260px;
-  min-width: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.quote-image .image-bg {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background-color: #f9f9f9;
-  position: relative;
-  z-index: 1;
-}
-
-.quote-image img {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  max-width: 335px;
-  height: auto;
-  object-fit: cover;
-  transform: translate(16px, 16px);
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .quote-inner {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
-  }
-
-  .quote-content,
-  .quote-image {
-    flex: 1 1 100%;
-    min-width: auto;
-  }
-
-  .quote-image img {
-    transform: none;
-    position: relative;
-    margin-top: 20px;
-    max-width: 280px;
-  }
-
-  .quote-image .image-bg {
-    display: none;
-  }
-}
 .implementation-strategy {
   background-color: #f4faff;
   padding: 40px 20px;
@@ -568,6 +258,162 @@
   .timeline-item .content-box::after {
     left: -73px !important;
     right: auto;
+  }
+}
+
+  /* Contact Section */
+ .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    
+.form-group input,
+.form-group select,
+.form-group textarea {
+  min-height: 45px;
+  font-size: 15px;
+}
+
+input, select, textarea {
+  width: 100%;
+  max-width: 100%; 
+  box-sizing: border-box;
+}
+
+.green-card {
+    background-color: #0a1f44;
+    width: 76%;
+    max-width: 1380px;
+    height: 363px;
+    border-radius: 0 50px 50px 0;
+    display: flex;
+    align-items: center;
+    margin-left: 37px;
+}
+ 
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #0a1f44;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 0.1rem solid #aeb0b2;
+  border-radius: 0.3rem;
+}
+textarea {
+  resize: vertical;
+}
+
+ @media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full {
+    grid-column: span 1;
+  }
+ 
+} 
+ 
+.contact-section {
+  position: relative;
+  padding: 161px 20px;
+  background-image: url('images/preview.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.curved-card {
+  position: relative;
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  width: 81%;
+  max-width: 960px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.curved-card::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -97px;
+    transform: translateY(-50%);
+    width: 164px;
+    height: 189px;
+    background-color: #0a1f44;
+    border-radius: 91px;
+    background-image: url(images/handshake.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 97px;
+    box-shadow: inset 20px 0 24px -14px rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .curved-card::after {
+    display: none;
+  }
+}
+.contact-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 80%;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+@media (max-width: 768px) {
+   .contact-form .form-grid {
+    width: auto !important; 
+   }
+  .green-card {
+    background: none !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block; 
+  }
+
+  .contact-section {
+    padding: 40px 15px !important;
+    background-image: none;
+  }
+
+  .curved-card {
+    width: 100% !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .curved-card {
+    width: 82%; 
+  }
+  .green-card {
+    background-color: #0a1f44;
+    width: 92%;
+    max-width: 1380px;
+    height: 363px;
+    border-radius: 0 50px 50px 0;
+    display: flex;
+    align-items: center;
+    margin-left: 37px;
   }
 }
 </style>
@@ -753,27 +599,22 @@
         </div>
 </div>
 
-<section class="hero-glass-with-bg">
-  <img src="images/abstract_shapes_7.jpg" alt="Base Background" class="hero-base-bg" />
+<div class="hero-image">
+  <img src="images/modern-buildings-with-yellow-lines.jpg" alt="IT-Analysis" loading="lazy">
+</div>
 
-  <div class="glass-card">
-    <!-- Left Side: Text -->
-    <div class="hero-text">
-      <p class="sub-heading">Leaders. Innovators. Doers</p>
-      <h1 class="family-title">Meet the Minds Behind Saasify.</h1>
-      <p class="description">
-       Our strength lies in our people. Saasify is powered by passionate professionals who bring vision, expertise, and dedication to every project. </p>
-       <a href="contact_us_page.html">
-          <button class="cta-button">Learn More About Us</button>
-       </a> 
-    </div>
-
-    <!-- Right Side: Collage -->
-    <div class="photo-collage">
-      <img src="images/Photo Collage.png" alt="Collage" />
-    </div>
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <p class="subtitle">Our Approach</p>
+    <h1>Where Strategy Meets Technology</h1>
+    <a href="contact_us_page.html">
+      <button class="cta-button">Book a Demo</button>
+    </a>
   </div>
 </section>
+
+<main class="content">
 
 <section class="breadcrumb">
   <div class="breadcrumb-container">
@@ -783,39 +624,12 @@
   </div>
 </section>
 
-  <section class="team-section">
-     <p class="sub-heading">OUR PEOPLE</p>
-      <h2 class="main-heading">Meet the brilliant minds behind  <span style="color: #00c896">our mission.</span></h2>
-      <p>Exceptional service across industries. Our proven track record drives growth and ensures maximum ROI for your enterprise.</p>
-    
-    <div class="team-container" id="teamContainer">
-      </div>
-  </section>
-<section class="quote-section">
-  <p class="sub-heading" style="margin-bottom: 23px;">FROM OUR DIRECTOR</p>
-<div class="quote-bg">
-  
-  <div class="quote-inner">
-    <div class="quote-content">
-      <div class="quote-mark">❝</div>
-      <h2 class="quote-text">
-        “At Saasify, we don’t just build solutions — we architect experiences that empower enterprises to evolve faster, smarter, and more securely. Innovation is not our goal — it’s our responsibility.”
-      </h2>
-      <p class="quote-author" style="font-family: 'Great Vibes', cursive; font-size: 1.5rem;">Madhusoodhanan</p>
-      <p class="quote-title">Director, Saasify Solutions</p>
-      <a href="our-team.html" class="quote-btn">Meet Our Leadership</a>
-    </div>
-    <div class="quote-image">
-      <div class="image-bg"></div>
-      <img src="images/Director_Image.png" alt="Madhusoodhanan" />
-    </div>
-  </div>
-</div>
-</section>
-
 <section class="implementation-strategy">
+   <p class="sub-heading">Implementation Strategy</p>
+    <h2 class="main-heading">Driving Success Through <span style="color: #00c896"> Strategy</span></h2>
+   
   <h2 class="main-heading">
-    <span class="span-border-bottom">Implementation Strategy</span>
+    <span class="span-border-bottom"></span>
   </h2>
   <div class="timeline-container">
     <div class="timeline-item left">
@@ -845,68 +659,52 @@
   </div>
 </section>
 
+<div id="contact-form-placeholder"></div>
 <div id="footer-placeholder"></div>
-
+</main>
 <script>
+   window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.remove('transparent');
+      header.classList.add('scrolled');
+    } else {
+      header.classList.add('transparent');
+      header.classList.remove('scrolled'); 
+    }
+  });
+
+  // Run once on load in case page starts scrolled
+  window.dispatchEvent(new Event('scroll'));
+  fetch('contact-form.html')
+    .then(response => response.text())
+    .then(html => {
+      const container = document.getElementById('contact-form-placeholder');
+      container.innerHTML = html;
+
+      // Extract and evaluate any scripts from the loaded HTML
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      const scripts = tempDiv.querySelectorAll('script');
+      scripts.forEach(script => {
+        const newScript = document.createElement('script');
+        if (script.src) {
+          newScript.src = script.src;
+        } else {
+          newScript.textContent = script.textContent;
+        }
+        document.body.appendChild(newScript);
+      });
+    })
+    .catch(error => console.error('Failed to load contact form:', error));
+
   fetch('footer.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
     })
     .catch(error => console.error('Error loading footer:', error));
-   const teamMembers = [
-      {
-        name: "Sanjana Rao",
-        role: "Chief People Officer",
-        description: "Sanjana leads our people-first culture and HR initiatives across global teams.",
-        image: "images/lifestyle-people.jpg"
-      },
-      {
-        name: "Madhusoodhanan",
-        role: "Director",
-        description: "Michael builds scalable systems and ensures the tech architecture meets enterprise goals.",
-        image: "images/lifestyle-people.jpg"
-      },
-      {
-        name: "Priya Sharma",
-        role: "Marketing Head",
-        description: "Priya crafts data-driven marketing strategies and creative campaigns for global outreach.",
-        image: "images/lifestyle-people.jpg"
-      },
-      {
-        name: "Rahul Verma",
-        role: "Lead Developer",
-        description: "Rahul leads the development team, ensuring code quality and timely feature releases.",
-        image: "images/lifestyle-people.jpg"
-      },
-       {
-        name: "Rahul Verma",
-        role: "Lead Developer",
-        description: "Rahul leads the development team, ensuring code quality and timely feature releases.",
-        image: "images/lifestyle-people.jpg"
-      }
-    ];
-
-    const container = document.getElementById("teamContainer");
-
-    teamMembers.forEach(member => {
-      const card = document.createElement("div");
-      card.className = "team-card";
-
-      card.innerHTML = `
-        <div class="image-wrapper">
-          <img src="${member.image}" alt="${member.name}">
-        </div>
-        <div class="team-info">
-          <h3>${member.name}</h3>
-          <h4>${member.role}</h4>
-          <p>${member.description}</p>
-        </div>
-      `;
-
-      container.appendChild(card);
-    });
-
+   
 </script>
 <script src="js/main.js"></script>
 </body>

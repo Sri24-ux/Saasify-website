@@ -112,7 +112,7 @@
 .trusted-by {
   overflow: hidden;
   padding: 50px 30px;
-  background-color: #f4faff;
+  background-color: #ddfff2;
 }
 
 .logo-slider-row {
@@ -167,7 +167,7 @@
 
 .client-stories {
   padding: 40px 40px;
-  background: #f4faff;
+  background: #ddfff2;
 }
 
 .client-stories h2 {
@@ -865,7 +865,7 @@ header {
     </a>
   </div>
 </section>
-
+<main class="content">
 <section class="why-saasify-section">
   <div class="why-saasify-container">
     <!-- Text Column -->
@@ -991,6 +991,7 @@ header {
 <div id="contact-form-placeholder"></div>
 
 <div id="footer-placeholder"></div>
+</main>
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1097,8 +1098,7 @@ window.addEventListener('scroll', function () {
 
   // Run once on load in case page starts scrolled
   window.dispatchEvent(new Event('scroll'));
-</script>
-<script>
+
    fetch('contact-form.html')
     .then(response => response.text())
     .then(html => {
