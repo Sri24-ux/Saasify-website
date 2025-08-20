@@ -498,50 +498,34 @@ footer {
 .contact-info p {
   margin: 0;
 }
-/* Intro Section */
 .intro-section {
   display: flex;
-  justify-content: center; 
-  padding: 1.5rem 2rem;
-  background-color: #f8f9fa;      
-  box-sizing: border-box;
+  padding: 40px 90px;
 }
 
-.intro-content {
-  max-width: 800px;
-}
-
-.intro-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
+.glass-card {
+  max-width: 1035px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .intro-content p {
-  font-size: 1.1rem;
+  font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-.intro-content ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.intro-content ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
+  text-align: justify;
 }
 
 /* Mobile view adjustments */
 @media (max-width: 768px) {
-  .intro-content {
-    max-width: 100%;
-    padding: 1rem;
-  }
+  .intro-section {
+  display: flex;
+  padding: 40px 30px;
+}
 }
 
 .logo img {

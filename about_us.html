@@ -452,134 +452,6 @@ button[type="submit"] {
   }
 }
 
-.milestone{
-  padding: 20px 40px;
-}
-/* TIMELINE WRAPPER */
-.timeline {
-  --year-w: 140px;               /* width of year column */
-  position: relative;
-  margin: 40px auto;
-  padding-left: calc(var(--year-w) + 32px); /* gap for rail */
-}
-
-/* DOTTED RAIL */
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: calc(var(--year-w) / 2); /* center under year */
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #000 0 8px,
-    transparent 8px 16px
-  );
-  z-index: 0;
-}
-
-/* ITEM */
-.timeline-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-  margin-bottom: 48px;
-  position: relative;
-  z-index: 1;
-}
-
-/* DOT */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: calc(var(--year-w) / 2 - 186px);
-  top: 10px;
-  width: 25px;
-  height: 25px;
-  background: #00c896;
-  border: 3px solid #000;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* YEAR */
-.year {
-  width: var(--year-w);
-  cursor: pointer;
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-  position: relative;
-  z-index: 2;
-  color: #333;
-  transition: color 0.3s, font-size 0.3s;
-}
-
- .timeline-content {
-  flex: 1;
-  max-height: 0;
-  margin-top: 15px;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-
-.timeline-content img {
-  max-width: 400px;   /* control image size */
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-.timeline-text {
-  max-width: 700px;   /* restrict width of paragraph */
-  text-align: justify; /* clean alignment */
-  line-height: 1.6;
-}
-
-/* ACTIVE STATE */
-.timeline-item.active .timeline-content {
-  max-height: 500px;
-  opacity: 1;
-}
-
-.timeline-item.active .year {
-  color: #00c896;
-  font-size: 40px;
-}
-
-/* ========== RESPONSIVE FIX ========== */
-@media (max-width: 768px) {
-  .timeline {
-    --year-w: 100px; /* smaller year column */
-    padding-left: calc(var(--year-w) + 20px);
-  }
-
-  .year {
-    font-size: 24px;
-  }
-
-  .timeline-content img {
-    width: 100%; /* make images flexible */
-    max-width: 300px;
-  }
-
-  .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .timeline::before {
-    left: 12px; /* move rail to left for mobile */
-  }
-
-  .timeline-item::before {
-   left: calc(var(--year-w) / 2 - 172px);
-  }
-}
 .intro-section {
   background-image: url('images/buildings-pushkar-town-rajasthan-india.jpg'); 
   background-size: revert;
@@ -684,7 +556,151 @@ button[type="submit"] {
     display: none;
   }
 }
+.quote-section {
+  background-image: url('images/abstract-luxury.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px; /* Add some spacing if needed */
+  position: relative;
+  z-index: 1;
+}
 
+.quote-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:  rgba(0, 0, 0, 0.4); /* Optional overlay for better text readability */
+  z-index: -1;
+}
+
+.quote-bg {
+ 
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1abc9c, #3498db);
+  background-image: url('images/2968880.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.quote-inner {
+  max-width: 1032px;
+  margin: 0 auto;
+ 
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+ background: white;
+  backdrop-filter: blur(3px);
+}
+
+.quote-content {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #0a1f44;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.quote-text {
+  color: #0a1f44;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 600;
+  margin: 0 0 30px;
+}
+
+.quote-author {
+  font-weight: bold;
+  color: #0a1f44;
+  margin-bottom: 4px;
+}
+
+.quote-title {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.quote-btn {
+  display: inline-block;
+  background-color: #f4c300;
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.quote-btn:hover {
+  background-color: #e0b800;
+}
+
+.quote-image {
+  position: relative;
+  flex: 1 1 260px;
+  min-width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-image .image-bg {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-image img {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  max-width: 335px;
+  height: auto;
+  object-fit: cover;
+  transform: translate(16px, 16px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .quote-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .quote-content,
+  .quote-image {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .quote-image img {
+    transform: none;
+    position: relative;
+    margin-top: 20px;
+    max-width: 280px;
+  }
+
+  .quote-image .image-bg {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -856,7 +872,7 @@ button[type="submit"] {
 
 <div class="hero-video">
   <video autoplay muted loop playsinline>
-    <source src="Videos/optimized_video_1080p.webm" type="video/mp4">
+    <source src="Videos/presence_hero_video_1080p.webm" type="video/mp4">
   </video>
 </div>
 
@@ -929,34 +945,6 @@ button[type="submit"] {
   </div>
 </section>
 
-<section class="services-section">
-  <p class="sub-heading">FEATURES</p>
-    <h2 class="main-heading">Purposeful Principles Powering  <span style="color: #00c896">Our Expansion.</span></h2>
-
-  <div class="services-grid">
-    <div class="service-card">
-      <img src="Collaborate_icon.png" alt="Collaboration icon" />
-      <h3>We collaborate</h3>
-      <p>Winning together through collective growth and accountability.</p>
-    </div>
-    <div class="service-card">
-      <img src="Customer_centric.png" alt="Customer-centered icon" />
-      <h3>We are customer-centered</h3>
-      <p>Placing our customers' ambitions at the heart of everything we do.</p>
-    </div>
-    <div class="service-card">
-      <img src="Opportunities.png" alt="Opportunities icon" />
-      <h3>We create opportunities</h3>
-      <p>Pushing technological boundaries to enable transformation.</p>
-    </div>
-    <div class="service-card">
-      <img src="We-care.png" alt="Care icon" />
-      <h3>We care</h3>
-      <p>Supporting communities through our technology and people.</p>
-    </div>
-  </div>
-</section>
-
 <section class="benefits-section">
   <div class="benefit-overlay">
     <div class="benefit-content">
@@ -988,13 +976,55 @@ button[type="submit"] {
     </div>
   </div>
 </section>
-<section class="milestone">
-  <p class="sub-heading">OUR HISTORY</p>
-  <h2 class="main-heading">
-    Milestones That Shaped <span style="color: #00c896">the Future </span>
-  </h2>
 
-  <div class="timeline"></div> <!-- JS injects here -->
+<section class="services-section">
+  <p class="sub-heading">FEATURES</p>
+    <h2 class="main-heading">Purposeful Principles Powering  <span style="color: #00c896">Our Expansion.</span></h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="Collaborate_icon.png" alt="Collaboration icon" />
+      <h3>We collaborate</h3>
+      <p>Winning together through collective growth and accountability.</p>
+    </div>
+    <div class="service-card">
+      <img src="Customer_centric.png" alt="Customer-centered icon" />
+      <h3>We are customer-centered</h3>
+      <p>Placing our customers' ambitions at the heart of everything we do.</p>
+    </div>
+    <div class="service-card">
+      <img src="Opportunities.png" alt="Opportunities icon" />
+      <h3>We create opportunities</h3>
+      <p>Pushing technological boundaries to enable transformation.</p>
+    </div>
+    <div class="service-card">
+      <img src="We-care.png" alt="Care icon" />
+      <h3>We care</h3>
+      <p>Supporting communities through our technology and people.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  
+<div class="quote-bg">
+  
+  <div class="quote-inner">
+    <div class="quote-content">
+      <div class="quote-mark">❝</div>
+      <p class="sub-heading" style="margin-bottom: 23px;">FROM OUR DIRECTOR</p>
+      <h2 class="quote-text">
+        “At Saasify, we don’t just build solutions — we architect experiences that empower enterprises to evolve faster, smarter, and more securely. Innovation is not our goal — it’s our responsibility.”
+      </h2>
+      <p class="quote-author" style="font-family: 'Great Vibes', cursive; font-size: 1.5rem;">Madhusoodhanan Sridharan</p>
+      <p class="quote-title">Managing Director, Saasify Solutions</p>
+    </div>
+    <div class="quote-image">
+      <div class="image-bg"></div>
+      <img src="images/Director_Image_Optimized - Copy.webp" alt="Madhusoodhanan" />
+    </div>
+  </div>
+</div>
 </section>
 
 <section class="careers-section">
@@ -1039,81 +1069,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 }); // trigger when 20% visible
 
   cards.forEach(card => observer.observe(card));
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".timeline-item .year").forEach(year => {
-    year.addEventListener("click", function () {
-      const item = this.closest(".timeline-item");
-
-      if (item.classList.contains("active")) {
-        item.classList.remove("active");
-      } else {
-        document.querySelectorAll(".timeline-item").forEach(el => {
-          el.classList.remove("active");
-        });
-        item.classList.add("active");
-      }
-    });
-  });
-});
-
-const timelineData = [
-  {
-    year: "2018",
-    image: "images/Madhu.png",
-    text: "In 2018, Mr. Madhusoodhanan S. founded SaaSify Solutions Pvt Ltd in Coimbatore. During the same year, the company expanded its operations to Chennai, laying the foundation for its journey in the IT solutions space.",
-    active: true
-  },
-  {
-    year: "2019",
-    image: "images/MindSpace_campus.jpg",
-    text: "The following year, in 2019, SaaSify extended its presence by opening a branch in Hyderabad. Alongside this, the company set up its IT Management Tools Practice and successfully acquired over 10 customers, showcasing early market acceptance."
-  },
-  {
-    year: "2020",
-    image: "images/Solution5.jpg",
-    text: "By 2020, SaaSify had diversified further with the launch of its Customer Engagement Setup Solutions Practice. The company’s reputation grew rapidly, enabling it to onboard more than 30 customers during the year."
-  },
-    {
-    year: "2021",
-    image: "images/hands-agreement.jpg",
-    text: "In 2021, SaaSify entered into strategic partnerships with Freshworks and SolarWinds, significantly enhancing its solution offerings. The trust built with clients translated into acquiring 50+ customers, marking a milestone year for the organization."
-  },
-    {
-    year: "2022",
-    image: "images/young.jpg",
-    text: "The year 2022 was one of recognition and accelerated growth. SaaSify achieved a 100+ customer base, delivered over 25 successful implementations, and was honored with the prestigious award of “Established Partner of the Year – APMEA” from Freshworks."
-  },
-    {
-    year: "2023",
-    image: "images/river-modern.jpg",
-    text: "In 2023, SaaSify expanded internationally by opening a branch in Dubai. The company also strengthened its global partnerships by signing with Ivanti and CyberArk, widening its portfolio of enterprise solutions."
-  },
-    {
-    year: "2025",
-    image: "images/aerial.webp",
-    text: "Continuing its growth trajectory, SaaSify opened a new branch in Bangalore in 2025, further expanding its footprint in India and reinforcing its commitment to serving customers across."
-  }
-];
-const timelineContainer = document.querySelector(".timeline");
-
-timelineData.forEach(item => {
-  const div = document.createElement("div");
-  div.classList.add("timeline-item");
-  if (item.active) div.classList.add("active");
-
-  div.innerHTML = `
-    <div class="year">${item.year}</div>
-    <div class="timeline-content">
-      <img src="${item.image}" alt="${item.year}">
-      <div class="timeline-text">
-        <p>${item.text}</p>
-      </div>
-    </div>
-  `;
-
-  timelineContainer.appendChild(div);
 });
 
 fetch('footer.html')
