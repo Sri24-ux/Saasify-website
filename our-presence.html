@@ -121,9 +121,8 @@ button[type="submit"] {
   position: relative;
   z-index: 3;
 }
-    
 .presence-section {
-  padding: 30px 40px;
+  padding: 60px 40px;
 }
 .section-title {
   text-align: center;
@@ -149,16 +148,8 @@ button[type="submit"] {
   border-radius: 8px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: transform 0.3s;
 }
-
-.location-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .location-card:hover {
   transform: translateY(-5px);
 }
@@ -185,6 +176,7 @@ button[type="submit"] {
   margin-right: 8px;
   color: #00bfa6;
 }
+
 
 .breadcrumb {
   padding: 15px 40px;
@@ -456,7 +448,7 @@ textarea {
 
         <nav>
            <div class="dropdown">
-            <span style="color: white;">Our Expertise </span>
+            <span style="color: white;">ManageEngine Expertise </span>
             <svg xmlns="http://www.w3.org/2000/svg" 
                 fill="none" viewBox="0 0 24 24" stroke="white" 
                 style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
@@ -476,14 +468,14 @@ textarea {
                     <span class="desc">Design, automate, deliver, and manage IT and business services.</span>
                   </li>
                   <li>
-                    <a href="UEM.html">UEM</a>
-                    <span class="desc">Integrated endpoint management and protection platform.</span>
-                  </li>
+                    <a href="UEM.html">UEMS</a>
+                   <span class="desc">Secure and manage endpoints to protect your IT assets effectively.</span>
+                 </li>
                 </ul>
                 <ul>
                   <li>
                     <a href="ITOM.html">ITOM</a>
-                    <span class="desc">Full-Stack Observability of your enterprise IT infrastructure.</span>
+                     <span class="desc">Achieve end-to-end visibility, proactive issue resolution, and enhanced security across the IT Infrastructure.</span>
                   </li>
                   <li>
                     <a href="SIEM.html">SIEM</a>
@@ -536,7 +528,6 @@ textarea {
                       <h4>About</h4>
                     <ul>
                         <li><a href="about_us.html">About Saasify</a></li>
-                        <li><a href="our-team.html">Our Approach</a></li>
                         <li><a href="our-presence.html">Our Presence</a></li>
                     </ul>
                 </div>
@@ -562,27 +553,17 @@ textarea {
 <div id="mobileMenu">
       <!-- Platform Proficiency -->
       
-       <div class="submenu-toggle" onclick="toggleSubmenu(this)"> Our Expertise 
+       <div class="submenu-toggle" onclick="toggleSubmenu(this)"> ManageEngine Expertise 
             <img src="images/Arrow.png" alt="Arrow" style=" height: 24px;" />
        </div>
         <div class="submenu">
             <a href="IAM.html">IAM</a>
-            <span class="desc">Manage, govern, and secure digital identities and privileged access</span>
-
             <a href="ITSM.html">ITSM/ESM</a>
-            <span class="desc">Design, automate, deliver, and manage IT and business services</span>
-
-            <a href="UEM.html">UEM</a>
-            <span class="desc">Integrated endpoint management and protection platform</span>
-
+            <a href="UEM.html">UEMS</a>
             <a href="ITOM.html">ITOM</a>
-            <span class="desc">Full-Stack Observability of your enterprise IT infrastructure</span>
-
             <a href="SIEM.html">SIEM</a>
-            <span class="desc">Secure your network from cyberattacks and ensure compliance</span>
-
             <a href="IT-Analysis.html">IT Analytics</a>
-            <span class="desc">Visualize IT data and gain actionable insights into IT operations</span>
+           
         </div>
 
         <!-- Services -->
@@ -604,7 +585,6 @@ textarea {
         </div>
         <div class="submenu">
             <a href="about_us.html">About Saasify</a>
-            <a href="our-team.html">Our Approach</a>
             <a href="our-presence.html">Our Presence</a>
         </div>
 
@@ -680,7 +660,6 @@ textarea {
 
   // Run once on load in case page starts scrolled
   window.dispatchEvent(new Event('scroll'));
-
   
   fetch('contact-form.html')
     .then(response => response.text())
@@ -710,6 +689,7 @@ textarea {
       document.getElementById('footer-placeholder').innerHTML = data;
     })
     .catch(error => console.error('Error loading footer:', error));
+
    fetch('locations.json')
     .then(response => response.json())
     .then(jsonData => {
@@ -746,20 +726,6 @@ textarea {
     })
     .catch(error => console.error('Error loading JSON data:', error));
   </script>
-  <script>
-  const cards = document.querySelectorAll('.location-card');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // animate only once
-      }
-    });
-  }, { threshold: 0.2 });
-
-  cards.forEach(card => observer.observe(card));
-</script>
 
   <script src="js/main.js"></script>
 </body>
