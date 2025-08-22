@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Saasify Solutions</title>
-  <link rel="icon" type="Saasify" href="Images/saasify.ico">
+    <link rel="icon" type="Saasify" href="Images/saasify.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
- 
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 <style>
-  body {
+ body {
     font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #ffffff;
     color: #2a2a2a;
@@ -20,7 +21,7 @@
     overflow-x: hidden !important;
     overscroll-behavior-y: none;
 }
- 
+
 .sub-heading {
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -43,16 +44,6 @@ header {
   left: 0;
   z-index: 999;
   transition: background-color 0.3s ease !important;
-}
-
-  .cta-button,
-button[type="submit"] {
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 50px;
-  cursor: pointer;
 }
 
  /* Hero Section */
@@ -130,194 +121,127 @@ button[type="submit"] {
   position: relative;
   z-index: 3;
 }
-  /* Other section */
- .consulting-expertise {
-  padding: 40px 20px;
-  background-color: #ddfff2;
-}
 
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+ .feature-section{
+  padding: 40px 40px;
+  color: #fff;
+  background: #0a1f44;;
+ }
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+}
+.feature-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 240px;
+  max-width: 300px;
+  text-align: center;
+}
+.feature-card i {
+  font-size: 30px;
+  color: #1f3c88;
+  margin-bottom: 15px;
+}
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: justify;
+}
+.evaluation-section {
+    padding: 40px 40px;
+}
+.evaluation-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
   margin: auto;
-  padding-top: 25px;
 }
 
-@media (max-width: 900px) {
-  .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.evaluation-image {
+  flex: 1 1 45%;
+  text-align: center;
 }
 
-@media (max-width: 600px) {
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.expertise-card {
-  background: white;
+.evaluation-image img {
+  max-width: 100%;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  transition: box-shadow 0.3s ease;
-  text-align: left;
-  max-width: 400px;
 }
 
-.expertise-card:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+.evaluation-text {
+  flex: 1 1 50%;
 }
 
-.expertise-card img {
-  transition: transform 0.5s ease;
+.evaluation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.expertise-card:hover img {
-  transform: scale(1.05);
+.evaluation-list li {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem;
+  color: #2a2a2a;
 }
 
-.expertise-card h3 {
-  display: inline-block;
-  border-bottom: 2.5px solid transparent;
-  transition: border-color 0.3s ease;
-}
-
-.expertise-card:hover h3 {
-  border-color: #55ffbe;
-}
-
-.card-img-top {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  display: block;
-}
-
-.card-content {
-  padding: 20px;
-}
-
-.card-content h3 {
-  margin-top: 0;
+.evaluation-list li i {
+  color: #00c896;
+  margin-right: 12px;
   font-size: 1.2rem;
-  color: #0a1f44;
+  margin-top: 4px;
 }
 
-.card-content p {
+/* Responsive */
+@media (max-width: 768px) {
+  .evaluation-container {
+    flex-direction: column;
+  }
+  .evaluation-text, .evaluation-image {
+    flex: 1 1 100%;
+  }
+}
+.breadcrumb {
+  padding: 15px 40px;
   font-size: 0.95rem;
   color: #333;
-  margin: 8px 0;
-  line-height: 1.6;
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
 }
 
-.approach-section {
-    max-width: 100%;
-    margin: auto;
-    padding: 60px 40px;
-    background-color: #0a1f44;
-  }
+.breadcrumb-container a {
+  text-decoration: none;
+  color: #0a1f44;
+  margin-right: 5px;
+}
 
-  .approach-steps {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  .step-card {
-    flex: 1;
-    min-width: 200px;
-    padding: 20px;
-    background: #0a1f44;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-  }
-
-  .step-card:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    right: 0;
-    height: 80%;
-    width: 1px;
-    background-color: #ffffff;
-  }
-
-  .step-card i {
-    font-size: 28px;
-    color: #55ffbe;
-    margin-bottom: 15px;
-  }
-
-  .step-time {
-    font-size: 0.85rem;
-    color: #1f3c88;
-    font-weight: 600;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
-
-  .step-title {
-    font-weight: bold;
-    font-size: 1.05rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-  }
-
-  .step-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #ffffff;
-  }
-
-  @media (max-width: 768px) {
-    .approach-steps {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .step-card {
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .step-card::after {
-      display: none;
-    }
-  }
-  .breadcrumb {
-    padding: 15px 40px;
-    font-size: 0.95rem;
-    color: #333;
-    z-index: 1;
-    position: relative;
-    background-color: #fff;
-  }
-  
-  .breadcrumb-container a {
-    text-decoration: none;
-    color: #0a1f44;
-    margin-right: 5px;
-  }
-  
-  .breadcrumb-container span {
-    color: #666;
-    font-weight: 500;
-  }
-
- /* Contact Section */
- .contact-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
+.breadcrumb-container span {
+  color: #666;
+  font-weight: 500;
+}
+/* Contact Section */
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
     
 .form-group input,
 .form-group select,
@@ -493,6 +417,7 @@ textarea {
   line-height: 1.6;
   margin-bottom: 1.5rem;
   color: #555;
+  text-align: justify;
 }
 
 .intro-content ul {
@@ -514,15 +439,15 @@ textarea {
     padding: 1rem;
   }
 }
-
 .logo img {
     transform: scale(1.5);
     transform-origin: center;
 }
 
-</style>
+  </style>
 </head>
 <body>
+
 <header>
         <div class="logo">
             <a href="index.html">
@@ -533,7 +458,7 @@ textarea {
 
         <nav>
            <div class="dropdown">
-            <span style="color: white;">ManageEngine Expertise </span>
+            <span style="color: white;">Our Expertise </span>
             <svg xmlns="http://www.w3.org/2000/svg" 
                 fill="none" viewBox="0 0 24 24" stroke="white" 
                 style="width: 16px; height: 16px; vertical-align: middle; margin-left: 6px;">
@@ -555,12 +480,12 @@ textarea {
                   <li>
                     <a href="UEM.html">UEMS</a>
                     <span class="desc">Secure and manage endpoints to protect your IT assets effectively.</span>
-                 </li>
+                  </li>
                 </ul>
                 <ul>
                   <li>
                     <a href="ITOM.html">ITOM</a>
-                    <span class="desc">Achieve end-to-end visibility, proactive issue resolution, and enhanced security across the IT Infrastructure.</span>
+                     <span class="desc">Achieve end-to-end visibility, proactive issue resolution, and enhanced security across the IT Infrastructure.</span>
                    </li>
                   <li>
                     <a href="SIEM.html">SIEM</a>
@@ -690,14 +615,14 @@ textarea {
 </div>
 
 <div class="hero-image">
-  <img src="images/consulting-img.webp" alt="Consulting handshake" loading="lazy">
+  <img src="images/hero_image_evaluation.webp" alt="evaluation-assistance" loading="lazy">
 </div>
 
 <section class="hero">
   <div class="overlay"></div>
   <div class="hero-content">
-    <p class="subtitle">Consulting Services</p>
-    <h1>Transform Your Business with Expert Consulting</h1>
+    <p class="subtitle">Evaluation Assistance</p>
+    <h1>Smart Evaluation for Smarter IT Decisions </h1>
     <a href="contact_us_page.html">
       <button class="cta-button">Book a Demo</button>
     </a>
@@ -710,121 +635,96 @@ textarea {
     <div class="breadcrumb-container">
       <a href="index.html">Home</a> &gt;
       <a href="#">Services & Solutions</a> &gt;
-      <span>Consulting</span>
+      <span>Evaluation Assistance</span>
     </div>
   </section>
 
   <section class="intro-section">
-  <div class="intro-content">
-    <h2>Smart Consulting. Smarter Outcomes.</h2>
-    <p>
-     At Saasify Solutions, we help organizations overcome critical challenges in managing 
-     enterprise IT infrastructure, service delivery, security, business analytics, 
-     and process automation. We start by understanding your current ecosystem, digital vision,
-      and transformation roadmap.</br> Then, we identify gaps, uncover opportunities, and equip you 
-      with cutting-edge tools to accelerate your digital journey — empowering you to deliver smarter,
-       faster, and more secure business outcomes.
-    </p>
+  <div class="glass-card">
+      <p class="sub-heading">Evaluation Aid</p>
+      <h2 class="main-heading">
+        Evaluate, Compare, and Select With 
+        <span style="color: #00c896">Expert Support</span>
+      </h2>
+      <div class="intro-content">
+       <p>
+      At Saasify, we simplify your IT tool evaluation journey. As a ManageEngine partner, we compare features, review architectures, and assess scalability, security, and costs—so you choose the right solution with confidence. We arrange product demos, highlight pros and cons, and even run proof-of-concept deployments in your environment to validate results before you commit.
+      </p>
+     </div>
   </div>
 </section>
 
-<section class="approach-section">
-      <p class="sub-heading">Our Consulting Approach</p>
-      <h2 class="main-heading" style="color: #ffffff">Your SaaS Vision,  <span style="color: #00c896">Our Consulting Expertise.</span></h2>
-  
-    <div class="approach-steps">
+<section class="feature-section">
+  <p class="sub-heading">Our Evaluation Process</p>
+  <h2 class="main-heading" style="color:#ccc">
+    Mapping Challenges to <span style="color: #00c896">Smart Solutions.</span>
+  </h2>
 
-      <!-- Step 1 -->
-      <div class="step-card">
-        <i class="fas fa-award"></i>
-        <div class="step-title">Assess </div>
-        <div class="step-desc">
-          Understand your current IT landscape, digital maturity, business goals, and critical challenges.
-       </div>
-      </div>
+  <div class="features">
 
-      <!-- Step 2 -->
-      <div class="step-card">
-        <i class="fas fa-rocket"></i>
-        <div class="step-title">Plan </div>
-        <div class="step-desc">
-          Define strategy, recommend tools and architecture, and create a phased roadmap aligned to your goals.
-        </div>
-      </div>
+    <div class="feature-card">
+      <i class="fas fa-sliders-h"></i>
+      <h3>Tool Comparison</h3>
+      <p>Gain clarity with side-by-side analysis of features, scalability, security, and usability across platforms.</p>
+    </div>
 
-      <!-- Step 3 -->
-      <div class="step-card">
-        <i class="fas fa-chart-line"></i>
-        <div class="step-title">Implement </div>
-        <div class="step-desc">
-          Deploy solutions using low-code/no-code platforms, automate workflows, and integrate across systems.
-         </div>
-      </div>
+    <div class="feature-card">
+      <i class="fas fa-balance-scale"></i>
+      <h3>Commercial Analysis</h3>
+      <p>Understand licensing models, pricing tiers, feature bundles, and long-term value to make cost-effective decisions.</p>
+    </div>
 
-      <!-- Step 4 -->
-      <div class="step-card">
-        <i class="fas fa-user-shield"></i>
-        <div class="step-title">Support</div>
-        <div class="step-desc">
-         Offer ongoing advisory, change management, user training, and optimization for sustained success.
-        </div>
-      </div>
+    <div class="feature-card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Live Demonstrations</h3>
+      <p>Experience live demos and walkthroughs of ManageEngine solutions, helping you weigh pros and cons in real time.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fas fa-vials"></i>
+      <h3>Proof of Concept</h3>
+      <p>Validate solutions in your own environment through pilot setups, testing scalability and user experience.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="evaluation-section">
+  <div class="evaluation-container">
+    
+    <!-- Left Image -->
+    <div class="evaluation-image">
+      <img src="images/eva-benefits.jpg" alt="Why Evaluation Matters">
+    </div>
+
+    <!-- Right Text -->
+    <div class="evaluation-text">
+       <p class="sub-heading">Why Evaluation Matters ?</p>
+      <h2 class="main-heading">Evaluation Drives<span style="color: #00c896"> Success</span></h2>
+
+      <ul class="evaluation-list">
+  <li>
+    <i class="fas fa-check-circle" style="color: #0a1f44"></i>
+    <span>Saasify helps you select the right ManageEngine solution early, reducing vendor lock-in.</span>
+  </li>
+  <li>
+    <i class="fas fa-check-circle" style="color: #0a1f44"></i>
+    <span>Save cost and time with Saasify’s guided evaluation and ManageEngine’s flexible licensing options.</span>
+  </li>
+  <li>
+    <i class="fas fa-check-circle" style="color: #0a1f44"></i>
+    <span>Prevent future rework by validating business fit upfront with Saasify’s consulting and ManageEngine tools.</span>
+  </li>
+  <li>
+    <i class="fas fa-check-circle" style="color: #0a1f44"></i>
+    <span>Ensure stakeholder buy-in with demos and proof-of-concepts of ManageEngine solutions delivered by Saasify.</span>
+  </li>
+      </ul>
 
     </div>
-  </section>
-
-<section class="consulting-expertise">
-  <div class="container">
-     <p class="sub-heading">What We Consult On</p>
-      <h2 class="main-heading" >Where Our Expertise <span style="color: #00c896">Delivers Impact.</span></h2>
-
-<div class="expertise-grid">
- <div class="expertise-card">
-  <img class="card-img-top" src="images/security_image_optimized.webp" alt="Security & Compliance" loading="lazy">
-  <div class="card-content">
-    <h3>IT Security Management</h3>
-        <p>Develop and enforce security policies. Implement threat detection, compliance monitoring, and secure access controls</p>
   </div>
-</div> 
- <div class="expertise-card">
-  <img class="card-img-top" src="images/optimized_esm.webp" alt="ITSM" loading="lazy">
-  <div class="card-content">
-    <h3>Enterprise Service Management</h3>
-        <p>Centralize and standardize service delivery across departments. Use platforms like ServiceNow to enhance service governance and workflows</p>
-  </div>
-</div>
- 
-  <div class="expertise-card">
-  <img class="card-img-top" src="images/process_automate_optimized.webp" alt="Process Automation" loading="lazy">
-  <div class="card-content">
-    <h3>Business Process Automation</h3>
-        <p>Analyze and streamline business workflows. Deploy tools to automate repetitive or manual processes</p>
-</div>
-</div>
-<div class="expertise-card">
-  <img class="card-img-top" src="images/business_analytics_optimized.webp" alt="Business Analytics" loading="lazy">
-  <div class="card-content">
-    <h3>Business Intelligence & Analytics</h3>
-        <p>Set up dashboards and reporting tools. Enable data-driven decision-making through real-time insights</p>
-  </div>
-</div>   
-<div class="expertise-card">
-  <img class="card-img-top" src="images/cloud_optimized.webp" alt="Security & Compliance" loading="lazy">
-  <div class="card-content">
-    <h3>Cloud Transformation Consulting</h3>
-        <p>Help organizations migrate legacy systems to the cloud. Optimize cloud usage, cost, and performance</p>
-  </div>
-</div>    
-<div class="expertise-card">
-  <img class="card-img-top" src="images/infrastructure-img-optimized.webp" alt="IT Infrastructure" loading="lazy">
-  <div class="card-content">
-    <h3>IT Infrastructure & Automation</h3>
-        <p>Design and optimize IT environments (on-prem, cloud, hybrid). Implement automation for provisioning, monitoring, and maintenance</p>
-  </div>
-</div>
-</div>
-</div>
 </section>
+
 <div id="contact-form-placeholder"></div>
 
 <script>
@@ -834,7 +734,6 @@ textarea {
       const container = document.getElementById('contact-form-placeholder');
       container.innerHTML = html;
 
-      // Extract and evaluate any scripts from the loaded HTML
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = html;
       const scripts = tempDiv.querySelectorAll('script');
@@ -850,7 +749,9 @@ textarea {
     })
     .catch(error => console.error('Failed to load contact form:', error));
 
-  fetch('footer.html')
+
+
+fetch('footer.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
@@ -858,9 +759,34 @@ textarea {
     .catch(error => console.error('Error loading footer:', error));
 </script>
 
-<div id="footer-placeholder"></div>
 
+<div id="footer-placeholder"></div>
 </main>
+
+  <script>
+  // JSON data
+  const testimonial = {
+    avatar: "https://i.pravatar.cc/100?img=11",
+    text: "The flexibility Saasify gave us in customizing our own internal leave management and travel approval system saved us weeks of development time.",
+    author: "IT Head, Consulting Firm",
+    rating: 5
+  };
+
+  // Render testimonial
+  const testimonialContainer = document.getElementById("testimonial");
+  const authorName = document.getElementById("author-name");
+
+  testimonialContainer.innerHTML = `
+    <i class="fas fa-quote-left quote"></i>
+    <p>${testimonial.text}</p>
+    <div class="stars">
+      ${'<i class="fas fa-star"></i>'.repeat(testimonial.rating)}
+    </div>
+    <img src="${testimonial.avatar}" alt="Avatar" class="avatar" />
+  `;
+
+  authorName.textContent = testimonial.author;
+</script>
 <script>
   window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
